@@ -9,7 +9,7 @@ var ua = $request.headers["User-Agent"] || $request.headers["user-agent"] || "";
 var obj = JSON.parse($response.body);
 
 if (true) {
-    obj.Attention = "Chào mừng bạn đến với King of Locket Gold!";
+    obj.Attention = "Chào mừng bạn đến Gold by Gon!";
     obj.state = "UPDATE";
     obj.entries = obj.entries || {};
 
@@ -1274,7 +1274,7 @@ if (true) {
             tag: "Gold By Al1nK Planet 🪐",
             tag_gradient: true,
             tag_style: "gold_gradient",
-            title: "Đã lên Gold by Gon - Al1nK Planet🪐",
+            title: "Gold by Gon_Al1nK Planet🪐",
             feature_set: [
                 {
                     title: "Hãy cho @Gon 1 legit tại #⭐legit",
