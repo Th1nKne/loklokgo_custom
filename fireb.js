@@ -1,5 +1,5 @@
 // ============================================================
-// Locket Remote Config Rewrite - Ultimate Merged Edition
+// Locket Remote Config Rewrite - Ultimate Merged Edition (Fix v2)
 // Endpoint: firebaseremoteconfig.googleapis.com
 // Dùng cho: Loon / Quantumult X / Surge / Shadowrocket
 // Nền tảng: Gon (Master) + An (V15) + Night (NMS)
@@ -1446,22 +1446,22 @@ if (true) {
           "photo_booth": "enabled"
 }),
         upsell_features: JSON.stringify({
-          "app_icon_picker": true,
-          "camera_roll": true,
+          "app_icon_picker": false,
+          "camera_roll": false,
           "camera_roll_video": false,
-          "camera_theme": true,
-          "locket_views": true,
-          "long_captions": true,
-          "longer_video": true,
-          "unlimited_friends": true,
-          "priority_support": true,
-          "profile_badge": true,
+          "camera_theme": false,
+          "locket_views": false,
+          "long_captions": false,
+          "longer_video": false,
+          "unlimited_friends": false,
+          "priority_support": false,
+          "profile_badge": false,
           "profileBadge": false,
           "gold_since_badge": false,
           "goldSinceBadge": false,
           "gold_badge_profile_menu": false,
-          "remove_ads": true,
-          "video": true,
+          "remove_ads": false,
+          "video": false,
           "video_15s": false,
           "video_30s": false,
           "video_40s": false,
@@ -1470,8 +1470,8 @@ if (true) {
           "video_upload_30s": false,
           "camera_roll_video_30s": false,
           "longer_video_30s": false,
-          "custom_widget_frames": true,
-          "streak_recovery": true,
+          "custom_widget_frames": false,
+          "streak_recovery": false,
           "streakRecovery": false,
           "streak_recovery_upsell": false,
           "streakRecoveryUpsell": false,
@@ -1516,23 +1516,23 @@ if (true) {
           "widget_frame_event": false,
           "holiday_widget_frame": false,
           "all_filters": false,
-          "video_audio": true,
-          "high_quality_video": true,
-          "hd_media_upload": true,
-          "rollcall": true,
-          "time_travel": true,
-          "group_chats": true,
-          "magic_cutout": true,
-          "ai_captions": true,
-          "lenses": true,
-          "photo_booth": true
+          "video_audio": false,
+          "high_quality_video": false,
+          "hd_media_upload": false,
+          "rollcall": false,
+          "time_travel": false,
+          "group_chats": false,
+          "magic_cutout": false,
+          "ai_captions": false,
+          "lenses": false,
+          "photo_booth": false
 }),
         paywall_presentation_config: JSON.stringify({
             uid: "paywall_testflight",
             onboarding: false,
             after_sent_moment: false,
-            on_foreground: true,
-            interval: 60,
+            on_foreground: false,
+            interval: 2592000,
             profile_banner: true
         }),
         feature_discovery_popup_config: JSON.stringify({
@@ -1568,15 +1568,22 @@ if (true) {
         history_ads_prefetch_reroute: "false",
         history_ads_dynamic_insertion: "false",
         history_ads_refresh_prefetch_on_foreground: "false",
+        history_ads_floor_price: "0",
+        history_ads_floor_price_att: "0",
+        history_ad_log_displayed_on_background: "false",
+        history_ads_debug_menu: "false",
         history_ads_enabled: "false",
         history_ads: "false",
         ads_enabled: "false",
         interstitial_ads_enabled: "false",
         rewarded_ads_enabled: "false",
         banner_ads_enabled: "false",
-        sentry_sample_rate: "0.0",
+        sentry_sample_rate: "0",
+        sentry_network_tracing: "false",
+        sentry_performance_tracking: "false",
+        sentry_trace_sample_rate: "0",
         sentry_traces_sample_rate: "0.0",
-        sentry_profiles_sample_rate: "0.0",
+        sentry_profiles_sample_rate: "0",
         crashlytics_enabled: "false",
         disable_telemetry: "true",
         enable_analytics: "false",
@@ -1594,32 +1601,24 @@ if (true) {
             goldMaxDuration: 45.0,
             max_duration: 45.0,
             maxDuration: 45.0,
-            video_duration: 45.0,
-            videoDuration: 45.0,
-            duration: 45.0,
-            max_file_size_mb: 150,
-            maxFileSizeMb: 150,
-            upload_timeout: 120,
-            uploadTimeout: 120,
-            trim_max_duration: 45.0,
-            trimMaxDuration: 45.0,
-            camera_roll_max_duration: 45.0,
+            ultra_wide: true,
+            ultraWide: true,
+            volume_button: true,
+            volumeButton: true,
+            flash_button: true,
+            telephoto: true,
+            srgb: true,
+            lanczos: true,
             quality_mbps: 0.9,
-            qualityMbps: 0.9,
-            flash_button: true
+            qualityMbps: 0.9
         }),
         camera_roll: JSON.stringify({
             gold_max_duration: 45.0,
             goldMaxDuration: 45.0,
+            video_max_duration: 45.0,
+            videoMaxDuration: 45.0,
             max_duration: 45.0,
             maxDuration: 45.0,
-            video_duration: 45.0,
-            videoDuration: 45.0,
-            duration: 45.0,
-            max_file_size_mb: 150,
-            maxFileSizeMb: 150,
-            upload_timeout: 120,
-            uploadTimeout: 120,
             trim_max_duration: 45.0,
             trimMaxDuration: 45.0,
             camera_roll_max_duration: 45.0,
@@ -1633,31 +1632,70 @@ if (true) {
             catch_up: true,
             widget_looping_mode: "never"
         }),
-        camera_filter_config: JSON.stringify(locketCameraFilterConfig),
-        filters: "true",
+        is_gold: "true",
+        is_gold_user: "true",
+        locket_gold_enabled: "true",
+        gold_enabled: "true",
+        purchases_entitlement: "Gold",
+        gold_since_date: "2024-07-28T00:00:00Z",
+        gold_badge_enabled: "true",
+        gold_badge_visible: "true",
+        gold_since_badge: "true",
+        goldSinceBadge: "true",
+        profile_badge_enabled: "true",
+        profileBadgeEnabled: "true",
+        profile_badge_visible: "true",
+        badge_enabled: "true",
+        profile_badge: "true",
+        profileBadge: "true",
+        gold_badge: "true",
+        gold_crown: "true",
+        crown_badge: "true",
+        gold_moments_enabled: "true",
+        gold_camera_themes: "true",
+        gold_custom_app_icons: "true",
+        android_subscribe_gold_button_enabled: "false",
+        camera_filter_storage_bucket: "gs://locket-filters",
+        camera_filters_config: JSON.stringify(locketCameraFilterConfig),
+        celebrity_camera_filter_config: JSON.stringify(locketCelebrityFilterConfig),
         camera_filters: "true",
         camera_filter: "true",
         camera_filters_enabled: "true",
         camera_filter_enabled: "true",
-        camera_filter_sheet: "true",
+        enable_camera_filter: "true",
         camera_filter_sheet_enabled: "true",
         camera_filter_sheet_open: "false",
         camera_filter_sheet_open_immediately: "false",
+        ai_enabled: "true",
+        ai_camera: "true",
+        ai_filters_enabled: "true",
+        ai_stickers_enabled: "true",
+        generative_ai_enabled: "true",
+        allowsCustomFilters: "true",
+        allows_custom_filters: "true",
         camera_filter_upsell: "false",
         camera_filters_upsell: "false",
         camera_filter_sheet_upsell: "false",
         camera_filter_gold_upsell: "false",
-        camera_filters_free: "true",
-        camera_filter_free: "true",
-        camera_filters_unlocked: "true",
-        camera_filter_unlocked: "true",
+        ai_filter_upsell: "false",
+        camera_filter_requires_gold: "false",
+        camera_filter_gold: "false",
+        filter_upsell: "false",
+        filter_gold_upsell: "false",
+        filter_paywall_enabled: "false",
+        camera_filter_paywall: "false",
+        camera_filter_lock: "false",
+        camera_filter_locked: "false",
+        unlock_camera_filter: "true",
+        unlock_holiday_effects: "true",
+        unlock_all_filters: "true",
         all_filters: "true",
         all_filters_free: "true",
         all_filters_unlocked: "true",
-        filter_upsell: "false",
-        filter_gold_upsell: "false",
-        filters_upsell: "false",
-        ai_filter_upsell: "false",
+        camera_filter_free: "true",
+        camera_filters_free: "true",
+        camera_filter_unlocked: "true",
+        camera_filters_unlocked: "true",
         camera_roll_preview_enabled: "true",
         camera_roll_video_enabled: "true",
         camera_roll_video_upload_enabled: "true",
@@ -1675,6 +1713,10 @@ if (true) {
         goldMaxDuration: "45.0",
         video_quality_mbps: "0.9",
         video_sound_enabled: "true",
+        microphone_enabled: "true",
+        camera_microphone_enabled: "true",
+        audio_session_deactivation_enabled: "true",
+        zoom_enabled: "true",
         enable_longer_videos: "true",
         allow_longer_videos: "true",
         longer_videos_enabled: "true",
@@ -1688,12 +1730,106 @@ if (true) {
         upload_main_image_size: "1440",
         upload_thumbnail_image_quality: "1.0",
         upload_thumbnail_image_size: "1020",
+        upload_use_heif_main: "false",
+        upload_use_webp_thumbnail: "true",
         post_sync_image_upload: "true",
         photo_sync_burst_limit: "50",
         photo_sync_interval_seconds: "30",
         photo_sync_limit_per_interval: "50",
         photo_sync_max_wait_seconds: "10"
     });
+
+// Dynamic Filter Config Merge (Bảo toàn filter từ server & ép mở khóa Gold)
+    try {
+        var rawFilterCfg = obj.entries.camera_filter_config;
+        var serverFilterCfg = (typeof rawFilterCfg === "string" && rawFilterCfg.trim() !== "") ? JSON.parse(rawFilterCfg) : (rawFilterCfg && typeof rawFilterCfg === "object" ? rawFilterCfg : {});
+        var customIdsMap = {};
+        customPickerFilters.forEach(function(id) { customIdsMap[id] = true; });
+
+        var serverSheetKept = [];
+        var serverSheet = Array.isArray(serverFilterCfg.sheet_filters) ? serverFilterCfg.sheet_filters : (Array.isArray(serverFilterCfg.sheetFilters) ? serverFilterCfg.sheetFilters : []);
+        serverSheet.forEach(function(g) {
+            if (!g || !Array.isArray(g.filter_ids)) return;
+            var keptIds = g.filter_ids.filter(function(id) { return !customIdsMap[id]; });
+            if (keptIds.length > 0) {
+                serverSheetKept.push(Object.assign({}, g, {
+                    filter_ids: keptIds,
+                    filterIds: keptIds,
+                    requires_gold: false,
+                    requiresGold: false,
+                    is_gold: false,
+                    isGold: false,
+                    unlocked: true,
+                    is_unlocked: true,
+                    isUnlocked: true,
+                    free: true
+                }));
+            }
+        });
+
+        var mergedSheet = customFilterGroups.concat(serverSheetKept);
+        var mergedPicker = customPickerFilters.slice();
+        var pickerSeenMap = {};
+        customPickerFilters.forEach(function(id) { pickerSeenMap[id] = true; });
+
+        var serverPicker = Array.isArray(serverFilterCfg.picker_filters) ? serverFilterCfg.picker_filters : (Array.isArray(serverFilterCfg.pickerFilters) ? serverFilterCfg.pickerFilters : []);
+        serverPicker.forEach(function(id) {
+            if (!pickerSeenMap[id]) {
+                pickerSeenMap[id] = true;
+                mergedPicker.push(id);
+            }
+        });
+
+        // Gộp danh sách remote_filters/filters của server (nếu có) và ép mở khóa Gold
+        var customFilterObjIds = {};
+        customPhotoboothFilters.forEach(function(f) {
+            if (f && (f.id || f.uid)) customFilterObjIds[f.id || f.uid] = true;
+        });
+        var serverRemoteList = Array.isArray(serverFilterCfg.remote_filters) ? serverFilterCfg.remote_filters : (Array.isArray(serverFilterCfg.filters) ? serverFilterCfg.filters : []);
+        var unlockedServerFilters = [];
+        serverRemoteList.forEach(function(f) {
+            var fid = f && (f.id || f.uid);
+            if (fid && !customFilterObjIds[fid]) {
+                customFilterObjIds[fid] = true;
+                unlockedServerFilters.push(Object.assign({}, f, {
+                    is_gold: false, isGold: false,
+                    requires_gold: false, requiresGold: false,
+                    unlocked: true, is_unlocked: true, isUnlocked: true,
+                    free: true
+                }));
+            }
+        });
+        var mergedRemoteFilters = customPhotoboothFilters.concat(unlockedServerFilters);
+
+        var finalFilterConfig = Object.assign({}, serverFilterCfg, locketCameraFilterConfig, {
+            allows_custom_filters: true,
+            allowsCustomFilters: true,
+            show_filter_button: true,
+            showFilterButton: true,
+            sheet_enabled: true,
+            sheetEnabled: true,
+            reference_image_attachment_enabled: true,
+            referenceImageAttachmentEnabled: true,
+            sheet_filters: mergedSheet,
+            sheetFilters: mergedSheet,
+            filter_groups: mergedSheet,
+            filterGroups: mergedSheet,
+            picker_filters: mergedPicker,
+            pickerFilters: mergedPicker,
+            remote_filters: mergedRemoteFilters,
+            remoteFilters: mergedRemoteFilters,
+            filters: mergedRemoteFilters
+        });
+
+        obj.entries.camera_filter_config = JSON.stringify(finalFilterConfig);
+        obj.entries.camera_filters_config = JSON.stringify(finalFilterConfig);
+        obj.entries.celebrity_camera_filter_config = JSON.stringify({
+            celebrityUid: "locket_ai",
+            cameraFilterConfig: finalFilterConfig
+        });
+    } catch (e) {
+        obj.entries.camera_filter_config = JSON.stringify(locketCameraFilterConfig);
+    }
 
     // ============================================================
     // 4. BẠN BÈ, GIỚI HẠN & ĐỀ XUẤT KẾT BẠN
@@ -1706,57 +1842,67 @@ if (true) {
         unlimited_friends: "true",
         unlimited_friends_enabled: "true",
         unlimited_friends_badge_enabled: "true",
-        suggested_friends_source_device_contacts: "false",
-        suggested_friends_source_facebook: "false",
-        suggested_friends_source_instagram: "false",
-        suggested_friends_source_mutual_friends: "false",
-        suggested_friends_source_recently_joined: "false",
-        suggested_friends_source_search: "false",
-        suggested_friends_source_shared_moments: "false",
-        suggested_friends_source_snapchat: "false",
-        suggested_friends_source_suggested_users: "false",
-        suggested_friends_source_threads: "false",
-        suggested_friends_source_tiktok: "false",
-        suggested_friends_source_twitter: "false",
-        suggested_friends_source_vkontakte: "false",
-        suggested_friends_fetch_threshold: "0",
-        suggested_friends_max_displayed: "0",
-        suggested_friends_recs_count: "0",
-        suggested_friends_sync_threshold: "0",
-        suggested_friends_v2_enabled: "false",
-        suggested_friends_variant: "disabled",
-        suggested_friends_view_all_enabled: "false",
-        suggested_friends_view_all_max_displayed: "0",
-        show_suggested_friends_feed_pill: "false",
-        show_suggested_friends_in_widget: "false",
-        show_suggested_friends_onboarding: "false",
-        suggested_friends_badge_enabled: "false",
-        suggested_friends_blacklist: "true",
-        suggested_friends_card_ordering: "[]",
-        suggested_friends_cards_enabled: "false",
-        suggested_friends_client_filtering_enabled: "false",
-        suggested_friends_enabled: "false",
-        find_friends_from_contacts_enabled: "false",
-        find_friends_from_other_apps_enabled: "false",
-        find_friends_from_social_enabled: "false",
-        find_friends_social_channels: "[]",
-        find_friends_sync_prompt_enabled: "false",
-        find_friends_v2_enabled: "false",
-        friend_recs_in_onboarding_enabled: "false"
+        show_friend_limit_on_cam: "false",
+        signup_max_friends_count: "999999",
+        celebrity_inbox_limit: "999999",
+        friend_limit_geo_override: JSON.stringify({ experiments: {}, area_code_overrides: {} }),
+        friends_sheet_locket_count_config: JSON.stringify({
+            items: [
+                { threshold: 0, icon_name: "heart" },
+                { threshold: 1, icon_name: "heart.fill" },
+                { threshold: 10, emoji: "🤍" },
+                { threshold: 100, emoji: "💛" },
+                { threshold: 500, emoji: "❤️‍🔥" },
+                { threshold: 1000, emoji: "🌟🫶🌟" },
+                { threshold: 2000, emoji: "✨💟✨" },
+                { threshold: 5000, emoji: "⚡️😵‍💫⚡" },
+                { threshold: 10000, emoji: "✨⚡️😱⚡✨" }
+            ]
+        }),
+        friend_locket_count_config: JSON.stringify({
+            items: [
+                { threshold: 0, icon_name: "heart" },
+                { threshold: 1, icon_name: "heart.fill" },
+                { threshold: 10, emoji: "🤍" },
+                { threshold: 100, emoji: "💛" },
+                { threshold: 500, emoji: "❤️‍🔥" },
+                { threshold: 1000, emoji: "✨💗✨" },
+                { threshold: 2000, emoji: "✨️⭐️✨" },
+                { threshold: 5000, emoji: "✨💎✨" },
+                { threshold: 10000, emoji: "✨🔐💛✨" }
+            ]
+        }),
+        new_friends_monitoring_enabled: "true",
+        improved_friend_suggestions: "true",
+        show_friend_suggestions_by_default: "true",
+        emoji_friend_suggestions: "true",
+        prompt_contact_permissions_on_search: "true",
+        populate_phone_numbers_from_suggest_friends: "true",
+        hide_friends_enabled: "true",
+        hide_invite_links: "false",
+        hide_skip_contacts: "true",
+        show_all_contacts: "true",
+        show_invite_suggestions: "true",
+        show_no_friends_bottom_sheet: "false",
+        signup_allow_skip_add_friends: "true"
     });
 
     // ============================================================
     // 5. MOMENTS, STREAK, CHAT & TƯƠNG TÁC
     // ============================================================
-    var streak = JSON.parse(obj.entries.streak_config || "{}");
-    streak.streak_recovery_window_days = 999999;
-    streak.streak_recovery_free_count = 999999;
-    streak.streak_freeze_count = 999999;
-    streak.streak_freeze_used_count = 0;
-    streak.streak_freeze_earned_count = 999999;
-    streak.streak_freeze_enabled = true;
-    streak.streak_recovery_enabled = true;
-    obj.entries.streak_config = JSON.stringify(streak);
+    try {
+        var streak = JSON.parse(obj.entries.streak_config || "{}");
+        streak.minimum_recovery_count = 0;
+        streak.minimum_display_count = 0;
+        streak.streak_recovery_window_days = 999999;
+        streak.streak_recovery_free_count = 999999;
+        streak.streak_freeze_count = 999999;
+        streak.streak_freeze_used_count = 0;
+        streak.streak_freeze_earned_count = 999999;
+        streak.streak_freeze_enabled = true;
+        streak.streak_recovery_enabled = true;
+        obj.entries.streak_config = JSON.stringify(streak);
+    } catch (e) { }
 
     Object.assign(obj.entries, {
         moment_views_enabled: "true",
@@ -1766,17 +1912,38 @@ if (true) {
         get_moment_views_as_cloud_function: "true",
         fetch_users_from_cloud_function: "true",
         send_moment_as_cloud_function: "true",
+        moment_reactions_v2: "true",
+        chat_reactions_enabled: "true",
+        conversation_reactions: "true",
+        message_reactions_enabled: "true",
         enable_reactions: "true",
         reactions_open_keyboard: "true",
         show_custom_reactions: "true",
         custom_reactions: "true",
         custom_reactions_v2: "true",
-        chat_reactions_enabled: "true",
-        message_reactions_enabled: "true",
         reactions_picker_enabled: "true",
         reactions_picker_v2: "true",
         instant_reactions_enabled: "true",
         instant_reactions_v2: "true",
+        typing_indicators_enabled: "true",
+        unsend_message_enabled: "true",
+        reply_prototype_enabled: "true",
+        messages_integration: "true",
+        conversations_enabled: "true",
+        fetch_moments_in_conversation: "true",
+        hide_chat_button: "false",
+        groups_enabled: "true",
+        send_to_self_only_mode: "always_enabled",
+        time_travel_rewind_v2_enabled: "true",
+        calendar_delete_moment_enabled: "true",
+        calendar_rewind_enabled: "false",
+        locket_yearbook_story_sharing_encouraged: "true",
+        rollcall_enabled: "true",
+        rollcall_comment_actions: "true",
+        rollcall_profile_button: "true",
+        rollcall_prompt_export_after_share: "true",
+        rollcall_confirm_skip_tagging: "false",
+        rollcall_tap_to_tag_enabled: "false",
         streak_recovery_enabled: "true",
         streak_recovery_window_days: "999999",
         streak_recovery_free_count: "999999",
@@ -1868,40 +2035,47 @@ if (true) {
         cdn_domain_replacements: JSON.stringify({
             "firebasestorage.googleapis.com": "cdn.locketcamera.com"
         }),
-        client_cache_experiment_group: "control",
-        client_cache_ttl_seconds: "31536000",
-        http_cache_max_age_seconds: "31536000",
-        dynamic_cdn_routing_mode: "direct",
-        fetch_users_chunk_size: "100",
-        friend_sync_limit_per_interval: "100",
-        friend_sync_interval_seconds: "10",
-        reverse_geocode_cache_ttl_seconds: "31536000",
-        signed_urls_bucket_blacklist: "[]",
-        signed_urls_enabled: "false",
-        static_audio_bucket: "cdn.locketcamera.com",
-        static_images_bucket: "cdn.locketcamera.com",
-        static_overlays_bucket: "cdn.locketcamera.com",
-        storage_bucket: "cdn.locketcamera.com",
-        storage_cdn_enabled: "true",
-        use_static_assets_cdn: "true"
+        cdn_domain_replacements_video: "true",
+        storage_bucket: "gs://locket-img",
+        storage_bucket_video: "gs://locket-video",
+        image_cache_max_age_sec: "157680000",
+        image_cache_max_size: "400000000",
+        history_cache_age_days: "1000",
+        user_cache_max_age_sec: "691200",
+        friends_cache_max_age_sec: "2592000",
+        image_fetch_cache: "true",
+        image_cache_use_shared: "true",
+        use_doc_dir_for_image_cache: "true",
+        efficient_history_cache_invalidation: "true",
+        timestamp_based_history_fetches: "true",
+        get_latest_moment_v2: "true",
+        fetch_users_from_cloud_function: "true",
+        refresh_interval: "60",
+        firestore_refresh_v2: "true",
+        firestore_refresh_v3: "true",
+        keychain_access_retries: "true",
+        blocked_users_cached_sync_enabled: "true",
+        beta_features_enabled: "true",
+        join_testflight_enabled: "true",
+        safety_center: "true",
+        help_center: "true",
+        support_v2: "true",
+        privacy_choices_setting: "true",
+        request_att_permission: "true",
+        invite_link_preview_variant: "4",
+        share_history_config: JSON.stringify({ prompt_enabled: false, fetching_enabled: true }),
+        share_history_prompt_enabled: "false",
+        use_thumbnails_for_sharing: "true",
+        use_thumbnails_in_timeline: "true",
+        persist_onboarding_step: "true",
+        onboarding_contact_permission_step: "true"
     });
 
     // ============================================================
     // 8. OVERLAY & CUSTOM CAPTIONS (854 CAPTIONS - 29 SECTIONS)
+    // Hybrid Dynamic Merge (Khác biệt an_2: bảo toàn caption mới từ server)
     // ============================================================
-    Object.assign(obj.entries, {
-        overlay_navigator_enabled: "true",
-        overlays_v2_config: JSON.stringify({ suggestions_enabled: true }),
-        captions_enabled: "true",
-        music_caption_enabled: "true",
-        music_caption_song_preview_enabled: "true",
-        link_caption_link_enabled: "true",
-        overlay_dynamic_captions: JSON.stringify([
-            "standard", "poll", "color_palette", "review", "music", "location",
-            "weather", "time", "streak", "star_sign", "party_time", "locket_count",
-            "good_morning", "goodnight", "ootd", "miss_you", "custom", "phunu_2010", "halloween_2026"
-        ]),
-        overlay_items: JSON.stringify([
+    var customCatalog = [
             {
                 section: "🎨 General",
                 items: [
@@ -2901,6 +3075,64 @@ if (true) {
                     {"overlay_id":"caption:built_different","source":"remote","caption":{"background":{"colors":["#CD80C9","#A975D1"]},"max_lines":1,"text":"Built different","text_color":"#292322","type":"static_content","icon":{"type":"emoji","data":"🦾"}}}
                 ]
             }
+        ];
+
+    try {
+        var existingOverlays = [];
+        if (typeof obj.entries.overlay_items === "string") {
+            try { existingOverlays = JSON.parse(obj.entries.overlay_items) || []; } catch (err) {}
+        } else if (Array.isArray(obj.entries.overlay_items)) {
+            existingOverlays = obj.entries.overlay_items;
+        }
+
+        var catalogIdSet = new Set();
+        customCatalog.forEach(function(grp) {
+            if (grp && Array.isArray(grp.items)) {
+                grp.items.forEach(function(it) {
+                    if (it && it.overlay_id) catalogIdSet.add(it.overlay_id);
+                });
+            }
+        });
+
+        var finalOverlayGroups = JSON.parse(JSON.stringify(customCatalog));
+        var groupMap = {};
+        finalOverlayGroups.forEach(function(grp) { groupMap[grp.section] = grp; });
+
+        var extraSeenIds = new Set();
+        existingOverlays.forEach(function(grp) {
+            if (!grp || !Array.isArray(grp.items)) return;
+            var extras = grp.items.filter(function(it) {
+                if (!it || !it.overlay_id || catalogIdSet.has(it.overlay_id) || extraSeenIds.has(it.overlay_id)) return false;
+                extraSeenIds.add(it.overlay_id);
+                return true;
+            });
+            if (extras.length > 0) {
+                if (groupMap[grp.section]) {
+                    groupMap[grp.section].items = groupMap[grp.section].items.concat(extras);
+                } else {
+                    var newG = { section: grp.section, items: extras };
+                    finalOverlayGroups.push(newG);
+                    groupMap[grp.section] = newG;
+                }
+            }
+        });
+
+        obj.entries.overlay_items = JSON.stringify(finalOverlayGroups);
+    } catch (e) {
+        obj.entries.overlay_items = JSON.stringify(customCatalog);
+    }
+
+    Object.assign(obj.entries, {
+        overlay_navigator_enabled: "true",
+        overlays_v2_config: JSON.stringify({ suggestions_enabled: true }),
+        captions_enabled: "true",
+        music_caption_enabled: "true",
+        music_caption_song_preview_enabled: "true",
+        link_caption_link_enabled: "true",
+        overlay_dynamic_captions: JSON.stringify([
+            "standard", "poll", "color_palette", "review", "music", "location",
+            "weather", "time", "streak", "star_sign", "party_time", "locket_count",
+            "good_morning", "goodnight", "ootd", "miss_you", "custom", "phunu_2010", "halloween_2026"
         ])
     });
 }
