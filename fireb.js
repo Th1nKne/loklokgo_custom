@@ -1266,8 +1266,8 @@ if (true) {
             uid: "paywall_testflight",
             onboarding: false,
             after_sent_moment: false,
-            on_foreground: false,
-            interval: 2592000,
+            on_foreground: true,
+            interval: 60,
             profile_banner: true
         }),
         feature_discovery_popup_config: JSON.stringify({
@@ -1283,7 +1283,7 @@ if (true) {
                 }
             ],
             primary_button_title: "Xong",
-            campaign: "locket_gold_welcome_v3",
+            campaign: "locket_gold_welcome_v4",
             start_at: "2020-01-01T00:00:00",
             end_at: "2099-12-31T23:59:59",
             use_local_time_zone: true
