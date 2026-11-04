@@ -9,7 +9,7 @@ var ua = $request.headers["User-Agent"] || $request.headers["user-agent"] || "";
 var obj = JSON.parse($response.body);
 
 if (true) {
-    obj.Attention = "Chào mừng bạn đến với Gold by Al1nK Planet 🪐!";
+    obj.Attention = "Chào mừng bạn đến với King of Locket Gold!";
     obj.state = "UPDATE";
     obj.entries = obj.entries || {};
 
@@ -1217,64 +1217,6 @@ if (true) {
             "longer_video_30s": false,
             "custom_widget_frames": false,
             "streak_recovery": false,
-            "streakRecovery": false,
-            "streak_recovery_upsell": false,
-            "streakRecoveryUpsell": false,
-            "groups": false,
-            "private_mode": false,
-            "viewer_mode": false,
-            "close_friends": false,
-            "camera_filter_sheet": false,
-            "camera_filters": false,
-            "camera_filter": false,
-            "camera_themes": false,
-            "holiday_effects": false,
-            "holiday_filters": false,
-            "holiday_filter": false,
-            "holiday_effect": false,
-            "holiday": false,
-            "holidays": false,
-            "holiday_effects_upsell": false,
-            "holiday_filters_upsell": false,
-            "holiday_filter_upsell": false,
-            "holiday_effect_upsell": false,
-            "holiday_gold_upsell": false,
-            "holiday_upsell": false,
-            "holiday_effects_unlocked": false,
-            "holiday_filters_unlocked": false,
-            "holiday_filter_unlocked": false,
-            "holiday_effect_unlocked": false,
-            "camera_filter_upsell": false,
-            "camera_filters_upsell": false,
-            "camera_filter_sheet_upsell": false,
-            "camera_filter_gold_upsell": false,
-            "filter_upsell": false,
-            "filter_gold_upsell": false,
-            "filters_upsell": false,
-            "ai_filter_upsell": false,
-            "history_gold_upsell": false,
-            "history_gold": false,
-            "custom_widget_frame": false,
-            "widget_frames": false,
-            "widget_frame": false,
-            "frames": false,
-            "widget_frame_event": false,
-            "holiday_widget_frame": false,
-            "all_filters": false
-}),
-        paywall_presentation_config: JSON.stringify({
-            uid: "paywall_testflight",
-            onboarding: false,
-            after_sent_moment: false,
-            on_foreground: false,
-            interval: 2592000,
-            profile_banner: true
-        }),
-        feature_discovery_popup_config: JSON.stringify({
-            tag: "LOCKET GOLD",
-            tag_gradient: true,
-            tag_style: "gold_gradient",
-            title: "Đã lên Gold by Gon - Al1nKPlanet            "streak_recovery": false,
             "streakRecovery": false,
             "streak_recovery_upsell": false,
             "streakRecoveryUpsell": false,
