@@ -3073,6 +3073,5 @@ obj.entries = obj.entries || {};
             "good_morning", "goodnight", "ootd", "miss_you", "custom", "phunu_2010", "halloween_2026"
         ])
     });
-}
 
 $done({ body: JSON.stringify(obj) });
