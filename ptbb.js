@@ -1,4 +1,5 @@
 // ========= Locket Photobooth Edge-to-Edge & 4-Shot Engine ========= //
+// Phiên bản tối ưu cho Server Node.js (Bypass 100% Băng thông AWS)
 (function () {
     const TWO_PASS_CONFIGS = [
         { idx: 1, matches: ["pb_strawberry", "frame_berry_days"], pass1Id: "photobooth_cute", targetFid: "pb_strawberry", cx: 24, cy: 24, cw: 1032, ch: 1032 },
@@ -109,10 +110,10 @@
     }
 
     function toSslIpHttp(urlStr) {
-        return String(urlStr || "")
-            .split("?")[0]
-            .replace(/^https?:\/\/us-central1-locket-4252a\.cloudfunctions\.net/, "http://52-62-46-207.sslip.io")
-            .replace(/^https?:\/\/180\.93\.61\.146/, "http://52-62-46-207.sslip.io");
+        // TỐI ƯU HÓA: Bỏ toàn bộ regex replace sang IP VPS (52.62.46.207).
+        // Giữ nguyên link ảnh xịn của Google Cloud để thiết bị tự tải trực tiếp.
+        // Cứu 100% băng thông cho VPS AWS EC2.
+        return String(urlStr || "").split("?")[0];
     }
 
     // 1. HTTP-REQUEST MODE: Rewrite custom 4-shot photobooth filterId to Pass 1 cute grid & isolate session IP
@@ -194,59 +195,70 @@
         const prefix = getDeviceIpPrefix();
 
         const twoPass = findTwoPass(fid);
-        if (twoPass && typeof $httpClient !== "undefined") {
-            const wsrvGridUrl =
-                "https://wsrv.nl/?url=" +
-                encodeURIComponent(rawHttpUrl) +
-                "&cx=116&cy=116&cw=848&ch=848&output=jpg";
+        if (twoPass) {
+            // FIX CHO NODE.JS: Sandbox hiện tại không có biến $httpClient, nên phải tạo luồng fallback
+            if (typeof $httpClient !== "undefined") {
+                const wsrvGridUrl =
+                    "https://wsrv.nl/?url=" +
+                    encodeURIComponent(rawHttpUrl) +
+                    "&cx=116&cy=116&cw=848&ch=848&output=jpg";
 
-            const pass2Ip = prefix + ".250";
-            const postOpts = {
-                url: "http://52.62.46.207/generateFilteredImage",
-                headers: {
-                    "Content-Type": "application/json",
-                    "Host": "us-central1-locket-4252a.cloudfunctions.net",
-                    "X-Forwarded-For": pass2Ip,
-                    "CF-Connecting-IP": pass2Ip,
-                    "X-Real-IP": pass2Ip
-                },
-                body: JSON.stringify({
-                    data: {
-                        imageUrl: wsrvGridUrl,
-                        filterId: twoPass.targetFid,
-                        filterType: "ai",
-                        prompt: twoPass.targetFid
-                    }
-                }),
-                timeout: 15
-            };
-
-            $httpClient.post(postOpts, function (err, resp, data) {
-                try {
-                    if (!err && data) {
-                        const pass2Obj = JSON.parse(data);
-                        const pass2Url =
-                            (pass2Obj && pass2Obj.result && pass2Obj.result.outputUrl) ||
-                            (pass2Obj && pass2Obj.outputUrl) ||
-                            "";
-                        if (pass2Url) {
-                            const rawPass2Http = toSslIpHttp(pass2Url);
-                            const finalUrl =
-                                "https://wsrv.nl/?url=" +
-                                encodeURIComponent(rawPass2Http) +
-                                "&cx=" + twoPass.cx +
-                                "&cy=" + twoPass.cy +
-                                "&cw=" + twoPass.cw +
-                                "&ch=" + twoPass.ch +
-                                "&output=jpg&t=" + Date.now();
-                            setAllUrls(resObj, finalUrl);
-                            return $done({ body: JSON.stringify(resObj) });
+                const pass2Ip = prefix + ".250";
+                const postOpts = {
+                    url: "https://us-central1-locket-4252a.cloudfunctions.net/generateFilteredImage", // Bắn thẳng về Google Cloud
+                    headers: {
+                        "Content-Type": "application/json",
+                        "X-Forwarded-For": pass2Ip,
+                        "CF-Connecting-IP": pass2Ip,
+                        "X-Real-IP": pass2Ip
+                    },
+                    body: JSON.stringify({
+                        data: {
+                            imageUrl: wsrvGridUrl,
+                            filterId: twoPass.targetFid,
+                            filterType: "ai",
+                            prompt: twoPass.targetFid
                         }
-                    }
-                } catch (e) {}
+                    }),
+                    timeout: 15
+                };
+
+                $httpClient.post(postOpts, function (err, resp, data) {
+                    try {
+                        if (!err && data) {
+                            const pass2Obj = JSON.parse(data);
+                            const pass2Url =
+                                (pass2Obj && pass2Obj.result && pass2Obj.result.outputUrl) ||
+                                (pass2Obj && pass2Obj.outputUrl) ||
+                                "";
+                            if (pass2Url) {
+                                const rawPass2Http = toSslIpHttp(pass2Url);
+                                const finalUrl =
+                                    "https://wsrv.nl/?url=" +
+                                    encodeURIComponent(rawPass2Http) +
+                                    "&cx=" + twoPass.cx +
+                                    "&cy=" + twoPass.cy +
+                                    "&cw=" + twoPass.cw +
+                                    "&ch=" + twoPass.ch +
+                                    "&output=jpg&t=" + Date.now();
+                                setAllUrls(resObj, finalUrl);
+                                return $done({ body: JSON.stringify(resObj) });
+                            }
+                        }
+                    } catch (e) {}
+                    return $done({ body: JSON.stringify(resObj) });
+                });
+                return;
+            } else {
+                // FALLBACK MÔI TRƯỜNG NODE.JS (vm context)
+                // Cắt khung ảnh cơ bản trực tiếp từ luồng 1 để tránh lỗi văng app do không có $httpClient
+                const finalUrlFallback =
+                    "https://wsrv.nl/?url=" +
+                    encodeURIComponent(rawHttpUrl) +
+                    "&cx=116&cy=116&cw=848&ch=848&output=jpg&t=" + Date.now();
+                setAllUrls(resObj, finalUrlFallback);
                 return $done({ body: JSON.stringify(resObj) });
-            });
-            return;
+            }
         }
 
         const singleCrop = findSingleCrop(fid);
