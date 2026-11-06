@@ -6,10 +6,25 @@
 // ============================================================
 
 var ua = $request.headers["User-Agent"] || $request.headers["user-agent"] || "";
-var obj = JSON.parse($response.body);
 
-if (true) {
-    obj.Attention = "Chào mừng bạn đến Locket Gold Ultimate - Merged by Gon & Community!";
+// 1. Kiểm tra xem response có body không
+if (typeof $response === "undefined" || !$response.body) {
+    $done({});
+}
+
+var obj = {};
+// 2. Dùng try...catch để bọc lỗi nếu phản hồi không phải là JSON
+try {
+    obj = JSON.parse($response.body);
+} catch (e) {
+    console.log("Lỗi Parse JSON: " + e);
+    $done({ body: $response.body }); // Trả về body gốc nếu lỗi
+}
+
+// Bỏ qua `if (true) {` vì nó không có tác dụng phân nhánh, code sẽ chạy trực tiếp
+obj.Attention = "Chào mừng bạn đến Locket Gold Ultimate - Merged by Gon & Community!";
+obj.state = "UPDATE";
+obj.entries = obj.entries || {};
     obj.state = "UPDATE";
     obj.entries = obj.entries || {};
 
