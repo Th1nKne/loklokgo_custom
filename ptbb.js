@@ -2,9 +2,10 @@
 // Phiên bản tối ưu cho Server Node.js (Bypass 100% Băng thông AWS)
 (function () {
     const TWO_PASS_CONFIGS = [
-        { idx: 1, matches: ["pb_strawberry", "frame_berry_days"], pass1Id: "photobooth_cute", targetFid: "pb_strawberry", cx: 24, cy: 24, cw: 1032, ch: 1032 },
-        { idx: 2, matches: ["pb_vintage", "frame_happy_snap"], pass1Id: "photobooth_cute", targetFid: "pb_vintage", cx: 24, cy: 24, cw: 1032, ch: 1032 },
-        { idx: 3, matches: ["pb_galaxy", "frame_sky_diary"], pass1Id: "photobooth_cute", targetFid: "pb_galaxy", cx: 24, cy: 24, cw: 1032, ch: 1032 },
+        // Sửa matches để khớp với ID trong firebase_res.txt
+        { idx: 1, matches: ["photobooth_berry_days", "frame_berry_days"], pass1Id: "photobooth_cute", targetFid: "pb_strawberry", cx: 24, cy: 24, cw: 1032, ch: 1032 },
+        { idx: 2, matches: ["photobooth_happy_snap", "frame_happy_snap"], pass1Id: "photobooth_cute", targetFid: "pb_vintage", cx: 24, cy: 24, cw: 1032, ch: 1032 },
+        { idx: 3, matches: ["photobooth_sky_diary", "frame_sky_diary"], pass1Id: "photobooth_cute", targetFid: "pb_galaxy", cx: 24, cy: 24, cw: 1032, ch: 1032 },
         { idx: 4, matches: ["pb_holo"], pass1Id: "photobooth_cute", targetFid: "pb_holo_4Cut", cx: 118, cy: 110, cw: 857, ch: 860 },
         { idx: 5, matches: ["pb_scrapbook"], pass1Id: "photobooth_cute", targetFid: "pb_scrapbook_ripped_4Cut", cx: 75, cy: 70, cw: 930, ch: 930 },
         { idx: 6, matches: ["pb_ripped_paper"], pass1Id: "photobooth_cute", targetFid: "pb_ripped_paper_4Cut", cx: 68, cy: 65, cw: 944, ch: 948 }
@@ -110,7 +111,7 @@
     }
 
     function toSslIpHttp(urlStr) {
-        // TỐI ƯU HÓA: Bỏ toàn bộ regex replace sang IP VPS (52.62.46.207).
+        // TỐI ƯU HÓA: Bỏ toàn bộ regex replace sang IP VPS.
         // Giữ nguyên link ảnh xịn của Google Cloud để thiết bị tự tải trực tiếp.
         // Cứu 100% băng thông cho VPS AWS EC2.
         return String(urlStr || "").split("?")[0];
@@ -205,7 +206,7 @@
 
                 const pass2Ip = prefix + ".250";
                 const postOpts = {
-                    url: "https://us-central1-locket-4252a.cloudfunctions.net/generateFilteredImage", // Bắn thẳng về Google Cloud
+                    url: "https://us-central1-locket-4252a.cloudfunctions.net/generateFilteredImage",
                     headers: {
                         "Content-Type": "application/json",
                         "X-Forwarded-For": pass2Ip,
