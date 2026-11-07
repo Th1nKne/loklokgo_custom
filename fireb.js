@@ -1317,6 +1317,43 @@ obj.entries = obj.entries || {};
         "frosty"
 ];
 
+    var officialAiFilterIds = [
+        "cutesy", "okay_wig", "influencer", "looks_maxxing", "toothless",
+        "bye_brows", "bowling_ball", "blonde_bleached", "beard", "bob_cut",
+        "buns", "tatted", "mohawk", "braces", "slimed", "princess",
+        "disco_lights", "cash_money", "happy_birthday", "sticker_face",
+        "flower_crown", "love_bug", "wedding", "cowboy_cowgirl", "giraffe",
+        "clown", "easter_bunney_cutout", "easter_chick_cutout", "bearded",
+        "leprechaun", "lucky_face", "sweet_hearts", "elf_cutout", "santa_cutout", "frosty"
+    ];
+
+    var unlockedOfficialAiFilters = officialAiFilterIds.map(function(fid) {
+        return {
+            id: fid,
+            uid: fid,
+            name: fid,
+            type: "ai",
+            filter_type: "ai",
+            filterType: "ai",
+            is_gold: false,
+            isGold: false,
+            requires_gold: false,
+            requiresGold: false,
+            unlocked: true,
+            is_unlocked: true,
+            isUnlocked: true,
+            free: true,
+            is_free: true,
+            isFree: true,
+            allows_try_filter: true,
+            allowsTryFilter: true,
+            try_button_enabled: true,
+            tryButtonEnabled: true
+        };
+    });
+
+    var baseRemoteFilters = customPhotoboothFilters.concat(unlockedOfficialAiFilters);
+
     var locketCameraFilterConfig = {
         showFilterButton: true,
         allowsCustomFilters: true,
@@ -1329,9 +1366,9 @@ obj.entries = obj.entries || {};
         filter_groups: customFilterGroups,
         sheetFilters: customFilterGroups,
         sheet_filters: customFilterGroups,
-        remoteFilters: customPhotoboothFilters,
-        remote_filters: customPhotoboothFilters,
-        filters: customPhotoboothFilters,
+        remoteFilters: baseRemoteFilters,
+        remote_filters: baseRemoteFilters,
+        filters: baseRemoteFilters,
         show_filter_button: true,
         allows_custom_filters: true,
         reference_image_attachment_enabled: true,
@@ -1458,7 +1495,21 @@ obj.entries = obj.entries || {};
           "magic_cutout": "enabled",
           "ai_captions": "enabled",
           "lenses": "enabled",
-          "photo_booth": "enabled"
+          "photo_booth": "enabled",
+          "photobooth": "enabled",
+          "ai_filters": "enabled",
+          "ai_filter": "enabled",
+          "ai_camera": "enabled",
+          "generative_ai": "enabled",
+          "camera_filter_gate": "disabled",
+          "camera_filters_gate": "disabled",
+          "ai_filter_gate": "disabled",
+          "ai_filters_gate": "disabled",
+          "ai_camera_gate": "disabled",
+          "generative_ai_gate": "disabled",
+          "photo_booth_gate": "disabled",
+          "photobooth_gate": "disabled",
+          "lenses_gate": "disabled"
 }),
         paywall_presentation_config: JSON.stringify({
             uid: "paywall_testflight",
@@ -1616,8 +1667,33 @@ obj.entries = obj.entries || {};
         camera_filter_sheet_upsell: "false",
         camera_filter_gold_upsell: "false",
         ai_filter_upsell: "false",
+        ai_filters_upsell: "false",
         camera_filter_requires_gold: "false",
         camera_filter_gold: "false",
+        ai_filter_requires_gold: "false",
+        ai_filters_requires_gold: "false",
+        ai_filter_gold: "false",
+        ai_filters_gold: "false",
+        ai_filters: "true",
+        ai_filter: "true",
+        ai_camera_enabled: "true",
+        generative_ai: "true",
+        ai_filter_paywall: "false",
+        ai_filters_paywall: "false",
+        ai_filters_sheet_upsell: "false",
+        ai_filter_sheet_upsell: "false",
+        ai_filter_free: "true",
+        ai_filters_free: "true",
+        ai_filter_unlocked: "true",
+        ai_filters_unlocked: "true",
+        photo_booth_enabled: "true",
+        photobooth_enabled: "true",
+        photo_booth_requires_gold: "false",
+        photobooth_requires_gold: "false",
+        photo_booth_free: "true",
+        photobooth_free: "true",
+        photo_booth_gold: "false",
+        photobooth_gold: "false",
         filter_upsell: "false",
         filter_gold_upsell: "false",
         filter_paywall_enabled: "false",
@@ -1733,11 +1809,53 @@ obj.entries = obj.entries || {};
                     is_gold: false, isGold: false,
                     requires_gold: false, requiresGold: false,
                     unlocked: true, is_unlocked: true, isUnlocked: true,
-                    free: true
+                    free: true, is_free: true, isFree: true,
+                    allows_try_filter: true, allowsTryFilter: true,
+                    try_button_enabled: true, tryButtonEnabled: true
                 }));
             }
         });
-        var mergedRemoteFilters = customPhotoboothFilters.concat(unlockedServerFilters);
+
+        // Bổ sung các Filter AI gốc (cutesy, okay_wig...) nếu server chưa trả về
+        var unlockedOfficialAi = [];
+        unlockedOfficialAiFilters.forEach(function(f) {
+            var fid = f && (f.id || f.uid);
+            if (fid && !customFilterObjIds[fid]) {
+                customFilterObjIds[fid] = true;
+                unlockedOfficialAi.push(f);
+            }
+        });
+
+        // Bổ sung bất kỳ filter ID nào trong mergedPicker mà chưa có trong danh sách
+        mergedPicker.forEach(function(fid) {
+            if (fid && !customFilterObjIds[fid]) {
+                customFilterObjIds[fid] = true;
+                unlockedOfficialAi.push({
+                    id: fid,
+                    uid: fid,
+                    name: fid,
+                    type: "ai",
+                    filter_type: "ai",
+                    filterType: "ai",
+                    is_gold: false,
+                    isGold: false,
+                    requires_gold: false,
+                    requiresGold: false,
+                    unlocked: true,
+                    is_unlocked: true,
+                    isUnlocked: true,
+                    free: true,
+                    is_free: true,
+                    isFree: true,
+                    allows_try_filter: true,
+                    allowsTryFilter: true,
+                    try_button_enabled: true,
+                    tryButtonEnabled: true
+                });
+            }
+        });
+
+        var mergedRemoteFilters = customPhotoboothFilters.concat(unlockedServerFilters).concat(unlockedOfficialAi);
 
         var finalFilterConfig = Object.assign({}, serverFilterCfg, locketCameraFilterConfig, {
             allows_custom_filters: true,
