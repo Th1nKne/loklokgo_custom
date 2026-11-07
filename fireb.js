@@ -1806,12 +1806,14 @@ var unlockedOfficialAiFilters = officialAiFilterIds.map(function(fid) {
             if (fid && !customFilterObjIds[fid]) {
                 customFilterObjIds[fid] = true;
                 unlockedServerFilters.push(Object.assign({}, f, {
+                    tier: "free", subscription_tier: "free",
+                    locked: false, is_locked: false, isLocked: false,
                     is_gold: false, isGold: false,
                     requires_gold: false, requiresGold: false,
                     unlocked: true, is_unlocked: true, isUnlocked: true,
                     free: true, is_free: true, isFree: true,
-                    allows_try_filter: true, allowsTryFilter: true,
-                    try_button_enabled: true, tryButtonEnabled: true
+                    allows_try_filter: false, allowsTryFilter: false,
+                    try_button_enabled: false, tryButtonEnabled: false
                 }));
             }
         });
@@ -1847,10 +1849,10 @@ var unlockedOfficialAiFilters = officialAiFilterIds.map(function(fid) {
                     free: true,
                     is_free: true,
                     isFree: true,
-                    allows_try_filter: true,
-                    allowsTryFilter: true,
-                    try_button_enabled: true,
-                    tryButtonEnabled: true
+                    allows_try_filter: false,
+                    allowsTryFilter: false,
+                    try_button_enabled: false,
+                    tryButtonEnabled: false
                 });
             }
         });
