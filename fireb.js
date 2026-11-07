@@ -1327,7 +1327,7 @@ obj.entries = obj.entries || {};
         "leprechaun", "lucky_face", "sweet_hearts", "elf_cutout", "santa_cutout", "frosty"
     ];
 
-    var unlockedOfficialAiFilters = officialAiFilterIds.map(function(fid) {
+var unlockedOfficialAiFilters = officialAiFilterIds.map(function(fid) {
         return {
             id: fid,
             uid: fid,
@@ -1345,10 +1345,10 @@ obj.entries = obj.entries || {};
             free: true,
             is_free: true,
             isFree: true,
-            allows_try_filter: true,
-            allowsTryFilter: true,
-            try_button_enabled: true,
-            tryButtonEnabled: true
+            allows_try_filter: false,
+            allowsTryFilter: false,
+            try_button_enabled: false,
+            tryButtonEnabled: false
         };
     });
 
