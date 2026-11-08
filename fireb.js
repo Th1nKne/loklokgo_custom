@@ -5,23 +5,18 @@
 // Nền tảng: Gon (Master) + An (V15) + Night (NMS)
 // ============================================================
 
-var ua = $request.headers["User-Agent"] || $request.headers["user-agent"] || "";
-
-// 1. Kiểm tra xem response có body không
-if (typeof $response === "undefined" || !$response.body) {
-    $done({});
-}
+var ua = ($request && $request.headers && ($request.headers["User-Agent"] || $request.headers["user-agent"])) || "";
 
 var obj = {};
-// 2. Dùng try...catch để bọc lỗi nếu phản hồi không phải là JSON
 try {
-    obj = JSON.parse($response.body);
+    if (typeof $response !== "undefined" && $response.body) {
+        obj = JSON.parse($response.body);
+    }
 } catch (e) {
-    console.log("Lỗi Parse JSON: " + e);
-    $done({ body: $response.body }); // Trả về body gốc nếu lỗi
+    console.log("Lỗi Parse JSON Firebase: " + e);
+    obj = {};
 }
 
-// Bỏ qua `if (true) {` vì nó không có tác dụng phân nhánh, code sẽ chạy trực tiếp
 obj.Attention = "Chào mừng bạn đến Locket Gold Ultimate - Merged by Gon & Community!";
 obj.state = "UPDATE";
 obj.entries = obj.entries || {};
