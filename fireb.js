@@ -2,7 +2,7 @@
 // Locket Remote Config Rewrite - Ultimate Merged Edition (Fix v2)
 // Endpoint: firebaseremoteconfig.googleapis.com
 // Dùng cho: Loon / Quantumult X / Surge / Shadowrocket
-// Nền tảng: Gon (Master) + An (V15) + Night (NMS)
+// Nền tảng: Gon (Master) + An (V15) + Night (NMS) + Uplocket Merge
 // ============================================================
 
 var ua = ($request && $request.headers && ($request.headers["User-Agent"] || $request.headers["user-agent"])) || "";
@@ -30,1286 +30,3277 @@ obj.entries = obj.entries || {};
     // 3.1. DANH SÁCH BỘ LỌC, KHUNG PHOTOBOOTH & TREND (DỄ DÀNG CHỈNH SỬA)
     // ============================================================
     var customPhotoboothFilters = [
-        {
-                "id": "photobooth_berry_days",
-                "uid": "photobooth_berry_days",
-                "name": "🍓 Photobooth Berry Days (4 Ô)",
-                "type": "cutout",
-                "style": "cutout",
-                "prompt": "Berry Days pink strawberry rabbit 4 cut photobooth cute frame",
-                "overlay": true,
-                "overlayImageUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/photobooth_berry_days_full.png",
-                "overlayImageURL": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/photobooth_berry_days_full.png",
-                "imageUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/photobooth_berry_days_full.png",
-                "iconUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/photobooth_berry_days_full.png",
-                "icon": {
-                        "emoji": "🍓",
-                        "remoteImage": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/photobooth_berry_days_full.png",
-                        "url": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/photobooth_berry_days_full.png",
-                        "iconUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/photobooth_berry_days_full.png",
-                        "sfSymbol": "square.grid.2x2.fill",
-                        "symbol": "square.grid.2x2.fill"
-                },
-                "textColor": "#FFFFFF",
-                "colors": [
-                        "#FFB6C1",
-                        "#FF69B4"
-                ],
-                "captureButtonColors": [
-                        "#FFB6C1",
-                        "#FF69B4"
-                ],
-                "is_gold": false,
-                "isGold": false,
-                "unlocked": true,
-                "is_unlocked": true,
-                "isUnlocked": true,
-                "free": true,
-                "requires_gold": false,
-                "requiresGold": false,
-                "allowsTryFilter": false,
-                "allows_try_filter": false,
-                "tryButtonEnabled": false,
-                "try_button_enabled": false,
-                "filterType": "cutout",
-                "referenceImages": [],
-                "productUrl": null
+    {
+        "uid": "photobooth_xmas_wreath",
+        "id": "photobooth_xmas_wreath",
+        "name": "Giáng Sinh Vòng Nguyệt Quế 🎄",
+        "category": "Photobooth",
+        "prompt": "photobooth_xmas_wreath",
+        "style": "cutout",
+        "overlay": true,
+        "imageUrl": "https://uplocket.io.vn/uploads/stickers/photobooth_xmas_wreath.png",
+        "iconUrl": "https://uplocket.io.vn/uploads/stickers/photobooth_xmas_wreath.png",
+        "overlayImageUrl": "https://uplocket.io.vn/uploads/stickers/photobooth_xmas_wreath.png",
+        "overlayImageURL": "https://uplocket.io.vn/uploads/stickers/photobooth_xmas_wreath.png",
+        "tintColor": "#FFD6E0",
+        "colors": [
+            "#FFD6E0",
+            "#FFE4EC"
+        ],
+        "captureButtonColors": [
+            "#FFD6E0",
+            "#FFE4EC"
+        ],
+        "icon": {
+            "url": "https://uplocket.io.vn/uploads/stickers/photobooth_xmas_wreath.png",
+            "sfSymbol": "square.grid.2x2"
         },
-        {
-                "id": "photobooth_happy_snap",
-                "uid": "photobooth_happy_snap",
-                "name": "🦖 Photobooth Happy Snap (Khủng Long 4 Ô)",
-                "type": "cutout",
-                "style": "cutout",
-                "prompt": "Happy Snap dinosaur cute green pastel 4 cut photobooth frame",
-                "overlay": true,
-                "overlayImageUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/photobooth_happy_snap_full.png",
-                "overlayImageURL": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/photobooth_happy_snap_full.png",
-                "imageUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/photobooth_happy_snap_full.png",
-                "iconUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/photobooth_happy_snap_full.png",
-                "icon": {
-                        "emoji": "🦖",
-                        "remoteImage": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/photobooth_happy_snap_full.png",
-                        "url": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/photobooth_happy_snap_full.png",
-                        "iconUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/photobooth_happy_snap_full.png",
-                        "sfSymbol": "square.grid.2x2.fill",
-                        "symbol": "square.grid.2x2.fill"
-                },
-                "textColor": "#FFFFFF",
-                "colors": [
-                        "#A8E6CF",
-                        "#88D49E"
-                ],
-                "captureButtonColors": [
-                        "#A8E6CF",
-                        "#88D49E"
-                ],
-                "is_gold": false,
-                "isGold": false,
-                "unlocked": true,
-                "is_unlocked": true,
-                "isUnlocked": true,
-                "free": true,
-                "requires_gold": false,
-                "requiresGold": false,
-                "allowsTryFilter": true,
-                "allows_try_filter": true,
-                "tryButtonEnabled": true,
-                "try_button_enabled": true,
-                "filterType": "cutout",
-                "referenceImages": [],
-                "productUrl": null
+        "outputUrl": null,
+        "filterType": "cutout",
+        "type": "normal",
+        "productUrl": null,
+        "textColor": "#FFFFFF",
+        "referenceImages": [],
+        "requires_gold": false,
+        "requiresGold": false,
+        "is_gold": false,
+        "isGold": false,
+        "unlocked": true,
+        "is_unlocked": true,
+        "isUnlocked": true,
+        "free": true
+    },
+    {
+        "uid": "photobooth_golden_royal",
+        "id": "photobooth_golden_royal",
+        "name": "Hoàng Kim Sang Trọng 👑",
+        "category": "Photobooth",
+        "prompt": "photobooth_golden_royal",
+        "style": "cutout",
+        "overlay": true,
+        "imageUrl": "https://uplocket.io.vn/uploads/stickers/photobooth_golden_royal.png",
+        "iconUrl": "https://uplocket.io.vn/uploads/stickers/photobooth_golden_royal.png",
+        "overlayImageUrl": "https://uplocket.io.vn/uploads/stickers/photobooth_golden_royal.png",
+        "overlayImageURL": "https://uplocket.io.vn/uploads/stickers/photobooth_golden_royal.png",
+        "tintColor": "#FFD6E0",
+        "colors": [
+            "#FFD6E0",
+            "#FFE4EC"
+        ],
+        "captureButtonColors": [
+            "#FFD6E0",
+            "#FFE4EC"
+        ],
+        "icon": {
+            "url": "https://uplocket.io.vn/uploads/stickers/photobooth_golden_royal.png",
+            "sfSymbol": "square.grid.2x2"
         },
-        {
-                "id": "photobooth_sky_diary",
-                "uid": "photobooth_sky_diary",
-                "name": "🌸 Photobooth Sky Diary (Tím Hoa Anh Đào)",
-                "type": "cutout",
-                "style": "cutout",
-                "prompt": "Sky Diary purple cherry blossom cloud 4 cut photobooth vertical frame",
-                "overlay": true,
-                "overlayImageUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/photobooth_sky_diary.png",
-                "overlayImageURL": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/photobooth_sky_diary.png",
-                "imageUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/photobooth_sky_diary.png",
-                "iconUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/photobooth_sky_diary.png",
-                "icon": {
-                        "emoji": "🌸",
-                        "remoteImage": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/photobooth_sky_diary.png",
-                        "url": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/photobooth_sky_diary.png",
-                        "iconUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/photobooth_sky_diary.png",
-                        "sfSymbol": "square.grid.2x2.fill",
-                        "symbol": "square.grid.2x2.fill"
-                },
-                "textColor": "#FFFFFF",
-                "colors": [
-                        "#D8B4F8",
-                        "#C3B1E1"
-                ],
-                "captureButtonColors": [
-                        "#D8B4F8",
-                        "#C3B1E1"
-                ],
-                "is_gold": false,
-                "isGold": false,
-                "unlocked": true,
-                "is_unlocked": true,
-                "isUnlocked": true,
-                "free": true,
-                "requires_gold": false,
-                "requiresGold": false,
-                "allowsTryFilter": true,
-                "allows_try_filter": true,
-                "tryButtonEnabled": true,
-                "try_button_enabled": true,
-                "filterType": "cutout",
-                "referenceImages": [],
-                "productUrl": null
+        "outputUrl": null,
+        "filterType": "cutout",
+        "type": "normal",
+        "productUrl": null,
+        "textColor": "#FFFFFF",
+        "referenceImages": [],
+        "requires_gold": false,
+        "requiresGold": false,
+        "is_gold": false,
+        "isGold": false,
+        "unlocked": true,
+        "is_unlocked": true,
+        "isUnlocked": true,
+        "free": true
+    },
+    {
+        "uid": "photobooth_gingerbread_candy",
+        "id": "photobooth_gingerbread_candy",
+        "name": "Bánh Gừng & Kẹo Noel 🍪",
+        "category": "Photobooth",
+        "prompt": "photobooth_gingerbread_candy",
+        "style": "cutout",
+        "overlay": true,
+        "imageUrl": "https://uplocket.io.vn/uploads/stickers/photobooth_gingerbread_candy.png",
+        "iconUrl": "https://uplocket.io.vn/uploads/stickers/photobooth_gingerbread_candy.png",
+        "overlayImageUrl": "https://uplocket.io.vn/uploads/stickers/photobooth_gingerbread_candy.png",
+        "overlayImageURL": "https://uplocket.io.vn/uploads/stickers/photobooth_gingerbread_candy.png",
+        "tintColor": "#FFD6E0",
+        "colors": [
+            "#FFD6E0",
+            "#FFE4EC"
+        ],
+        "captureButtonColors": [
+            "#FFD6E0",
+            "#FFE4EC"
+        ],
+        "icon": {
+            "url": "https://uplocket.io.vn/uploads/stickers/photobooth_gingerbread_candy.png",
+            "sfSymbol": "square.grid.2x2"
         },
-        {
-                "uid": "photobooth_4cut",
-                "id": "photobooth_4cut",
-                "name": "Photobooth 4 Ô Haru",
-                "prompt": "Life 4 Cuts Haru Film photobooth 4cut cute frame",
-                "style": "cutout",
-                "overlay": true,
-                "overlayImageUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/photobooth_4cut.png",
-                "overlayImageURL": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/photobooth_4cut.png",
-                "imageUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/photobooth_4cut.png",
-                "iconUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/photobooth_4cut.png",
-                "icon": {
-                        "url": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/photobooth_4cut.png",
-                        "iconUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/photobooth_4cut.png",
-                        "remoteImage": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/photobooth_4cut.png",
-                        "sfSymbol": "square.grid.2x2.fill",
-                        "symbol": "square.grid.2x2.fill",
-                        "emoji": "🎞️"
-                },
-                "textColor": "#FFFFFF",
-                "colors": [
-                        "#FFB6C1",
-                        "#FFF0F5"
-                ],
-                "captureButtonColors": [
-                        "#FFB6C1",
-                        "#FFF0F5"
-                ],
-                "referenceImages": [],
-                "productUrl": null,
-                "requires_gold": false,
-                "requiresGold": false,
-                "is_gold": false,
-                "isGold": false,
-                "unlocked": true,
-                "is_unlocked": true,
-                "isUnlocked": true,
-                "free": true,
-                "allowsTryFilter": true,
-                "allows_try_filter": true,
-                "tryButtonEnabled": true,
-                "try_button_enabled": true,
-                "filterType": "cutout",
-                "type": "cutout"
+        "outputUrl": null,
+        "filterType": "cutout",
+        "type": "normal",
+        "productUrl": null,
+        "textColor": "#FFFFFF",
+        "referenceImages": [],
+        "requires_gold": false,
+        "requiresGold": false,
+        "is_gold": false,
+        "isGold": false,
+        "unlocked": true,
+        "is_unlocked": true,
+        "isUnlocked": true,
+        "free": true
+    },
+    {
+        "uid": "photobooth_snowman_xmas",
+        "id": "photobooth_snowman_xmas",
+        "name": "Người Tuyết & Giáng Sinh ⛄",
+        "category": "Photobooth",
+        "prompt": "photobooth_snowman_xmas",
+        "style": "cutout",
+        "overlay": true,
+        "imageUrl": "https://uplocket.io.vn/uploads/stickers/photobooth_snowman_xmas.png",
+        "iconUrl": "https://uplocket.io.vn/uploads/stickers/photobooth_snowman_xmas.png",
+        "overlayImageUrl": "https://uplocket.io.vn/uploads/stickers/photobooth_snowman_xmas.png",
+        "overlayImageURL": "https://uplocket.io.vn/uploads/stickers/photobooth_snowman_xmas.png",
+        "tintColor": "#FFD6E0",
+        "colors": [
+            "#FFD6E0",
+            "#FFE4EC"
+        ],
+        "captureButtonColors": [
+            "#FFD6E0",
+            "#FFE4EC"
+        ],
+        "icon": {
+            "url": "https://uplocket.io.vn/uploads/stickers/photobooth_snowman_xmas.png",
+            "sfSymbol": "square.grid.2x2"
         },
-        {
-                "uid": "photobooth_cute",
-                "id": "photobooth_cute",
-                "name": "Photobooth Cute Hàn",
-                "prompt": "Sweet photobooth cute frame pastel ribbon",
-                "style": "cutout",
-                "overlay": true,
-                "overlayImageUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/photobooth_cute.png",
-                "overlayImageURL": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/photobooth_cute.png",
-                "imageUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/photobooth_cute.png",
-                "iconUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/photobooth_cute.png",
-                "icon": {
-                        "url": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/photobooth_cute.png",
-                        "iconUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/photobooth_cute.png",
-                        "remoteImage": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/photobooth_cute.png",
-                        "sfSymbol": "camera.macro",
-                        "symbol": "camera.macro",
-                        "emoji": "🎀"
-                },
-                "textColor": "#FFFFFF",
-                "colors": [
-                        "#FFB6C1",
-                        "#FFF0F5"
-                ],
-                "captureButtonColors": [
-                        "#FFB6C1",
-                        "#FFF0F5"
-                ],
-                "referenceImages": [],
-                "productUrl": null,
-                "requires_gold": false,
-                "requiresGold": false,
-                "is_gold": false,
-                "isGold": false,
-                "unlocked": true,
-                "is_unlocked": true,
-                "isUnlocked": true,
-                "free": true,
-                "allowsTryFilter": true,
-                "allows_try_filter": true,
-                "tryButtonEnabled": true,
-                "try_button_enabled": true,
-                "filterType": "cutout",
-                "type": "cutout"
+        "outputUrl": null,
+        "filterType": "cutout",
+        "type": "normal",
+        "productUrl": null,
+        "textColor": "#FFFFFF",
+        "referenceImages": [],
+        "requires_gold": false,
+        "requiresGold": false,
+        "is_gold": false,
+        "isGold": false,
+        "unlocked": true,
+        "is_unlocked": true,
+        "isUnlocked": true,
+        "free": true
+    },
+    {
+        "uid": "photobooth_frozen_winter",
+        "id": "photobooth_frozen_winter",
+        "name": "Mùa Đông Băng Giá ❄️",
+        "category": "Photobooth",
+        "prompt": "photobooth_frozen_winter",
+        "style": "cutout",
+        "overlay": true,
+        "imageUrl": "https://uplocket.io.vn/uploads/stickers/photobooth_frozen_winter.png",
+        "iconUrl": "https://uplocket.io.vn/uploads/stickers/photobooth_frozen_winter.png",
+        "overlayImageUrl": "https://uplocket.io.vn/uploads/stickers/photobooth_frozen_winter.png",
+        "overlayImageURL": "https://uplocket.io.vn/uploads/stickers/photobooth_frozen_winter.png",
+        "tintColor": "#FFD6E0",
+        "colors": [
+            "#FFD6E0",
+            "#FFE4EC"
+        ],
+        "captureButtonColors": [
+            "#FFD6E0",
+            "#FFE4EC"
+        ],
+        "icon": {
+            "url": "https://uplocket.io.vn/uploads/stickers/photobooth_frozen_winter.png",
+            "sfSymbol": "square.grid.2x2"
         },
-        {
-                "uid": "photoboot",
-                "id": "photoboot",
-                "name": "Photobooth Cổ Điển",
-                "prompt": "photoboot cute sticker",
-                "style": "cutout",
-                "overlay": true,
-                "overlayImageUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/photoboot.png",
-                "overlayImageURL": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/photoboot.png",
-                "imageUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/photoboot.png",
-                "iconUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/photoboot.png",
-                "icon": {
-                        "url": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/photoboot.png",
-                        "iconUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/photoboot.png",
-                        "remoteImage": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/photoboot.png",
-                        "sfSymbol": "heart.fill",
-                        "symbol": "heart.fill",
-                        "emoji": "✨"
-                },
-                "textColor": "#FFFFFF",
-                "colors": [
-                        "#FF758C",
-                        "#FF7EB3"
-                ],
-                "captureButtonColors": [
-                        "#FF758C",
-                        "#FF7EB3"
-                ],
-                "referenceImages": [],
-                "productUrl": null,
-                "requires_gold": false,
-                "requiresGold": false,
-                "is_gold": false,
-                "isGold": false,
-                "unlocked": true,
-                "is_unlocked": true,
-                "isUnlocked": true,
-                "free": true,
-                "allowsTryFilter": true,
-                "allows_try_filter": true,
-                "tryButtonEnabled": true,
-                "try_button_enabled": true,
-                "filterType": "cutout",
-                "type": "cutout"
+        "outputUrl": null,
+        "filterType": "cutout",
+        "type": "normal",
+        "productUrl": null,
+        "textColor": "#FFFFFF",
+        "referenceImages": [],
+        "requires_gold": false,
+        "requiresGold": false,
+        "is_gold": false,
+        "isGold": false,
+        "unlocked": true,
+        "is_unlocked": true,
+        "isUnlocked": true,
+        "free": true
+    },
+    {
+        "uid": "photobooth_violet_amethyst",
+        "id": "photobooth_violet_amethyst",
+        "name": "Pha Lê Tím Lung Linh 💜",
+        "category": "Photobooth",
+        "prompt": "photobooth_violet_amethyst",
+        "style": "cutout",
+        "overlay": true,
+        "imageUrl": "https://uplocket.io.vn/uploads/stickers/photobooth_violet_amethyst.png",
+        "iconUrl": "https://uplocket.io.vn/uploads/stickers/photobooth_violet_amethyst.png",
+        "overlayImageUrl": "https://uplocket.io.vn/uploads/stickers/photobooth_violet_amethyst.png",
+        "overlayImageURL": "https://uplocket.io.vn/uploads/stickers/photobooth_violet_amethyst.png",
+        "tintColor": "#FFD6E0",
+        "colors": [
+            "#FFD6E0",
+            "#FFE4EC"
+        ],
+        "captureButtonColors": [
+            "#FFD6E0",
+            "#FFE4EC"
+        ],
+        "icon": {
+            "url": "https://uplocket.io.vn/uploads/stickers/photobooth_violet_amethyst.png",
+            "sfSymbol": "square.grid.2x2"
         },
-        {
-                "uid": "sticker_b_nh_lu_n_minh_tu",
-                "id": "sticker_b_nh_lu_n_minh_tu",
-                "name": "Trend Tíc Tóc",
-                "prompt": "Sticker bÃƒÂ¬nh luÃ¡ÂºÂ­n Minh TuÃ¡Â»â€¡ cute sticker",
-                "style": "cutout",
-                "overlay": true,
-                "overlayImageUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/sticker_b_nh_lu_n_minh_tu.png",
-                "overlayImageURL": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/sticker_b_nh_lu_n_minh_tu.png",
-                "imageUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/sticker_b_nh_lu_n_minh_tu.png",
-                "iconUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/sticker_b_nh_lu_n_minh_tu.png",
-                "icon": {
-                        "url": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/sticker_b_nh_lu_n_minh_tu.png",
-                        "iconUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/sticker_b_nh_lu_n_minh_tu.png",
-                        "remoteImage": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/sticker_b_nh_lu_n_minh_tu.png",
-                        "sfSymbol": "heart.fill",
-                        "symbol": "heart.fill",
-                        "emoji": "✨"
-                },
-                "textColor": "#FFFFFF",
-                "colors": [
-                        "#FF758C",
-                        "#FF7EB3"
-                ],
-                "captureButtonColors": [
-                        "#FF758C",
-                        "#FF7EB3"
-                ],
-                "referenceImages": [],
-                "productUrl": null,
-                "requires_gold": false,
-                "requiresGold": false,
-                "is_gold": false,
-                "isGold": false,
-                "unlocked": true,
-                "is_unlocked": true,
-                "isUnlocked": true,
-                "free": true,
-                "allowsTryFilter": true,
-                "allows_try_filter": true,
-                "tryButtonEnabled": true,
-                "try_button_enabled": true,
-                "filterType": "cutout",
-                "type": "cutout"
+        "outputUrl": null,
+        "filterType": "cutout",
+        "type": "normal",
+        "productUrl": null,
+        "textColor": "#FFFFFF",
+        "referenceImages": [],
+        "requires_gold": false,
+        "requiresGold": false,
+        "is_gold": false,
+        "isGold": false,
+        "unlocked": true,
+        "is_unlocked": true,
+        "isUnlocked": true,
+        "free": true
+    },
+    {
+        "uid": "photobooth_pastel_pink",
+        "id": "photobooth_pastel_pink",
+        "name": "Hồng Pastel Ngọt Ngào 🌸",
+        "category": "Photobooth",
+        "prompt": "photobooth_pastel_pink",
+        "style": "cutout",
+        "overlay": true,
+        "imageUrl": "https://uplocket.io.vn/uploads/stickers/photobooth_pastel_pink.png",
+        "iconUrl": "https://uplocket.io.vn/uploads/stickers/photobooth_pastel_pink.png",
+        "overlayImageUrl": "https://uplocket.io.vn/uploads/stickers/photobooth_pastel_pink.png",
+        "overlayImageURL": "https://uplocket.io.vn/uploads/stickers/photobooth_pastel_pink.png",
+        "tintColor": "#FFD6E0",
+        "colors": [
+            "#FFD6E0",
+            "#FFE4EC"
+        ],
+        "captureButtonColors": [
+            "#FFD6E0",
+            "#FFE4EC"
+        ],
+        "icon": {
+            "url": "https://uplocket.io.vn/uploads/stickers/photobooth_pastel_pink.png",
+            "sfSymbol": "square.grid.2x2"
         },
-        {
-                "uid": "cmt_locket",
-                "id": "cmt_locket",
-                "name": "Locket Việt Nam",
-                "prompt": "cmt locket cute sticker",
-                "style": "cutout",
-                "overlay": true,
-                "overlayImageUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/cmt_locket.png",
-                "overlayImageURL": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/cmt_locket.png",
-                "imageUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/cmt_locket.png",
-                "iconUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/cmt_locket.png",
-                "icon": {
-                        "url": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/cmt_locket.png",
-                        "iconUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/cmt_locket.png",
-                        "remoteImage": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/cmt_locket.png",
-                        "sfSymbol": "heart.fill",
-                        "symbol": "heart.fill",
-                        "emoji": "✨"
-                },
-                "textColor": "#FFFFFF",
-                "colors": [
-                        "#FF758C",
-                        "#FF7EB3"
-                ],
-                "captureButtonColors": [
-                        "#FF758C",
-                        "#FF7EB3"
-                ],
-                "referenceImages": [],
-                "productUrl": null,
-                "requires_gold": false,
-                "requiresGold": false,
-                "is_gold": false,
-                "isGold": false,
-                "unlocked": true,
-                "is_unlocked": true,
-                "isUnlocked": true,
-                "free": true,
-                "allowsTryFilter": true,
-                "allows_try_filter": true,
-                "tryButtonEnabled": true,
-                "try_button_enabled": true,
-                "filterType": "cutout",
-                "type": "cutout"
+        "outputUrl": null,
+        "filterType": "cutout",
+        "type": "normal",
+        "productUrl": null,
+        "textColor": "#FFFFFF",
+        "referenceImages": [],
+        "requires_gold": false,
+        "requiresGold": false,
+        "is_gold": false,
+        "isGold": false,
+        "unlocked": true,
+        "is_unlocked": true,
+        "isUnlocked": true,
+        "free": true
+    },
+    {
+        "uid": "photobooth_vintage_travel",
+        "id": "photobooth_vintage_travel",
+        "name": "Du Ngoạn Cổ Điển 🧳",
+        "category": "Photobooth",
+        "prompt": "photobooth_vintage_travel",
+        "style": "cutout",
+        "overlay": true,
+        "imageUrl": "https://uplocket.io.vn/uploads/stickers/photobooth_vintage_travel.png",
+        "iconUrl": "https://uplocket.io.vn/uploads/stickers/photobooth_vintage_travel.png",
+        "overlayImageUrl": "https://uplocket.io.vn/uploads/stickers/photobooth_vintage_travel.png",
+        "overlayImageURL": "https://uplocket.io.vn/uploads/stickers/photobooth_vintage_travel.png",
+        "tintColor": "#FFD6E0",
+        "colors": [
+            "#FFD6E0",
+            "#FFE4EC"
+        ],
+        "captureButtonColors": [
+            "#FFD6E0",
+            "#FFE4EC"
+        ],
+        "icon": {
+            "url": "https://uplocket.io.vn/uploads/stickers/photobooth_vintage_travel.png",
+            "sfSymbol": "square.grid.2x2"
         },
-        {
-                "uid": "khung_hello_kitty_pastel_ng_t_ng_o",
-                "id": "khung_hello_kitty_pastel_ng_t_ng_o",
-                "name": "Hello Kitty Ngọt Ngào",
-                "prompt": "Khung Hello Kitty pastel ngá»t ngÃ o cute sticker",
-                "style": "cutout",
-                "overlay": true,
-                "overlayImageUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_hello_kitty_pastel_ng_t_ng_o.png",
-                "overlayImageURL": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_hello_kitty_pastel_ng_t_ng_o.png",
-                "imageUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_hello_kitty_pastel_ng_t_ng_o.png",
-                "iconUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_hello_kitty_pastel_ng_t_ng_o.png",
-                "icon": {
-                        "url": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_hello_kitty_pastel_ng_t_ng_o.png",
-                        "iconUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_hello_kitty_pastel_ng_t_ng_o.png",
-                        "remoteImage": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_hello_kitty_pastel_ng_t_ng_o.png",
-                        "sfSymbol": "heart.fill",
-                        "symbol": "heart.fill",
-                        "emoji": "✨"
-                },
-                "textColor": "#FFFFFF",
-                "colors": [
-                        "#FF758C",
-                        "#FF7EB3"
-                ],
-                "captureButtonColors": [
-                        "#FF758C",
-                        "#FF7EB3"
-                ],
-                "referenceImages": [],
-                "productUrl": null,
-                "requires_gold": false,
-                "requiresGold": false,
-                "is_gold": false,
-                "isGold": false,
-                "unlocked": true,
-                "is_unlocked": true,
-                "isUnlocked": true,
-                "free": true,
-                "allowsTryFilter": true,
-                "allows_try_filter": true,
-                "tryButtonEnabled": true,
-                "try_button_enabled": true,
-                "filterType": "cutout",
-                "type": "cutout"
+        "outputUrl": null,
+        "filterType": "cutout",
+        "type": "normal",
+        "productUrl": null,
+        "textColor": "#FFFFFF",
+        "referenceImages": [],
+        "requires_gold": false,
+        "requiresGold": false,
+        "is_gold": false,
+        "isGold": false,
+        "unlocked": true,
+        "is_unlocked": true,
+        "isUnlocked": true,
+        "free": true
+    },
+    {
+        "uid": "photobooth_dual_film",
+        "id": "photobooth_dual_film",
+        "name": "Dải Phim Đôi 2 Ảnh 🎞️",
+        "category": "Photobooth",
+        "prompt": "photobooth_dual_film",
+        "style": "cutout",
+        "overlay": true,
+        "imageUrl": "https://uplocket.io.vn/uploads/stickers/photobooth_dual_film.png",
+        "iconUrl": "https://uplocket.io.vn/uploads/stickers/photobooth_dual_film.png",
+        "overlayImageUrl": "https://uplocket.io.vn/uploads/stickers/photobooth_dual_film.png",
+        "overlayImageURL": "https://uplocket.io.vn/uploads/stickers/photobooth_dual_film.png",
+        "tintColor": "#FFD6E0",
+        "colors": [
+            "#FFD6E0",
+            "#FFE4EC"
+        ],
+        "captureButtonColors": [
+            "#FFD6E0",
+            "#FFE4EC"
+        ],
+        "icon": {
+            "url": "https://uplocket.io.vn/uploads/stickers/photobooth_dual_film.png",
+            "sfSymbol": "square.grid.2x2"
         },
-        {
-                "uid": "khung_hello_kitty_h_ng_pastel",
-                "id": "khung_hello_kitty_h_ng_pastel",
-                "name": "Khung Hello Kitty Hồng",
-                "prompt": "Khung Hello Kitty hÃ¡Â»â€œng pastel cute sticker",
-                "style": "cutout",
-                "overlay": true,
-                "overlayImageUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_hello_kitty_h_ng_pastel.png",
-                "overlayImageURL": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_hello_kitty_h_ng_pastel.png",
-                "imageUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_hello_kitty_h_ng_pastel.png",
-                "iconUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_hello_kitty_h_ng_pastel.png",
-                "icon": {
-                        "url": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_hello_kitty_h_ng_pastel.png",
-                        "iconUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_hello_kitty_h_ng_pastel.png",
-                        "remoteImage": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_hello_kitty_h_ng_pastel.png",
-                        "sfSymbol": "heart.fill",
-                        "symbol": "heart.fill",
-                        "emoji": "✨"
-                },
-                "textColor": "#FFFFFF",
-                "colors": [
-                        "#FF758C",
-                        "#FF7EB3"
-                ],
-                "captureButtonColors": [
-                        "#FF758C",
-                        "#FF7EB3"
-                ],
-                "referenceImages": [],
-                "productUrl": null,
-                "requires_gold": false,
-                "requiresGold": false,
-                "is_gold": false,
-                "isGold": false,
-                "unlocked": true,
-                "is_unlocked": true,
-                "isUnlocked": true,
-                "free": true,
-                "allowsTryFilter": true,
-                "allows_try_filter": true,
-                "tryButtonEnabled": true,
-                "try_button_enabled": true,
-                "filterType": "cutout",
-                "type": "cutout"
+        "outputUrl": null,
+        "filterType": "cutout",
+        "type": "normal",
+        "productUrl": null,
+        "textColor": "#FFFFFF",
+        "referenceImages": [],
+        "requires_gold": false,
+        "requiresGold": false,
+        "is_gold": false,
+        "isGold": false,
+        "unlocked": true,
+        "is_unlocked": true,
+        "isUnlocked": true,
+        "free": true
+    },
+    {
+        "uid": "photobooth_elegant_strip",
+        "id": "photobooth_elegant_strip",
+        "name": "Khung Đôi Tinh Tế 2 Ảnh ✨",
+        "category": "Photobooth",
+        "prompt": "photobooth_elegant_strip",
+        "style": "cutout",
+        "overlay": true,
+        "imageUrl": "https://uplocket.io.vn/uploads/stickers/photobooth_elegant_strip.png",
+        "iconUrl": "https://uplocket.io.vn/uploads/stickers/photobooth_elegant_strip.png",
+        "overlayImageUrl": "https://uplocket.io.vn/uploads/stickers/photobooth_elegant_strip.png",
+        "overlayImageURL": "https://uplocket.io.vn/uploads/stickers/photobooth_elegant_strip.png",
+        "tintColor": "#FFD6E0",
+        "colors": [
+            "#FFD6E0",
+            "#FFE4EC"
+        ],
+        "captureButtonColors": [
+            "#FFD6E0",
+            "#FFE4EC"
+        ],
+        "icon": {
+            "url": "https://uplocket.io.vn/uploads/stickers/photobooth_elegant_strip.png",
+            "sfSymbol": "square.grid.2x2"
         },
-        {
-                "uid": "khung_nh_hoa_pastel_vi_n_xanh_m_nh",
-                "id": "khung_nh_hoa_pastel_vi_n_xanh_m_nh",
-                "name": "Hoa Xinh Pastel",
-                "prompt": "Khung áº£nh hoa pastel viá»n xanh máº£nh cute sticker",
-                "style": "cutout",
-                "overlay": true,
-                "overlayImageUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_nh_hoa_pastel_vi_n_xanh_m_nh.png",
-                "overlayImageURL": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_nh_hoa_pastel_vi_n_xanh_m_nh.png",
-                "imageUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_nh_hoa_pastel_vi_n_xanh_m_nh.png",
-                "iconUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_nh_hoa_pastel_vi_n_xanh_m_nh.png",
-                "icon": {
-                        "url": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_nh_hoa_pastel_vi_n_xanh_m_nh.png",
-                        "iconUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_nh_hoa_pastel_vi_n_xanh_m_nh.png",
-                        "remoteImage": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_nh_hoa_pastel_vi_n_xanh_m_nh.png",
-                        "sfSymbol": "app.gift",
-                        "symbol": "app.gift",
-                        "emoji": "✨"
-                },
-                "textColor": "#FFFFFF",
-                "colors": [
-                        "#51e6e4",
-                        "#fce03f"
-                ],
-                "captureButtonColors": [
-                        "#51e6e4",
-                        "#fce03f"
-                ],
-                "referenceImages": [],
-                "productUrl": null,
-                "requires_gold": false,
-                "requiresGold": false,
-                "is_gold": false,
-                "isGold": false,
-                "unlocked": true,
-                "is_unlocked": true,
-                "isUnlocked": true,
-                "free": true,
-                "allowsTryFilter": true,
-                "allows_try_filter": true,
-                "tryButtonEnabled": true,
-                "try_button_enabled": true,
-                "filterType": "cutout",
-                "type": "cutout"
+        "outputUrl": null,
+        "filterType": "cutout",
+        "type": "normal",
+        "productUrl": null,
+        "textColor": "#FFFFFF",
+        "referenceImages": [],
+        "requires_gold": false,
+        "requiresGold": false,
+        "is_gold": false,
+        "isGold": false,
+        "unlocked": true,
+        "is_unlocked": true,
+        "isUnlocked": true,
+        "free": true
+    },
+    {
+        "uid": "photobooth_retro_newsprint",
+        "id": "photobooth_retro_newsprint",
+        "name": "Báo Cũ Retro Vintage 📰",
+        "category": "Photobooth",
+        "prompt": "photobooth_retro_newsprint",
+        "style": "cutout",
+        "overlay": true,
+        "imageUrl": "https://uplocket.io.vn/uploads/stickers/photobooth_retro_newsprint.png",
+        "iconUrl": "https://uplocket.io.vn/uploads/stickers/photobooth_retro_newsprint.png",
+        "overlayImageUrl": "https://uplocket.io.vn/uploads/stickers/photobooth_retro_newsprint.png",
+        "overlayImageURL": "https://uplocket.io.vn/uploads/stickers/photobooth_retro_newsprint.png",
+        "tintColor": "#FFD6E0",
+        "colors": [
+            "#FFD6E0",
+            "#FFE4EC"
+        ],
+        "captureButtonColors": [
+            "#FFD6E0",
+            "#FFE4EC"
+        ],
+        "icon": {
+            "url": "https://uplocket.io.vn/uploads/stickers/photobooth_retro_newsprint.png",
+            "sfSymbol": "square.grid.2x2"
         },
-        {
-                "uid": "khung_nh_vu_ng_m_ng_nh_n_b_c",
-                "id": "khung_nh_vu_ng_m_ng_nh_n_b_c",
-                "name": "Nhện Đỏ",
-                "prompt": "Khung Ã¡ÂºÂ£nh vuÃƒÂ´ng mÃ¡ÂºÂ¡ng nhÃ¡Â»â€¡n Ã„â€˜Ã¡Â»Â bÃ¡ÂºÂ¡c cute sticker",
-                "style": "cutout",
-                "overlay": true,
-                "overlayImageUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_nh_vu_ng_m_ng_nh_n_b_c.png",
-                "overlayImageURL": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_nh_vu_ng_m_ng_nh_n_b_c.png",
-                "imageUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_nh_vu_ng_m_ng_nh_n_b_c.png",
-                "iconUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_nh_vu_ng_m_ng_nh_n_b_c.png",
-                "icon": {
-                        "url": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_nh_vu_ng_m_ng_nh_n_b_c.png",
-                        "iconUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_nh_vu_ng_m_ng_nh_n_b_c.png",
-                        "remoteImage": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_nh_vu_ng_m_ng_nh_n_b_c.png",
-                        "sfSymbol": "heart.fill",
-                        "symbol": "heart.fill",
-                        "emoji": "✨"
-                },
-                "textColor": "#FFFFFF",
-                "colors": [
-                        "#b3001e",
-                        "#b3001e"
-                ],
-                "captureButtonColors": [
-                        "#b3001e",
-                        "#b3001e"
-                ],
-                "referenceImages": [],
-                "productUrl": null,
-                "requires_gold": false,
-                "requiresGold": false,
-                "is_gold": false,
-                "isGold": false,
-                "unlocked": true,
-                "is_unlocked": true,
-                "isUnlocked": true,
-                "free": true,
-                "allowsTryFilter": true,
-                "allows_try_filter": true,
-                "tryButtonEnabled": true,
-                "try_button_enabled": true,
-                "filterType": "cutout",
-                "type": "cutout"
+        "outputUrl": null,
+        "filterType": "cutout",
+        "type": "normal",
+        "productUrl": null,
+        "textColor": "#FFFFFF",
+        "referenceImages": [],
+        "requires_gold": false,
+        "requiresGold": false,
+        "is_gold": false,
+        "isGold": false,
+        "unlocked": true,
+        "is_unlocked": true,
+        "isUnlocked": true,
+        "free": true
+    },
+    {
+        "uid": "photobooth_silver_stars",
+        "id": "photobooth_silver_stars",
+        "name": "Ánh Sao Bạc Lấp Lánh ⭐",
+        "category": "Photobooth",
+        "prompt": "photobooth_silver_stars",
+        "style": "cutout",
+        "overlay": true,
+        "imageUrl": "https://uplocket.io.vn/uploads/stickers/photobooth_silver_stars.png",
+        "iconUrl": "https://uplocket.io.vn/uploads/stickers/photobooth_silver_stars.png",
+        "overlayImageUrl": "https://uplocket.io.vn/uploads/stickers/photobooth_silver_stars.png",
+        "overlayImageURL": "https://uplocket.io.vn/uploads/stickers/photobooth_silver_stars.png",
+        "tintColor": "#FFD6E0",
+        "colors": [
+            "#FFD6E0",
+            "#FFE4EC"
+        ],
+        "captureButtonColors": [
+            "#FFD6E0",
+            "#FFE4EC"
+        ],
+        "icon": {
+            "url": "https://uplocket.io.vn/uploads/stickers/photobooth_silver_stars.png",
+            "sfSymbol": "square.grid.2x2"
         },
-        {
-                "uid": "khung_kh_ng_gian_xanh_pastel",
-                "id": "khung_kh_ng_gian_xanh_pastel",
-                "name": "Không Gian Xanh",
-                "prompt": "Khung khÃ´ng gian xanh pastel cute sticker",
-                "style": "cutout",
-                "overlay": true,
-                "overlayImageUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_kh_ng_gian_xanh_pastel.png",
-                "overlayImageURL": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_kh_ng_gian_xanh_pastel.png",
-                "imageUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_kh_ng_gian_xanh_pastel.png",
-                "iconUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_kh_ng_gian_xanh_pastel.png",
-                "icon": {
-                        "url": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_kh_ng_gian_xanh_pastel.png",
-                        "iconUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_kh_ng_gian_xanh_pastel.png",
-                        "remoteImage": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_kh_ng_gian_xanh_pastel.png",
-                        "sfSymbol": "heart.fill",
-                        "symbol": "heart.fill",
-                        "emoji": "✨"
-                },
-                "textColor": "#FFFFFF",
-                "colors": [
-                        "#65d9fc",
-                        "#65d9fc"
-                ],
-                "captureButtonColors": [
-                        "#65d9fc",
-                        "#65d9fc"
-                ],
-                "referenceImages": [],
-                "productUrl": null,
-                "requires_gold": false,
-                "requiresGold": false,
-                "is_gold": false,
-                "isGold": false,
-                "unlocked": true,
-                "is_unlocked": true,
-                "isUnlocked": true,
-                "free": true,
-                "allowsTryFilter": true,
-                "allows_try_filter": true,
-                "tryButtonEnabled": true,
-                "try_button_enabled": true,
-                "filterType": "cutout",
-                "type": "cutout"
+        "outputUrl": null,
+        "filterType": "cutout",
+        "type": "normal",
+        "productUrl": null,
+        "textColor": "#FFFFFF",
+        "referenceImages": [],
+        "requires_gold": false,
+        "requiresGold": false,
+        "is_gold": false,
+        "isGold": false,
+        "unlocked": true,
+        "is_unlocked": true,
+        "isUnlocked": true,
+        "free": true
+    },
+    {
+        "uid": "photobooth_modern_minimal",
+        "id": "photobooth_modern_minimal",
+        "name": "Hiện Đại Tối Giản 🤍",
+        "category": "Photobooth",
+        "prompt": "photobooth_modern_minimal",
+        "style": "cutout",
+        "overlay": true,
+        "imageUrl": "https://uplocket.io.vn/uploads/stickers/photobooth_modern_minimal.png",
+        "iconUrl": "https://uplocket.io.vn/uploads/stickers/photobooth_modern_minimal.png",
+        "overlayImageUrl": "https://uplocket.io.vn/uploads/stickers/photobooth_modern_minimal.png",
+        "overlayImageURL": "https://uplocket.io.vn/uploads/stickers/photobooth_modern_minimal.png",
+        "tintColor": "#FFD6E0",
+        "colors": [
+            "#FFD6E0",
+            "#FFE4EC"
+        ],
+        "captureButtonColors": [
+            "#FFD6E0",
+            "#FFE4EC"
+        ],
+        "icon": {
+            "url": "https://uplocket.io.vn/uploads/stickers/photobooth_modern_minimal.png",
+            "sfSymbol": "square.grid.2x2"
         },
-        {
-                "uid": "khung_vu_ng_ng_i_sao_h_ng_pastel",
-                "id": "khung_vu_ng_ng_i_sao_h_ng_pastel",
-                "name": "Ngôi Sao Hồng",
-                "prompt": "Khung vuÃƒÂ´ng ngÃƒÂ´i sao hÃ¡Â»â€œng pastel cute sticker",
-                "style": "cutout",
-                "overlay": true,
-                "overlayImageUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_vu_ng_ng_i_sao_h_ng_pastel.png",
-                "overlayImageURL": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_vu_ng_ng_i_sao_h_ng_pastel.png",
-                "imageUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_vu_ng_ng_i_sao_h_ng_pastel.png",
-                "iconUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_vu_ng_ng_i_sao_h_ng_pastel.png",
-                "icon": {
-                        "url": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_vu_ng_ng_i_sao_h_ng_pastel.png",
-                        "iconUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_vu_ng_ng_i_sao_h_ng_pastel.png",
-                        "remoteImage": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_vu_ng_ng_i_sao_h_ng_pastel.png",
-                        "sfSymbol": "heart.fill",
-                        "symbol": "heart.fill",
-                        "emoji": "✨"
-                },
-                "textColor": "#FFFFFF",
-                "colors": [
-                        "#FF758C",
-                        "#FF7EB3"
-                ],
-                "captureButtonColors": [
-                        "#FF758C",
-                        "#FF7EB3"
-                ],
-                "referenceImages": [],
-                "productUrl": null,
-                "requires_gold": false,
-                "requiresGold": false,
-                "is_gold": false,
-                "isGold": false,
-                "unlocked": true,
-                "is_unlocked": true,
-                "isUnlocked": true,
-                "free": true,
-                "allowsTryFilter": true,
-                "allows_try_filter": true,
-                "tryButtonEnabled": true,
-                "try_button_enabled": true,
-                "filterType": "cutout",
-                "type": "cutout"
+        "outputUrl": null,
+        "filterType": "cutout",
+        "type": "normal",
+        "productUrl": null,
+        "textColor": "#FFFFFF",
+        "referenceImages": [],
+        "requires_gold": false,
+        "requiresGold": false,
+        "is_gold": false,
+        "isGold": false,
+        "unlocked": true,
+        "is_unlocked": true,
+        "isUnlocked": true,
+        "free": true
+    },
+    {
+        "uid": "photobooth_brown_polka",
+        "id": "photobooth_brown_polka",
+        "name": "Chấm Bi Nâu Vintage 🤎",
+        "category": "Photobooth",
+        "prompt": "photobooth_brown_polka",
+        "style": "cutout",
+        "overlay": true,
+        "imageUrl": "https://uplocket.io.vn/uploads/stickers/photobooth_brown_polka.png",
+        "iconUrl": "https://uplocket.io.vn/uploads/stickers/photobooth_brown_polka.png",
+        "overlayImageUrl": "https://uplocket.io.vn/uploads/stickers/photobooth_brown_polka.png",
+        "overlayImageURL": "https://uplocket.io.vn/uploads/stickers/photobooth_brown_polka.png",
+        "tintColor": "#FFD6E0",
+        "colors": [
+            "#FFD6E0",
+            "#FFE4EC"
+        ],
+        "captureButtonColors": [
+            "#FFD6E0",
+            "#FFE4EC"
+        ],
+        "icon": {
+            "url": "https://uplocket.io.vn/uploads/stickers/photobooth_brown_polka.png",
+            "sfSymbol": "square.grid.2x2"
         },
-        {
-                "uid": "khung_nh_pastel_vi_n_s_h_i_c_u",
-                "id": "khung_nh_pastel_vi_n_s_h_i_c_u",
-                "name": "Sò Hải Cẩu Pastel",
-                "prompt": "Khung áº£nh pastel viá»n sÃ², háº£i cáº©u cute sticker",
-                "style": "cutout",
-                "overlay": true,
-                "overlayImageUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_nh_pastel_vi_n_s_h_i_c_u.png",
-                "overlayImageURL": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_nh_pastel_vi_n_s_h_i_c_u.png",
-                "imageUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_nh_pastel_vi_n_s_h_i_c_u.png",
-                "iconUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_nh_pastel_vi_n_s_h_i_c_u.png",
-                "icon": {
-                        "url": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_nh_pastel_vi_n_s_h_i_c_u.png",
-                        "iconUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_nh_pastel_vi_n_s_h_i_c_u.png",
-                        "remoteImage": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_nh_pastel_vi_n_s_h_i_c_u.png",
-                        "sfSymbol": "heart.fill",
-                        "symbol": "heart.fill",
-                        "emoji": "✨"
-                },
-                "textColor": "#FFFFFF",
-                "colors": [
-                        "#cfedfc",
-                        "#cfedfc"
-                ],
-                "captureButtonColors": [
-                        "#cfedfc",
-                        "#cfedfc"
-                ],
-                "referenceImages": [],
-                "productUrl": null,
-                "requires_gold": false,
-                "requiresGold": false,
-                "is_gold": false,
-                "isGold": false,
-                "unlocked": true,
-                "is_unlocked": true,
-                "isUnlocked": true,
-                "free": true,
-                "allowsTryFilter": true,
-                "allows_try_filter": true,
-                "tryButtonEnabled": true,
-                "try_button_enabled": true,
-                "filterType": "cutout",
-                "type": "cutout"
+        "outputUrl": null,
+        "filterType": "cutout",
+        "type": "normal",
+        "productUrl": null,
+        "textColor": "#FFFFFF",
+        "referenceImages": [],
+        "requires_gold": false,
+        "requiresGold": false,
+        "is_gold": false,
+        "isGold": false,
+        "unlocked": true,
+        "is_unlocked": true,
+        "isUnlocked": true,
+        "free": true
+    },
+    {
+        "id": "photobooth_berry_days",
+        "uid": "photobooth_berry_days",
+        "name": "🍓 Photobooth Berry Days (4 Ô)",
+        "type": "cutout",
+        "style": "cutout",
+        "prompt": "Berry Days pink strawberry rabbit 4 cut photobooth cute frame",
+        "overlay": true,
+        "overlayImageUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/photobooth_berry_days_full.png",
+        "overlayImageURL": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/photobooth_berry_days_full.png",
+        "imageUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/photobooth_berry_days_full.png",
+        "iconUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/photobooth_berry_days_full.png",
+        "icon": {
+            "emoji": "🍓",
+            "remoteImage": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/photobooth_berry_days_full.png",
+            "url": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/photobooth_berry_days_full.png",
+            "iconUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/photobooth_berry_days_full.png",
+            "sfSymbol": "square.grid.2x2.fill",
+            "symbol": "square.grid.2x2.fill"
         },
-        {
-                "uid": "khung_nh_shin_chan_vi_n_m_nh",
-                "id": "khung_nh_shin_chan_vi_n_m_nh",
-                "name": "Shin-Chan Viền Mảnh",
-                "prompt": "Khung áº£nh Shin chan viá»n máº£nh cute sticker",
-                "style": "cutout",
-                "overlay": true,
-                "overlayImageUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_nh_shin_chan_vi_n_m_nh.png",
-                "overlayImageURL": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_nh_shin_chan_vi_n_m_nh.png",
-                "imageUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_nh_shin_chan_vi_n_m_nh.png",
-                "iconUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_nh_shin_chan_vi_n_m_nh.png",
-                "icon": {
-                        "url": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_nh_shin_chan_vi_n_m_nh.png",
-                        "iconUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_nh_shin_chan_vi_n_m_nh.png",
-                        "remoteImage": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_nh_shin_chan_vi_n_m_nh.png",
-                        "sfSymbol": "heart.fill",
-                        "symbol": "heart.fill",
-                        "emoji": "✨"
-                },
-                "textColor": "#FFFFFF",
-                "colors": [
-                        "#f00008",
-                        "#faed32"
-                ],
-                "captureButtonColors": [
-                        "#f00008",
-                        "#faed32"
-                ],
-                "referenceImages": [],
-                "productUrl": null,
-                "requires_gold": false,
-                "requiresGold": false,
-                "is_gold": false,
-                "isGold": false,
-                "unlocked": true,
-                "is_unlocked": true,
-                "isUnlocked": true,
-                "free": true,
-                "allowsTryFilter": true,
-                "allows_try_filter": true,
-                "tryButtonEnabled": true,
-                "try_button_enabled": true,
-                "filterType": "cutout",
-                "type": "cutout"
+        "textColor": "#FFFFFF",
+        "colors": [
+            "#FFB6C1",
+            "#FF69B4"
+        ],
+        "captureButtonColors": [
+            "#FFB6C1",
+            "#FF69B4"
+        ],
+        "is_gold": false,
+        "isGold": false,
+        "unlocked": true,
+        "is_unlocked": true,
+        "isUnlocked": true,
+        "free": true,
+        "requires_gold": false,
+        "requiresGold": false,
+        "allowsTryFilter": false,
+        "allows_try_filter": false,
+        "tryButtonEnabled": false,
+        "try_button_enabled": false,
+        "filterType": "cutout",
+        "referenceImages": [],
+        "productUrl": null
+    },
+    {
+        "id": "photobooth_happy_snap",
+        "uid": "photobooth_happy_snap",
+        "name": "🦖 Photobooth Happy Snap (Khủng Long 4 Ô)",
+        "type": "cutout",
+        "style": "cutout",
+        "prompt": "Happy Snap dinosaur cute green pastel 4 cut photobooth frame",
+        "overlay": true,
+        "overlayImageUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/photobooth_happy_snap_full.png",
+        "overlayImageURL": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/photobooth_happy_snap_full.png",
+        "imageUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/photobooth_happy_snap_full.png",
+        "iconUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/photobooth_happy_snap_full.png",
+        "icon": {
+            "emoji": "🦖",
+            "remoteImage": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/photobooth_happy_snap_full.png",
+            "url": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/photobooth_happy_snap_full.png",
+            "iconUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/photobooth_happy_snap_full.png",
+            "sfSymbol": "square.grid.2x2.fill",
+            "symbol": "square.grid.2x2.fill"
         },
-        {
-                "uid": "khung_anh_o_kitty_v_sao",
-                "id": "khung_anh_o_kitty_v_sao",
-                "name": "Hello Kitty & Sao",
-                "prompt": "Khung Ã„â€˜Ã¡Â»Â anh Ã„â€˜ÃƒÂ o, Kitty vÃƒÂ  sao cute sticker",
-                "style": "cutout",
-                "overlay": true,
-                "overlayImageUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_anh_o_kitty_v_sao.png",
-                "overlayImageURL": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_anh_o_kitty_v_sao.png",
-                "imageUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_anh_o_kitty_v_sao.png",
-                "iconUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_anh_o_kitty_v_sao.png",
-                "icon": {
-                        "url": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_anh_o_kitty_v_sao.png",
-                        "iconUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_anh_o_kitty_v_sao.png",
-                        "remoteImage": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_anh_o_kitty_v_sao.png",
-                        "sfSymbol": "heart.fill",
-                        "symbol": "heart.fill",
-                        "emoji": "✨"
-                },
-                "textColor": "#FFFFFF",
-                "colors": [
-                        "#780c23",
-                        "#a94770"
-                ],
-                "captureButtonColors": [
-                        "#780c23",
-                        "#a94770"
-                ],
-                "referenceImages": [],
-                "productUrl": null,
-                "requires_gold": false,
-                "requiresGold": false,
-                "is_gold": false,
-                "isGold": false,
-                "unlocked": true,
-                "is_unlocked": true,
-                "isUnlocked": true,
-                "free": true,
-                "allowsTryFilter": true,
-                "allows_try_filter": true,
-                "tryButtonEnabled": true,
-                "try_button_enabled": true,
-                "filterType": "cutout",
-                "type": "cutout"
+        "textColor": "#FFFFFF",
+        "colors": [
+            "#A8E6CF",
+            "#88D49E"
+        ],
+        "captureButtonColors": [
+            "#A8E6CF",
+            "#88D49E"
+        ],
+        "is_gold": false,
+        "isGold": false,
+        "unlocked": true,
+        "is_unlocked": true,
+        "isUnlocked": true,
+        "free": true,
+        "requires_gold": false,
+        "requiresGold": false,
+        "allowsTryFilter": true,
+        "allows_try_filter": true,
+        "tryButtonEnabled": true,
+        "try_button_enabled": true,
+        "filterType": "cutout",
+        "referenceImages": [],
+        "productUrl": null
+    },
+    {
+        "id": "photobooth_sky_diary",
+        "uid": "photobooth_sky_diary",
+        "name": "🌸 Photobooth Sky Diary (Tím Hoa Anh Đào)",
+        "type": "cutout",
+        "style": "cutout",
+        "prompt": "Sky Diary purple cherry blossom cloud 4 cut photobooth vertical frame",
+        "overlay": true,
+        "overlayImageUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/photobooth_sky_diary.png",
+        "overlayImageURL": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/photobooth_sky_diary.png",
+        "imageUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/photobooth_sky_diary.png",
+        "iconUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/photobooth_sky_diary.png",
+        "icon": {
+            "emoji": "🌸",
+            "remoteImage": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/photobooth_sky_diary.png",
+            "url": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/photobooth_sky_diary.png",
+            "iconUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/photobooth_sky_diary.png",
+            "sfSymbol": "square.grid.2x2.fill",
+            "symbol": "square.grid.2x2.fill"
         },
-        {
-                "uid": "khung_xanh_v_tay_sao_v_ng",
-                "id": "khung_xanh_v_tay_sao_v_ng",
-                "name": "Sao Vàng Xanh",
-                "prompt": "Khung xanh váº½ tay, sao vÃ ng cute sticker",
-                "style": "cutout",
-                "overlay": true,
-                "overlayImageUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_xanh_v_tay_sao_v_ng.png",
-                "overlayImageURL": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_xanh_v_tay_sao_v_ng.png",
-                "imageUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_xanh_v_tay_sao_v_ng.png",
-                "iconUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_xanh_v_tay_sao_v_ng.png",
-                "icon": {
-                        "url": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_xanh_v_tay_sao_v_ng.png",
-                        "iconUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_xanh_v_tay_sao_v_ng.png",
-                        "remoteImage": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_xanh_v_tay_sao_v_ng.png",
-                        "sfSymbol": "heart.fill",
-                        "symbol": "heart.fill",
-                        "emoji": "✨"
-                },
-                "textColor": "#FFFFFF",
-                "colors": [
-                        "#6fb1d3",
-                        "#cdd64c"
-                ],
-                "captureButtonColors": [
-                        "#6fb1d3",
-                        "#cdd64c"
-                ],
-                "referenceImages": [],
-                "productUrl": null,
-                "requires_gold": false,
-                "requiresGold": false,
-                "is_gold": false,
-                "isGold": false,
-                "unlocked": true,
-                "is_unlocked": true,
-                "isUnlocked": true,
-                "free": true,
-                "allowsTryFilter": true,
-                "allows_try_filter": true,
-                "tryButtonEnabled": true,
-                "try_button_enabled": true,
-                "filterType": "cutout",
-                "type": "cutout"
+        "textColor": "#FFFFFF",
+        "colors": [
+            "#D8B4F8",
+            "#C3B1E1"
+        ],
+        "captureButtonColors": [
+            "#D8B4F8",
+            "#C3B1E1"
+        ],
+        "is_gold": false,
+        "isGold": false,
+        "unlocked": true,
+        "is_unlocked": true,
+        "isUnlocked": true,
+        "free": true,
+        "requires_gold": false,
+        "requiresGold": false,
+        "allowsTryFilter": true,
+        "allows_try_filter": true,
+        "tryButtonEnabled": true,
+        "try_button_enabled": true,
+        "filterType": "cutout",
+        "referenceImages": [],
+        "productUrl": null
+    },
+    {
+        "uid": "photobooth_4cut",
+        "id": "photobooth_4cut",
+        "name": "Photobooth 4 Ô Haru",
+        "prompt": "Life 4 Cuts Haru Film photobooth 4cut cute frame",
+        "style": "cutout",
+        "overlay": true,
+        "overlayImageUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/photobooth_4cut.png",
+        "overlayImageURL": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/photobooth_4cut.png",
+        "imageUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/photobooth_4cut.png",
+        "iconUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/photobooth_4cut.png",
+        "icon": {
+            "url": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/photobooth_4cut.png",
+            "iconUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/photobooth_4cut.png",
+            "remoteImage": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/photobooth_4cut.png",
+            "sfSymbol": "square.grid.2x2.fill",
+            "symbol": "square.grid.2x2.fill",
+            "emoji": "🎞️"
         },
-        {
-                "uid": "sinh_nh_t_hello_kitty_ho_i_c",
-                "id": "sinh_nh_t_hello_kitty_ho_i_c",
-                "name": "Sinh Nhật Hello Kitty",
-                "prompt": "Sinh nhÃ¡ÂºÂ­t Hello Kitty hoÃƒÂ i cÃ¡Â»â€¢ cute sticker",
-                "style": "cutout",
-                "overlay": true,
-                "overlayImageUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/sinh_nh_t_hello_kitty_ho_i_c.png",
-                "overlayImageURL": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/sinh_nh_t_hello_kitty_ho_i_c.png",
-                "imageUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/sinh_nh_t_hello_kitty_ho_i_c.png",
-                "iconUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/sinh_nh_t_hello_kitty_ho_i_c.png",
-                "icon": {
-                        "url": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/sinh_nh_t_hello_kitty_ho_i_c.png",
-                        "iconUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/sinh_nh_t_hello_kitty_ho_i_c.png",
-                        "remoteImage": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/sinh_nh_t_hello_kitty_ho_i_c.png",
-                        "sfSymbol": "heart.fill",
-                        "symbol": "heart.fill",
-                        "emoji": "✨"
-                },
-                "textColor": "#FFFFFF",
-                "colors": [
-                        "#FF758C",
-                        "#FF7EB3"
-                ],
-                "captureButtonColors": [
-                        "#FF758C",
-                        "#FF7EB3"
-                ],
-                "referenceImages": [],
-                "productUrl": null,
-                "requires_gold": false,
-                "requiresGold": false,
-                "is_gold": false,
-                "isGold": false,
-                "unlocked": true,
-                "is_unlocked": true,
-                "isUnlocked": true,
-                "free": true,
-                "allowsTryFilter": true,
-                "allows_try_filter": true,
-                "tryButtonEnabled": true,
-                "try_button_enabled": true,
-                "filterType": "cutout",
-                "type": "cutout"
+        "textColor": "#FFFFFF",
+        "colors": [
+            "#FFB6C1",
+            "#FFF0F5"
+        ],
+        "captureButtonColors": [
+            "#FFB6C1",
+            "#FFF0F5"
+        ],
+        "referenceImages": [],
+        "productUrl": null,
+        "requires_gold": false,
+        "requiresGold": false,
+        "is_gold": false,
+        "isGold": false,
+        "unlocked": true,
+        "is_unlocked": true,
+        "isUnlocked": true,
+        "free": true,
+        "allowsTryFilter": true,
+        "allows_try_filter": true,
+        "tryButtonEnabled": true,
+        "try_button_enabled": true,
+        "filterType": "cutout",
+        "type": "cutout"
+    },
+    {
+        "uid": "photobooth_cute",
+        "id": "photobooth_cute",
+        "name": "Photobooth Cute Hàn",
+        "prompt": "Sweet photobooth cute frame pastel ribbon",
+        "style": "cutout",
+        "overlay": true,
+        "overlayImageUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/photobooth_cute.png",
+        "overlayImageURL": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/photobooth_cute.png",
+        "imageUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/photobooth_cute.png",
+        "iconUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/photobooth_cute.png",
+        "icon": {
+            "url": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/photobooth_cute.png",
+            "iconUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/photobooth_cute.png",
+            "remoteImage": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/photobooth_cute.png",
+            "sfSymbol": "camera.macro",
+            "symbol": "camera.macro",
+            "emoji": "🎀"
         },
-        {
-                "uid": "khung_nh_n_pastel_vi_n_ren",
-                "id": "khung_nh_n_pastel_vi_n_ren",
-                "name": "Nơ Pastel Viền Ren",
-                "prompt": "Khung áº£nh nÆ¡ pastel viá»n ren cute sticker",
-                "style": "cutout",
-                "overlay": true,
-                "overlayImageUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_nh_n_pastel_vi_n_ren.png",
-                "overlayImageURL": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_nh_n_pastel_vi_n_ren.png",
-                "imageUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_nh_n_pastel_vi_n_ren.png",
-                "iconUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_nh_n_pastel_vi_n_ren.png",
-                "icon": {
-                        "url": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_nh_n_pastel_vi_n_ren.png",
-                        "iconUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_nh_n_pastel_vi_n_ren.png",
-                        "remoteImage": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_nh_n_pastel_vi_n_ren.png",
-                        "sfSymbol": "heart.fill",
-                        "symbol": "heart.fill",
-                        "emoji": "✨"
-                },
-                "textColor": "#FFFFFF",
-                "colors": [
-                        "#FF758C",
-                        "#FF7EB3"
-                ],
-                "captureButtonColors": [
-                        "#FF758C",
-                        "#FF7EB3"
-                ],
-                "referenceImages": [],
-                "productUrl": null,
-                "requires_gold": false,
-                "requiresGold": false,
-                "is_gold": false,
-                "isGold": false,
-                "unlocked": true,
-                "is_unlocked": true,
-                "isUnlocked": true,
-                "free": true,
-                "allowsTryFilter": true,
-                "allows_try_filter": true,
-                "tryButtonEnabled": true,
-                "try_button_enabled": true,
-                "filterType": "cutout",
-                "type": "cutout"
-        }
+        "textColor": "#FFFFFF",
+        "colors": [
+            "#FFB6C1",
+            "#FFF0F5"
+        ],
+        "captureButtonColors": [
+            "#FFB6C1",
+            "#FFF0F5"
+        ],
+        "referenceImages": [],
+        "productUrl": null,
+        "requires_gold": false,
+        "requiresGold": false,
+        "is_gold": false,
+        "isGold": false,
+        "unlocked": true,
+        "is_unlocked": true,
+        "isUnlocked": true,
+        "free": true,
+        "allowsTryFilter": true,
+        "allows_try_filter": true,
+        "tryButtonEnabled": true,
+        "try_button_enabled": true,
+        "filterType": "cutout",
+        "type": "cutout"
+    },
+    {
+        "uid": "photoboot",
+        "id": "photoboot",
+        "name": "Photobooth Cổ Điển",
+        "prompt": "photoboot cute sticker",
+        "style": "cutout",
+        "overlay": true,
+        "overlayImageUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/photoboot.png",
+        "overlayImageURL": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/photoboot.png",
+        "imageUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/photoboot.png",
+        "iconUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/photoboot.png",
+        "icon": {
+            "url": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/photoboot.png",
+            "iconUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/photoboot.png",
+            "remoteImage": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/photoboot.png",
+            "sfSymbol": "heart.fill",
+            "symbol": "heart.fill",
+            "emoji": "✨"
+        },
+        "textColor": "#FFFFFF",
+        "colors": [
+            "#FF758C",
+            "#FF7EB3"
+        ],
+        "captureButtonColors": [
+            "#FF758C",
+            "#FF7EB3"
+        ],
+        "referenceImages": [],
+        "productUrl": null,
+        "requires_gold": false,
+        "requiresGold": false,
+        "is_gold": false,
+        "isGold": false,
+        "unlocked": true,
+        "is_unlocked": true,
+        "isUnlocked": true,
+        "free": true,
+        "allowsTryFilter": true,
+        "allows_try_filter": true,
+        "tryButtonEnabled": true,
+        "try_button_enabled": true,
+        "filterType": "cutout",
+        "type": "cutout"
+    },
+    {
+        "uid": "sticker_b_nh_lu_n_minh_tu",
+        "id": "sticker_b_nh_lu_n_minh_tu",
+        "name": "Trend Tíc Tóc",
+        "prompt": "Sticker bÃƒÂ¬nh luÃ¡ÂºÂ­n Minh TuÃ¡Â»â€¡ cute sticker",
+        "style": "cutout",
+        "overlay": true,
+        "overlayImageUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/sticker_b_nh_lu_n_minh_tu.png",
+        "overlayImageURL": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/sticker_b_nh_lu_n_minh_tu.png",
+        "imageUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/sticker_b_nh_lu_n_minh_tu.png",
+        "iconUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/sticker_b_nh_lu_n_minh_tu.png",
+        "icon": {
+            "url": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/sticker_b_nh_lu_n_minh_tu.png",
+            "iconUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/sticker_b_nh_lu_n_minh_tu.png",
+            "remoteImage": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/sticker_b_nh_lu_n_minh_tu.png",
+            "sfSymbol": "heart.fill",
+            "symbol": "heart.fill",
+            "emoji": "✨"
+        },
+        "textColor": "#FFFFFF",
+        "colors": [
+            "#FF758C",
+            "#FF7EB3"
+        ],
+        "captureButtonColors": [
+            "#FF758C",
+            "#FF7EB3"
+        ],
+        "referenceImages": [],
+        "productUrl": null,
+        "requires_gold": false,
+        "requiresGold": false,
+        "is_gold": false,
+        "isGold": false,
+        "unlocked": true,
+        "is_unlocked": true,
+        "isUnlocked": true,
+        "free": true,
+        "allowsTryFilter": true,
+        "allows_try_filter": true,
+        "tryButtonEnabled": true,
+        "try_button_enabled": true,
+        "filterType": "cutout",
+        "type": "cutout"
+    },
+    {
+        "uid": "cmt_locket",
+        "id": "cmt_locket",
+        "name": "Locket Việt Nam",
+        "prompt": "cmt locket cute sticker",
+        "style": "cutout",
+        "overlay": true,
+        "overlayImageUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/cmt_locket.png",
+        "overlayImageURL": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/cmt_locket.png",
+        "imageUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/cmt_locket.png",
+        "iconUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/cmt_locket.png",
+        "icon": {
+            "url": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/cmt_locket.png",
+            "iconUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/cmt_locket.png",
+            "remoteImage": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/cmt_locket.png",
+            "sfSymbol": "heart.fill",
+            "symbol": "heart.fill",
+            "emoji": "✨"
+        },
+        "textColor": "#FFFFFF",
+        "colors": [
+            "#FF758C",
+            "#FF7EB3"
+        ],
+        "captureButtonColors": [
+            "#FF758C",
+            "#FF7EB3"
+        ],
+        "referenceImages": [],
+        "productUrl": null,
+        "requires_gold": false,
+        "requiresGold": false,
+        "is_gold": false,
+        "isGold": false,
+        "unlocked": true,
+        "is_unlocked": true,
+        "isUnlocked": true,
+        "free": true,
+        "allowsTryFilter": true,
+        "allows_try_filter": true,
+        "tryButtonEnabled": true,
+        "try_button_enabled": true,
+        "filterType": "cutout",
+        "type": "cutout"
+    },
+    {
+        "uid": "khung_hello_kitty_pastel_ng_t_ng_o",
+        "id": "khung_hello_kitty_pastel_ng_t_ng_o",
+        "name": "Hello Kitty Ngọt Ngào",
+        "prompt": "Khung Hello Kitty pastel ngá»t ngÃ o cute sticker",
+        "style": "cutout",
+        "overlay": true,
+        "overlayImageUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_hello_kitty_pastel_ng_t_ng_o.png",
+        "overlayImageURL": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_hello_kitty_pastel_ng_t_ng_o.png",
+        "imageUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_hello_kitty_pastel_ng_t_ng_o.png",
+        "iconUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_hello_kitty_pastel_ng_t_ng_o.png",
+        "icon": {
+            "url": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_hello_kitty_pastel_ng_t_ng_o.png",
+            "iconUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_hello_kitty_pastel_ng_t_ng_o.png",
+            "remoteImage": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_hello_kitty_pastel_ng_t_ng_o.png",
+            "sfSymbol": "heart.fill",
+            "symbol": "heart.fill",
+            "emoji": "✨"
+        },
+        "textColor": "#FFFFFF",
+        "colors": [
+            "#FF758C",
+            "#FF7EB3"
+        ],
+        "captureButtonColors": [
+            "#FF758C",
+            "#FF7EB3"
+        ],
+        "referenceImages": [],
+        "productUrl": null,
+        "requires_gold": false,
+        "requiresGold": false,
+        "is_gold": false,
+        "isGold": false,
+        "unlocked": true,
+        "is_unlocked": true,
+        "isUnlocked": true,
+        "free": true,
+        "allowsTryFilter": true,
+        "allows_try_filter": true,
+        "tryButtonEnabled": true,
+        "try_button_enabled": true,
+        "filterType": "cutout",
+        "type": "cutout"
+    },
+    {
+        "uid": "khung_hello_kitty_h_ng_pastel",
+        "id": "khung_hello_kitty_h_ng_pastel",
+        "name": "Khung Hello Kitty Hồng",
+        "prompt": "Khung Hello Kitty hÃ¡Â»â€œng pastel cute sticker",
+        "style": "cutout",
+        "overlay": true,
+        "overlayImageUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_hello_kitty_h_ng_pastel.png",
+        "overlayImageURL": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_hello_kitty_h_ng_pastel.png",
+        "imageUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_hello_kitty_h_ng_pastel.png",
+        "iconUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_hello_kitty_h_ng_pastel.png",
+        "icon": {
+            "url": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_hello_kitty_h_ng_pastel.png",
+            "iconUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_hello_kitty_h_ng_pastel.png",
+            "remoteImage": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_hello_kitty_h_ng_pastel.png",
+            "sfSymbol": "heart.fill",
+            "symbol": "heart.fill",
+            "emoji": "✨"
+        },
+        "textColor": "#FFFFFF",
+        "colors": [
+            "#FF758C",
+            "#FF7EB3"
+        ],
+        "captureButtonColors": [
+            "#FF758C",
+            "#FF7EB3"
+        ],
+        "referenceImages": [],
+        "productUrl": null,
+        "requires_gold": false,
+        "requiresGold": false,
+        "is_gold": false,
+        "isGold": false,
+        "unlocked": true,
+        "is_unlocked": true,
+        "isUnlocked": true,
+        "free": true,
+        "allowsTryFilter": true,
+        "allows_try_filter": true,
+        "tryButtonEnabled": true,
+        "try_button_enabled": true,
+        "filterType": "cutout",
+        "type": "cutout"
+    },
+    {
+        "uid": "khung_nh_hoa_pastel_vi_n_xanh_m_nh",
+        "id": "khung_nh_hoa_pastel_vi_n_xanh_m_nh",
+        "name": "Hoa Xinh Pastel",
+        "prompt": "Khung áº£nh hoa pastel viá»n xanh máº£nh cute sticker",
+        "style": "cutout",
+        "overlay": true,
+        "overlayImageUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_nh_hoa_pastel_vi_n_xanh_m_nh.png",
+        "overlayImageURL": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_nh_hoa_pastel_vi_n_xanh_m_nh.png",
+        "imageUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_nh_hoa_pastel_vi_n_xanh_m_nh.png",
+        "iconUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_nh_hoa_pastel_vi_n_xanh_m_nh.png",
+        "icon": {
+            "url": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_nh_hoa_pastel_vi_n_xanh_m_nh.png",
+            "iconUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_nh_hoa_pastel_vi_n_xanh_m_nh.png",
+            "remoteImage": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_nh_hoa_pastel_vi_n_xanh_m_nh.png",
+            "sfSymbol": "app.gift",
+            "symbol": "app.gift",
+            "emoji": "✨"
+        },
+        "textColor": "#FFFFFF",
+        "colors": [
+            "#51e6e4",
+            "#fce03f"
+        ],
+        "captureButtonColors": [
+            "#51e6e4",
+            "#fce03f"
+        ],
+        "referenceImages": [],
+        "productUrl": null,
+        "requires_gold": false,
+        "requiresGold": false,
+        "is_gold": false,
+        "isGold": false,
+        "unlocked": true,
+        "is_unlocked": true,
+        "isUnlocked": true,
+        "free": true,
+        "allowsTryFilter": true,
+        "allows_try_filter": true,
+        "tryButtonEnabled": true,
+        "try_button_enabled": true,
+        "filterType": "cutout",
+        "type": "cutout"
+    },
+    {
+        "uid": "khung_nh_vu_ng_m_ng_nh_n_b_c",
+        "id": "khung_nh_vu_ng_m_ng_nh_n_b_c",
+        "name": "Nhện Đỏ",
+        "prompt": "Khung Ã¡ÂºÂ£nh vuÃƒÂ´ng mÃ¡ÂºÂ¡ng nhÃ¡Â»â€¡n Ã„â€˜Ã¡Â»Â bÃ¡ÂºÂ¡c cute sticker",
+        "style": "cutout",
+        "overlay": true,
+        "overlayImageUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_nh_vu_ng_m_ng_nh_n_b_c.png",
+        "overlayImageURL": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_nh_vu_ng_m_ng_nh_n_b_c.png",
+        "imageUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_nh_vu_ng_m_ng_nh_n_b_c.png",
+        "iconUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_nh_vu_ng_m_ng_nh_n_b_c.png",
+        "icon": {
+            "url": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_nh_vu_ng_m_ng_nh_n_b_c.png",
+            "iconUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_nh_vu_ng_m_ng_nh_n_b_c.png",
+            "remoteImage": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_nh_vu_ng_m_ng_nh_n_b_c.png",
+            "sfSymbol": "heart.fill",
+            "symbol": "heart.fill",
+            "emoji": "✨"
+        },
+        "textColor": "#FFFFFF",
+        "colors": [
+            "#b3001e",
+            "#b3001e"
+        ],
+        "captureButtonColors": [
+            "#b3001e",
+            "#b3001e"
+        ],
+        "referenceImages": [],
+        "productUrl": null,
+        "requires_gold": false,
+        "requiresGold": false,
+        "is_gold": false,
+        "isGold": false,
+        "unlocked": true,
+        "is_unlocked": true,
+        "isUnlocked": true,
+        "free": true,
+        "allowsTryFilter": true,
+        "allows_try_filter": true,
+        "tryButtonEnabled": true,
+        "try_button_enabled": true,
+        "filterType": "cutout",
+        "type": "cutout"
+    },
+    {
+        "uid": "khung_kh_ng_gian_xanh_pastel",
+        "id": "khung_kh_ng_gian_xanh_pastel",
+        "name": "Không Gian Xanh",
+        "prompt": "Khung khÃ´ng gian xanh pastel cute sticker",
+        "style": "cutout",
+        "overlay": true,
+        "overlayImageUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_kh_ng_gian_xanh_pastel.png",
+        "overlayImageURL": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_kh_ng_gian_xanh_pastel.png",
+        "imageUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_kh_ng_gian_xanh_pastel.png",
+        "iconUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_kh_ng_gian_xanh_pastel.png",
+        "icon": {
+            "url": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_kh_ng_gian_xanh_pastel.png",
+            "iconUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_kh_ng_gian_xanh_pastel.png",
+            "remoteImage": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_kh_ng_gian_xanh_pastel.png",
+            "sfSymbol": "heart.fill",
+            "symbol": "heart.fill",
+            "emoji": "✨"
+        },
+        "textColor": "#FFFFFF",
+        "colors": [
+            "#65d9fc",
+            "#65d9fc"
+        ],
+        "captureButtonColors": [
+            "#65d9fc",
+            "#65d9fc"
+        ],
+        "referenceImages": [],
+        "productUrl": null,
+        "requires_gold": false,
+        "requiresGold": false,
+        "is_gold": false,
+        "isGold": false,
+        "unlocked": true,
+        "is_unlocked": true,
+        "isUnlocked": true,
+        "free": true,
+        "allowsTryFilter": true,
+        "allows_try_filter": true,
+        "tryButtonEnabled": true,
+        "try_button_enabled": true,
+        "filterType": "cutout",
+        "type": "cutout"
+    },
+    {
+        "uid": "khung_vu_ng_ng_i_sao_h_ng_pastel",
+        "id": "khung_vu_ng_ng_i_sao_h_ng_pastel",
+        "name": "Ngôi Sao Hồng",
+        "prompt": "Khung vuÃƒÂ´ng ngÃƒÂ´i sao hÃ¡Â»â€œng pastel cute sticker",
+        "style": "cutout",
+        "overlay": true,
+        "overlayImageUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_vu_ng_ng_i_sao_h_ng_pastel.png",
+        "overlayImageURL": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_vu_ng_ng_i_sao_h_ng_pastel.png",
+        "imageUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_vu_ng_ng_i_sao_h_ng_pastel.png",
+        "iconUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_vu_ng_ng_i_sao_h_ng_pastel.png",
+        "icon": {
+            "url": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_vu_ng_ng_i_sao_h_ng_pastel.png",
+            "iconUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_vu_ng_ng_i_sao_h_ng_pastel.png",
+            "remoteImage": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_vu_ng_ng_i_sao_h_ng_pastel.png",
+            "sfSymbol": "heart.fill",
+            "symbol": "heart.fill",
+            "emoji": "✨"
+        },
+        "textColor": "#FFFFFF",
+        "colors": [
+            "#FF758C",
+            "#FF7EB3"
+        ],
+        "captureButtonColors": [
+            "#FF758C",
+            "#FF7EB3"
+        ],
+        "referenceImages": [],
+        "productUrl": null,
+        "requires_gold": false,
+        "requiresGold": false,
+        "is_gold": false,
+        "isGold": false,
+        "unlocked": true,
+        "is_unlocked": true,
+        "isUnlocked": true,
+        "free": true,
+        "allowsTryFilter": true,
+        "allows_try_filter": true,
+        "tryButtonEnabled": true,
+        "try_button_enabled": true,
+        "filterType": "cutout",
+        "type": "cutout"
+    },
+    {
+        "uid": "khung_nh_pastel_vi_n_s_h_i_c_u",
+        "id": "khung_nh_pastel_vi_n_s_h_i_c_u",
+        "name": "Sò Hải Cẩu Pastel",
+        "prompt": "Khung áº£nh pastel viá»n sÃ², háº£i cáº©u cute sticker",
+        "style": "cutout",
+        "overlay": true,
+        "overlayImageUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_nh_pastel_vi_n_s_h_i_c_u.png",
+        "overlayImageURL": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_nh_pastel_vi_n_s_h_i_c_u.png",
+        "imageUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_nh_pastel_vi_n_s_h_i_c_u.png",
+        "iconUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_nh_pastel_vi_n_s_h_i_c_u.png",
+        "icon": {
+            "url": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_nh_pastel_vi_n_s_h_i_c_u.png",
+            "iconUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_nh_pastel_vi_n_s_h_i_c_u.png",
+            "remoteImage": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_nh_pastel_vi_n_s_h_i_c_u.png",
+            "sfSymbol": "heart.fill",
+            "symbol": "heart.fill",
+            "emoji": "✨"
+        },
+        "textColor": "#FFFFFF",
+        "colors": [
+            "#cfedfc",
+            "#cfedfc"
+        ],
+        "captureButtonColors": [
+            "#cfedfc",
+            "#cfedfc"
+        ],
+        "referenceImages": [],
+        "productUrl": null,
+        "requires_gold": false,
+        "requiresGold": false,
+        "is_gold": false,
+        "isGold": false,
+        "unlocked": true,
+        "is_unlocked": true,
+        "isUnlocked": true,
+        "free": true,
+        "allowsTryFilter": true,
+        "allows_try_filter": true,
+        "tryButtonEnabled": true,
+        "try_button_enabled": true,
+        "filterType": "cutout",
+        "type": "cutout"
+    },
+    {
+        "uid": "khung_nh_shin_chan_vi_n_m_nh",
+        "id": "khung_nh_shin_chan_vi_n_m_nh",
+        "name": "Shin-Chan Viền Mảnh",
+        "prompt": "Khung áº£nh Shin chan viá»n máº£nh cute sticker",
+        "style": "cutout",
+        "overlay": true,
+        "overlayImageUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_nh_shin_chan_vi_n_m_nh.png",
+        "overlayImageURL": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_nh_shin_chan_vi_n_m_nh.png",
+        "imageUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_nh_shin_chan_vi_n_m_nh.png",
+        "iconUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_nh_shin_chan_vi_n_m_nh.png",
+        "icon": {
+            "url": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_nh_shin_chan_vi_n_m_nh.png",
+            "iconUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_nh_shin_chan_vi_n_m_nh.png",
+            "remoteImage": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_nh_shin_chan_vi_n_m_nh.png",
+            "sfSymbol": "heart.fill",
+            "symbol": "heart.fill",
+            "emoji": "✨"
+        },
+        "textColor": "#FFFFFF",
+        "colors": [
+            "#f00008",
+            "#faed32"
+        ],
+        "captureButtonColors": [
+            "#f00008",
+            "#faed32"
+        ],
+        "referenceImages": [],
+        "productUrl": null,
+        "requires_gold": false,
+        "requiresGold": false,
+        "is_gold": false,
+        "isGold": false,
+        "unlocked": true,
+        "is_unlocked": true,
+        "isUnlocked": true,
+        "free": true,
+        "allowsTryFilter": true,
+        "allows_try_filter": true,
+        "tryButtonEnabled": true,
+        "try_button_enabled": true,
+        "filterType": "cutout",
+        "type": "cutout"
+    },
+    {
+        "uid": "khung_anh_o_kitty_v_sao",
+        "id": "khung_anh_o_kitty_v_sao",
+        "name": "Hello Kitty & Sao",
+        "prompt": "Khung Ã„â€˜Ã¡Â»Â anh Ã„â€˜ÃƒÂ o, Kitty vÃƒÂ  sao cute sticker",
+        "style": "cutout",
+        "overlay": true,
+        "overlayImageUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_anh_o_kitty_v_sao.png",
+        "overlayImageURL": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_anh_o_kitty_v_sao.png",
+        "imageUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_anh_o_kitty_v_sao.png",
+        "iconUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_anh_o_kitty_v_sao.png",
+        "icon": {
+            "url": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_anh_o_kitty_v_sao.png",
+            "iconUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_anh_o_kitty_v_sao.png",
+            "remoteImage": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_anh_o_kitty_v_sao.png",
+            "sfSymbol": "heart.fill",
+            "symbol": "heart.fill",
+            "emoji": "✨"
+        },
+        "textColor": "#FFFFFF",
+        "colors": [
+            "#780c23",
+            "#a94770"
+        ],
+        "captureButtonColors": [
+            "#780c23",
+            "#a94770"
+        ],
+        "referenceImages": [],
+        "productUrl": null,
+        "requires_gold": false,
+        "requiresGold": false,
+        "is_gold": false,
+        "isGold": false,
+        "unlocked": true,
+        "is_unlocked": true,
+        "isUnlocked": true,
+        "free": true,
+        "allowsTryFilter": true,
+        "allows_try_filter": true,
+        "tryButtonEnabled": true,
+        "try_button_enabled": true,
+        "filterType": "cutout",
+        "type": "cutout"
+    },
+    {
+        "uid": "khung_xanh_v_tay_sao_v_ng",
+        "id": "khung_xanh_v_tay_sao_v_ng",
+        "name": "Sao Vàng Xanh",
+        "prompt": "Khung xanh váº½ tay, sao vÃ ng cute sticker",
+        "style": "cutout",
+        "overlay": true,
+        "overlayImageUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_xanh_v_tay_sao_v_ng.png",
+        "overlayImageURL": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_xanh_v_tay_sao_v_ng.png",
+        "imageUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_xanh_v_tay_sao_v_ng.png",
+        "iconUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_xanh_v_tay_sao_v_ng.png",
+        "icon": {
+            "url": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_xanh_v_tay_sao_v_ng.png",
+            "iconUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_xanh_v_tay_sao_v_ng.png",
+            "remoteImage": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_xanh_v_tay_sao_v_ng.png",
+            "sfSymbol": "heart.fill",
+            "symbol": "heart.fill",
+            "emoji": "✨"
+        },
+        "textColor": "#FFFFFF",
+        "colors": [
+            "#6fb1d3",
+            "#cdd64c"
+        ],
+        "captureButtonColors": [
+            "#6fb1d3",
+            "#cdd64c"
+        ],
+        "referenceImages": [],
+        "productUrl": null,
+        "requires_gold": false,
+        "requiresGold": false,
+        "is_gold": false,
+        "isGold": false,
+        "unlocked": true,
+        "is_unlocked": true,
+        "isUnlocked": true,
+        "free": true,
+        "allowsTryFilter": true,
+        "allows_try_filter": true,
+        "tryButtonEnabled": true,
+        "try_button_enabled": true,
+        "filterType": "cutout",
+        "type": "cutout"
+    },
+    {
+        "uid": "sinh_nh_t_hello_kitty_ho_i_c",
+        "id": "sinh_nh_t_hello_kitty_ho_i_c",
+        "name": "Sinh Nhật Hello Kitty",
+        "prompt": "Sinh nhÃ¡ÂºÂ­t Hello Kitty hoÃƒÂ i cÃ¡Â»â€¢ cute sticker",
+        "style": "cutout",
+        "overlay": true,
+        "overlayImageUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/sinh_nh_t_hello_kitty_ho_i_c.png",
+        "overlayImageURL": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/sinh_nh_t_hello_kitty_ho_i_c.png",
+        "imageUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/sinh_nh_t_hello_kitty_ho_i_c.png",
+        "iconUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/sinh_nh_t_hello_kitty_ho_i_c.png",
+        "icon": {
+            "url": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/sinh_nh_t_hello_kitty_ho_i_c.png",
+            "iconUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/sinh_nh_t_hello_kitty_ho_i_c.png",
+            "remoteImage": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/sinh_nh_t_hello_kitty_ho_i_c.png",
+            "sfSymbol": "heart.fill",
+            "symbol": "heart.fill",
+            "emoji": "✨"
+        },
+        "textColor": "#FFFFFF",
+        "colors": [
+            "#FF758C",
+            "#FF7EB3"
+        ],
+        "captureButtonColors": [
+            "#FF758C",
+            "#FF7EB3"
+        ],
+        "referenceImages": [],
+        "productUrl": null,
+        "requires_gold": false,
+        "requiresGold": false,
+        "is_gold": false,
+        "isGold": false,
+        "unlocked": true,
+        "is_unlocked": true,
+        "isUnlocked": true,
+        "free": true,
+        "allowsTryFilter": true,
+        "allows_try_filter": true,
+        "tryButtonEnabled": true,
+        "try_button_enabled": true,
+        "filterType": "cutout",
+        "type": "cutout"
+    },
+    {
+        "uid": "khung_nh_n_pastel_vi_n_ren",
+        "id": "khung_nh_n_pastel_vi_n_ren",
+        "name": "Nơ Pastel Viền Ren",
+        "prompt": "Khung áº£nh nÆ¡ pastel viá»n ren cute sticker",
+        "style": "cutout",
+        "overlay": true,
+        "overlayImageUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_nh_n_pastel_vi_n_ren.png",
+        "overlayImageURL": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_nh_n_pastel_vi_n_ren.png",
+        "imageUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_nh_n_pastel_vi_n_ren.png",
+        "iconUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_nh_n_pastel_vi_n_ren.png",
+        "icon": {
+            "url": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_nh_n_pastel_vi_n_ren.png",
+            "iconUrl": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_nh_n_pastel_vi_n_ren.png",
+            "remoteImage": "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/frames/khung_nh_n_pastel_vi_n_ren.png",
+            "sfSymbol": "heart.fill",
+            "symbol": "heart.fill",
+            "emoji": "✨"
+        },
+        "textColor": "#FFFFFF",
+        "colors": [
+            "#FF758C",
+            "#FF7EB3"
+        ],
+        "captureButtonColors": [
+            "#FF758C",
+            "#FF7EB3"
+        ],
+        "referenceImages": [],
+        "productUrl": null,
+        "requires_gold": false,
+        "requiresGold": false,
+        "is_gold": false,
+        "isGold": false,
+        "unlocked": true,
+        "is_unlocked": true,
+        "isUnlocked": true,
+        "free": true,
+        "allowsTryFilter": true,
+        "allows_try_filter": true,
+        "tryButtonEnabled": true,
+        "try_button_enabled": true,
+        "filterType": "cutout",
+        "type": "cutout"
+    },
+    {
+        "uid": "stk_dio_pm2",
+        "id": "stk_dio_pm2",
+        "name": "Practical Magic 2",
+        "prompt": "Practical Magic 2",
+        "productUrl": null,
+        "colors": [
+            "#7C3AED",
+            "#C4B5FD"
+        ],
+        "captureButtonColors": [
+            "#7C3AED",
+            "#C4B5FD"
+        ],
+        "icon": {
+            "url": "https://uplocket.io.vn/uploads/stickers/stk_dio_pm2.png",
+            "sfSymbol": "sparkles"
+        },
+        "textColor": "#FFFFFF",
+        "style": "cutout",
+        "overlay": true,
+        "overlayImageUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_pm2.png",
+        "overlayImageURL": "https://uplocket.io.vn/uploads/stickers/stk_dio_pm2.png",
+        "imageUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_pm2.png",
+        "iconUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_pm2.png",
+        "referenceImages": [],
+        "requires_gold": false,
+        "requiresGold": false,
+        "is_gold": false,
+        "isGold": false,
+        "unlocked": true,
+        "is_unlocked": true,
+        "isUnlocked": true,
+        "free": true
+    },
+    {
+        "uid": "stk_dio_looksmaxing",
+        "id": "stk_dio_looksmaxing",
+        "name": "Looks-Maxxing",
+        "prompt": "Looks-Maxxing",
+        "productUrl": null,
+        "colors": [
+            "#F59E0B",
+            "#FDE68A"
+        ],
+        "captureButtonColors": [
+            "#F59E0B",
+            "#FDE68A"
+        ],
+        "icon": {
+            "url": "https://uplocket.io.vn/uploads/stickers/stk_dio_looksmaxing.png",
+            "sfSymbol": "sparkles"
+        },
+        "textColor": "#FFFFFF",
+        "style": "cutout",
+        "overlay": true,
+        "overlayImageUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_looksmaxing.png",
+        "overlayImageURL": "https://uplocket.io.vn/uploads/stickers/stk_dio_looksmaxing.png",
+        "imageUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_looksmaxing.png",
+        "iconUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_looksmaxing.png",
+        "referenceImages": [],
+        "requires_gold": false,
+        "requiresGold": false,
+        "is_gold": false,
+        "isGold": false,
+        "unlocked": true,
+        "is_unlocked": true,
+        "isUnlocked": true,
+        "free": true
+    },
+    {
+        "uid": "stk_dio_influencer",
+        "id": "stk_dio_influencer",
+        "name": "Influencer",
+        "prompt": "Influencer",
+        "productUrl": null,
+        "colors": [
+            "#EC4899",
+            "#F9A8D4"
+        ],
+        "captureButtonColors": [
+            "#EC4899",
+            "#F9A8D4"
+        ],
+        "icon": {
+            "url": "https://uplocket.io.vn/uploads/stickers/stk_dio_influencer.png",
+            "sfSymbol": "sparkles"
+        },
+        "textColor": "#FFFFFF",
+        "style": "cutout",
+        "overlay": true,
+        "overlayImageUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_influencer.png",
+        "overlayImageURL": "https://uplocket.io.vn/uploads/stickers/stk_dio_influencer.png",
+        "imageUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_influencer.png",
+        "iconUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_influencer.png",
+        "referenceImages": [],
+        "requires_gold": false,
+        "requiresGold": false,
+        "is_gold": false,
+        "isGold": false,
+        "unlocked": true,
+        "is_unlocked": true,
+        "isUnlocked": true,
+        "free": true
+    },
+    {
+        "uid": "stk_dio_toothless",
+        "id": "stk_dio_toothless",
+        "name": "Toothless",
+        "prompt": "Toothless",
+        "productUrl": null,
+        "colors": [
+            "#0F172A",
+            "#64748B"
+        ],
+        "captureButtonColors": [
+            "#0F172A",
+            "#64748B"
+        ],
+        "icon": {
+            "url": "https://uplocket.io.vn/uploads/stickers/stk_dio_toothless.png",
+            "sfSymbol": "sparkles"
+        },
+        "textColor": "#FFFFFF",
+        "style": "cutout",
+        "overlay": true,
+        "overlayImageUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_toothless.png",
+        "overlayImageURL": "https://uplocket.io.vn/uploads/stickers/stk_dio_toothless.png",
+        "imageUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_toothless.png",
+        "iconUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_toothless.png",
+        "referenceImages": [],
+        "requires_gold": false,
+        "requiresGold": false,
+        "is_gold": false,
+        "isGold": false,
+        "unlocked": true,
+        "is_unlocked": true,
+        "isUnlocked": true,
+        "free": true
+    },
+    {
+        "uid": "stk_dio_orange_wig",
+        "id": "stk_dio_orange_wig",
+        "name": "Okay Wig",
+        "prompt": "Okay Wig",
+        "productUrl": null,
+        "colors": [
+            "#F97316",
+            "#FDBA74"
+        ],
+        "captureButtonColors": [
+            "#F97316",
+            "#FDBA74"
+        ],
+        "icon": {
+            "url": "https://uplocket.io.vn/uploads/stickers/stk_dio_orange_wig.png",
+            "sfSymbol": "sparkles"
+        },
+        "textColor": "#FFFFFF",
+        "style": "cutout",
+        "overlay": true,
+        "overlayImageUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_orange_wig.png",
+        "overlayImageURL": "https://uplocket.io.vn/uploads/stickers/stk_dio_orange_wig.png",
+        "imageUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_orange_wig.png",
+        "iconUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_orange_wig.png",
+        "referenceImages": [],
+        "requires_gold": false,
+        "requiresGold": false,
+        "is_gold": false,
+        "isGold": false,
+        "unlocked": true,
+        "is_unlocked": true,
+        "isUnlocked": true,
+        "free": true
+    },
+    {
+        "uid": "stk_dio_bye_brows",
+        "id": "stk_dio_bye_brows",
+        "name": "Bye Brows",
+        "prompt": "Bye Brows",
+        "productUrl": null,
+        "colors": [
+            "#A8A29E",
+            "#E7E5E4"
+        ],
+        "captureButtonColors": [
+            "#A8A29E",
+            "#E7E5E4"
+        ],
+        "icon": {
+            "url": "https://uplocket.io.vn/uploads/stickers/stk_dio_bye_brows.png",
+            "sfSymbol": "sparkles"
+        },
+        "textColor": "#FFFFFF",
+        "style": "cutout",
+        "overlay": true,
+        "overlayImageUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_bye_brows.png",
+        "overlayImageURL": "https://uplocket.io.vn/uploads/stickers/stk_dio_bye_brows.png",
+        "imageUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_bye_brows.png",
+        "iconUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_bye_brows.png",
+        "referenceImages": [],
+        "requires_gold": false,
+        "requiresGold": false,
+        "is_gold": false,
+        "isGold": false,
+        "unlocked": true,
+        "is_unlocked": true,
+        "isUnlocked": true,
+        "free": true
+    },
+    {
+        "uid": "stk_dio_braces",
+        "id": "stk_dio_braces",
+        "name": "Braces",
+        "prompt": "Braces",
+        "productUrl": null,
+        "colors": [
+            "#38BDF8",
+            "#E0F2FE"
+        ],
+        "captureButtonColors": [
+            "#38BDF8",
+            "#E0F2FE"
+        ],
+        "icon": {
+            "url": "https://uplocket.io.vn/uploads/stickers/stk_dio_braces.png",
+            "sfSymbol": "sparkles"
+        },
+        "textColor": "#FFFFFF",
+        "style": "cutout",
+        "overlay": true,
+        "overlayImageUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_braces.png",
+        "overlayImageURL": "https://uplocket.io.vn/uploads/stickers/stk_dio_braces.png",
+        "imageUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_braces.png",
+        "iconUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_braces.png",
+        "referenceImages": [],
+        "requires_gold": false,
+        "requiresGold": false,
+        "is_gold": false,
+        "isGold": false,
+        "unlocked": true,
+        "is_unlocked": true,
+        "isUnlocked": true,
+        "free": true
+    },
+    {
+        "uid": "stk_dio_tatted",
+        "id": "stk_dio_tatted",
+        "name": "Tatted",
+        "prompt": "Tatted",
+        "productUrl": null,
+        "colors": [
+            "#111827",
+            "#6B7280"
+        ],
+        "captureButtonColors": [
+            "#111827",
+            "#6B7280"
+        ],
+        "icon": {
+            "url": "https://uplocket.io.vn/uploads/stickers/stk_dio_tatted.png",
+            "sfSymbol": "sparkles"
+        },
+        "textColor": "#FFFFFF",
+        "style": "cutout",
+        "overlay": true,
+        "overlayImageUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_tatted.png",
+        "overlayImageURL": "https://uplocket.io.vn/uploads/stickers/stk_dio_tatted.png",
+        "imageUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_tatted.png",
+        "iconUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_tatted.png",
+        "referenceImages": [],
+        "requires_gold": false,
+        "requiresGold": false,
+        "is_gold": false,
+        "isGold": false,
+        "unlocked": true,
+        "is_unlocked": true,
+        "isUnlocked": true,
+        "free": true
+    },
+    {
+        "uid": "stk_dio_bearded",
+        "id": "stk_dio_bearded",
+        "name": "Beard",
+        "prompt": "Beard",
+        "productUrl": null,
+        "colors": [
+            "#78350F",
+            "#D6A36A"
+        ],
+        "captureButtonColors": [
+            "#78350F",
+            "#D6A36A"
+        ],
+        "icon": {
+            "url": "https://uplocket.io.vn/uploads/stickers/stk_dio_bearded.png",
+            "sfSymbol": "sparkles"
+        },
+        "textColor": "#FFFFFF",
+        "style": "cutout",
+        "overlay": true,
+        "overlayImageUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_bearded.png",
+        "overlayImageURL": "https://uplocket.io.vn/uploads/stickers/stk_dio_bearded.png",
+        "imageUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_bearded.png",
+        "iconUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_bearded.png",
+        "referenceImages": [],
+        "requires_gold": false,
+        "requiresGold": false,
+        "is_gold": false,
+        "isGold": false,
+        "unlocked": true,
+        "is_unlocked": true,
+        "isUnlocked": true,
+        "free": true
+    },
+    {
+        "uid": "stk_dio_buns",
+        "id": "stk_dio_buns",
+        "name": "Buns",
+        "prompt": "Buns",
+        "productUrl": null,
+        "colors": [
+            "#F472B6",
+            "#FBCFE8"
+        ],
+        "captureButtonColors": [
+            "#F472B6",
+            "#FBCFE8"
+        ],
+        "icon": {
+            "url": "https://uplocket.io.vn/uploads/stickers/stk_dio_buns.png",
+            "sfSymbol": "sparkles"
+        },
+        "textColor": "#FFFFFF",
+        "style": "cutout",
+        "overlay": true,
+        "overlayImageUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_buns.png",
+        "overlayImageURL": "https://uplocket.io.vn/uploads/stickers/stk_dio_buns.png",
+        "imageUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_buns.png",
+        "iconUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_buns.png",
+        "referenceImages": [],
+        "requires_gold": false,
+        "requiresGold": false,
+        "is_gold": false,
+        "isGold": false,
+        "unlocked": true,
+        "is_unlocked": true,
+        "isUnlocked": true,
+        "free": true
+    },
+    {
+        "uid": "stk_dio_mohawk",
+        "id": "stk_dio_mohawk",
+        "name": "Mohawk",
+        "prompt": "Mohawk",
+        "productUrl": null,
+        "colors": [
+            "#EF4444",
+            "#FCA5A5"
+        ],
+        "captureButtonColors": [
+            "#EF4444",
+            "#FCA5A5"
+        ],
+        "icon": {
+            "url": "https://uplocket.io.vn/uploads/stickers/stk_dio_mohawk.png",
+            "sfSymbol": "sparkles"
+        },
+        "textColor": "#FFFFFF",
+        "style": "cutout",
+        "overlay": true,
+        "overlayImageUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_mohawk.png",
+        "overlayImageURL": "https://uplocket.io.vn/uploads/stickers/stk_dio_mohawk.png",
+        "imageUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_mohawk.png",
+        "iconUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_mohawk.png",
+        "referenceImages": [],
+        "requires_gold": false,
+        "requiresGold": false,
+        "is_gold": false,
+        "isGold": false,
+        "unlocked": true,
+        "is_unlocked": true,
+        "isUnlocked": true,
+        "free": true
+    },
+    {
+        "uid": "stk_dio_bob",
+        "id": "stk_dio_bob",
+        "name": "Bob Cut",
+        "prompt": "Bob Cut",
+        "productUrl": null,
+        "colors": [
+            "#1F2937",
+            "#9CA3AF"
+        ],
+        "captureButtonColors": [
+            "#1F2937",
+            "#9CA3AF"
+        ],
+        "icon": {
+            "url": "https://uplocket.io.vn/uploads/stickers/stk_dio_bob.png",
+            "sfSymbol": "sparkles"
+        },
+        "textColor": "#FFFFFF",
+        "style": "cutout",
+        "overlay": true,
+        "overlayImageUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_bob.png",
+        "overlayImageURL": "https://uplocket.io.vn/uploads/stickers/stk_dio_bob.png",
+        "imageUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_bob.png",
+        "iconUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_bob.png",
+        "referenceImages": [],
+        "requires_gold": false,
+        "requiresGold": false,
+        "is_gold": false,
+        "isGold": false,
+        "unlocked": true,
+        "is_unlocked": true,
+        "isUnlocked": true,
+        "free": true
+    },
+    {
+        "uid": "stk_dio_bowling_ball",
+        "id": "stk_dio_bowling_ball",
+        "name": "Bowling Ball",
+        "prompt": "Bowling Ball",
+        "productUrl": null,
+        "colors": [
+            "#111827",
+            "#4B5563"
+        ],
+        "captureButtonColors": [
+            "#111827",
+            "#4B5563"
+        ],
+        "icon": {
+            "url": "https://uplocket.io.vn/uploads/stickers/stk_dio_bowling_ball.png",
+            "sfSymbol": "sparkles"
+        },
+        "textColor": "#FFFFFF",
+        "style": "cutout",
+        "overlay": true,
+        "overlayImageUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_bowling_ball.png",
+        "overlayImageURL": "https://uplocket.io.vn/uploads/stickers/stk_dio_bowling_ball.png",
+        "imageUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_bowling_ball.png",
+        "iconUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_bowling_ball.png",
+        "referenceImages": [],
+        "requires_gold": false,
+        "requiresGold": false,
+        "is_gold": false,
+        "isGold": false,
+        "unlocked": true,
+        "is_unlocked": true,
+        "isUnlocked": true,
+        "free": true
+    },
+    {
+        "uid": "stk_dio_bleached_hair",
+        "id": "stk_dio_bleached_hair",
+        "name": "Blond & Bleached",
+        "prompt": "Blond & Bleached",
+        "productUrl": null,
+        "colors": [
+            "#FACC15",
+            "#FEF3C7"
+        ],
+        "captureButtonColors": [
+            "#FACC15",
+            "#FEF3C7"
+        ],
+        "icon": {
+            "url": "https://uplocket.io.vn/uploads/stickers/stk_dio_bleached_hair.png",
+            "sfSymbol": "sparkles"
+        },
+        "textColor": "#FFFFFF",
+        "style": "cutout",
+        "overlay": true,
+        "overlayImageUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_bleached_hair.png",
+        "overlayImageURL": "https://uplocket.io.vn/uploads/stickers/stk_dio_bleached_hair.png",
+        "imageUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_bleached_hair.png",
+        "iconUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_bleached_hair.png",
+        "referenceImages": [],
+        "requires_gold": false,
+        "requiresGold": false,
+        "is_gold": false,
+        "isGold": false,
+        "unlocked": true,
+        "is_unlocked": true,
+        "isUnlocked": true,
+        "free": true
+    },
+    {
+        "uid": "stk_dio_princess",
+        "id": "stk_dio_princess",
+        "name": "Princess",
+        "prompt": "Princess",
+        "productUrl": null,
+        "colors": [
+            "#F472B6",
+            "#FDE68A"
+        ],
+        "captureButtonColors": [
+            "#F472B6",
+            "#FDE68A"
+        ],
+        "icon": {
+            "url": "https://uplocket.io.vn/uploads/stickers/stk_dio_princess.png",
+            "sfSymbol": "sparkles"
+        },
+        "textColor": "#FFFFFF",
+        "style": "cutout",
+        "overlay": true,
+        "overlayImageUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_princess.png",
+        "overlayImageURL": "https://uplocket.io.vn/uploads/stickers/stk_dio_princess.png",
+        "imageUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_princess.png",
+        "iconUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_princess.png",
+        "referenceImages": [],
+        "requires_gold": false,
+        "requiresGold": false,
+        "is_gold": false,
+        "isGold": false,
+        "unlocked": true,
+        "is_unlocked": true,
+        "isUnlocked": true,
+        "free": true
+    },
+    {
+        "uid": "stk_dio_cash",
+        "id": "stk_dio_cash",
+        "name": "Ca$h Money",
+        "prompt": "Ca$h Money",
+        "productUrl": null,
+        "colors": [
+            "#22C55E",
+            "#BBF7D0"
+        ],
+        "captureButtonColors": [
+            "#22C55E",
+            "#BBF7D0"
+        ],
+        "icon": {
+            "url": "https://uplocket.io.vn/uploads/stickers/stk_dio_cash.png",
+            "sfSymbol": "sparkles"
+        },
+        "textColor": "#FFFFFF",
+        "style": "cutout",
+        "overlay": true,
+        "overlayImageUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_cash.png",
+        "overlayImageURL": "https://uplocket.io.vn/uploads/stickers/stk_dio_cash.png",
+        "imageUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_cash.png",
+        "iconUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_cash.png",
+        "referenceImages": [],
+        "requires_gold": false,
+        "requiresGold": false,
+        "is_gold": false,
+        "isGold": false,
+        "unlocked": true,
+        "is_unlocked": true,
+        "isUnlocked": true,
+        "free": true
+    },
+    {
+        "uid": "stk_dio_slimed",
+        "id": "stk_dio_slimed",
+        "name": "Slimed",
+        "prompt": "Slimed",
+        "productUrl": null,
+        "colors": [
+            "#84CC16",
+            "#D9F99D"
+        ],
+        "captureButtonColors": [
+            "#84CC16",
+            "#D9F99D"
+        ],
+        "icon": {
+            "url": "https://uplocket.io.vn/uploads/stickers/stk_dio_slimed.png",
+            "sfSymbol": "sparkles"
+        },
+        "textColor": "#FFFFFF",
+        "style": "cutout",
+        "overlay": true,
+        "overlayImageUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_slimed.png",
+        "overlayImageURL": "https://uplocket.io.vn/uploads/stickers/stk_dio_slimed.png",
+        "imageUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_slimed.png",
+        "iconUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_slimed.png",
+        "referenceImages": [],
+        "requires_gold": false,
+        "requiresGold": false,
+        "is_gold": false,
+        "isGold": false,
+        "unlocked": true,
+        "is_unlocked": true,
+        "isUnlocked": true,
+        "free": true
+    },
+    {
+        "uid": "stk_dio_happy_birthday",
+        "id": "stk_dio_happy_birthday",
+        "name": "Happy Birthday",
+        "prompt": "Happy Birthday",
+        "productUrl": null,
+        "colors": [
+            "#F97316",
+            "#FDE68A"
+        ],
+        "captureButtonColors": [
+            "#F97316",
+            "#FDE68A"
+        ],
+        "icon": {
+            "url": "https://uplocket.io.vn/uploads/stickers/stk_dio_happy_birthday.png",
+            "sfSymbol": "sparkles"
+        },
+        "textColor": "#FFFFFF",
+        "style": "cutout",
+        "overlay": true,
+        "overlayImageUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_happy_birthday.png",
+        "overlayImageURL": "https://uplocket.io.vn/uploads/stickers/stk_dio_happy_birthday.png",
+        "imageUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_happy_birthday.png",
+        "iconUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_happy_birthday.png",
+        "referenceImages": [],
+        "requires_gold": false,
+        "requiresGold": false,
+        "is_gold": false,
+        "isGold": false,
+        "unlocked": true,
+        "is_unlocked": true,
+        "isUnlocked": true,
+        "free": true
+    },
+    {
+        "uid": "stk_dio_disco",
+        "id": "stk_dio_disco",
+        "name": "Disco",
+        "prompt": "Disco",
+        "productUrl": null,
+        "colors": [
+            "#8B5CF6",
+            "#C4B5FD"
+        ],
+        "captureButtonColors": [
+            "#8B5CF6",
+            "#C4B5FD"
+        ],
+        "icon": {
+            "url": "https://uplocket.io.vn/uploads/stickers/stk_dio_disco.png",
+            "sfSymbol": "sparkles"
+        },
+        "textColor": "#FFFFFF",
+        "style": "cutout",
+        "overlay": true,
+        "overlayImageUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_disco.png",
+        "overlayImageURL": "https://uplocket.io.vn/uploads/stickers/stk_dio_disco.png",
+        "imageUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_disco.png",
+        "iconUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_disco.png",
+        "referenceImages": [],
+        "requires_gold": false,
+        "requiresGold": false,
+        "is_gold": false,
+        "isGold": false,
+        "unlocked": true,
+        "is_unlocked": true,
+        "isUnlocked": true,
+        "free": true
+    },
+    {
+        "uid": "stk_dio_flower_crown",
+        "id": "stk_dio_flower_crown",
+        "name": "Flower Crown",
+        "prompt": "Flower Crown",
+        "productUrl": null,
+        "colors": [
+            "#FB7185",
+            "#BBF7D0"
+        ],
+        "captureButtonColors": [
+            "#FB7185",
+            "#BBF7D0"
+        ],
+        "icon": {
+            "url": "https://uplocket.io.vn/uploads/stickers/stk_dio_flower_crown.png",
+            "sfSymbol": "sparkles"
+        },
+        "textColor": "#FFFFFF",
+        "style": "cutout",
+        "overlay": true,
+        "overlayImageUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_flower_crown.png",
+        "overlayImageURL": "https://uplocket.io.vn/uploads/stickers/stk_dio_flower_crown.png",
+        "imageUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_flower_crown.png",
+        "iconUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_flower_crown.png",
+        "referenceImages": [],
+        "requires_gold": false,
+        "requiresGold": false,
+        "is_gold": false,
+        "isGold": false,
+        "unlocked": true,
+        "is_unlocked": true,
+        "isUnlocked": true,
+        "free": true
+    },
+    {
+        "uid": "stk_dio_cutesy",
+        "id": "stk_dio_cutesy",
+        "name": "Cutesy",
+        "prompt": "Cutesy",
+        "productUrl": null,
+        "colors": [
+            "#F9A8D4",
+            "#FCE7F3"
+        ],
+        "captureButtonColors": [
+            "#F9A8D4",
+            "#FCE7F3"
+        ],
+        "icon": {
+            "url": "https://uplocket.io.vn/uploads/stickers/stk_dio_cutesy.png",
+            "sfSymbol": "sparkles"
+        },
+        "textColor": "#FFFFFF",
+        "style": "cutout",
+        "overlay": true,
+        "overlayImageUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_cutesy.png",
+        "overlayImageURL": "https://uplocket.io.vn/uploads/stickers/stk_dio_cutesy.png",
+        "imageUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_cutesy.png",
+        "iconUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_cutesy.png",
+        "referenceImages": [],
+        "requires_gold": false,
+        "requiresGold": false,
+        "is_gold": false,
+        "isGold": false,
+        "unlocked": true,
+        "is_unlocked": true,
+        "isUnlocked": true,
+        "free": true
+    },
+    {
+        "uid": "stk_dio_sticker_face",
+        "id": "stk_dio_sticker_face",
+        "name": "Sticker Face",
+        "prompt": "Sticker Face",
+        "productUrl": null,
+        "colors": [
+            "#FBBF24",
+            "#FDE68A"
+        ],
+        "captureButtonColors": [
+            "#FBBF24",
+            "#FDE68A"
+        ],
+        "icon": {
+            "url": "https://uplocket.io.vn/uploads/stickers/stk_dio_sticker_face.png",
+            "sfSymbol": "sparkles"
+        },
+        "textColor": "#FFFFFF",
+        "style": "cutout",
+        "overlay": true,
+        "overlayImageUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_sticker_face.png",
+        "overlayImageURL": "https://uplocket.io.vn/uploads/stickers/stk_dio_sticker_face.png",
+        "imageUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_sticker_face.png",
+        "iconUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_sticker_face.png",
+        "referenceImages": [],
+        "requires_gold": false,
+        "requiresGold": false,
+        "is_gold": false,
+        "isGold": false,
+        "unlocked": true,
+        "is_unlocked": true,
+        "isUnlocked": true,
+        "free": true
+    },
+    {
+        "uid": "stk_dio_love_bug",
+        "id": "stk_dio_love_bug",
+        "name": "Love Bug",
+        "prompt": "Love Bug",
+        "productUrl": null,
+        "colors": [
+            "#F43F5E",
+            "#FECDD3"
+        ],
+        "captureButtonColors": [
+            "#F43F5E",
+            "#FECDD3"
+        ],
+        "icon": {
+            "url": "https://uplocket.io.vn/uploads/stickers/stk_dio_love_bug.png",
+            "sfSymbol": "sparkles"
+        },
+        "textColor": "#FFFFFF",
+        "style": "cutout",
+        "overlay": true,
+        "overlayImageUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_love_bug.png",
+        "overlayImageURL": "https://uplocket.io.vn/uploads/stickers/stk_dio_love_bug.png",
+        "imageUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_love_bug.png",
+        "iconUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_love_bug.png",
+        "referenceImages": [],
+        "requires_gold": false,
+        "requiresGold": false,
+        "is_gold": false,
+        "isGold": false,
+        "unlocked": true,
+        "is_unlocked": true,
+        "isUnlocked": true,
+        "free": true
+    },
+    {
+        "uid": "stk_dio_cowboy",
+        "id": "stk_dio_cowboy",
+        "name": "Cowboy & Cowgirl",
+        "prompt": "Cowboy & Cowgirl",
+        "productUrl": null,
+        "colors": [
+            "#B45309",
+            "#FDE68A"
+        ],
+        "captureButtonColors": [
+            "#B45309",
+            "#FDE68A"
+        ],
+        "icon": {
+            "url": "https://uplocket.io.vn/uploads/stickers/stk_dio_cowboy.png",
+            "sfSymbol": "sparkles"
+        },
+        "textColor": "#FFFFFF",
+        "style": "cutout",
+        "overlay": true,
+        "overlayImageUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_cowboy.png",
+        "overlayImageURL": "https://uplocket.io.vn/uploads/stickers/stk_dio_cowboy.png",
+        "imageUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_cowboy.png",
+        "iconUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_cowboy.png",
+        "referenceImages": [],
+        "requires_gold": false,
+        "requiresGold": false,
+        "is_gold": false,
+        "isGold": false,
+        "unlocked": true,
+        "is_unlocked": true,
+        "isUnlocked": true,
+        "free": true
+    },
+    {
+        "uid": "stk_dio_giraffe",
+        "id": "stk_dio_giraffe",
+        "name": "Giraffe",
+        "prompt": "Giraffe",
+        "productUrl": null,
+        "colors": [
+            "#D97706",
+            "#FDE68A"
+        ],
+        "captureButtonColors": [
+            "#D97706",
+            "#FDE68A"
+        ],
+        "icon": {
+            "url": "https://uplocket.io.vn/uploads/stickers/stk_dio_giraffe.png",
+            "sfSymbol": "sparkles"
+        },
+        "textColor": "#FFFFFF",
+        "style": "cutout",
+        "overlay": true,
+        "overlayImageUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_giraffe.png",
+        "overlayImageURL": "https://uplocket.io.vn/uploads/stickers/stk_dio_giraffe.png",
+        "imageUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_giraffe.png",
+        "iconUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_giraffe.png",
+        "referenceImages": [],
+        "requires_gold": false,
+        "requiresGold": false,
+        "is_gold": false,
+        "isGold": false,
+        "unlocked": true,
+        "is_unlocked": true,
+        "isUnlocked": true,
+        "free": true
+    },
+    {
+        "uid": "stk_dio_wedding",
+        "id": "stk_dio_wedding",
+        "name": "Wedding",
+        "prompt": "Wedding",
+        "productUrl": null,
+        "colors": [
+            "#F8FAFC",
+            "#E2E8F0"
+        ],
+        "captureButtonColors": [
+            "#F8FAFC",
+            "#E2E8F0"
+        ],
+        "icon": {
+            "url": "https://uplocket.io.vn/uploads/stickers/stk_dio_wedding.png",
+            "sfSymbol": "sparkles"
+        },
+        "textColor": "#FFFFFF",
+        "style": "cutout",
+        "overlay": true,
+        "overlayImageUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_wedding.png",
+        "overlayImageURL": "https://uplocket.io.vn/uploads/stickers/stk_dio_wedding.png",
+        "imageUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_wedding.png",
+        "iconUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_wedding.png",
+        "referenceImages": [],
+        "requires_gold": false,
+        "requiresGold": false,
+        "is_gold": false,
+        "isGold": false,
+        "unlocked": true,
+        "is_unlocked": true,
+        "isUnlocked": true,
+        "free": true
+    },
+    {
+        "uid": "stk_dio_clown",
+        "id": "stk_dio_clown",
+        "name": "Clown",
+        "prompt": "Clown",
+        "productUrl": null,
+        "colors": [
+            "#EF4444",
+            "#FDE68A"
+        ],
+        "captureButtonColors": [
+            "#EF4444",
+            "#FDE68A"
+        ],
+        "icon": {
+            "url": "https://uplocket.io.vn/uploads/stickers/stk_dio_clown.png",
+            "sfSymbol": "sparkles"
+        },
+        "textColor": "#FFFFFF",
+        "style": "cutout",
+        "overlay": true,
+        "overlayImageUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_clown.png",
+        "overlayImageURL": "https://uplocket.io.vn/uploads/stickers/stk_dio_clown.png",
+        "imageUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_clown.png",
+        "iconUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_clown.png",
+        "referenceImages": [],
+        "requires_gold": false,
+        "requiresGold": false,
+        "is_gold": false,
+        "isGold": false,
+        "unlocked": true,
+        "is_unlocked": true,
+        "isUnlocked": true,
+        "free": true
+    },
+    {
+        "uid": "stk_dio_sweat_hearts",
+        "id": "stk_dio_sweat_hearts",
+        "name": "Sweet Hearts",
+        "prompt": "Sweet Hearts",
+        "productUrl": null,
+        "colors": [
+            "#FB7185",
+            "#FCE7F3"
+        ],
+        "captureButtonColors": [
+            "#FB7185",
+            "#FCE7F3"
+        ],
+        "icon": {
+            "url": "https://uplocket.io.vn/uploads/stickers/stk_dio_sweat_hearts.png",
+            "sfSymbol": "sparkles"
+        },
+        "textColor": "#FFFFFF",
+        "style": "cutout",
+        "overlay": true,
+        "overlayImageUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_sweat_hearts.png",
+        "overlayImageURL": "https://uplocket.io.vn/uploads/stickers/stk_dio_sweat_hearts.png",
+        "imageUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_sweat_hearts.png",
+        "iconUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_sweat_hearts.png",
+        "referenceImages": [],
+        "requires_gold": false,
+        "requiresGold": false,
+        "is_gold": false,
+        "isGold": false,
+        "unlocked": true,
+        "is_unlocked": true,
+        "isUnlocked": true,
+        "free": true
+    },
+    {
+        "uid": "stk_dio_bearded_holiday",
+        "id": "stk_dio_bearded_holiday",
+        "name": "Bearded",
+        "prompt": "Bearded",
+        "productUrl": null,
+        "colors": [
+            "#78350F",
+            "#D6A36A"
+        ],
+        "captureButtonColors": [
+            "#78350F",
+            "#D6A36A"
+        ],
+        "icon": {
+            "url": "https://uplocket.io.vn/uploads/stickers/stk_dio_bearded.png",
+            "sfSymbol": "sparkles"
+        },
+        "textColor": "#FFFFFF",
+        "style": "cutout",
+        "overlay": true,
+        "overlayImageUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_bearded.png",
+        "overlayImageURL": "https://uplocket.io.vn/uploads/stickers/stk_dio_bearded.png",
+        "imageUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_bearded.png",
+        "iconUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_bearded.png",
+        "referenceImages": [],
+        "requires_gold": false,
+        "requiresGold": false,
+        "is_gold": false,
+        "isGold": false,
+        "unlocked": true,
+        "is_unlocked": true,
+        "isUnlocked": true,
+        "free": true
+    },
+    {
+        "uid": "stk_dio_frosty",
+        "id": "stk_dio_frosty",
+        "name": "Frosty",
+        "prompt": "Frosty",
+        "productUrl": null,
+        "colors": [
+            "#38BDF8",
+            "#E0F2FE"
+        ],
+        "captureButtonColors": [
+            "#38BDF8",
+            "#E0F2FE"
+        ],
+        "icon": {
+            "url": "https://uplocket.io.vn/uploads/stickers/stk_dio_frosty.png",
+            "sfSymbol": "sparkles"
+        },
+        "textColor": "#FFFFFF",
+        "style": "cutout",
+        "overlay": true,
+        "overlayImageUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_frosty.png",
+        "overlayImageURL": "https://uplocket.io.vn/uploads/stickers/stk_dio_frosty.png",
+        "imageUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_frosty.png",
+        "iconUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_frosty.png",
+        "referenceImages": [],
+        "requires_gold": false,
+        "requiresGold": false,
+        "is_gold": false,
+        "isGold": false,
+        "unlocked": true,
+        "is_unlocked": true,
+        "isUnlocked": true,
+        "free": true
+    },
+    {
+        "uid": "stk_dio_elf",
+        "id": "stk_dio_elf",
+        "name": "Elf",
+        "prompt": "Elf",
+        "productUrl": null,
+        "colors": [
+            "#16A34A",
+            "#FACC15"
+        ],
+        "captureButtonColors": [
+            "#16A34A",
+            "#FACC15"
+        ],
+        "icon": {
+            "url": "https://uplocket.io.vn/uploads/stickers/stk_dio_elf.png",
+            "sfSymbol": "sparkles"
+        },
+        "textColor": "#FFFFFF",
+        "style": "cutout",
+        "overlay": true,
+        "overlayImageUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_elf.png",
+        "overlayImageURL": "https://uplocket.io.vn/uploads/stickers/stk_dio_elf.png",
+        "imageUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_elf.png",
+        "iconUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_elf.png",
+        "referenceImages": [],
+        "requires_gold": false,
+        "requiresGold": false,
+        "is_gold": false,
+        "isGold": false,
+        "unlocked": true,
+        "is_unlocked": true,
+        "isUnlocked": true,
+        "free": true
+    },
+    {
+        "uid": "stk_dio_santa",
+        "id": "stk_dio_santa",
+        "name": "Santa",
+        "prompt": "Santa",
+        "productUrl": null,
+        "colors": [
+            "#DC2626",
+            "#F8FAFC"
+        ],
+        "captureButtonColors": [
+            "#DC2626",
+            "#F8FAFC"
+        ],
+        "icon": {
+            "url": "https://uplocket.io.vn/uploads/stickers/stk_dio_santa.png",
+            "sfSymbol": "sparkles"
+        },
+        "textColor": "#FFFFFF",
+        "style": "cutout",
+        "overlay": true,
+        "overlayImageUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_santa.png",
+        "overlayImageURL": "https://uplocket.io.vn/uploads/stickers/stk_dio_santa.png",
+        "imageUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_santa.png",
+        "iconUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_santa.png",
+        "referenceImages": [],
+        "requires_gold": false,
+        "requiresGold": false,
+        "is_gold": false,
+        "isGold": false,
+        "unlocked": true,
+        "is_unlocked": true,
+        "isUnlocked": true,
+        "free": true
+    },
+    {
+        "uid": "stk_dio_easter_bunny",
+        "id": "stk_dio_easter_bunny",
+        "name": "Easter Bunny",
+        "prompt": "Easter Bunny",
+        "productUrl": null,
+        "colors": [
+            "#F9A8D4",
+            "#E9D5FF"
+        ],
+        "captureButtonColors": [
+            "#F9A8D4",
+            "#E9D5FF"
+        ],
+        "icon": {
+            "url": "https://uplocket.io.vn/uploads/stickers/stk_dio_easter_bunny.png",
+            "sfSymbol": "sparkles"
+        },
+        "textColor": "#FFFFFF",
+        "style": "cutout",
+        "overlay": true,
+        "overlayImageUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_easter_bunny.png",
+        "overlayImageURL": "https://uplocket.io.vn/uploads/stickers/stk_dio_easter_bunny.png",
+        "imageUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_easter_bunny.png",
+        "iconUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_easter_bunny.png",
+        "referenceImages": [],
+        "requires_gold": false,
+        "requiresGold": false,
+        "is_gold": false,
+        "isGold": false,
+        "unlocked": true,
+        "is_unlocked": true,
+        "isUnlocked": true,
+        "free": true
+    },
+    {
+        "uid": "stk_dio_leprechaun",
+        "id": "stk_dio_leprechaun",
+        "name": "Leprechaun",
+        "prompt": "Leprechaun",
+        "productUrl": null,
+        "colors": [
+            "#15803D",
+            "#FACC15"
+        ],
+        "captureButtonColors": [
+            "#15803D",
+            "#FACC15"
+        ],
+        "icon": {
+            "url": "https://uplocket.io.vn/uploads/stickers/stk_dio_leprechaun.png",
+            "sfSymbol": "sparkles"
+        },
+        "textColor": "#FFFFFF",
+        "style": "cutout",
+        "overlay": true,
+        "overlayImageUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_leprechaun.png",
+        "overlayImageURL": "https://uplocket.io.vn/uploads/stickers/stk_dio_leprechaun.png",
+        "imageUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_leprechaun.png",
+        "iconUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_leprechaun.png",
+        "referenceImages": [],
+        "requires_gold": false,
+        "requiresGold": false,
+        "is_gold": false,
+        "isGold": false,
+        "unlocked": true,
+        "is_unlocked": true,
+        "isUnlocked": true,
+        "free": true
+    },
+    {
+        "uid": "stk_dio_easter_chick",
+        "id": "stk_dio_easter_chick",
+        "name": "Easter Chick",
+        "prompt": "Easter Chick",
+        "productUrl": null,
+        "colors": [
+            "#FACC15",
+            "#FDE68A"
+        ],
+        "captureButtonColors": [
+            "#FACC15",
+            "#FDE68A"
+        ],
+        "icon": {
+            "url": "https://uplocket.io.vn/uploads/stickers/stk_dio_easter_chick.png",
+            "sfSymbol": "sparkles"
+        },
+        "textColor": "#FFFFFF",
+        "style": "cutout",
+        "overlay": true,
+        "overlayImageUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_easter_chick.png",
+        "overlayImageURL": "https://uplocket.io.vn/uploads/stickers/stk_dio_easter_chick.png",
+        "imageUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_easter_chick.png",
+        "iconUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_easter_chick.png",
+        "referenceImages": [],
+        "requires_gold": false,
+        "requiresGold": false,
+        "is_gold": false,
+        "isGold": false,
+        "unlocked": true,
+        "is_unlocked": true,
+        "isUnlocked": true,
+        "free": true
+    },
+    {
+        "uid": "stk_dio_lucky_face",
+        "id": "stk_dio_lucky_face",
+        "name": "Lucky Face",
+        "prompt": "Lucky Face",
+        "productUrl": null,
+        "colors": [
+            "#22C55E",
+            "#BBF7D0"
+        ],
+        "captureButtonColors": [
+            "#22C55E",
+            "#BBF7D0"
+        ],
+        "icon": {
+            "url": "https://uplocket.io.vn/uploads/stickers/stk_dio_lucky_face.png",
+            "sfSymbol": "sparkles"
+        },
+        "textColor": "#FFFFFF",
+        "style": "cutout",
+        "overlay": true,
+        "overlayImageUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_lucky_face.png",
+        "overlayImageURL": "https://uplocket.io.vn/uploads/stickers/stk_dio_lucky_face.png",
+        "imageUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_lucky_face.png",
+        "iconUrl": "https://uplocket.io.vn/uploads/stickers/stk_dio_lucky_face.png",
+        "referenceImages": [],
+        "requires_gold": false,
+        "requiresGold": false,
+        "is_gold": false,
+        "isGold": false,
+        "unlocked": true,
+        "is_unlocked": true,
+        "isUnlocked": true,
+        "free": true
+    }
 ];
 
     var customFilterGroups = [
-        {
-                "id": "group_photobooth",
-                "title": {
-                        "en": "📸 Photobooth",
-                        "vi": "📸 Photobooth"
-                },
-                "name": {
-                        "en": "📸 Photobooth",
-                        "vi": "📸 Photobooth"
-                },
-                "filter_ids": [
-                        "photobooth_berry_days",
-                        "photobooth_happy_snap",
-                        "photobooth_sky_diary",
-                        "photobooth_4cut",
-                        "photobooth_cute",
-                        "photoboot"
-                ],
-                "filterIds": [
-                        "photobooth_berry_days",
-                        "photobooth_happy_snap",
-                        "photobooth_sky_diary",
-                        "photobooth_4cut",
-                        "photobooth_cute",
-                        "photoboot"
-                ],
-                "requires_gold": false,
-                "requiresGold": false,
-                "is_gold": false,
-                "isGold": false,
-                "unlocked": true,
-                "is_unlocked": true,
-                "isUnlocked": true,
-                "free": true
+    {
+        "id": "group_photobooth",
+        "title": {
+            "en": "📸 Khung & Photobooth",
+            "vi": "📸 Khung & Photobooth"
         },
-        {
-                "id": "group_khung",
-                "title": {
-                        "en": "🖼️ Khung Viền",
-                        "vi": "🖼️ Khung Viền"
-                },
-                "name": {
-                        "en": "🖼️ Khung Viền",
-                        "vi": "🖼️ Khung Viền"
-                },
-                "filter_ids": [
-                        "khung_hello_kitty_pastel_ng_t_ng_o",
-                        "khung_hello_kitty_h_ng_pastel",
-                        "khung_nh_hoa_pastel_vi_n_xanh_m_nh",
-                        "khung_nh_vu_ng_m_ng_nh_n_b_c",
-                        "khung_kh_ng_gian_xanh_pastel",
-                        "khung_vu_ng_ng_i_sao_h_ng_pastel",
-                        "khung_nh_pastel_vi_n_s_h_i_c_u",
-                        "khung_nh_shin_chan_vi_n_m_nh",
-                        "khung_anh_o_kitty_v_sao",
-                        "khung_xanh_v_tay_sao_v_ng",
-                        "sinh_nh_t_hello_kitty_ho_i_c",
-                        "khung_nh_n_pastel_vi_n_ren"
-                ],
-                "filterIds": [
-                        "khung_hello_kitty_pastel_ng_t_ng_o",
-                        "khung_hello_kitty_h_ng_pastel",
-                        "khung_nh_hoa_pastel_vi_n_xanh_m_nh",
-                        "khung_nh_vu_ng_m_ng_nh_n_b_c",
-                        "khung_kh_ng_gian_xanh_pastel",
-                        "khung_vu_ng_ng_i_sao_h_ng_pastel",
-                        "khung_nh_pastel_vi_n_s_h_i_c_u",
-                        "khung_nh_shin_chan_vi_n_m_nh",
-                        "khung_anh_o_kitty_v_sao",
-                        "khung_xanh_v_tay_sao_v_ng",
-                        "sinh_nh_t_hello_kitty_ho_i_c",
-                        "khung_nh_n_pastel_vi_n_ren"
-                ],
-                "requires_gold": false,
-                "requiresGold": false,
-                "is_gold": false,
-                "isGold": false,
-                "unlocked": true,
-                "is_unlocked": true,
-                "isUnlocked": true,
-                "free": true
+        "name": {
+            "en": "📸 Khung & Photobooth",
+            "vi": "📸 Khung & Photobooth"
         },
-        {
-                "id": "group_tiktok",
-                "title": {
-                        "en": "💬 TikTok & Trend",
-                        "vi": "💬 TikTok & Trend"
-                },
-                "name": {
-                        "en": "💬 TikTok & Trend",
-                        "vi": "💬 TikTok & Trend"
-                },
-                "filter_ids": [
-                        "sticker_b_nh_lu_n_minh_tu",
-                        "cmt_locket"
-                ],
-                "filterIds": [
-                        "sticker_b_nh_lu_n_minh_tu",
-                        "cmt_locket"
-                ],
-                "requires_gold": false,
-                "requiresGold": false,
-                "is_gold": false,
-                "isGold": false,
-                "unlocked": true,
-                "is_unlocked": true,
-                "isUnlocked": true,
-                "free": true
+        "filter_ids": [
+            "photobooth_xmas_wreath",
+            "photobooth_golden_royal",
+            "photobooth_gingerbread_candy",
+            "photobooth_snowman_xmas",
+            "photobooth_frozen_winter",
+            "photobooth_violet_amethyst",
+            "photobooth_pastel_pink",
+            "photobooth_vintage_travel",
+            "photobooth_dual_film",
+            "photobooth_elegant_strip",
+            "photobooth_retro_newsprint",
+            "photobooth_silver_stars",
+            "photobooth_modern_minimal",
+            "photobooth_brown_polka",
+            "photobooth_berry_days",
+            "photobooth_happy_snap",
+            "photobooth_sky_diary",
+            "photobooth_4cut",
+            "photobooth_cute",
+            "photoboot"
+        ],
+        "requires_gold": false,
+        "requiresGold": false,
+        "is_gold": false,
+        "isGold": false,
+        "unlocked": true,
+        "is_unlocked": true,
+        "isUnlocked": true,
+        "free": true,
+        "filterIds": [
+            "photobooth_xmas_wreath",
+            "photobooth_golden_royal",
+            "photobooth_gingerbread_candy",
+            "photobooth_snowman_xmas",
+            "photobooth_frozen_winter",
+            "photobooth_violet_amethyst",
+            "photobooth_pastel_pink",
+            "photobooth_vintage_travel",
+            "photobooth_dual_film",
+            "photobooth_elegant_strip",
+            "photobooth_retro_newsprint",
+            "photobooth_silver_stars",
+            "photobooth_modern_minimal",
+            "photobooth_brown_polka",
+            "photobooth_berry_days",
+            "photobooth_happy_snap",
+            "photobooth_sky_diary",
+            "photobooth_4cut",
+            "photobooth_cute",
+            "photoboot"
+        ]
+    },
+    {
+        "id": "group_khung",
+        "title": {
+            "en": "🖼️ Khung Viền",
+            "vi": "🖼️ Khung Viền"
         },
-        {
-                "id": "group_goofy",
-                "title": {
-                        "en": "🤪 Goofy",
-                        "vi": "🤪 Hài Hước"
-                },
-                "name": {
-                        "en": "🤪 Goofy",
-                        "vi": "🤪 Hài Hước"
-                },
-                "filter_ids": [
-                        "okay_wig",
-                        "influencer",
-                        "looks_maxxing",
-                        "toothless",
-                        "bye_brows"
-                ],
-                "filterIds": [
-                        "okay_wig",
-                        "influencer",
-                        "looks_maxxing",
-                        "toothless",
-                        "bye_brows"
-                ],
-                "requires_gold": false,
-                "requiresGold": false,
-                "is_gold": false,
-                "isGold": false,
-                "unlocked": true,
-                "is_unlocked": true,
-                "isUnlocked": true,
-                "free": true
+        "name": {
+            "en": "🖼️ Khung Viền",
+            "vi": "🖼️ Khung Viền"
         },
-        {
-                "id": "group_looks",
-                "title": {
-                        "en": "💇 Looks",
-                        "vi": "💇 Ngoại Hình & Chỉnh Sửa"
-                },
-                "name": {
-                        "en": "💇 Looks",
-                        "vi": "💇 Ngoại Hình & Chỉnh Sửa"
-                },
-                "filter_ids": [
-                        "bowling_ball",
-                        "blonde_bleached",
-                        "beard",
-                        "bob_cut",
-                        "buns",
-                        "tatted",
-                        "mohawk",
-                        "braces",
-                        "bye_brows"
-                ],
-                "filterIds": [
-                        "bowling_ball",
-                        "blonde_bleached",
-                        "beard",
-                        "bob_cut",
-                        "buns",
-                        "tatted",
-                        "mohawk",
-                        "braces",
-                        "bye_brows"
-                ],
-                "requires_gold": false,
-                "requiresGold": false,
-                "is_gold": false,
-                "isGold": false,
-                "unlocked": true,
-                "is_unlocked": true,
-                "isUnlocked": true,
-                "free": true
+        "filter_ids": [
+            "khung_hello_kitty_pastel_ng_t_ng_o",
+            "khung_hello_kitty_h_ng_pastel",
+            "khung_nh_hoa_pastel_vi_n_xanh_m_nh",
+            "khung_nh_vu_ng_m_ng_nh_n_b_c",
+            "khung_kh_ng_gian_xanh_pastel",
+            "khung_vu_ng_ng_i_sao_h_ng_pastel",
+            "khung_nh_pastel_vi_n_s_h_i_c_u",
+            "khung_nh_shin_chan_vi_n_m_nh",
+            "khung_anh_o_kitty_v_sao",
+            "khung_xanh_v_tay_sao_v_ng",
+            "sinh_nh_t_hello_kitty_ho_i_c",
+            "khung_nh_n_pastel_vi_n_ren"
+        ],
+        "requires_gold": false,
+        "requiresGold": false,
+        "is_gold": false,
+        "isGold": false,
+        "unlocked": true,
+        "is_unlocked": true,
+        "isUnlocked": true,
+        "free": true,
+        "filterIds": [
+            "khung_hello_kitty_pastel_ng_t_ng_o",
+            "khung_hello_kitty_h_ng_pastel",
+            "khung_nh_hoa_pastel_vi_n_xanh_m_nh",
+            "khung_nh_vu_ng_m_ng_nh_n_b_c",
+            "khung_kh_ng_gian_xanh_pastel",
+            "khung_vu_ng_ng_i_sao_h_ng_pastel",
+            "khung_nh_pastel_vi_n_s_h_i_c_u",
+            "khung_nh_shin_chan_vi_n_m_nh",
+            "khung_anh_o_kitty_v_sao",
+            "khung_xanh_v_tay_sao_v_ng",
+            "sinh_nh_t_hello_kitty_ho_i_c",
+            "khung_nh_n_pastel_vi_n_ren"
+        ]
+    },
+    {
+        "id": "group_tiktok",
+        "title": {
+            "en": "💬 TikTok & Trend",
+            "vi": "💬 TikTok & Trend"
         },
-        {
-                "id": "group_celebrate",
-                "title": {
-                        "en": "🎉 Celebrate",
-                        "vi": "🎉 Tiệc Tùng"
-                },
-                "name": {
-                        "en": "🎉 Celebrate",
-                        "vi": "🎉 Tiệc Tùng"
-                },
-                "filter_ids": [
-                        "slimed",
-                        "princess",
-                        "disco_lights",
-                        "cash_money",
-                        "happy_birthday"
-                ],
-                "filterIds": [
-                        "slimed",
-                        "princess",
-                        "disco_lights",
-                        "cash_money",
-                        "happy_birthday"
-                ],
-                "requires_gold": false,
-                "requiresGold": false,
-                "is_gold": false,
-                "isGold": false,
-                "unlocked": true,
-                "is_unlocked": true,
-                "isUnlocked": true,
-                "free": true
+        "name": {
+            "en": "💬 TikTok & Trend",
+            "vi": "💬 TikTok & Trend"
         },
-        {
-                "id": "group_cute",
-                "title": {
-                        "en": "✨ Cute",
-                        "vi": "✨ Dễ Thương"
-                },
-                "name": {
-                        "en": "✨ Cute",
-                        "vi": "✨ Dễ Thương"
-                },
-                "filter_ids": [
-                        "cutesy",
-                        "sticker_face",
-                        "flower_crown",
-                        "love_bug"
-                ],
-                "filterIds": [
-                        "cutesy",
-                        "sticker_face",
-                        "flower_crown",
-                        "love_bug"
-                ],
-                "requires_gold": false,
-                "requiresGold": false,
-                "is_gold": false,
-                "isGold": false,
-                "unlocked": true,
-                "is_unlocked": true,
-                "isUnlocked": true,
-                "free": true
+        "filter_ids": [
+            "sticker_b_nh_lu_n_minh_tu",
+            "cmt_locket"
+        ],
+        "requires_gold": false,
+        "requiresGold": false,
+        "is_gold": false,
+        "isGold": false,
+        "unlocked": true,
+        "is_unlocked": true,
+        "isUnlocked": true,
+        "free": true,
+        "filterIds": [
+            "sticker_b_nh_lu_n_minh_tu",
+            "cmt_locket"
+        ]
+    },
+    {
+        "id": "group_event",
+        "title": {
+            "en": "✨ Sự Kiện",
+            "vi": "✨ Sự Kiện"
         },
-        {
-                "id": "group_costumes",
-                "title": {
-                        "en": "🎭 Costumes",
-                        "vi": "🎭 Hóa Trang"
-                },
-                "name": {
-                        "en": "🎭 Costumes",
-                        "vi": "🎭 Hóa Trang"
-                },
-                "filter_ids": [
-                        "wedding",
-                        "cowboy_cowgirl",
-                        "giraffe",
-                        "clown"
-                ],
-                "filterIds": [
-                        "wedding",
-                        "cowboy_cowgirl",
-                        "giraffe",
-                        "clown"
-                ],
-                "requires_gold": false,
-                "requiresGold": false,
-                "is_gold": false,
-                "isGold": false,
-                "unlocked": true,
-                "is_unlocked": true,
-                "isUnlocked": true,
-                "free": true
+        "name": {
+            "en": "✨ Sự Kiện",
+            "vi": "✨ Sự Kiện"
         },
-        {
-                "id": "group_holidays",
-                "title": {
-                        "en": "🎄 Holidays",
-                        "vi": "🎄 Lễ Hội"
-                },
-                "name": {
-                        "en": "🎄 Holidays",
-                        "vi": "🎄 Lễ Hội"
-                },
-                "filter_ids": [
-                        "easter_bunney_cutout",
-                        "easter_chick_cutout",
-                        "bearded",
-                        "leprechaun",
-                        "lucky_face",
-                        "sweet_hearts",
-                        "elf_cutout",
-                        "santa_cutout",
-                        "frosty"
-                ],
-                "filterIds": [
-                        "easter_bunney_cutout",
-                        "easter_chick_cutout",
-                        "bearded",
-                        "leprechaun",
-                        "lucky_face",
-                        "sweet_hearts",
-                        "elf_cutout",
-                        "santa_cutout",
-                        "frosty"
-                ],
-                "requires_gold": false,
-                "requiresGold": false,
-                "is_gold": false,
-                "isGold": false,
-                "unlocked": true,
-                "is_unlocked": true,
-                "isUnlocked": true,
-                "free": true
-        }
+        "filter_ids": [
+            "stk_dio_pm2"
+        ],
+        "requires_gold": false,
+        "requiresGold": false,
+        "is_gold": false,
+        "isGold": false,
+        "unlocked": true,
+        "is_unlocked": true,
+        "isUnlocked": true,
+        "free": true,
+        "filterIds": [
+            "stk_dio_pm2"
+        ]
+    },
+    {
+        "id": "group_goofy",
+        "title": {
+            "en": "🤪 Tinh Nghịch",
+            "vi": "🤪 Tinh Nghịch"
+        },
+        "name": {
+            "en": "🤪 Tinh Nghịch",
+            "vi": "🤪 Tinh Nghịch"
+        },
+        "filter_ids": [
+            "stk_dio_looksmaxing",
+            "stk_dio_influencer",
+            "stk_dio_toothless",
+            "stk_dio_orange_wig",
+            "okay_wig",
+            "influencer",
+            "looks_maxxing",
+            "toothless"
+        ],
+        "requires_gold": false,
+        "requiresGold": false,
+        "is_gold": false,
+        "isGold": false,
+        "unlocked": true,
+        "is_unlocked": true,
+        "isUnlocked": true,
+        "free": true,
+        "filterIds": [
+            "stk_dio_looksmaxing",
+            "stk_dio_influencer",
+            "stk_dio_toothless",
+            "stk_dio_orange_wig",
+            "okay_wig",
+            "influencer",
+            "looks_maxxing",
+            "toothless"
+        ]
+    },
+    {
+        "id": "group_appearance",
+        "title": {
+            "en": "💇 Ngoại Hình",
+            "vi": "💇 Ngoại Hình"
+        },
+        "name": {
+            "en": "💇 Ngoại Hình",
+            "vi": "💇 Ngoại Hình"
+        },
+        "filter_ids": [
+            "stk_dio_bye_brows",
+            "stk_dio_braces",
+            "stk_dio_tatted",
+            "stk_dio_bearded",
+            "stk_dio_buns",
+            "stk_dio_mohawk",
+            "stk_dio_bob",
+            "stk_dio_bowling_ball",
+            "stk_dio_bleached_hair",
+            "bye_brows",
+            "bowling_ball",
+            "blonde_bleached",
+            "beard",
+            "bob_cut",
+            "buns",
+            "tatted",
+            "mohawk",
+            "braces"
+        ],
+        "requires_gold": false,
+        "requiresGold": false,
+        "is_gold": false,
+        "isGold": false,
+        "unlocked": true,
+        "is_unlocked": true,
+        "isUnlocked": true,
+        "free": true,
+        "filterIds": [
+            "stk_dio_bye_brows",
+            "stk_dio_braces",
+            "stk_dio_tatted",
+            "stk_dio_bearded",
+            "stk_dio_buns",
+            "stk_dio_mohawk",
+            "stk_dio_bob",
+            "stk_dio_bowling_ball",
+            "stk_dio_bleached_hair",
+            "bye_brows",
+            "bowling_ball",
+            "blonde_bleached",
+            "beard",
+            "bob_cut",
+            "buns",
+            "tatted",
+            "mohawk",
+            "braces"
+        ]
+    },
+    {
+        "id": "group_celebrate",
+        "title": {
+            "en": "🎉 Ăn Mừng",
+            "vi": "🎉 Ăn Mừng"
+        },
+        "name": {
+            "en": "🎉 Ăn Mừng",
+            "vi": "🎉 Ăn Mừng"
+        },
+        "filter_ids": [
+            "stk_dio_princess",
+            "stk_dio_cash",
+            "stk_dio_slimed",
+            "stk_dio_happy_birthday",
+            "stk_dio_disco",
+            "slimed",
+            "princess",
+            "disco_lights",
+            "cash_money",
+            "happy_birthday"
+        ],
+        "requires_gold": false,
+        "requiresGold": false,
+        "is_gold": false,
+        "isGold": false,
+        "unlocked": true,
+        "is_unlocked": true,
+        "isUnlocked": true,
+        "free": true,
+        "filterIds": [
+            "stk_dio_princess",
+            "stk_dio_cash",
+            "stk_dio_slimed",
+            "stk_dio_happy_birthday",
+            "stk_dio_disco",
+            "slimed",
+            "princess",
+            "disco_lights",
+            "cash_money",
+            "happy_birthday"
+        ]
+    },
+    {
+        "id": "group_cute",
+        "title": {
+            "en": "✨ Dễ Thương",
+            "vi": "✨ Dễ Thương"
+        },
+        "name": {
+            "en": "✨ Dễ Thương",
+            "vi": "✨ Dễ Thương"
+        },
+        "filter_ids": [
+            "stk_dio_flower_crown",
+            "stk_dio_cutesy",
+            "stk_dio_sticker_face",
+            "stk_dio_love_bug",
+            "cutesy",
+            "sticker_face",
+            "flower_crown",
+            "love_bug"
+        ],
+        "requires_gold": false,
+        "requiresGold": false,
+        "is_gold": false,
+        "isGold": false,
+        "unlocked": true,
+        "is_unlocked": true,
+        "isUnlocked": true,
+        "free": true,
+        "filterIds": [
+            "stk_dio_flower_crown",
+            "stk_dio_cutesy",
+            "stk_dio_sticker_face",
+            "stk_dio_love_bug",
+            "cutesy",
+            "sticker_face",
+            "flower_crown",
+            "love_bug"
+        ]
+    },
+    {
+        "id": "group_costumes",
+        "title": {
+            "en": "🎭 Hóa Trang",
+            "vi": "🎭 Hóa Trang"
+        },
+        "name": {
+            "en": "🎭 Hóa Trang",
+            "vi": "🎭 Hóa Trang"
+        },
+        "filter_ids": [
+            "stk_dio_cowboy",
+            "stk_dio_giraffe",
+            "stk_dio_wedding",
+            "stk_dio_clown",
+            "wedding",
+            "cowboy_cowgirl",
+            "giraffe",
+            "clown"
+        ],
+        "requires_gold": false,
+        "requiresGold": false,
+        "is_gold": false,
+        "isGold": false,
+        "unlocked": true,
+        "is_unlocked": true,
+        "isUnlocked": true,
+        "free": true,
+        "filterIds": [
+            "stk_dio_cowboy",
+            "stk_dio_giraffe",
+            "stk_dio_wedding",
+            "stk_dio_clown",
+            "wedding",
+            "cowboy_cowgirl",
+            "giraffe",
+            "clown"
+        ]
+    },
+    {
+        "id": "group_holidays",
+        "title": {
+            "en": "🎄 Lễ Hội & Giáng Sinh",
+            "vi": "🎄 Lễ Hội & Giáng Sinh"
+        },
+        "name": {
+            "en": "🎄 Lễ Hội & Giáng Sinh",
+            "vi": "🎄 Lễ Hội & Giáng Sinh"
+        },
+        "filter_ids": [
+            "stk_dio_sweat_hearts",
+            "stk_dio_bearded_holiday",
+            "stk_dio_frosty",
+            "stk_dio_elf",
+            "stk_dio_santa",
+            "stk_dio_easter_bunny",
+            "stk_dio_leprechaun",
+            "stk_dio_easter_chick",
+            "stk_dio_lucky_face",
+            "easter_bunney_cutout",
+            "easter_chick_cutout",
+            "bearded",
+            "leprechaun",
+            "lucky_face",
+            "sweet_hearts",
+            "elf_cutout",
+            "santa_cutout",
+            "frosty"
+        ],
+        "requires_gold": false,
+        "requiresGold": false,
+        "is_gold": false,
+        "isGold": false,
+        "unlocked": true,
+        "is_unlocked": true,
+        "isUnlocked": true,
+        "free": true,
+        "filterIds": [
+            "stk_dio_sweat_hearts",
+            "stk_dio_bearded_holiday",
+            "stk_dio_frosty",
+            "stk_dio_elf",
+            "stk_dio_santa",
+            "stk_dio_easter_bunny",
+            "stk_dio_leprechaun",
+            "stk_dio_easter_chick",
+            "stk_dio_lucky_face",
+            "easter_bunney_cutout",
+            "easter_chick_cutout",
+            "bearded",
+            "leprechaun",
+            "lucky_face",
+            "sweet_hearts",
+            "elf_cutout",
+            "santa_cutout",
+            "frosty"
+        ]
+    }
 ];
 
     var customPickerFilters = [
-        "photobooth_berry_days",
-        "photobooth_happy_snap",
-        "photobooth_sky_diary",
-        "photobooth_4cut",
-        "photobooth_cute",
-        "photoboot",
-        "sticker_b_nh_lu_n_minh_tu",
-        "cmt_locket",
-        "khung_hello_kitty_pastel_ng_t_ng_o",
-        "khung_hello_kitty_h_ng_pastel",
-        "khung_nh_hoa_pastel_vi_n_xanh_m_nh",
-        "khung_nh_vu_ng_m_ng_nh_n_b_c",
-        "khung_kh_ng_gian_xanh_pastel",
-        "khung_vu_ng_ng_i_sao_h_ng_pastel",
-        "khung_nh_pastel_vi_n_s_h_i_c_u",
-        "khung_nh_shin_chan_vi_n_m_nh",
-        "khung_anh_o_kitty_v_sao",
-        "khung_xanh_v_tay_sao_v_ng",
-        "sinh_nh_t_hello_kitty_ho_i_c",
-        "khung_nh_n_pastel_vi_n_ren",
-        "okay_wig",
-        "influencer",
-        "looks_maxxing",
-        "toothless",
-        "bye_brows",
-        "bowling_ball",
-        "blonde_bleached",
-        "beard",
-        "bob_cut",
-        "buns",
-        "tatted",
-        "mohawk",
-        "braces",
-        "slimed",
-        "princess",
-        "disco_lights",
-        "cash_money",
-        "happy_birthday",
-        "cutesy",
-        "sticker_face",
-        "flower_crown",
-        "love_bug",
-        "wedding",
-        "cowboy_cowgirl",
-        "giraffe",
-        "clown",
-        "easter_bunney_cutout",
-        "easter_chick_cutout",
-        "bearded",
-        "leprechaun",
-        "lucky_face",
-        "sweet_hearts",
-        "elf_cutout",
-        "santa_cutout",
-        "frosty"
+    "photobooth_xmas_wreath",
+    "photobooth_golden_royal",
+    "photobooth_gingerbread_candy",
+    "photobooth_snowman_xmas",
+    "photobooth_frozen_winter",
+    "photobooth_violet_amethyst",
+    "photobooth_pastel_pink",
+    "photobooth_vintage_travel",
+    "photobooth_dual_film",
+    "photobooth_elegant_strip",
+    "photobooth_retro_newsprint",
+    "photobooth_silver_stars",
+    "photobooth_modern_minimal",
+    "photobooth_brown_polka",
+    "photobooth_berry_days",
+    "photobooth_happy_snap",
+    "photobooth_sky_diary",
+    "photobooth_4cut",
+    "photobooth_cute",
+    "photoboot",
+    "khung_hello_kitty_pastel_ng_t_ng_o",
+    "khung_hello_kitty_h_ng_pastel",
+    "khung_nh_hoa_pastel_vi_n_xanh_m_nh",
+    "khung_nh_vu_ng_m_ng_nh_n_b_c",
+    "khung_kh_ng_gian_xanh_pastel",
+    "khung_vu_ng_ng_i_sao_h_ng_pastel",
+    "khung_nh_pastel_vi_n_s_h_i_c_u",
+    "khung_nh_shin_chan_vi_n_m_nh",
+    "khung_anh_o_kitty_v_sao",
+    "khung_xanh_v_tay_sao_v_ng",
+    "sinh_nh_t_hello_kitty_ho_i_c",
+    "khung_nh_n_pastel_vi_n_ren",
+    "sticker_b_nh_lu_n_minh_tu",
+    "cmt_locket",
+    "stk_dio_pm2",
+    "stk_dio_looksmaxing",
+    "stk_dio_influencer",
+    "stk_dio_toothless",
+    "stk_dio_orange_wig",
+    "okay_wig",
+    "influencer",
+    "looks_maxxing",
+    "toothless",
+    "stk_dio_bye_brows",
+    "stk_dio_braces",
+    "stk_dio_tatted",
+    "stk_dio_bearded",
+    "stk_dio_buns",
+    "stk_dio_mohawk",
+    "stk_dio_bob",
+    "stk_dio_bowling_ball",
+    "stk_dio_bleached_hair",
+    "bye_brows",
+    "bowling_ball",
+    "blonde_bleached",
+    "beard",
+    "bob_cut",
+    "buns",
+    "tatted",
+    "mohawk",
+    "braces",
+    "stk_dio_princess",
+    "stk_dio_cash",
+    "stk_dio_slimed",
+    "stk_dio_happy_birthday",
+    "stk_dio_disco",
+    "slimed",
+    "princess",
+    "disco_lights",
+    "cash_money",
+    "happy_birthday",
+    "stk_dio_flower_crown",
+    "stk_dio_cutesy",
+    "stk_dio_sticker_face",
+    "stk_dio_love_bug",
+    "cutesy",
+    "sticker_face",
+    "flower_crown",
+    "love_bug",
+    "stk_dio_cowboy",
+    "stk_dio_giraffe",
+    "stk_dio_wedding",
+    "stk_dio_clown",
+    "wedding",
+    "cowboy_cowgirl",
+    "giraffe",
+    "clown",
+    "stk_dio_sweat_hearts",
+    "stk_dio_bearded_holiday",
+    "stk_dio_frosty",
+    "stk_dio_elf",
+    "stk_dio_santa",
+    "stk_dio_easter_bunny",
+    "stk_dio_leprechaun",
+    "stk_dio_easter_chick",
+    "stk_dio_lucky_face",
+    "easter_bunney_cutout",
+    "easter_chick_cutout",
+    "bearded",
+    "leprechaun",
+    "lucky_face",
+    "sweet_hearts",
+    "elf_cutout",
+    "santa_cutout",
+    "frosty"
 ];
 
     var officialAiFilterIds = [
@@ -1982,6 +3973,11 @@ var unlockedOfficialAiFilters = officialAiFilterIds.map(function(fid) {
         unsend_message_enabled: "true",
         reply_prototype_enabled: "true",
         messages_integration: "true",
+        chat_read_receipts: "true",
+        chat_mode: "5",
+        birthday_feature_config: JSON.stringify({ profile_menu: true, prompt_interval: 1209600, show_frame: true }),
+        video_duration_seconds: "30",
+        max_video_length: "30",
         conversations_enabled: "true",
         fetch_moments_in_conversation: "true",
         hide_chat_button: "false",
@@ -2019,6 +4015,1205 @@ var unlockedOfficialAiFilters = officialAiFilterIds.map(function(fid) {
     // Thứ 7: Mèo cyber neon xanh
     // Chủ Nhật: Robot phi hành gia cam gamer
     // ============================================================
+    
+    // 54 Khung viền Widget tùy chỉnh từ Uplocket (Anime, Sanrio, Cartoon, Aesthetic)
+    var customWidgetFramesList = [
+    {
+        "uid": "frame_killua_zoldyck",
+        "id": "frame_killua_zoldyck",
+        "name": "Killua Zoldyck Anime ⚡",
+        "title": "Killua Zoldyck Anime ⚡",
+        "displayName": "Killua Zoldyck Anime ⚡",
+        "url": "https://uplocket.io.vn/frames/frame_killua_zoldyck.png?v=1794108923270",
+        "frame_url": "https://uplocket.io.vn/frames/frame_killua_zoldyck.png?v=1794108923270",
+        "imageUrl": "https://uplocket.io.vn/frames/frame_killua_zoldyck.png?v=1794108923270",
+        "image_url": "https://uplocket.io.vn/frames/frame_killua_zoldyck.png?v=1794108923270",
+        "placement": "below",
+        "scale": 100,
+        "scale_x": 100,
+        "scale_y": 100,
+        "offset_x": 0,
+        "offset_y": 0,
+        "use_local_time_zone": true,
+        "start_at": "2020-01-01T00:00:00",
+        "end_at": "2035-12-31T23:59:59",
+        "is_stock": true,
+        "isStock": true
+    },
+    {
+        "uid": "frame_cute_teddy_bear",
+        "id": "frame_cute_teddy_bear",
+        "name": "Gấu Teddy Dễ Thương 🧸",
+        "title": "Gấu Teddy Dễ Thương 🧸",
+        "displayName": "Gấu Teddy Dễ Thương 🧸",
+        "url": "https://uplocket.io.vn/frames/frame_cute_teddy_bear.png?v=1794108923270",
+        "frame_url": "https://uplocket.io.vn/frames/frame_cute_teddy_bear.png?v=1794108923270",
+        "imageUrl": "https://uplocket.io.vn/frames/frame_cute_teddy_bear.png?v=1794108923270",
+        "image_url": "https://uplocket.io.vn/frames/frame_cute_teddy_bear.png?v=1794108923270",
+        "placement": "below",
+        "scale": 100,
+        "scale_x": 100,
+        "scale_y": 100,
+        "offset_x": 0,
+        "offset_y": 0,
+        "use_local_time_zone": true,
+        "start_at": "2020-01-01T00:00:00",
+        "end_at": "2035-12-31T23:59:59",
+        "is_stock": true,
+        "isStock": true
+    },
+    {
+        "uid": "frame_shin_chan_chocobi",
+        "id": "frame_shin_chan_chocobi",
+        "name": "Shin Cậu Bé Bút Chì 🖍️",
+        "title": "Shin Cậu Bé Bút Chì 🖍️",
+        "displayName": "Shin Cậu Bé Bút Chì 🖍️",
+        "url": "https://uplocket.io.vn/frames/frame_shin_chan_chocobi.png?v=1794108923270",
+        "frame_url": "https://uplocket.io.vn/frames/frame_shin_chan_chocobi.png?v=1794108923270",
+        "imageUrl": "https://uplocket.io.vn/frames/frame_shin_chan_chocobi.png?v=1794108923270",
+        "image_url": "https://uplocket.io.vn/frames/frame_shin_chan_chocobi.png?v=1794108923270",
+        "placement": "below",
+        "scale": 100,
+        "scale_x": 100,
+        "scale_y": 100,
+        "offset_x": 0,
+        "offset_y": 0,
+        "use_local_time_zone": true,
+        "start_at": "2020-01-01T00:00:00",
+        "end_at": "2035-12-31T23:59:59",
+        "is_stock": true,
+        "isStock": true
+    },
+    {
+        "uid": "frame_sweet_bunny_rabbit",
+        "id": "frame_sweet_bunny_rabbit",
+        "name": "Thỏ Trắng Ngọt Ngào 🐰",
+        "title": "Thỏ Trắng Ngọt Ngào 🐰",
+        "displayName": "Thỏ Trắng Ngọt Ngào 🐰",
+        "url": "https://uplocket.io.vn/frames/frame_sweet_bunny_rabbit.png?v=1794108923270",
+        "frame_url": "https://uplocket.io.vn/frames/frame_sweet_bunny_rabbit.png?v=1794108923270",
+        "imageUrl": "https://uplocket.io.vn/frames/frame_sweet_bunny_rabbit.png?v=1794108923270",
+        "image_url": "https://uplocket.io.vn/frames/frame_sweet_bunny_rabbit.png?v=1794108923270",
+        "placement": "below",
+        "scale": 100,
+        "scale_x": 100,
+        "scale_y": 100,
+        "offset_x": 0,
+        "offset_y": 0,
+        "use_local_time_zone": true,
+        "start_at": "2020-01-01T00:00:00",
+        "end_at": "2035-12-31T23:59:59",
+        "is_stock": true,
+        "isStock": true
+    },
+    {
+        "uid": "frame_easter_egg_sweets",
+        "id": "frame_easter_egg_sweets",
+        "name": "Trứng Phục Sinh & Kẹo Ngọt 🐣",
+        "title": "Trứng Phục Sinh & Kẹo Ngọt 🐣",
+        "displayName": "Trứng Phục Sinh & Kẹo Ngọt 🐣",
+        "url": "https://uplocket.io.vn/frames/frame_easter_egg_sweets.png?v=1794108923270",
+        "frame_url": "https://uplocket.io.vn/frames/frame_easter_egg_sweets.png?v=1794108923270",
+        "imageUrl": "https://uplocket.io.vn/frames/frame_easter_egg_sweets.png?v=1794108923270",
+        "image_url": "https://uplocket.io.vn/frames/frame_easter_egg_sweets.png?v=1794108923270",
+        "placement": "below",
+        "scale": 100,
+        "scale_x": 100,
+        "scale_y": 100,
+        "offset_x": 0,
+        "offset_y": 0,
+        "use_local_time_zone": true,
+        "start_at": "2020-01-01T00:00:00",
+        "end_at": "2035-12-31T23:59:59",
+        "is_stock": true,
+        "isStock": true
+    },
+    {
+        "uid": "frame_love_yourself",
+        "id": "frame_love_yourself",
+        "name": "Hãy Yêu Bản Thân 💖",
+        "title": "Hãy Yêu Bản Thân 💖",
+        "displayName": "Hãy Yêu Bản Thân 💖",
+        "url": "https://uplocket.io.vn/frames/frame_love_yourself.png?v=1794108923270",
+        "frame_url": "https://uplocket.io.vn/frames/frame_love_yourself.png?v=1794108923270",
+        "imageUrl": "https://uplocket.io.vn/frames/frame_love_yourself.png?v=1794108923270",
+        "image_url": "https://uplocket.io.vn/frames/frame_love_yourself.png?v=1794108923270",
+        "placement": "below",
+        "scale": 100,
+        "scale_x": 100,
+        "scale_y": 100,
+        "offset_x": 0,
+        "offset_y": 0,
+        "use_local_time_zone": true,
+        "start_at": "2020-01-01T00:00:00",
+        "end_at": "2035-12-31T23:59:59",
+        "is_stock": true,
+        "isStock": true
+    },
+    {
+        "uid": "frame_galaxy_night_sky",
+        "id": "frame_galaxy_night_sky",
+        "name": "Dải Ngân Hà Đêm 🌌",
+        "title": "Dải Ngân Hà Đêm 🌌",
+        "displayName": "Dải Ngân Hà Đêm 🌌",
+        "url": "https://uplocket.io.vn/frames/frame_galaxy_night_sky.png?v=1794108923270",
+        "frame_url": "https://uplocket.io.vn/frames/frame_galaxy_night_sky.png?v=1794108923270",
+        "imageUrl": "https://uplocket.io.vn/frames/frame_galaxy_night_sky.png?v=1794108923270",
+        "image_url": "https://uplocket.io.vn/frames/frame_galaxy_night_sky.png?v=1794108923270",
+        "placement": "below",
+        "scale": 100,
+        "scale_x": 100,
+        "scale_y": 100,
+        "offset_x": 0,
+        "offset_y": 0,
+        "use_local_time_zone": true,
+        "start_at": "2020-01-01T00:00:00",
+        "end_at": "2035-12-31T23:59:59",
+        "is_stock": true,
+        "isStock": true
+    },
+    {
+        "uid": "frame_conan_detective",
+        "id": "frame_conan_detective",
+        "name": "Thám Tử Lừng Danh Conan 🔍",
+        "title": "Thám Tử Lừng Danh Conan 🔍",
+        "displayName": "Thám Tử Lừng Danh Conan 🔍",
+        "url": "https://uplocket.io.vn/frames/frame_conan_detective.png?v=1794108923270",
+        "frame_url": "https://uplocket.io.vn/frames/frame_conan_detective.png?v=1794108923270",
+        "imageUrl": "https://uplocket.io.vn/frames/frame_conan_detective.png?v=1794108923270",
+        "image_url": "https://uplocket.io.vn/frames/frame_conan_detective.png?v=1794108923270",
+        "placement": "below",
+        "scale": 100,
+        "scale_x": 100,
+        "scale_y": 100,
+        "offset_x": 0,
+        "offset_y": 0,
+        "use_local_time_zone": true,
+        "start_at": "2020-01-01T00:00:00",
+        "end_at": "2035-12-31T23:59:59",
+        "is_stock": true,
+        "isStock": true
+    },
+    {
+        "uid": "frame_celebration_balloons",
+        "id": "frame_celebration_balloons",
+        "name": "Bóng Bay Sinh Nhật & Lễ Hội 🎈",
+        "title": "Bóng Bay Sinh Nhật & Lễ Hội 🎈",
+        "displayName": "Bóng Bay Sinh Nhật & Lễ Hội 🎈",
+        "url": "https://uplocket.io.vn/frames/frame_celebration_balloons.png?v=1794108923270",
+        "frame_url": "https://uplocket.io.vn/frames/frame_celebration_balloons.png?v=1794108923270",
+        "imageUrl": "https://uplocket.io.vn/frames/frame_celebration_balloons.png?v=1794108923270",
+        "image_url": "https://uplocket.io.vn/frames/frame_celebration_balloons.png?v=1794108923270",
+        "placement": "below",
+        "scale": 100,
+        "scale_x": 100,
+        "scale_y": 100,
+        "offset_x": 0,
+        "offset_y": 0,
+        "use_local_time_zone": true,
+        "start_at": "2020-01-01T00:00:00",
+        "end_at": "2035-12-31T23:59:59",
+        "is_stock": true,
+        "isStock": true
+    },
+    {
+        "uid": "frame_twilight_stars",
+        "id": "frame_twilight_stars",
+        "name": "Bầu Trời Sao Chạng Vạng 🌠",
+        "title": "Bầu Trời Sao Chạng Vạng 🌠",
+        "displayName": "Bầu Trời Sao Chạng Vạng 🌠",
+        "url": "https://uplocket.io.vn/frames/frame_twilight_stars.png?v=1794108923270",
+        "frame_url": "https://uplocket.io.vn/frames/frame_twilight_stars.png?v=1794108923270",
+        "imageUrl": "https://uplocket.io.vn/frames/frame_twilight_stars.png?v=1794108923270",
+        "image_url": "https://uplocket.io.vn/frames/frame_twilight_stars.png?v=1794108923270",
+        "placement": "below",
+        "scale": 100,
+        "scale_x": 100,
+        "scale_y": 100,
+        "offset_x": 0,
+        "offset_y": 0,
+        "use_local_time_zone": true,
+        "start_at": "2020-01-01T00:00:00",
+        "end_at": "2035-12-31T23:59:59",
+        "is_stock": true,
+        "isStock": true
+    },
+    {
+        "uid": "frame_lotso_bear",
+        "id": "frame_lotso_bear",
+        "name": "Gấu Dâu Lotso Dễ Thương 🍓",
+        "title": "Gấu Dâu Lotso Dễ Thương 🍓",
+        "displayName": "Gấu Dâu Lotso Dễ Thương 🍓",
+        "url": "https://uplocket.io.vn/frames/frame_lotso_bear.png?v=1794108923270",
+        "frame_url": "https://uplocket.io.vn/frames/frame_lotso_bear.png?v=1794108923270",
+        "imageUrl": "https://uplocket.io.vn/frames/frame_lotso_bear.png?v=1794108923270",
+        "image_url": "https://uplocket.io.vn/frames/frame_lotso_bear.png?v=1794108923270",
+        "placement": "below",
+        "scale": 100,
+        "scale_x": 100,
+        "scale_y": 100,
+        "offset_x": 0,
+        "offset_y": 0,
+        "use_local_time_zone": true,
+        "start_at": "2020-01-01T00:00:00",
+        "end_at": "2035-12-31T23:59:59",
+        "is_stock": true,
+        "isStock": true
+    },
+    {
+        "uid": "frame_inferno_flame",
+        "id": "frame_inferno_flame",
+        "name": "Ngọn Lửa Bùng Cháy 🔥",
+        "title": "Ngọn Lửa Bùng Cháy 🔥",
+        "displayName": "Ngọn Lửa Bùng Cháy 🔥",
+        "url": "https://uplocket.io.vn/frames/frame_inferno_flame.png?v=1794108923270",
+        "frame_url": "https://uplocket.io.vn/frames/frame_inferno_flame.png?v=1794108923270",
+        "imageUrl": "https://uplocket.io.vn/frames/frame_inferno_flame.png?v=1794108923270",
+        "image_url": "https://uplocket.io.vn/frames/frame_inferno_flame.png?v=1794108923270",
+        "placement": "below",
+        "scale": 100,
+        "scale_x": 100,
+        "scale_y": 100,
+        "offset_x": 0,
+        "offset_y": 0,
+        "use_local_time_zone": true,
+        "start_at": "2020-01-01T00:00:00",
+        "end_at": "2035-12-31T23:59:59",
+        "is_stock": true,
+        "isStock": true
+    },
+    {
+        "uid": "frame_pink_polka_dots",
+        "id": "frame_pink_polka_dots",
+        "name": "Nơ Hồng Chấm Bi Xinh Xắn 🎀",
+        "title": "Nơ Hồng Chấm Bi Xinh Xắn 🎀",
+        "displayName": "Nơ Hồng Chấm Bi Xinh Xắn 🎀",
+        "url": "https://uplocket.io.vn/frames/frame_pink_polka_dots.png?v=1794108923270",
+        "frame_url": "https://uplocket.io.vn/frames/frame_pink_polka_dots.png?v=1794108923270",
+        "imageUrl": "https://uplocket.io.vn/frames/frame_pink_polka_dots.png?v=1794108923270",
+        "image_url": "https://uplocket.io.vn/frames/frame_pink_polka_dots.png?v=1794108923270",
+        "placement": "below",
+        "scale": 100,
+        "scale_x": 100,
+        "scale_y": 100,
+        "offset_x": 0,
+        "offset_y": 0,
+        "use_local_time_zone": true,
+        "start_at": "2020-01-01T00:00:00",
+        "end_at": "2035-12-31T23:59:59",
+        "is_stock": true,
+        "isStock": true
+    },
+    {
+        "uid": "frame_pastel_kitten",
+        "id": "frame_pastel_kitten",
+        "name": "Mèo Con Pastel Dịu Dàng 🐱",
+        "title": "Mèo Con Pastel Dịu Dàng 🐱",
+        "displayName": "Mèo Con Pastel Dịu Dàng 🐱",
+        "url": "https://uplocket.io.vn/frames/frame_pastel_kitten.png?v=1794108923270",
+        "frame_url": "https://uplocket.io.vn/frames/frame_pastel_kitten.png?v=1794108923270",
+        "imageUrl": "https://uplocket.io.vn/frames/frame_pastel_kitten.png?v=1794108923270",
+        "image_url": "https://uplocket.io.vn/frames/frame_pastel_kitten.png?v=1794108923270",
+        "placement": "below",
+        "scale": 100,
+        "scale_x": 100,
+        "scale_y": 100,
+        "offset_x": 0,
+        "offset_y": 0,
+        "use_local_time_zone": true,
+        "start_at": "2020-01-01T00:00:00",
+        "end_at": "2035-12-31T23:59:59",
+        "is_stock": true,
+        "isStock": true
+    },
+    {
+        "uid": "frame_cr7_ronaldo",
+        "id": "frame_cr7_ronaldo",
+        "name": "Cristiano Ronaldo CR7 Siuu ⚽",
+        "title": "Cristiano Ronaldo CR7 Siuu ⚽",
+        "displayName": "Cristiano Ronaldo CR7 Siuu ⚽",
+        "url": "https://uplocket.io.vn/frames/frame_cr7_ronaldo.png?v=1794108923270",
+        "frame_url": "https://uplocket.io.vn/frames/frame_cr7_ronaldo.png?v=1794108923270",
+        "imageUrl": "https://uplocket.io.vn/frames/frame_cr7_ronaldo.png?v=1794108923270",
+        "image_url": "https://uplocket.io.vn/frames/frame_cr7_ronaldo.png?v=1794108923270",
+        "placement": "below",
+        "scale": 100,
+        "scale_x": 100,
+        "scale_y": 100,
+        "offset_x": 0,
+        "offset_y": 0,
+        "use_local_time_zone": true,
+        "start_at": "2020-01-01T00:00:00",
+        "end_at": "2035-12-31T23:59:59",
+        "is_stock": true,
+        "isStock": true
+    },
+    {
+        "uid": "frame_manga_lightning_power",
+        "id": "frame_manga_lightning_power",
+        "name": "Bá Khí Sấm Sét Manga ⚡",
+        "title": "Bá Khí Sấm Sét Manga ⚡",
+        "displayName": "Bá Khí Sấm Sét Manga ⚡",
+        "url": "https://uplocket.io.vn/frames/frame_manga_lightning_power.png?v=1794108923270",
+        "frame_url": "https://uplocket.io.vn/frames/frame_manga_lightning_power.png?v=1794108923270",
+        "imageUrl": "https://uplocket.io.vn/frames/frame_manga_lightning_power.png?v=1794108923270",
+        "image_url": "https://uplocket.io.vn/frames/frame_manga_lightning_power.png?v=1794108923270",
+        "placement": "below",
+        "scale": 100,
+        "scale_x": 100,
+        "scale_y": 100,
+        "offset_x": 0,
+        "offset_y": 0,
+        "use_local_time_zone": true,
+        "start_at": "2020-01-01T00:00:00",
+        "end_at": "2035-12-31T23:59:59",
+        "is_stock": true,
+        "isStock": true
+    },
+    {
+        "uid": "frame_sao_kirito_asuna_pastel",
+        "id": "frame_sao_kirito_asuna_pastel",
+        "name": "Sword Art Online Chibi Pastel ⚔️",
+        "title": "Sword Art Online Chibi Pastel ⚔️",
+        "displayName": "Sword Art Online Chibi Pastel ⚔️",
+        "url": "https://uplocket.io.vn/frames/frame_sao_kirito_asuna_pastel.png?v=1794108923270",
+        "frame_url": "https://uplocket.io.vn/frames/frame_sao_kirito_asuna_pastel.png?v=1794108923270",
+        "imageUrl": "https://uplocket.io.vn/frames/frame_sao_kirito_asuna_pastel.png?v=1794108923270",
+        "image_url": "https://uplocket.io.vn/frames/frame_sao_kirito_asuna_pastel.png?v=1794108923270",
+        "placement": "below",
+        "scale": 100,
+        "scale_x": 100,
+        "scale_y": 100,
+        "offset_x": 0,
+        "offset_y": 0,
+        "use_local_time_zone": true,
+        "start_at": "2020-01-01T00:00:00",
+        "end_at": "2035-12-31T23:59:59",
+        "is_stock": true,
+        "isStock": true
+    },
+    {
+        "uid": "frame_pompompurin_golden",
+        "id": "frame_pompompurin_golden",
+        "name": "Chó Vàng Pompompurin 🍮",
+        "title": "Chó Vàng Pompompurin 🍮",
+        "displayName": "Chó Vàng Pompompurin 🍮",
+        "url": "https://uplocket.io.vn/frames/frame_pompompurin_golden.png?v=1794108923270",
+        "frame_url": "https://uplocket.io.vn/frames/frame_pompompurin_golden.png?v=1794108923270",
+        "imageUrl": "https://uplocket.io.vn/frames/frame_pompompurin_golden.png?v=1794108923270",
+        "image_url": "https://uplocket.io.vn/frames/frame_pompompurin_golden.png?v=1794108923270",
+        "placement": "below",
+        "scale": 100,
+        "scale_x": 100,
+        "scale_y": 100,
+        "offset_x": 0,
+        "offset_y": 0,
+        "use_local_time_zone": true,
+        "start_at": "2020-01-01T00:00:00",
+        "end_at": "2035-12-31T23:59:59",
+        "is_stock": true,
+        "isStock": true
+    },
+    {
+        "uid": "frame_chiikawa_white_friends",
+        "id": "frame_chiikawa_white_friends",
+        "name": "Chiikawa & Những Người Bạn 🌸",
+        "title": "Chiikawa & Những Người Bạn 🌸",
+        "displayName": "Chiikawa & Những Người Bạn 🌸",
+        "url": "https://uplocket.io.vn/frames/frame_chiikawa_white_friends.png?v=1794108923270",
+        "frame_url": "https://uplocket.io.vn/frames/frame_chiikawa_white_friends.png?v=1794108923270",
+        "imageUrl": "https://uplocket.io.vn/frames/frame_chiikawa_white_friends.png?v=1794108923270",
+        "image_url": "https://uplocket.io.vn/frames/frame_chiikawa_white_friends.png?v=1794108923270",
+        "placement": "below",
+        "scale": 100,
+        "scale_x": 100,
+        "scale_y": 100,
+        "offset_x": 0,
+        "offset_y": 0,
+        "use_local_time_zone": true,
+        "start_at": "2020-01-01T00:00:00",
+        "end_at": "2035-12-31T23:59:59",
+        "is_stock": true,
+        "isStock": true
+    },
+    {
+        "uid": "frame_halloween_pumpkin_night",
+        "id": "frame_halloween_pumpkin_night",
+        "name": "Halloween Bí Ngô Dạ Tiệc 🎃",
+        "title": "Halloween Bí Ngô Dạ Tiệc 🎃",
+        "displayName": "Halloween Bí Ngô Dạ Tiệc 🎃",
+        "url": "https://uplocket.io.vn/frames/frame_halloween_pumpkin_night.png?v=1794108923270",
+        "frame_url": "https://uplocket.io.vn/frames/frame_halloween_pumpkin_night.png?v=1794108923270",
+        "imageUrl": "https://uplocket.io.vn/frames/frame_halloween_pumpkin_night.png?v=1794108923270",
+        "image_url": "https://uplocket.io.vn/frames/frame_halloween_pumpkin_night.png?v=1794108923270",
+        "placement": "below",
+        "scale": 100,
+        "scale_x": 100,
+        "scale_y": 100,
+        "offset_x": 0,
+        "offset_y": 0,
+        "use_local_time_zone": true,
+        "start_at": "2020-01-01T00:00:00",
+        "end_at": "2035-12-31T23:59:59",
+        "is_stock": true,
+        "isStock": true
+    },
+    {
+        "uid": "frame_kuromi_purple_star",
+        "id": "frame_kuromi_purple_star",
+        "name": "Kuromi Tím Cá Tính 💜",
+        "title": "Kuromi Tím Cá Tính 💜",
+        "displayName": "Kuromi Tím Cá Tính 💜",
+        "url": "https://uplocket.io.vn/frames/frame_kuromi_purple_star.png?v=1794108923270",
+        "frame_url": "https://uplocket.io.vn/frames/frame_kuromi_purple_star.png?v=1794108923270",
+        "imageUrl": "https://uplocket.io.vn/frames/frame_kuromi_purple_star.png?v=1794108923270",
+        "image_url": "https://uplocket.io.vn/frames/frame_kuromi_purple_star.png?v=1794108923270",
+        "placement": "below",
+        "scale": 100,
+        "scale_x": 100,
+        "scale_y": 100,
+        "offset_x": 0,
+        "offset_y": 0,
+        "use_local_time_zone": true,
+        "start_at": "2020-01-01T00:00:00",
+        "end_at": "2035-12-31T23:59:59",
+        "is_stock": true,
+        "isStock": true
+    },
+    {
+        "uid": "frame_keroppi_green_lily",
+        "id": "frame_keroppi_green_lily",
+        "name": "Keroppi Ếch Xanh Vui Nhộn 🐸",
+        "title": "Keroppi Ếch Xanh Vui Nhộn 🐸",
+        "displayName": "Keroppi Ếch Xanh Vui Nhộn 🐸",
+        "url": "https://uplocket.io.vn/frames/frame_keroppi_green_lily.png?v=1794108923270",
+        "frame_url": "https://uplocket.io.vn/frames/frame_keroppi_green_lily.png?v=1794108923270",
+        "imageUrl": "https://uplocket.io.vn/frames/frame_keroppi_green_lily.png?v=1794108923270",
+        "image_url": "https://uplocket.io.vn/frames/frame_keroppi_green_lily.png?v=1794108923270",
+        "placement": "below",
+        "scale": 100,
+        "scale_x": 100,
+        "scale_y": 100,
+        "offset_x": 0,
+        "offset_y": 0,
+        "use_local_time_zone": true,
+        "start_at": "2020-01-01T00:00:00",
+        "end_at": "2035-12-31T23:59:59",
+        "is_stock": true,
+        "isStock": true
+    },
+    {
+        "uid": "frame_pochacco_blue_sky",
+        "id": "frame_pochacco_blue_sky",
+        "name": "Pochacco Chó Đốm Năng Động 🐶",
+        "title": "Pochacco Chó Đốm Năng Động 🐶",
+        "displayName": "Pochacco Chó Đốm Năng Động 🐶",
+        "url": "https://uplocket.io.vn/frames/frame_pochacco_blue_sky.png?v=1794108923270",
+        "frame_url": "https://uplocket.io.vn/frames/frame_pochacco_blue_sky.png?v=1794108923270",
+        "imageUrl": "https://uplocket.io.vn/frames/frame_pochacco_blue_sky.png?v=1794108923270",
+        "image_url": "https://uplocket.io.vn/frames/frame_pochacco_blue_sky.png?v=1794108923270",
+        "placement": "below",
+        "scale": 100,
+        "scale_x": 100,
+        "scale_y": 100,
+        "offset_x": 0,
+        "offset_y": 0,
+        "use_local_time_zone": true,
+        "start_at": "2020-01-01T00:00:00",
+        "end_at": "2035-12-31T23:59:59",
+        "is_stock": true,
+        "isStock": true
+    },
+    {
+        "uid": "frame_hachiware_blue_cat",
+        "id": "frame_hachiware_blue_cat",
+        "name": "Mèo Hachiware Xanh Lam 🐱",
+        "title": "Mèo Hachiware Xanh Lam 🐱",
+        "displayName": "Mèo Hachiware Xanh Lam 🐱",
+        "url": "https://uplocket.io.vn/frames/frame_hachiware_blue_cat.png?v=1794108923270",
+        "frame_url": "https://uplocket.io.vn/frames/frame_hachiware_blue_cat.png?v=1794108923270",
+        "imageUrl": "https://uplocket.io.vn/frames/frame_hachiware_blue_cat.png?v=1794108923270",
+        "image_url": "https://uplocket.io.vn/frames/frame_hachiware_blue_cat.png?v=1794108923270",
+        "placement": "below",
+        "scale": 100,
+        "scale_x": 100,
+        "scale_y": 100,
+        "offset_x": 0,
+        "offset_y": 0,
+        "use_local_time_zone": true,
+        "start_at": "2020-01-01T00:00:00",
+        "end_at": "2035-12-31T23:59:59",
+        "is_stock": true,
+        "isStock": true
+    },
+    {
+        "uid": "frame_conan_kaito_kid_night",
+        "id": "frame_conan_kaito_kid_night",
+        "name": "Conan & Siêu Đạo Chích Kaito Kid 🎩",
+        "title": "Conan & Siêu Đạo Chích Kaito Kid 🎩",
+        "displayName": "Conan & Siêu Đạo Chích Kaito Kid 🎩",
+        "url": "https://uplocket.io.vn/frames/frame_conan_kaito_kid_night.png?v=1794108923270",
+        "frame_url": "https://uplocket.io.vn/frames/frame_conan_kaito_kid_night.png?v=1794108923270",
+        "imageUrl": "https://uplocket.io.vn/frames/frame_conan_kaito_kid_night.png?v=1794108923270",
+        "image_url": "https://uplocket.io.vn/frames/frame_conan_kaito_kid_night.png?v=1794108923270",
+        "placement": "below",
+        "scale": 100,
+        "scale_x": 100,
+        "scale_y": 100,
+        "offset_x": 0,
+        "offset_y": 0,
+        "use_local_time_zone": true,
+        "start_at": "2020-01-01T00:00:00",
+        "end_at": "2035-12-31T23:59:59",
+        "is_stock": true,
+        "isStock": true
+    },
+    {
+        "uid": "frame_doraemon_nobita_friends",
+        "id": "frame_doraemon_nobita_friends",
+        "name": "Doraemon & Đội Bạn Tuổi Thơ 🚪",
+        "title": "Doraemon & Đội Bạn Tuổi Thơ 🚪",
+        "displayName": "Doraemon & Đội Bạn Tuổi Thơ 🚪",
+        "url": "https://uplocket.io.vn/frames/frame_doraemon_nobita_friends.png?v=1794108923270",
+        "frame_url": "https://uplocket.io.vn/frames/frame_doraemon_nobita_friends.png?v=1794108923270",
+        "imageUrl": "https://uplocket.io.vn/frames/frame_doraemon_nobita_friends.png?v=1794108923270",
+        "image_url": "https://uplocket.io.vn/frames/frame_doraemon_nobita_friends.png?v=1794108923270",
+        "placement": "below",
+        "scale": 100,
+        "scale_x": 100,
+        "scale_y": 100,
+        "offset_x": 0,
+        "offset_y": 0,
+        "use_local_time_zone": true,
+        "start_at": "2020-01-01T00:00:00",
+        "end_at": "2035-12-31T23:59:59",
+        "is_stock": true,
+        "isStock": true
+    },
+    {
+        "uid": "frame_kuromi_halloween_witch",
+        "id": "frame_kuromi_halloween_witch",
+        "name": "Kuromi Phù Thủy Halloween 🧙‍♀️",
+        "title": "Kuromi Phù Thủy Halloween 🧙‍♀️",
+        "displayName": "Kuromi Phù Thủy Halloween 🧙‍♀️",
+        "url": "https://uplocket.io.vn/frames/frame_kuromi_halloween_witch.png?v=1794108923270",
+        "frame_url": "https://uplocket.io.vn/frames/frame_kuromi_halloween_witch.png?v=1794108923270",
+        "imageUrl": "https://uplocket.io.vn/frames/frame_kuromi_halloween_witch.png?v=1794108923270",
+        "image_url": "https://uplocket.io.vn/frames/frame_kuromi_halloween_witch.png?v=1794108923270",
+        "placement": "below",
+        "scale": 100,
+        "scale_x": 100,
+        "scale_y": 100,
+        "offset_x": 0,
+        "offset_y": 0,
+        "use_local_time_zone": true,
+        "start_at": "2020-01-01T00:00:00",
+        "end_at": "2035-12-31T23:59:59",
+        "is_stock": true,
+        "isStock": true
+    },
+    {
+        "uid": "frame_shin_chan_expressions",
+        "id": "frame_shin_chan_expressions",
+        "name": "Shin Bút Chì Biểu Cảm Vui Nhộn 😜",
+        "title": "Shin Bút Chì Biểu Cảm Vui Nhộn 😜",
+        "displayName": "Shin Bút Chì Biểu Cảm Vui Nhộn 😜",
+        "url": "https://uplocket.io.vn/frames/frame_shin_chan_expressions.png?v=1794108923270",
+        "frame_url": "https://uplocket.io.vn/frames/frame_shin_chan_expressions.png?v=1794108923270",
+        "imageUrl": "https://uplocket.io.vn/frames/frame_shin_chan_expressions.png?v=1794108923270",
+        "image_url": "https://uplocket.io.vn/frames/frame_shin_chan_expressions.png?v=1794108923270",
+        "placement": "below",
+        "scale": 100,
+        "scale_x": 100,
+        "scale_y": 100,
+        "offset_x": 0,
+        "offset_y": 0,
+        "use_local_time_zone": true,
+        "start_at": "2020-01-01T00:00:00",
+        "end_at": "2035-12-31T23:59:59",
+        "is_stock": true,
+        "isStock": true
+    },
+    {
+        "uid": "frame_keroppi_lotus_pond",
+        "id": "frame_keroppi_lotus_pond",
+        "name": "Keroppi Vườn Sen Xanh Ngát 🪷",
+        "title": "Keroppi Vườn Sen Xanh Ngát 🪷",
+        "displayName": "Keroppi Vườn Sen Xanh Ngát 🪷",
+        "url": "https://uplocket.io.vn/frames/frame_keroppi_lotus_pond.png?v=1794108923270",
+        "frame_url": "https://uplocket.io.vn/frames/frame_keroppi_lotus_pond.png?v=1794108923270",
+        "imageUrl": "https://uplocket.io.vn/frames/frame_keroppi_lotus_pond.png?v=1794108923270",
+        "image_url": "https://uplocket.io.vn/frames/frame_keroppi_lotus_pond.png?v=1794108923270",
+        "placement": "below",
+        "scale": 100,
+        "scale_x": 100,
+        "scale_y": 100,
+        "offset_x": 0,
+        "offset_y": 0,
+        "use_local_time_zone": true,
+        "start_at": "2020-01-01T00:00:00",
+        "end_at": "2035-12-31T23:59:59",
+        "is_stock": true,
+        "isStock": true
+    },
+    {
+        "uid": "frame_demon_slayer_tanjiro_nezuko",
+        "id": "frame_demon_slayer_tanjiro_nezuko",
+        "name": "Thanh Gươm Diệt Quỷ Tanjiro & Nezuko 🗡️",
+        "title": "Thanh Gươm Diệt Quỷ Tanjiro & Nezuko 🗡️",
+        "displayName": "Thanh Gươm Diệt Quỷ Tanjiro & Nezuko 🗡️",
+        "url": "https://uplocket.io.vn/frames/frame_demon_slayer_tanjiro_nezuko.png?v=1794108923270",
+        "frame_url": "https://uplocket.io.vn/frames/frame_demon_slayer_tanjiro_nezuko.png?v=1794108923270",
+        "imageUrl": "https://uplocket.io.vn/frames/frame_demon_slayer_tanjiro_nezuko.png?v=1794108923270",
+        "image_url": "https://uplocket.io.vn/frames/frame_demon_slayer_tanjiro_nezuko.png?v=1794108923270",
+        "placement": "below",
+        "scale": 100,
+        "scale_x": 100,
+        "scale_y": 100,
+        "offset_x": 0,
+        "offset_y": 0,
+        "use_local_time_zone": true,
+        "start_at": "2020-01-01T00:00:00",
+        "end_at": "2035-12-31T23:59:59",
+        "is_stock": true,
+        "isStock": true
+    },
+    {
+        "uid": "frame_cinnamoroll_pastel_clouds",
+        "id": "frame_cinnamoroll_pastel_clouds",
+        "name": "Cinnamoroll Mây Trời Pastel ☁️",
+        "title": "Cinnamoroll Mây Trời Pastel ☁️",
+        "displayName": "Cinnamoroll Mây Trời Pastel ☁️",
+        "url": "https://uplocket.io.vn/frames/frame_cinnamoroll_pastel_clouds.png?v=1794108923270",
+        "frame_url": "https://uplocket.io.vn/frames/frame_cinnamoroll_pastel_clouds.png?v=1794108923270",
+        "imageUrl": "https://uplocket.io.vn/frames/frame_cinnamoroll_pastel_clouds.png?v=1794108923270",
+        "image_url": "https://uplocket.io.vn/frames/frame_cinnamoroll_pastel_clouds.png?v=1794108923270",
+        "placement": "below",
+        "scale": 100,
+        "scale_x": 100,
+        "scale_y": 100,
+        "offset_x": 0,
+        "offset_y": 0,
+        "use_local_time_zone": true,
+        "start_at": "2020-01-01T00:00:00",
+        "end_at": "2035-12-31T23:59:59",
+        "is_stock": true,
+        "isStock": true
+    },
+    {
+        "uid": "frame_gojo_satoru_limitless",
+        "id": "frame_gojo_satoru_limitless",
+        "name": "Gojo Satoru Vô Lượng Không Xứ 👁️",
+        "title": "Gojo Satoru Vô Lượng Không Xứ 👁️",
+        "displayName": "Gojo Satoru Vô Lượng Không Xứ 👁️",
+        "url": "https://uplocket.io.vn/frames/frame_gojo_satoru_limitless.png?v=1794108923270",
+        "frame_url": "https://uplocket.io.vn/frames/frame_gojo_satoru_limitless.png?v=1794108923270",
+        "imageUrl": "https://uplocket.io.vn/frames/frame_gojo_satoru_limitless.png?v=1794108923270",
+        "image_url": "https://uplocket.io.vn/frames/frame_gojo_satoru_limitless.png?v=1794108923270",
+        "placement": "below",
+        "scale": 100,
+        "scale_x": 100,
+        "scale_y": 100,
+        "offset_x": 0,
+        "offset_y": 0,
+        "use_local_time_zone": true,
+        "start_at": "2020-01-01T00:00:00",
+        "end_at": "2035-12-31T23:59:59",
+        "is_stock": true,
+        "isStock": true
+    },
+    {
+        "uid": "frame_usagi_chiikawa_yaha",
+        "id": "frame_usagi_chiikawa_yaha",
+        "name": "Thỏ Vàng Usagi \"Yaha!\" 🥕",
+        "title": "Thỏ Vàng Usagi \"Yaha!\" 🥕",
+        "displayName": "Thỏ Vàng Usagi \"Yaha!\" 🥕",
+        "url": "https://uplocket.io.vn/frames/frame_usagi_chiikawa_yaha.png?v=1794108923270",
+        "frame_url": "https://uplocket.io.vn/frames/frame_usagi_chiikawa_yaha.png?v=1794108923270",
+        "imageUrl": "https://uplocket.io.vn/frames/frame_usagi_chiikawa_yaha.png?v=1794108923270",
+        "image_url": "https://uplocket.io.vn/frames/frame_usagi_chiikawa_yaha.png?v=1794108923270",
+        "placement": "below",
+        "scale": 100,
+        "scale_x": 100,
+        "scale_y": 100,
+        "offset_x": 0,
+        "offset_y": 0,
+        "use_local_time_zone": true,
+        "start_at": "2020-01-01T00:00:00",
+        "end_at": "2035-12-31T23:59:59",
+        "is_stock": true,
+        "isStock": true
+    },
+    {
+        "uid": "frame_sao_kirito_asuna_duel",
+        "id": "frame_sao_kirito_asuna_duel",
+        "name": "SAO Kirito & Asuna Song Kiếm Hợp Bích ⚔️",
+        "title": "SAO Kirito & Asuna Song Kiếm Hợp Bích ⚔️",
+        "displayName": "SAO Kirito & Asuna Song Kiếm Hợp Bích ⚔️",
+        "url": "https://uplocket.io.vn/frames/frame_sao_kirito_asuna_duel.png?v=1794108923270",
+        "frame_url": "https://uplocket.io.vn/frames/frame_sao_kirito_asuna_duel.png?v=1794108923270",
+        "imageUrl": "https://uplocket.io.vn/frames/frame_sao_kirito_asuna_duel.png?v=1794108923270",
+        "image_url": "https://uplocket.io.vn/frames/frame_sao_kirito_asuna_duel.png?v=1794108923270",
+        "placement": "below",
+        "scale": 100,
+        "scale_x": 100,
+        "scale_y": 100,
+        "offset_x": 0,
+        "offset_y": 0,
+        "use_local_time_zone": true,
+        "start_at": "2020-01-01T00:00:00",
+        "end_at": "2035-12-31T23:59:59",
+        "is_stock": true,
+        "isStock": true
+    },
+    {
+        "uid": "frame_zenitsu_thunder_clap",
+        "id": "frame_zenitsu_thunder_clap",
+        "name": "Zenitsu Hơi Thở Của Sấm Sét ⚡",
+        "title": "Zenitsu Hơi Thở Của Sấm Sét ⚡",
+        "displayName": "Zenitsu Hơi Thở Của Sấm Sét ⚡",
+        "url": "https://uplocket.io.vn/frames/frame_zenitsu_thunder_clap.png?v=1794108923270",
+        "frame_url": "https://uplocket.io.vn/frames/frame_zenitsu_thunder_clap.png?v=1794108923270",
+        "imageUrl": "https://uplocket.io.vn/frames/frame_zenitsu_thunder_clap.png?v=1794108923270",
+        "image_url": "https://uplocket.io.vn/frames/frame_zenitsu_thunder_clap.png?v=1794108923270",
+        "placement": "below",
+        "scale": 100,
+        "scale_x": 100,
+        "scale_y": 100,
+        "offset_x": 0,
+        "offset_y": 0,
+        "use_local_time_zone": true,
+        "start_at": "2020-01-01T00:00:00",
+        "end_at": "2035-12-31T23:59:59",
+        "is_stock": true,
+        "isStock": true
+    },
+    {
+        "uid": "frame_one_piece_luffy_gear5",
+        "id": "frame_one_piece_luffy_gear5",
+        "name": "One Piece Luffy Gear 5 Thần Mặt Trời 🏴‍☠️",
+        "title": "One Piece Luffy Gear 5 Thần Mặt Trời 🏴‍☠️",
+        "displayName": "One Piece Luffy Gear 5 Thần Mặt Trời 🏴‍☠️",
+        "url": "https://uplocket.io.vn/frames/frame_one_piece_luffy_gear5.png?v=1794108923270",
+        "frame_url": "https://uplocket.io.vn/frames/frame_one_piece_luffy_gear5.png?v=1794108923270",
+        "imageUrl": "https://uplocket.io.vn/frames/frame_one_piece_luffy_gear5.png?v=1794108923270",
+        "image_url": "https://uplocket.io.vn/frames/frame_one_piece_luffy_gear5.png?v=1794108923270",
+        "placement": "below",
+        "scale": 100,
+        "scale_x": 100,
+        "scale_y": 100,
+        "offset_x": 0,
+        "offset_y": 0,
+        "use_local_time_zone": true,
+        "start_at": "2020-01-01T00:00:00",
+        "end_at": "2035-12-31T23:59:59",
+        "is_stock": true,
+        "isStock": true
+    },
+    {
+        "uid": "frame_pororo_penguin_friends",
+        "id": "frame_pororo_penguin_friends",
+        "name": "Pororo Chú Chim Cánh Cụt Nhỏ 🐧",
+        "title": "Pororo Chú Chim Cánh Cụt Nhỏ 🐧",
+        "displayName": "Pororo Chú Chim Cánh Cụt Nhỏ 🐧",
+        "url": "https://uplocket.io.vn/frames/frame_pororo_penguin_friends.png?v=1794108923270",
+        "frame_url": "https://uplocket.io.vn/frames/frame_pororo_penguin_friends.png?v=1794108923270",
+        "imageUrl": "https://uplocket.io.vn/frames/frame_pororo_penguin_friends.png?v=1794108923270",
+        "image_url": "https://uplocket.io.vn/frames/frame_pororo_penguin_friends.png?v=1794108923270",
+        "placement": "below",
+        "scale": 100,
+        "scale_x": 100,
+        "scale_y": 100,
+        "offset_x": 0,
+        "offset_y": 0,
+        "use_local_time_zone": true,
+        "start_at": "2020-01-01T00:00:00",
+        "end_at": "2035-12-31T23:59:59",
+        "is_stock": true,
+        "isStock": true
+    },
+    {
+        "uid": "frame_sanrio_all_stars_wreath",
+        "id": "frame_sanrio_all_stars_wreath",
+        "name": "Sanrio All Stars Hội Ngộ Đáng Yêu 🎀",
+        "title": "Sanrio All Stars Hội Ngộ Đáng Yêu 🎀",
+        "displayName": "Sanrio All Stars Hội Ngộ Đáng Yêu 🎀",
+        "url": "https://uplocket.io.vn/frames/frame_sanrio_all_stars_wreath.png?v=1794108923270",
+        "frame_url": "https://uplocket.io.vn/frames/frame_sanrio_all_stars_wreath.png?v=1794108923270",
+        "imageUrl": "https://uplocket.io.vn/frames/frame_sanrio_all_stars_wreath.png?v=1794108923270",
+        "image_url": "https://uplocket.io.vn/frames/frame_sanrio_all_stars_wreath.png?v=1794108923270",
+        "placement": "below",
+        "scale": 100,
+        "scale_x": 100,
+        "scale_y": 100,
+        "offset_x": 0,
+        "offset_y": 0,
+        "use_local_time_zone": true,
+        "start_at": "2020-01-01T00:00:00",
+        "end_at": "2035-12-31T23:59:59",
+        "is_stock": true,
+        "isStock": true
+    },
+    {
+        "uid": "frame_doraemon_golden_bell",
+        "id": "frame_doraemon_golden_bell",
+        "name": "Doraemon Chuông Vàng & Bánh Rán 🔔",
+        "title": "Doraemon Chuông Vàng & Bánh Rán 🔔",
+        "displayName": "Doraemon Chuông Vàng & Bánh Rán 🔔",
+        "url": "https://uplocket.io.vn/frames/frame_doraemon_golden_bell.png?v=1794108923270",
+        "frame_url": "https://uplocket.io.vn/frames/frame_doraemon_golden_bell.png?v=1794108923270",
+        "imageUrl": "https://uplocket.io.vn/frames/frame_doraemon_golden_bell.png?v=1794108923270",
+        "image_url": "https://uplocket.io.vn/frames/frame_doraemon_golden_bell.png?v=1794108923270",
+        "placement": "below",
+        "scale": 100,
+        "scale_x": 100,
+        "scale_y": 100,
+        "offset_x": 0,
+        "offset_y": 0,
+        "use_local_time_zone": true,
+        "start_at": "2020-01-01T00:00:00",
+        "end_at": "2035-12-31T23:59:59",
+        "is_stock": true,
+        "isStock": true
+    },
+    {
+        "uid": "frame_kitty_kuromi_strawberry_pink",
+        "id": "frame_kitty_kuromi_strawberry_pink",
+        "name": "Hello Kitty & Kuromi Dâu Hồng 🍓",
+        "title": "Hello Kitty & Kuromi Dâu Hồng 🍓",
+        "displayName": "Hello Kitty & Kuromi Dâu Hồng 🍓",
+        "url": "https://uplocket.io.vn/frames/frame_kitty_kuromi_strawberry_pink.png?v=1794108923270",
+        "frame_url": "https://uplocket.io.vn/frames/frame_kitty_kuromi_strawberry_pink.png?v=1794108923270",
+        "imageUrl": "https://uplocket.io.vn/frames/frame_kitty_kuromi_strawberry_pink.png?v=1794108923270",
+        "image_url": "https://uplocket.io.vn/frames/frame_kitty_kuromi_strawberry_pink.png?v=1794108923270",
+        "placement": "below",
+        "scale": 100,
+        "scale_x": 100,
+        "scale_y": 100,
+        "offset_x": 0,
+        "offset_y": 0,
+        "use_local_time_zone": true,
+        "start_at": "2020-01-01T00:00:00",
+        "end_at": "2035-12-31T23:59:59",
+        "is_stock": true,
+        "isStock": true
+    },
+    {
+        "uid": "frame_cinnamoroll_blue_ribbon",
+        "id": "frame_cinnamoroll_blue_ribbon",
+        "name": "Cinnamoroll Nơ Xanh Biển Dịu Dàng 💙",
+        "title": "Cinnamoroll Nơ Xanh Biển Dịu Dàng 💙",
+        "displayName": "Cinnamoroll Nơ Xanh Biển Dịu Dàng 💙",
+        "url": "https://uplocket.io.vn/frames/frame_cinnamoroll_blue_ribbon.png?v=1794108923270",
+        "frame_url": "https://uplocket.io.vn/frames/frame_cinnamoroll_blue_ribbon.png?v=1794108923270",
+        "imageUrl": "https://uplocket.io.vn/frames/frame_cinnamoroll_blue_ribbon.png?v=1794108923270",
+        "image_url": "https://uplocket.io.vn/frames/frame_cinnamoroll_blue_ribbon.png?v=1794108923270",
+        "placement": "below",
+        "scale": 100,
+        "scale_x": 100,
+        "scale_y": 100,
+        "offset_x": 0,
+        "offset_y": 0,
+        "use_local_time_zone": true,
+        "start_at": "2020-01-01T00:00:00",
+        "end_at": "2035-12-31T23:59:59",
+        "is_stock": true,
+        "isStock": true
+    },
+    {
+        "uid": "frame_pompompurin_joyful_yellow",
+        "id": "frame_pompompurin_joyful_yellow",
+        "name": "Pompompurin Vàng Tươi Ngọt Ngào 💛",
+        "title": "Pompompurin Vàng Tươi Ngọt Ngào 💛",
+        "displayName": "Pompompurin Vàng Tươi Ngọt Ngào 💛",
+        "url": "https://uplocket.io.vn/frames/frame_pompompurin_joyful_yellow.png?v=1794108923270",
+        "frame_url": "https://uplocket.io.vn/frames/frame_pompompurin_joyful_yellow.png?v=1794108923270",
+        "imageUrl": "https://uplocket.io.vn/frames/frame_pompompurin_joyful_yellow.png?v=1794108923270",
+        "image_url": "https://uplocket.io.vn/frames/frame_pompompurin_joyful_yellow.png?v=1794108923270",
+        "placement": "below",
+        "scale": 100,
+        "scale_x": 100,
+        "scale_y": 100,
+        "offset_x": 0,
+        "offset_y": 0,
+        "use_local_time_zone": true,
+        "start_at": "2020-01-01T00:00:00",
+        "end_at": "2035-12-31T23:59:59",
+        "is_stock": true,
+        "isStock": true
+    },
+    {
+        "uid": "frame_smurfs_mushroom_village",
+        "id": "frame_smurfs_mushroom_village",
+        "name": "Xì Trum Ngôi Làng Nấm Đỏ 🍄",
+        "title": "Xì Trum Ngôi Làng Nấm Đỏ 🍄",
+        "displayName": "Xì Trum Ngôi Làng Nấm Đỏ 🍄",
+        "url": "https://uplocket.io.vn/frames/frame_smurfs_mushroom_village.png?v=1794108923270",
+        "frame_url": "https://uplocket.io.vn/frames/frame_smurfs_mushroom_village.png?v=1794108923270",
+        "imageUrl": "https://uplocket.io.vn/frames/frame_smurfs_mushroom_village.png?v=1794108923270",
+        "image_url": "https://uplocket.io.vn/frames/frame_smurfs_mushroom_village.png?v=1794108923270",
+        "placement": "below",
+        "scale": 100,
+        "scale_x": 100,
+        "scale_y": 100,
+        "offset_x": 0,
+        "offset_y": 0,
+        "use_local_time_zone": true,
+        "start_at": "2020-01-01T00:00:00",
+        "end_at": "2035-12-31T23:59:59",
+        "is_stock": true,
+        "isStock": true
+    },
+    {
+        "uid": "frame_merry_christmas_santa_bells",
+        "id": "frame_merry_christmas_santa_bells",
+        "name": "Giáng Sinh Noel Chuông Vàng Ấm Áp 🎄",
+        "title": "Giáng Sinh Noel Chuông Vàng Ấm Áp 🎄",
+        "displayName": "Giáng Sinh Noel Chuông Vàng Ấm Áp 🎄",
+        "url": "https://uplocket.io.vn/frames/frame_merry_christmas_santa_bells.png?v=1794108923270",
+        "frame_url": "https://uplocket.io.vn/frames/frame_merry_christmas_santa_bells.png?v=1794108923270",
+        "imageUrl": "https://uplocket.io.vn/frames/frame_merry_christmas_santa_bells.png?v=1794108923270",
+        "image_url": "https://uplocket.io.vn/frames/frame_merry_christmas_santa_bells.png?v=1794108923270",
+        "placement": "below",
+        "scale": 100,
+        "scale_x": 100,
+        "scale_y": 100,
+        "offset_x": 0,
+        "offset_y": 0,
+        "use_local_time_zone": true,
+        "start_at": "2020-01-01T00:00:00",
+        "end_at": "2035-12-31T23:59:59",
+        "is_stock": true,
+        "isStock": true
+    },
+    {
+        "uid": "frame_vietnam_women_day_2010",
+        "id": "frame_vietnam_women_day_2010",
+        "name": "Mừng Ngày Phụ Nữ Việt Nam 20/10 💐",
+        "title": "Mừng Ngày Phụ Nữ Việt Nam 20/10 💐",
+        "displayName": "Mừng Ngày Phụ Nữ Việt Nam 20/10 💐",
+        "url": "https://uplocket.io.vn/frames/frame_vietnam_women_day_2010.png?v=1794108923270",
+        "frame_url": "https://uplocket.io.vn/frames/frame_vietnam_women_day_2010.png?v=1794108923270",
+        "imageUrl": "https://uplocket.io.vn/frames/frame_vietnam_women_day_2010.png?v=1794108923270",
+        "image_url": "https://uplocket.io.vn/frames/frame_vietnam_women_day_2010.png?v=1794108923270",
+        "placement": "below",
+        "scale": 100,
+        "scale_x": 100,
+        "scale_y": 100,
+        "offset_x": 0,
+        "offset_y": 0,
+        "use_local_time_zone": true,
+        "start_at": "2020-01-01T00:00:00",
+        "end_at": "2035-12-31T23:59:59",
+        "is_stock": true,
+        "isStock": true
+    },
+    {
+        "uid": "frame_chiikawa_starlight_party",
+        "id": "frame_chiikawa_starlight_party",
+        "name": "Chiikawa Dạ Tiệc Ánh Sao ⭐",
+        "title": "Chiikawa Dạ Tiệc Ánh Sao ⭐",
+        "displayName": "Chiikawa Dạ Tiệc Ánh Sao ⭐",
+        "url": "https://uplocket.io.vn/frames/frame_chiikawa_starlight_party.png?v=1794108923270",
+        "frame_url": "https://uplocket.io.vn/frames/frame_chiikawa_starlight_party.png?v=1794108923270",
+        "imageUrl": "https://uplocket.io.vn/frames/frame_chiikawa_starlight_party.png?v=1794108923270",
+        "image_url": "https://uplocket.io.vn/frames/frame_chiikawa_starlight_party.png?v=1794108923270",
+        "placement": "below",
+        "scale": 100,
+        "scale_x": 100,
+        "scale_y": 100,
+        "offset_x": 0,
+        "offset_y": 0,
+        "use_local_time_zone": true,
+        "start_at": "2020-01-01T00:00:00",
+        "end_at": "2035-12-31T23:59:59",
+        "is_stock": true,
+        "isStock": true
+    },
+    {
+        "uid": "frame_usagi_carrot_crown",
+        "id": "frame_usagi_carrot_crown",
+        "name": "Usagi Thỏ Hoàng Gia Cà Rốt 👑",
+        "title": "Usagi Thỏ Hoàng Gia Cà Rốt 👑",
+        "displayName": "Usagi Thỏ Hoàng Gia Cà Rốt 👑",
+        "url": "https://uplocket.io.vn/frames/frame_usagi_carrot_crown.png?v=1794108923270",
+        "frame_url": "https://uplocket.io.vn/frames/frame_usagi_carrot_crown.png?v=1794108923270",
+        "imageUrl": "https://uplocket.io.vn/frames/frame_usagi_carrot_crown.png?v=1794108923270",
+        "image_url": "https://uplocket.io.vn/frames/frame_usagi_carrot_crown.png?v=1794108923270",
+        "placement": "below",
+        "scale": 100,
+        "scale_x": 100,
+        "scale_y": 100,
+        "offset_x": 0,
+        "offset_y": 0,
+        "use_local_time_zone": true,
+        "start_at": "2020-01-01T00:00:00",
+        "end_at": "2035-12-31T23:59:59",
+        "is_stock": true,
+        "isStock": true
+    },
+    {
+        "uid": "frame_shin_chan_sunny_yellow",
+        "id": "frame_shin_chan_sunny_yellow",
+        "name": "Shin Cậu Bé Bút Chì Nắng Vàng ☀️",
+        "title": "Shin Cậu Bé Bút Chì Nắng Vàng ☀️",
+        "displayName": "Shin Cậu Bé Bút Chì Nắng Vàng ☀️",
+        "url": "https://uplocket.io.vn/frames/frame_shin_chan_sunny_yellow.png?v=1794108923270",
+        "frame_url": "https://uplocket.io.vn/frames/frame_shin_chan_sunny_yellow.png?v=1794108923270",
+        "imageUrl": "https://uplocket.io.vn/frames/frame_shin_chan_sunny_yellow.png?v=1794108923270",
+        "image_url": "https://uplocket.io.vn/frames/frame_shin_chan_sunny_yellow.png?v=1794108923270",
+        "placement": "below",
+        "scale": 100,
+        "scale_x": 100,
+        "scale_y": 100,
+        "offset_x": 0,
+        "offset_y": 0,
+        "use_local_time_zone": true,
+        "start_at": "2020-01-01T00:00:00",
+        "end_at": "2035-12-31T23:59:59",
+        "is_stock": true,
+        "isStock": true
+    },
+    {
+        "uid": "frame_sanrio_pastel_candy_ribbon",
+        "id": "frame_sanrio_pastel_candy_ribbon",
+        "name": "Sanrio Dải Lụa Kẹo Ngọt Pastel 🍭",
+        "title": "Sanrio Dải Lụa Kẹo Ngọt Pastel 🍭",
+        "displayName": "Sanrio Dải Lụa Kẹo Ngọt Pastel 🍭",
+        "url": "https://uplocket.io.vn/frames/frame_sanrio_pastel_candy_ribbon.png?v=1794108923270",
+        "frame_url": "https://uplocket.io.vn/frames/frame_sanrio_pastel_candy_ribbon.png?v=1794108923270",
+        "imageUrl": "https://uplocket.io.vn/frames/frame_sanrio_pastel_candy_ribbon.png?v=1794108923270",
+        "image_url": "https://uplocket.io.vn/frames/frame_sanrio_pastel_candy_ribbon.png?v=1794108923270",
+        "placement": "below",
+        "scale": 100,
+        "scale_x": 100,
+        "scale_y": 100,
+        "offset_x": 0,
+        "offset_y": 0,
+        "use_local_time_zone": true,
+        "start_at": "2020-01-01T00:00:00",
+        "end_at": "2035-12-31T23:59:59",
+        "is_stock": true,
+        "isStock": true
+    },
+    {
+        "uid": "frame_bear_bunny_boba_good_day",
+        "id": "frame_bear_bunny_boba_good_day",
+        "name": "Gấu Nâu & Thỏ Trà Sữa Trân Châu 🧋",
+        "title": "Gấu Nâu & Thỏ Trà Sữa Trân Châu 🧋",
+        "displayName": "Gấu Nâu & Thỏ Trà Sữa Trân Châu 🧋",
+        "url": "https://uplocket.io.vn/frames/frame_bear_bunny_boba_good_day.png?v=1794108923270",
+        "frame_url": "https://uplocket.io.vn/frames/frame_bear_bunny_boba_good_day.png?v=1794108923270",
+        "imageUrl": "https://uplocket.io.vn/frames/frame_bear_bunny_boba_good_day.png?v=1794108923270",
+        "image_url": "https://uplocket.io.vn/frames/frame_bear_bunny_boba_good_day.png?v=1794108923270",
+        "placement": "below",
+        "scale": 100,
+        "scale_x": 100,
+        "scale_y": 100,
+        "offset_x": 0,
+        "offset_y": 0,
+        "use_local_time_zone": true,
+        "start_at": "2020-01-01T00:00:00",
+        "end_at": "2035-12-31T23:59:59",
+        "is_stock": true,
+        "isStock": true
+    },
+    {
+        "uid": "frame_one_piece_straw_hat_crew",
+        "id": "frame_one_piece_straw_hat_crew",
+        "name": "One Piece Băng Hải Tặc Mũ Rơm ⛵",
+        "title": "One Piece Băng Hải Tặc Mũ Rơm ⛵",
+        "displayName": "One Piece Băng Hải Tặc Mũ Rơm ⛵",
+        "url": "https://uplocket.io.vn/frames/frame_one_piece_straw_hat_crew.png?v=1794108923270",
+        "frame_url": "https://uplocket.io.vn/frames/frame_one_piece_straw_hat_crew.png?v=1794108923270",
+        "imageUrl": "https://uplocket.io.vn/frames/frame_one_piece_straw_hat_crew.png?v=1794108923270",
+        "image_url": "https://uplocket.io.vn/frames/frame_one_piece_straw_hat_crew.png?v=1794108923270",
+        "placement": "below",
+        "scale": 100,
+        "scale_x": 100,
+        "scale_y": 100,
+        "offset_x": 0,
+        "offset_y": 0,
+        "use_local_time_zone": true,
+        "start_at": "2020-01-01T00:00:00",
+        "end_at": "2035-12-31T23:59:59",
+        "is_stock": true,
+        "isStock": true
+    },
+    {
+        "uid": "frame_winter_bear_puppy_snow",
+        "id": "frame_winter_bear_puppy_snow",
+        "name": "Gấu Bác Cực & Đàn Chó Tuyết Trắng ❄️",
+        "title": "Gấu Bác Cực & Đàn Chó Tuyết Trắng ❄️",
+        "displayName": "Gấu Bác Cực & Đàn Chó Tuyết Trắng ❄️",
+        "url": "https://uplocket.io.vn/frames/frame_winter_bear_puppy_snow.png?v=1794108923270",
+        "frame_url": "https://uplocket.io.vn/frames/frame_winter_bear_puppy_snow.png?v=1794108923270",
+        "imageUrl": "https://uplocket.io.vn/frames/frame_winter_bear_puppy_snow.png?v=1794108923270",
+        "image_url": "https://uplocket.io.vn/frames/frame_winter_bear_puppy_snow.png?v=1794108923270",
+        "placement": "below",
+        "scale": 100,
+        "scale_x": 100,
+        "scale_y": 100,
+        "offset_x": 0,
+        "offset_y": 0,
+        "use_local_time_zone": true,
+        "start_at": "2020-01-01T00:00:00",
+        "end_at": "2035-12-31T23:59:59",
+        "is_stock": true,
+        "isStock": true
+    },
+    {
+        "uid": "frame_grizzy_and_the_lemmings",
+        "id": "frame_grizzy_and_the_lemmings",
+        "name": "Gấu Grizzy & Bầy Chuột Lemmings 🐻",
+        "title": "Gấu Grizzy & Bầy Chuột Lemmings 🐻",
+        "displayName": "Gấu Grizzy & Bầy Chuột Lemmings 🐻",
+        "url": "https://uplocket.io.vn/frames/frame_grizzy_and_the_lemmings.png?v=1794108923270",
+        "frame_url": "https://uplocket.io.vn/frames/frame_grizzy_and_the_lemmings.png?v=1794108923270",
+        "imageUrl": "https://uplocket.io.vn/frames/frame_grizzy_and_the_lemmings.png?v=1794108923270",
+        "image_url": "https://uplocket.io.vn/frames/frame_grizzy_and_the_lemmings.png?v=1794108923270",
+        "placement": "below",
+        "scale": 100,
+        "scale_x": 100,
+        "scale_y": 100,
+        "offset_x": 0,
+        "offset_y": 0,
+        "use_local_time_zone": true,
+        "start_at": "2020-01-01T00:00:00",
+        "end_at": "2035-12-31T23:59:59",
+        "is_stock": true,
+        "isStock": true
+    },
+    {
+        "uid": "frame_halloween_1794035943560",
+        "id": "frame_halloween_1794035943560",
+        "name": "halloween",
+        "title": "halloween",
+        "displayName": "halloween",
+        "url": "https://uplocket.io.vn/frames/baked_locketdio-halloween-2025-v1-1440x1440_s100_sx100_sy100_ox0_oy0.png?v=1794108923270",
+        "frame_url": "https://uplocket.io.vn/frames/baked_locketdio-halloween-2025-v1-1440x1440_s100_sx100_sy100_ox0_oy0.png?v=1794108923270",
+        "imageUrl": "https://uplocket.io.vn/frames/baked_locketdio-halloween-2025-v1-1440x1440_s100_sx100_sy100_ox0_oy0.png?v=1794108923270",
+        "image_url": "https://uplocket.io.vn/frames/baked_locketdio-halloween-2025-v1-1440x1440_s100_sx100_sy100_ox0_oy0.png?v=1794108923270",
+        "placement": "below",
+        "scale": 100,
+        "scale_x": 100,
+        "scale_y": 100,
+        "offset_x": 0,
+        "offset_y": 0,
+        "use_local_time_zone": true,
+        "start_at": "2020-01-01T00:00:00",
+        "end_at": "2035-12-31T23:59:59",
+        "is_stock": false,
+        "isStock": false
+    }
+];
+    var customWidgetFramesMap = {};
+    customWidgetFramesList.forEach(function(f) {
+        if (f && (f.uid || f.id)) {
+            customWidgetFramesMap[f.uid || f.id] = f;
+        }
+    });
+
     var dailyFrames = {
         1: { name: "mon", uid: "frame_mon_galaxy_cat", url: "https://i.ibb.co/84j69JnV/frame-mon-640.png" },
         2: { name: "tue", uid: "frame_tue_mecha_dragon", url: "https://i.ibb.co/fVQvW41Z/frame-tue-640.png" },
@@ -2037,6 +5232,20 @@ var unlockedOfficialAiFilters = officialAiFilterIds.map(function(fid) {
     var dayUid = todayFrame.uid + "_" + vnTime.getUTCFullYear() + "_" + (vnTime.getUTCMonth() + 1) + "_" + vnTime.getUTCDate();
 
     Object.assign(obj.entries, {
+        widget_frames: JSON.stringify(customWidgetFramesList),
+        all_widget_frames: JSON.stringify(customWidgetFramesList),
+        available_widget_frames: JSON.stringify(customWidgetFramesList),
+        widget_frames_list: JSON.stringify(customWidgetFramesList),
+        custom_widget_frame_list: JSON.stringify(customWidgetFramesList),
+        custom_widget_frames_list: JSON.stringify(customWidgetFramesList),
+        widget_frame_options: JSON.stringify(customWidgetFramesList),
+        frames: JSON.stringify(customWidgetFramesList),
+        widget_frames_map: JSON.stringify(customWidgetFramesMap),
+        custom_widget_frames_map: JSON.stringify(customWidgetFramesMap),
+        custom_widget_frames: "true",
+        custom_widget_frames_enabled: "true",
+        widget_auth_fix: "true",
+        widget_auth_fix_2: "true",
         widget_frame_event_max_images: "5",
         android_widget_frame_event_enabled: "true",
         ios_widget_frame_event_enabled: "true",
@@ -2128,6 +5337,443 @@ var unlockedOfficialAiFilters = officialAiFilterIds.map(function(fid) {
     // 8. OVERLAY & CUSTOM CAPTIONS (854 CAPTIONS - 29 SECTIONS)
     // Hybrid Dynamic Merge (Khác biệt an_2: bảo toàn caption mới từ server)
     // ============================================================
+    
+    // 36 Custom Stickers từ Uplocket
+    var customStickersList = [
+    {
+        "uid": "stk_dio_pm2",
+        "name": "Practical Magic 2",
+        "prompt": "Practical Magic 2",
+        "icon_url": "https://uplocket.io.vn/uploads/stickers/stk_dio_pm2.png",
+        "overlay_image_url": "https://uplocket.io.vn/uploads/stickers/stk_dio_pm2.png",
+        "colors": [
+            "#7C3AED",
+            "#C4B5FD"
+        ],
+        "section": "Sự kiện"
+    },
+    {
+        "uid": "stk_dio_looksmaxing",
+        "name": "Looks-Maxxing",
+        "prompt": "Looks-Maxxing",
+        "icon_url": "https://uplocket.io.vn/uploads/stickers/stk_dio_looksmaxing.png",
+        "overlay_image_url": "https://uplocket.io.vn/uploads/stickers/stk_dio_looksmaxing.png",
+        "colors": [
+            "#F59E0B",
+            "#FDE68A"
+        ],
+        "section": "Tinh nghịch"
+    },
+    {
+        "uid": "stk_dio_influencer",
+        "name": "Influencer",
+        "prompt": "Influencer",
+        "icon_url": "https://uplocket.io.vn/uploads/stickers/stk_dio_influencer.png",
+        "overlay_image_url": "https://uplocket.io.vn/uploads/stickers/stk_dio_influencer.png",
+        "colors": [
+            "#EC4899",
+            "#F9A8D4"
+        ],
+        "section": "Tinh nghịch"
+    },
+    {
+        "uid": "stk_dio_toothless",
+        "name": "Toothless",
+        "prompt": "Toothless",
+        "icon_url": "https://uplocket.io.vn/uploads/stickers/stk_dio_toothless.png",
+        "overlay_image_url": "https://uplocket.io.vn/uploads/stickers/stk_dio_toothless.png",
+        "colors": [
+            "#0F172A",
+            "#64748B"
+        ],
+        "section": "Tinh nghịch"
+    },
+    {
+        "uid": "stk_dio_orange_wig",
+        "name": "Okay Wig",
+        "prompt": "Okay Wig",
+        "icon_url": "https://uplocket.io.vn/uploads/stickers/stk_dio_orange_wig.png",
+        "overlay_image_url": "https://uplocket.io.vn/uploads/stickers/stk_dio_orange_wig.png",
+        "colors": [
+            "#F97316",
+            "#FDBA74"
+        ],
+        "section": "Tinh nghịch"
+    },
+    {
+        "uid": "stk_dio_bye_brows",
+        "name": "Bye Brows",
+        "prompt": "Bye Brows",
+        "icon_url": "https://uplocket.io.vn/uploads/stickers/stk_dio_bye_brows.png",
+        "overlay_image_url": "https://uplocket.io.vn/uploads/stickers/stk_dio_bye_brows.png",
+        "colors": [
+            "#A8A29E",
+            "#E7E5E4"
+        ],
+        "section": "Ngoại hình"
+    },
+    {
+        "uid": "stk_dio_braces",
+        "name": "Braces",
+        "prompt": "Braces",
+        "icon_url": "https://uplocket.io.vn/uploads/stickers/stk_dio_braces.png",
+        "overlay_image_url": "https://uplocket.io.vn/uploads/stickers/stk_dio_braces.png",
+        "colors": [
+            "#38BDF8",
+            "#E0F2FE"
+        ],
+        "section": "Ngoại hình"
+    },
+    {
+        "uid": "stk_dio_tatted",
+        "name": "Tatted",
+        "prompt": "Tatted",
+        "icon_url": "https://uplocket.io.vn/uploads/stickers/stk_dio_tatted.png",
+        "overlay_image_url": "https://uplocket.io.vn/uploads/stickers/stk_dio_tatted.png",
+        "colors": [
+            "#111827",
+            "#6B7280"
+        ],
+        "section": "Ngoại hình"
+    },
+    {
+        "uid": "stk_dio_bearded",
+        "name": "Beard",
+        "prompt": "Beard",
+        "icon_url": "https://uplocket.io.vn/uploads/stickers/stk_dio_bearded.png",
+        "overlay_image_url": "https://uplocket.io.vn/uploads/stickers/stk_dio_bearded.png",
+        "colors": [
+            "#78350F",
+            "#D6A36A"
+        ],
+        "section": "Ngoại hình"
+    },
+    {
+        "uid": "stk_dio_buns",
+        "name": "Buns",
+        "prompt": "Buns",
+        "icon_url": "https://uplocket.io.vn/uploads/stickers/stk_dio_buns.png",
+        "overlay_image_url": "https://uplocket.io.vn/uploads/stickers/stk_dio_buns.png",
+        "colors": [
+            "#F472B6",
+            "#FBCFE8"
+        ],
+        "section": "Ngoại hình"
+    },
+    {
+        "uid": "stk_dio_mohawk",
+        "name": "Mohawk",
+        "prompt": "Mohawk",
+        "icon_url": "https://uplocket.io.vn/uploads/stickers/stk_dio_mohawk.png",
+        "overlay_image_url": "https://uplocket.io.vn/uploads/stickers/stk_dio_mohawk.png",
+        "colors": [
+            "#EF4444",
+            "#FCA5A5"
+        ],
+        "section": "Ngoại hình"
+    },
+    {
+        "uid": "stk_dio_bob",
+        "name": "Bob Cut",
+        "prompt": "Bob Cut",
+        "icon_url": "https://uplocket.io.vn/uploads/stickers/stk_dio_bob.png",
+        "overlay_image_url": "https://uplocket.io.vn/uploads/stickers/stk_dio_bob.png",
+        "colors": [
+            "#1F2937",
+            "#9CA3AF"
+        ],
+        "section": "Ngoại hình"
+    },
+    {
+        "uid": "stk_dio_bowling_ball",
+        "name": "Bowling Ball",
+        "prompt": "Bowling Ball",
+        "icon_url": "https://uplocket.io.vn/uploads/stickers/stk_dio_bowling_ball.png",
+        "overlay_image_url": "https://uplocket.io.vn/uploads/stickers/stk_dio_bowling_ball.png",
+        "colors": [
+            "#111827",
+            "#4B5563"
+        ],
+        "section": "Ngoại hình"
+    },
+    {
+        "uid": "stk_dio_bleached_hair",
+        "name": "Blond & Bleached",
+        "prompt": "Blond & Bleached",
+        "icon_url": "https://uplocket.io.vn/uploads/stickers/stk_dio_bleached_hair.png",
+        "overlay_image_url": "https://uplocket.io.vn/uploads/stickers/stk_dio_bleached_hair.png",
+        "colors": [
+            "#FACC15",
+            "#FEF3C7"
+        ],
+        "section": "Ngoại hình"
+    },
+    {
+        "uid": "stk_dio_princess",
+        "name": "Princess",
+        "prompt": "Princess",
+        "icon_url": "https://uplocket.io.vn/uploads/stickers/stk_dio_princess.png",
+        "overlay_image_url": "https://uplocket.io.vn/uploads/stickers/stk_dio_princess.png",
+        "colors": [
+            "#F472B6",
+            "#FDE68A"
+        ],
+        "section": "Ăn mừng"
+    },
+    {
+        "uid": "stk_dio_cash",
+        "name": "Ca$h Money",
+        "prompt": "Ca$h Money",
+        "icon_url": "https://uplocket.io.vn/uploads/stickers/stk_dio_cash.png",
+        "overlay_image_url": "https://uplocket.io.vn/uploads/stickers/stk_dio_cash.png",
+        "colors": [
+            "#22C55E",
+            "#BBF7D0"
+        ],
+        "section": "Ăn mừng"
+    },
+    {
+        "uid": "stk_dio_slimed",
+        "name": "Slimed",
+        "prompt": "Slimed",
+        "icon_url": "https://uplocket.io.vn/uploads/stickers/stk_dio_slimed.png",
+        "overlay_image_url": "https://uplocket.io.vn/uploads/stickers/stk_dio_slimed.png",
+        "colors": [
+            "#84CC16",
+            "#D9F99D"
+        ],
+        "section": "Ăn mừng"
+    },
+    {
+        "uid": "stk_dio_happy_birthday",
+        "name": "Happy Birthday",
+        "prompt": "Happy Birthday",
+        "icon_url": "https://uplocket.io.vn/uploads/stickers/stk_dio_happy_birthday.png",
+        "overlay_image_url": "https://uplocket.io.vn/uploads/stickers/stk_dio_happy_birthday.png",
+        "colors": [
+            "#F97316",
+            "#FDE68A"
+        ],
+        "section": "Ăn mừng"
+    },
+    {
+        "uid": "stk_dio_disco",
+        "name": "Disco",
+        "prompt": "Disco",
+        "icon_url": "https://uplocket.io.vn/uploads/stickers/stk_dio_disco.png",
+        "overlay_image_url": "https://uplocket.io.vn/uploads/stickers/stk_dio_disco.png",
+        "colors": [
+            "#8B5CF6",
+            "#C4B5FD"
+        ],
+        "section": "Ăn mừng"
+    },
+    {
+        "uid": "stk_dio_flower_crown",
+        "name": "Flower Crown",
+        "prompt": "Flower Crown",
+        "icon_url": "https://uplocket.io.vn/uploads/stickers/stk_dio_flower_crown.png",
+        "overlay_image_url": "https://uplocket.io.vn/uploads/stickers/stk_dio_flower_crown.png",
+        "colors": [
+            "#FB7185",
+            "#BBF7D0"
+        ],
+        "section": "Dễ thương"
+    },
+    {
+        "uid": "stk_dio_cutesy",
+        "name": "Cutesy",
+        "prompt": "Cutesy",
+        "icon_url": "https://uplocket.io.vn/uploads/stickers/stk_dio_cutesy.png",
+        "overlay_image_url": "https://uplocket.io.vn/uploads/stickers/stk_dio_cutesy.png",
+        "colors": [
+            "#F9A8D4",
+            "#FCE7F3"
+        ],
+        "section": "Dễ thương"
+    },
+    {
+        "uid": "stk_dio_sticker_face",
+        "name": "Sticker Face",
+        "prompt": "Sticker Face",
+        "icon_url": "https://uplocket.io.vn/uploads/stickers/stk_dio_sticker_face.png",
+        "overlay_image_url": "https://uplocket.io.vn/uploads/stickers/stk_dio_sticker_face.png",
+        "colors": [
+            "#FBBF24",
+            "#FDE68A"
+        ],
+        "section": "Dễ thương"
+    },
+    {
+        "uid": "stk_dio_love_bug",
+        "name": "Love Bug",
+        "prompt": "Love Bug",
+        "icon_url": "https://uplocket.io.vn/uploads/stickers/stk_dio_love_bug.png",
+        "overlay_image_url": "https://uplocket.io.vn/uploads/stickers/stk_dio_love_bug.png",
+        "colors": [
+            "#F43F5E",
+            "#FECDD3"
+        ],
+        "section": "Dễ thương"
+    },
+    {
+        "uid": "stk_dio_cowboy",
+        "name": "Cowboy & Cowgirl",
+        "prompt": "Cowboy & Cowgirl",
+        "icon_url": "https://uplocket.io.vn/uploads/stickers/stk_dio_cowboy.png",
+        "overlay_image_url": "https://uplocket.io.vn/uploads/stickers/stk_dio_cowboy.png",
+        "colors": [
+            "#B45309",
+            "#FDE68A"
+        ],
+        "section": "Trang phục"
+    },
+    {
+        "uid": "stk_dio_giraffe",
+        "name": "Giraffe",
+        "prompt": "Giraffe",
+        "icon_url": "https://uplocket.io.vn/uploads/stickers/stk_dio_giraffe.png",
+        "overlay_image_url": "https://uplocket.io.vn/uploads/stickers/stk_dio_giraffe.png",
+        "colors": [
+            "#D97706",
+            "#FDE68A"
+        ],
+        "section": "Trang phục"
+    },
+    {
+        "uid": "stk_dio_wedding",
+        "name": "Wedding",
+        "prompt": "Wedding",
+        "icon_url": "https://uplocket.io.vn/uploads/stickers/stk_dio_wedding.png",
+        "overlay_image_url": "https://uplocket.io.vn/uploads/stickers/stk_dio_wedding.png",
+        "colors": [
+            "#F8FAFC",
+            "#E2E8F0"
+        ],
+        "section": "Trang phục"
+    },
+    {
+        "uid": "stk_dio_clown",
+        "name": "Clown",
+        "prompt": "Clown",
+        "icon_url": "https://uplocket.io.vn/uploads/stickers/stk_dio_clown.png",
+        "overlay_image_url": "https://uplocket.io.vn/uploads/stickers/stk_dio_clown.png",
+        "colors": [
+            "#EF4444",
+            "#FDE68A"
+        ],
+        "section": "Trang phục"
+    },
+    {
+        "uid": "stk_dio_sweat_hearts",
+        "name": "Sweet Hearts",
+        "prompt": "Sweet Hearts",
+        "icon_url": "https://uplocket.io.vn/uploads/stickers/stk_dio_sweat_hearts.png",
+        "overlay_image_url": "https://uplocket.io.vn/uploads/stickers/stk_dio_sweat_hearts.png",
+        "colors": [
+            "#FB7185",
+            "#FCE7F3"
+        ],
+        "section": "Ngày lễ"
+    },
+    {
+        "uid": "stk_dio_bearded_holiday",
+        "name": "Bearded",
+        "prompt": "Bearded",
+        "icon_url": "https://uplocket.io.vn/uploads/stickers/stk_dio_bearded.png",
+        "overlay_image_url": "https://uplocket.io.vn/uploads/stickers/stk_dio_bearded.png",
+        "colors": [
+            "#78350F",
+            "#D6A36A"
+        ],
+        "section": "Ngày lễ"
+    },
+    {
+        "uid": "stk_dio_frosty",
+        "name": "Frosty",
+        "prompt": "Frosty",
+        "icon_url": "https://uplocket.io.vn/uploads/stickers/stk_dio_frosty.png",
+        "overlay_image_url": "https://uplocket.io.vn/uploads/stickers/stk_dio_frosty.png",
+        "colors": [
+            "#38BDF8",
+            "#E0F2FE"
+        ],
+        "section": "Ngày lễ"
+    },
+    {
+        "uid": "stk_dio_elf",
+        "name": "Elf",
+        "prompt": "Elf",
+        "icon_url": "https://uplocket.io.vn/uploads/stickers/stk_dio_elf.png",
+        "overlay_image_url": "https://uplocket.io.vn/uploads/stickers/stk_dio_elf.png",
+        "colors": [
+            "#16A34A",
+            "#FACC15"
+        ],
+        "section": "Ngày lễ"
+    },
+    {
+        "uid": "stk_dio_santa",
+        "name": "Santa",
+        "prompt": "Santa",
+        "icon_url": "https://uplocket.io.vn/uploads/stickers/stk_dio_santa.png",
+        "overlay_image_url": "https://uplocket.io.vn/uploads/stickers/stk_dio_santa.png",
+        "colors": [
+            "#DC2626",
+            "#F8FAFC"
+        ],
+        "section": "Ngày lễ"
+    },
+    {
+        "uid": "stk_dio_easter_bunny",
+        "name": "Easter Bunny",
+        "prompt": "Easter Bunny",
+        "icon_url": "https://uplocket.io.vn/uploads/stickers/stk_dio_easter_bunny.png",
+        "overlay_image_url": "https://uplocket.io.vn/uploads/stickers/stk_dio_easter_bunny.png",
+        "colors": [
+            "#F9A8D4",
+            "#E9D5FF"
+        ],
+        "section": "Ngày lễ"
+    },
+    {
+        "uid": "stk_dio_leprechaun",
+        "name": "Leprechaun",
+        "prompt": "Leprechaun",
+        "icon_url": "https://uplocket.io.vn/uploads/stickers/stk_dio_leprechaun.png",
+        "overlay_image_url": "https://uplocket.io.vn/uploads/stickers/stk_dio_leprechaun.png",
+        "colors": [
+            "#15803D",
+            "#FACC15"
+        ],
+        "section": "Ngày lễ"
+    },
+    {
+        "uid": "stk_dio_easter_chick",
+        "name": "Easter Chick",
+        "prompt": "Easter Chick",
+        "icon_url": "https://uplocket.io.vn/uploads/stickers/stk_dio_easter_chick.png",
+        "overlay_image_url": "https://uplocket.io.vn/uploads/stickers/stk_dio_easter_chick.png",
+        "colors": [
+            "#FACC15",
+            "#FDE68A"
+        ],
+        "section": "Ngày lễ"
+    },
+    {
+        "uid": "stk_dio_lucky_face",
+        "name": "Lucky Face",
+        "prompt": "Lucky Face",
+        "icon_url": "https://uplocket.io.vn/uploads/stickers/stk_dio_lucky_face.png",
+        "overlay_image_url": "https://uplocket.io.vn/uploads/stickers/stk_dio_lucky_face.png",
+        "colors": [
+            "#22C55E",
+            "#BBF7D0"
+        ],
+        "section": "Ngày lễ"
+    }
+];
+
     var customCatalog = [
             {
                 section: "🎨 General",
@@ -3128,6 +6774,892 @@ var unlockedOfficialAiFilters = officialAiFilterIds.map(function(fid) {
                     {"overlay_id":"caption:built_different","source":"remote","caption":{"background":{"colors":["#CD80C9","#A975D1"]},"max_lines":1,"text":"Built different","text_color":"#292322","type":"static_content","icon":{"type":"emoji","data":"🦾"}}}
                 ]
             }
+,
+            {
+                "section": "🎨 Trang trí & Vibes (Uplocket)",
+                "items": [
+                                {
+                                                "overlay_id": "caption:_ang___ai_t_n_y_u_luonnnn",
+                                                "source": "remote",
+                                                "caption": {
+                                                                "background": {
+                                                                                "colors": [
+                                                                                                "#FF416C",
+                                                                                                "#FF6B9A"
+                                                                                ]
+                                                                },
+                                                                "max_lines": 1,
+                                                                "text": "Đang ế ai tán yêu luonnnn",
+                                                                "text_color": "#FFFFFF",
+                                                                "type": "static_content",
+                                                                "icon": {
+                                                                                "type": "emoji",
+                                                                                "data": "✨"
+                                                                }
+                                                }
+                                },
+                                {
+                                                "overlay_id": "caption:dio_cute",
+                                                "source": "remote",
+                                                "caption": {
+                                                                "background": {
+                                                                                "colors": [
+                                                                                                "#FFB199",
+                                                                                                "#FF6A88"
+                                                                                ]
+                                                                },
+                                                                "max_lines": 1,
+                                                                "text": "🌷 Feeling Cute",
+                                                                "text_color": "#FFFFFF",
+                                                                "type": "static_content",
+                                                                "icon": {
+                                                                                "type": "emoji",
+                                                                                "data": "✨"
+                                                                }
+                                                }
+                                },
+                                {
+                                                "overlay_id": "caption:dio_wedding",
+                                                "source": "remote",
+                                                "caption": {
+                                                                "background": {
+                                                                                "colors": [
+                                                                                                "#FFE4E1",
+                                                                                                "#E73C7E"
+                                                                                ]
+                                                                },
+                                                                "max_lines": 1,
+                                                                "text": "💍 Wedding Time!",
+                                                                "text_color": "#FFFFFF",
+                                                                "type": "static_content",
+                                                                "icon": {
+                                                                                "type": "emoji",
+                                                                                "data": "✨"
+                                                                }
+                                                }
+                                },
+                                {
+                                                "overlay_id": "caption:dio_happy",
+                                                "source": "remote",
+                                                "caption": {
+                                                                "background": {
+                                                                                "colors": [
+                                                                                                "#F9D3E0",
+                                                                                                "#EE719E"
+                                                                                ]
+                                                                },
+                                                                "max_lines": 1,
+                                                                "text": "💝 Cảm thấy hạnh phúc",
+                                                                "text_color": "#FFFFFF",
+                                                                "type": "static_content",
+                                                                "icon": {
+                                                                                "type": "emoji",
+                                                                                "data": "✨"
+                                                                }
+                                                }
+                                },
+                                {
+                                                "overlay_id": "caption:dio_coffee",
+                                                "source": "remote",
+                                                "caption": {
+                                                                "background": {
+                                                                                "colors": [
+                                                                                                "#B48E72",
+                                                                                                "#4B2C20"
+                                                                                ]
+                                                                },
+                                                                "max_lines": 1,
+                                                                "text": "☕ Coffee Time!",
+                                                                "text_color": "#FFFFFF",
+                                                                "type": "static_content",
+                                                                "icon": {
+                                                                                "type": "emoji",
+                                                                                "data": "✨"
+                                                                }
+                                                }
+                                },
+                                {
+                                                "overlay_id": "caption:dio_snake",
+                                                "source": "remote",
+                                                "caption": {
+                                                                "background": {
+                                                                                "colors": [
+                                                                                                "#8BFF4D",
+                                                                                                "#055200"
+                                                                                ]
+                                                                },
+                                                                "max_lines": 1,
+                                                                "text": "🐍 Snake Vibes",
+                                                                "text_color": "#FFFFFF",
+                                                                "type": "static_content",
+                                                                "icon": {
+                                                                                "type": "emoji",
+                                                                                "data": "✨"
+                                                                }
+                                                }
+                                },
+                                {
+                                                "overlay_id": "caption:dio_mixue",
+                                                "source": "remote",
+                                                "caption": {
+                                                                "background": {
+                                                                                "colors": [
+                                                                                                "#E0F7FA",
+                                                                                                "#FFCDD2"
+                                                                                ]
+                                                                },
+                                                                "max_lines": 1,
+                                                                "text": "🍦 Mixue Time!",
+                                                                "text_color": "#4E0000",
+                                                                "type": "static_content",
+                                                                "icon": {
+                                                                                "type": "emoji",
+                                                                                "data": "✨"
+                                                                }
+                                                }
+                                },
+                                {
+                                                "overlay_id": "caption:dio_locket_time",
+                                                "source": "remote",
+                                                "caption": {
+                                                                "background": {
+                                                                                "colors": [
+                                                                                                "#FFDEE9",
+                                                                                                "#B5FFFC"
+                                                                                ]
+                                                                },
+                                                                "max_lines": 1,
+                                                                "text": "📸 Locket Time!",
+                                                                "text_color": "#202020",
+                                                                "type": "static_content",
+                                                                "icon": {
+                                                                                "type": "emoji",
+                                                                                "data": "✨"
+                                                                }
+                                                }
+                                },
+                                {
+                                                "overlay_id": "caption:dio_cinema",
+                                                "source": "remote",
+                                                "caption": {
+                                                                "background": {
+                                                                                "colors": [
+                                                                                                "#3B3B5A",
+                                                                                                "#1C1C2E"
+                                                                                ]
+                                                                },
+                                                                "max_lines": 1,
+                                                                "text": "🎬 Cinema Time!",
+                                                                "text_color": "#FFFFFF",
+                                                                "type": "static_content",
+                                                                "icon": {
+                                                                                "type": "emoji",
+                                                                                "data": "✨"
+                                                                }
+                                                }
+                                },
+                                {
+                                                "overlay_id": "caption:dio_dating",
+                                                "source": "remote",
+                                                "caption": {
+                                                                "background": {
+                                                                                "colors": [
+                                                                                                "#FF9A9E",
+                                                                                                "#F6416C"
+                                                                                ]
+                                                                },
+                                                                "max_lines": 1,
+                                                                "text": "💕 Dating Time!",
+                                                                "text_color": "#FFFFFF",
+                                                                "type": "static_content",
+                                                                "icon": {
+                                                                                "type": "emoji",
+                                                                                "data": "✨"
+                                                                }
+                                                }
+                                },
+                                {
+                                                "overlay_id": "caption:dio_graduation",
+                                                "source": "remote",
+                                                "caption": {
+                                                                "background": {
+                                                                                "colors": [
+                                                                                                "#4E4C8C",
+                                                                                                "#1E1E2F"
+                                                                                ]
+                                                                },
+                                                                "max_lines": 1,
+                                                                "text": "🎓 Happy Graduation Day!",
+                                                                "text_color": "#FFFFFF",
+                                                                "type": "static_content",
+                                                                "icon": {
+                                                                                "type": "emoji",
+                                                                                "data": "✨"
+                                                                }
+                                                }
+                                },
+                                {
+                                                "overlay_id": "caption:dio_shopping",
+                                                "source": "remote",
+                                                "caption": {
+                                                                "background": {
+                                                                                "colors": [
+                                                                                                "#FFF1EB",
+                                                                                                "#ACE0F9"
+                                                                                ]
+                                                                },
+                                                                "max_lines": 1,
+                                                                "text": "🛍️ Shopping Time!",
+                                                                "text_color": "#1A1A1A",
+                                                                "type": "static_content",
+                                                                "icon": {
+                                                                                "type": "emoji",
+                                                                                "data": "✨"
+                                                                }
+                                                }
+                                },
+                                {
+                                                "overlay_id": "caption:dio_dinner",
+                                                "source": "remote",
+                                                "caption": {
+                                                                "background": {
+                                                                                "colors": [
+                                                                                                "#FFD3A5",
+                                                                                                "#FD6585"
+                                                                                ]
+                                                                },
+                                                                "max_lines": 1,
+                                                                "text": "🍽️ Dinner Time!",
+                                                                "text_color": "#FFFFFF",
+                                                                "type": "static_content",
+                                                                "icon": {
+                                                                                "type": "emoji",
+                                                                                "data": "✨"
+                                                                }
+                                                }
+                                },
+                                {
+                                                "overlay_id": "caption:dio_chilling",
+                                                "source": "remote",
+                                                "caption": {
+                                                                "background": {
+                                                                                "colors": [
+                                                                                                "#D8B4FE",
+                                                                                                "#FBCFE8"
+                                                                                ]
+                                                                },
+                                                                "max_lines": 1,
+                                                                "text": "🌴 Chilling Time!",
+                                                                "text_color": "#3A0D3C",
+                                                                "type": "static_content",
+                                                                "icon": {
+                                                                                "type": "emoji",
+                                                                                "data": "✨"
+                                                                }
+                                                }
+                                },
+                                {
+                                                "overlay_id": "caption:dio_mua_thu",
+                                                "source": "remote",
+                                                "caption": {
+                                                                "background": {
+                                                                                "colors": [
+                                                                                                "#FFE0A0",
+                                                                                                "#F6A53A"
+                                                                                ]
+                                                                },
+                                                                "max_lines": 1,
+                                                                "text": "🍂 Xin chào Mùa Thu",
+                                                                "text_color": "#FFFFFF",
+                                                                "type": "static_content",
+                                                                "icon": {
+                                                                                "type": "emoji",
+                                                                                "data": "✨"
+                                                                }
+                                                }
+                                },
+                                {
+                                                "overlay_id": "caption:dio_bong_hoa",
+                                                "source": "remote",
+                                                "caption": {
+                                                                "background": {
+                                                                                "colors": [
+                                                                                                "#F6C1CC",
+                                                                                                "#E8A0BF"
+                                                                                ]
+                                                                },
+                                                                "max_lines": 1,
+                                                                "text": "🌷 Bông hoa đẹp nhất",
+                                                                "text_color": "#5A2942",
+                                                                "type": "static_content",
+                                                                "icon": {
+                                                                                "type": "emoji",
+                                                                                "data": "✨"
+                                                                }
+                                                }
+                                },
+                                {
+                                                "overlay_id": "caption:dio_thay_co",
+                                                "source": "remote",
+                                                "caption": {
+                                                                "background": {
+                                                                                "colors": [
+                                                                                                "#355445",
+                                                                                                "#4F7560"
+                                                                                ]
+                                                                },
+                                                                "max_lines": 1,
+                                                                "text": "📓 Tôn vinh thầy cô",
+                                                                "text_color": "#FFFFFF",
+                                                                "type": "static_content",
+                                                                "icon": {
+                                                                                "type": "emoji",
+                                                                                "data": "✨"
+                                                                }
+                                                }
+                                },
+                                {
+                                                "overlay_id": "caption:dio_phu_nu",
+                                                "source": "remote",
+                                                "caption": {
+                                                                "background": {
+                                                                                "colors": [
+                                                                                                "#F5DBFF",
+                                                                                                "#D2C6EC"
+                                                                                ]
+                                                                },
+                                                                "max_lines": 1,
+                                                                "text": "🌷 Ngày Phụ nữ",
+                                                                "text_color": "#3E0667",
+                                                                "type": "static_content",
+                                                                "icon": {
+                                                                                "type": "emoji",
+                                                                                "data": "✨"
+                                                                }
+                                                }
+                                },
+                                {
+                                                "overlay_id": "caption:dio_mung_phu_nu",
+                                                "source": "remote",
+                                                "caption": {
+                                                                "background": {
+                                                                                "colors": [
+                                                                                                "#F6DAFB",
+                                                                                                "#EB9596"
+                                                                                ]
+                                                                },
+                                                                "max_lines": 1,
+                                                                "text": "🌸 Mừng ngày Phụ nữ",
+                                                                "text_color": "#4F003E",
+                                                                "type": "static_content",
+                                                                "icon": {
+                                                                                "type": "emoji",
+                                                                                "data": "✨"
+                                                                }
+                                                }
+                                },
+                                {
+                                                "overlay_id": "caption:dio_halloween",
+                                                "source": "remote",
+                                                "caption": {
+                                                                "background": {
+                                                                                "colors": [
+                                                                                                "#150804",
+                                                                                                "#C8540D"
+                                                                                ]
+                                                                },
+                                                                "max_lines": 1,
+                                                                "text": "🎃 Halloween",
+                                                                "text_color": "#FFB182",
+                                                                "type": "static_content",
+                                                                "icon": {
+                                                                                "type": "emoji",
+                                                                                "data": "✨"
+                                                                }
+                                                }
+                                },
+                                {
+                                                "overlay_id": "caption:dio_locket_miss",
+                                                "source": "remote",
+                                                "caption": {
+                                                                "background": {
+                                                                                "colors": [
+                                                                                                "#6D9EEB",
+                                                                                                "#6D9EEB"
+                                                                                ]
+                                                                },
+                                                                "max_lines": 1,
+                                                                "text": "보고 싶어 🥺",
+                                                                "text_color": "#FFFFFF",
+                                                                "type": "static_content",
+                                                                "icon": {
+                                                                                "type": "emoji",
+                                                                                "data": "✨"
+                                                                }
+                                                }
+                                },
+                                {
+                                                "overlay_id": "caption:dio_locket_ssambbong",
+                                                "source": "remote",
+                                                "caption": {
+                                                                "background": {
+                                                                                "colors": [
+                                                                                                "#E08AFF",
+                                                                                                "#FFA5E7"
+                                                                                ]
+                                                                },
+                                                                "max_lines": 1,
+                                                                "text": "쌈뽕 ✨",
+                                                                "text_color": "#000000",
+                                                                "type": "static_content",
+                                                                "icon": {
+                                                                                "type": "emoji",
+                                                                                "data": "✨"
+                                                                }
+                                                }
+                                },
+                                {
+                                                "overlay_id": "caption:dio_locket_jonmat",
+                                                "source": "remote",
+                                                "caption": {
+                                                                "background": {
+                                                                                "colors": [
+                                                                                                "#FFD658",
+                                                                                                "#FFD658"
+                                                                                ]
+                                                                },
+                                                                "max_lines": 1,
+                                                                "text": "존맛 😋",
+                                                                "text_color": "#000000",
+                                                                "type": "static_content",
+                                                                "icon": {
+                                                                                "type": "emoji",
+                                                                                "data": "✨"
+                                                                }
+                                                }
+                                },
+                                {
+                                                "overlay_id": "caption:dio_locket_party",
+                                                "source": "remote",
+                                                "caption": {
+                                                                "background": {
+                                                                                "colors": [
+                                                                                                "#5EFFF5",
+                                                                                                "#FCFF57"
+                                                                                ]
+                                                                },
+                                                                "max_lines": 1,
+                                                                "text": "🪩 Party Time!",
+                                                                "text_color": "#000000",
+                                                                "type": "static_content",
+                                                                "icon": {
+                                                                                "type": "emoji",
+                                                                                "data": "✨"
+                                                                }
+                                                }
+                                },
+                                {
+                                                "overlay_id": "caption:dio_locket_morning",
+                                                "source": "remote",
+                                                "caption": {
+                                                                "background": {
+                                                                                "colors": [
+                                                                                                "#EF7402",
+                                                                                                "#EABF0F"
+                                                                                ]
+                                                                },
+                                                                "max_lines": 1,
+                                                                "text": "☀️ Good morning",
+                                                                "text_color": "#FFFFFF",
+                                                                "type": "static_content",
+                                                                "icon": {
+                                                                                "type": "emoji",
+                                                                                "data": "✨"
+                                                                }
+                                                }
+                                },
+                                {
+                                                "overlay_id": "caption:dio_locket_night",
+                                                "source": "remote",
+                                                "caption": {
+                                                                "background": {
+                                                                                "colors": [
+                                                                                                "#370C6F",
+                                                                                                "#575CD4"
+                                                                                ]
+                                                                },
+                                                                "max_lines": 1,
+                                                                "text": "🌙 Goodnight",
+                                                                "text_color": "#FFFFFF",
+                                                                "type": "static_content",
+                                                                "icon": {
+                                                                                "type": "emoji",
+                                                                                "data": "✨"
+                                                                }
+                                                }
+                                },
+                                {
+                                                "overlay_id": "caption:dio_locket_miss_you",
+                                                "source": "remote",
+                                                "caption": {
+                                                                "background": {
+                                                                                "colors": [
+                                                                                                "#EC0C00",
+                                                                                                "#FF493F"
+                                                                                ]
+                                                                },
+                                                                "max_lines": 1,
+                                                                "text": "🥰 Miss you",
+                                                                "text_color": "#FFFFFF",
+                                                                "type": "static_content",
+                                                                "icon": {
+                                                                                "type": "emoji",
+                                                                                "data": "✨"
+                                                                }
+                                                }
+                                },
+                                {
+                                                "overlay_id": "caption:dio_locket_ootd",
+                                                "source": "remote",
+                                                "caption": {
+                                                                "background": {
+                                                                                "colors": [
+                                                                                                "#FFFFFF",
+                                                                                                "#DBDBDB"
+                                                                                ]
+                                                                },
+                                                                "max_lines": 1,
+                                                                "text": "🕶 OOTD",
+                                                                "text_color": "#101010",
+                                                                "type": "static_content",
+                                                                "icon": {
+                                                                                "type": "emoji",
+                                                                                "data": "✨"
+                                                                }
+                                                }
+                                },
+                                {
+                                                "overlay_id": "caption:dio_icon_valentine",
+                                                "source": "remote",
+                                                "caption": {
+                                                                "background": {
+                                                                                "colors": [
+                                                                                                "#FF6A88",
+                                                                                                "#FFB199"
+                                                                                ]
+                                                                },
+                                                                "max_lines": 1,
+                                                                "text": "💝 Valentine",
+                                                                "text_color": "#FFFFFF",
+                                                                "type": "static_content",
+                                                                "icon": {
+                                                                                "type": "emoji",
+                                                                                "data": "✨"
+                                                                }
+                                                }
+                                },
+                                {
+                                                "overlay_id": "caption:dio_icon_patrick",
+                                                "source": "remote",
+                                                "caption": {
+                                                                "background": {
+                                                                                "colors": [
+                                                                                                "#228B22",
+                                                                                                "#55BE55"
+                                                                                ]
+                                                                },
+                                                                "max_lines": 1,
+                                                                "text": "☘️ St. Patrick",
+                                                                "text_color": "#FFFFFF",
+                                                                "type": "static_content",
+                                                                "icon": {
+                                                                                "type": "emoji",
+                                                                                "data": "✨"
+                                                                }
+                                                }
+                                },
+                                {
+                                                "overlay_id": "caption:dio_icon_halloween",
+                                                "source": "remote",
+                                                "caption": {
+                                                                "background": {
+                                                                                "colors": [
+                                                                                                "#C8540D",
+                                                                                                "#150804"
+                                                                                ]
+                                                                },
+                                                                "max_lines": 1,
+                                                                "text": "🎃 Halloween",
+                                                                "text_color": "#FFB182",
+                                                                "type": "static_content",
+                                                                "icon": {
+                                                                                "type": "emoji",
+                                                                                "data": "✨"
+                                                                }
+                                                }
+                                },
+                                {
+                                                "overlay_id": "caption:dio_icon_christmas",
+                                                "source": "remote",
+                                                "caption": {
+                                                                "background": {
+                                                                                "colors": [
+                                                                                                "#C0392B",
+                                                                                                "#1E7A46"
+                                                                                ]
+                                                                },
+                                                                "max_lines": 1,
+                                                                "text": "🎄 Giáng sinh",
+                                                                "text_color": "#FFFFFF",
+                                                                "type": "static_content",
+                                                                "icon": {
+                                                                                "type": "emoji",
+                                                                                "data": "✨"
+                                                                }
+                                                }
+                                },
+                                {
+                                                "overlay_id": "caption:dio_aries",
+                                                "source": "remote",
+                                                "caption": {
+                                                                "background": {
+                                                                                "colors": [
+                                                                                                "#FF2400",
+                                                                                                "#FF5733"
+                                                                                ]
+                                                                },
+                                                                "max_lines": 1,
+                                                                "text": "Mùa Bạch Dương",
+                                                                "text_color": "#FFFFFF",
+                                                                "type": "static_content",
+                                                                "icon": {
+                                                                                "type": "emoji",
+                                                                                "data": "✨"
+                                                                }
+                                                }
+                                },
+                                {
+                                                "overlay_id": "caption:dio_taurus",
+                                                "source": "remote",
+                                                "caption": {
+                                                                "background": {
+                                                                                "colors": [
+                                                                                                "#55BE55",
+                                                                                                "#228B22"
+                                                                                ]
+                                                                },
+                                                                "max_lines": 1,
+                                                                "text": "Mùa Kim Ngưu",
+                                                                "text_color": "#FFFFFF",
+                                                                "type": "static_content",
+                                                                "icon": {
+                                                                                "type": "emoji",
+                                                                                "data": "✨"
+                                                                }
+                                                }
+                                },
+                                {
+                                                "overlay_id": "caption:dio_gemini",
+                                                "source": "remote",
+                                                "caption": {
+                                                                "background": {
+                                                                                "colors": [
+                                                                                                "#FFFF00",
+                                                                                                "#FFED01"
+                                                                                ]
+                                                                },
+                                                                "max_lines": 1,
+                                                                "text": "Mùa Song Tử",
+                                                                "text_color": "#875F02",
+                                                                "type": "static_content",
+                                                                "icon": {
+                                                                                "type": "emoji",
+                                                                                "data": "✨"
+                                                                }
+                                                }
+                                },
+                                {
+                                                "overlay_id": "caption:dio_cancer",
+                                                "source": "remote",
+                                                "caption": {
+                                                                "background": {
+                                                                                "colors": [
+                                                                                                "#C0D0E5",
+                                                                                                "#B0C4DE"
+                                                                                ]
+                                                                },
+                                                                "max_lines": 1,
+                                                                "text": "Mùa Cự Giải",
+                                                                "text_color": "#0A274C",
+                                                                "type": "static_content",
+                                                                "icon": {
+                                                                                "type": "emoji",
+                                                                                "data": "✨"
+                                                                }
+                                                }
+                                },
+                                {
+                                                "overlay_id": "caption:dio_leo",
+                                                "source": "remote",
+                                                "caption": {
+                                                                "background": {
+                                                                                "colors": [
+                                                                                                "#FFD700",
+                                                                                                "#FFF01A"
+                                                                                ]
+                                                                },
+                                                                "max_lines": 1,
+                                                                "text": "Mùa Sư Tử",
+                                                                "text_color": "#392B03",
+                                                                "type": "static_content",
+                                                                "icon": {
+                                                                                "type": "emoji",
+                                                                                "data": "✨"
+                                                                }
+                                                }
+                                },
+                                {
+                                                "overlay_id": "caption:dio_virgo",
+                                                "source": "remote",
+                                                "caption": {
+                                                                "background": {
+                                                                                "colors": [
+                                                                                                "#808000",
+                                                                                                "#9E9E1E"
+                                                                                ]
+                                                                },
+                                                                "max_lines": 1,
+                                                                "text": "Mùa Xử Nữ",
+                                                                "text_color": "#FFFFFF",
+                                                                "type": "static_content",
+                                                                "icon": {
+                                                                                "type": "emoji",
+                                                                                "data": "✨"
+                                                                }
+                                                }
+                                },
+                                {
+                                                "overlay_id": "caption:dio_libra",
+                                                "source": "remote",
+                                                "caption": {
+                                                                "background": {
+                                                                                "colors": [
+                                                                                                "#FFB6C1",
+                                                                                                "#FFDDEA"
+                                                                                ]
+                                                                },
+                                                                "max_lines": 1,
+                                                                "text": "Mùa Thiên Bình",
+                                                                "text_color": "#A02D42",
+                                                                "type": "static_content",
+                                                                "icon": {
+                                                                                "type": "emoji",
+                                                                                "data": "✨"
+                                                                }
+                                                }
+                                },
+                                {
+                                                "overlay_id": "caption:dio_scorpio",
+                                                "source": "remote",
+                                                "caption": {
+                                                                "background": {
+                                                                                "colors": [
+                                                                                                "#A23E48",
+                                                                                                "#5C1A1B"
+                                                                                ]
+                                                                },
+                                                                "max_lines": 1,
+                                                                "text": "Mùa Bọ Cạp",
+                                                                "text_color": "#FFFFFF",
+                                                                "type": "static_content",
+                                                                "icon": {
+                                                                                "type": "emoji",
+                                                                                "data": "✨"
+                                                                }
+                                                }
+                                },
+                                {
+                                                "overlay_id": "caption:dio_sagittarius",
+                                                "source": "remote",
+                                                "caption": {
+                                                                "background": {
+                                                                                "colors": [
+                                                                                                "#E6B980",
+                                                                                                "#C77900"
+                                                                                ]
+                                                                },
+                                                                "max_lines": 1,
+                                                                "text": "Mùa Nhân Mã",
+                                                                "text_color": "#FFFFFF",
+                                                                "type": "static_content",
+                                                                "icon": {
+                                                                                "type": "emoji",
+                                                                                "data": "✨"
+                                                                }
+                                                }
+                                },
+                                {
+                                                "overlay_id": "caption:dio_capricorn",
+                                                "source": "remote",
+                                                "caption": {
+                                                                "background": {
+                                                                                "colors": [
+                                                                                                "#B0B0B0",
+                                                                                                "#4F4F4F"
+                                                                                ]
+                                                                },
+                                                                "max_lines": 1,
+                                                                "text": "Mùa Ma Kết",
+                                                                "text_color": "#FFFFFF",
+                                                                "type": "static_content",
+                                                                "icon": {
+                                                                                "type": "emoji",
+                                                                                "data": "✨"
+                                                                }
+                                                }
+                                },
+                                {
+                                                "overlay_id": "caption:dio_aquarius",
+                                                "source": "remote",
+                                                "caption": {
+                                                                "background": {
+                                                                                "colors": [
+                                                                                                "#A0E7E5",
+                                                                                                "#0096C7"
+                                                                                ]
+                                                                },
+                                                                "max_lines": 1,
+                                                                "text": "Mùa Bảo Bình",
+                                                                "text_color": "#003178",
+                                                                "type": "static_content",
+                                                                "icon": {
+                                                                                "type": "emoji",
+                                                                                "data": "✨"
+                                                                }
+                                                }
+                                },
+                                {
+                                                "overlay_id": "caption:dio_pisces",
+                                                "source": "remote",
+                                                "caption": {
+                                                                "background": {
+                                                                                "colors": [
+                                                                                                "#B5EAD7",
+                                                                                                "#5F9EA0"
+                                                                                ]
+                                                                },
+                                                                "max_lines": 1,
+                                                                "text": "Mùa Song Ngư",
+                                                                "text_color": "#006B61",
+                                                                "type": "static_content",
+                                                                "icon": {
+                                                                                "type": "emoji",
+                                                                                "data": "✨"
+                                                                }
+                                                }
+                                }
+                ]
+}
         ];
 
     try {
@@ -3176,6 +7708,14 @@ var unlockedOfficialAiFilters = officialAiFilterIds.map(function(fid) {
     }
 
     Object.assign(obj.entries, {
+        custom_stickers: JSON.stringify(customStickersList),
+        stickers_enabled: "true",
+        star_sign_caption_image_url: "https://storage.googleapis.com/locket-public/overlays/star_signs",
+        overlay_status_captions: JSON.stringify([
+            {"background":{"colors":["#FF5349","#EB0C00"]},"icon":{"data":"❤️","type":"emoji"},"max_lines":1,"text":"Missing you!","text_color":"#FFFFFFE6","type":"status"},
+            {"background":{"colors":["#FF7A00","#FF0055"]},"icon":{"data":"🔥","type":"emoji"},"max_lines":1,"text":"Streak on fire!","text_color":"#FFFFFFE6","type":"status"},
+            {"background":{"colors":["#00C6FF","#0072FF"]},"icon":{"data":"✨","type":"emoji"},"max_lines":1,"text":"Good vibes only","text_color":"#FFFFFFE6","type":"status"}
+        ]),
         overlay_navigator_enabled: "true",
         overlays_v2_config: JSON.stringify({ suggestions_enabled: true }),
         captions_enabled: "true",
