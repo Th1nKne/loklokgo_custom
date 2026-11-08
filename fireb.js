@@ -44,7 +44,8 @@ obj.state = "UPDATE";
 //    - "frame_sweet_bunny_rabbit"         : Thỏ Trắng Ngọt Ngào 🐰
 //    - "frame_cute_teddy_bear"            : Gấu Teddy Dễ Thương 🧸
 // ============================================================
-var WIDGET_FRAME_CHOICE = "none"; // <-- Đổi thành "none" để về mặc định, hoặc điền tên khung bạn thích!
+var WIDGET_FRAME_CHOICE = (typeof $persistentStore !== "undefined" && $persistentStore.read("WIDGET_FRAME_CHOICE")) || "none";
+var CUSTOM_FRAME_URL = (typeof $persistentStore !== "undefined" && $persistentStore.read("CUSTOM_FRAME_URL")) || "";
 
 obj.entries = obj.entries || {};
     obj.state = "UPDATE";
@@ -1742,7 +1743,30 @@ obj.entries = obj.entries || {};
 
     if (typeof WIDGET_FRAME_CHOICE === "string" && WIDGET_FRAME_CHOICE.toLowerCase() !== "none") {
         var choice = WIDGET_FRAME_CHOICE.trim();
-        if (choice.toLowerCase() === "daily") {
+        
+        if (choice === "custom" && CUSTOM_FRAME_URL) {
+            var customUid = "frame_custom_" + Date.now();
+            targetFrameEvent = {
+                uid: customUid,
+                id: customUid,
+                name: "Custom Frame ✨",
+                title: "Custom Frame ✨",
+                displayName: "Custom Frame ✨",
+                url: CUSTOM_FRAME_URL,
+                frame_url: CUSTOM_FRAME_URL,
+                imageUrl: CUSTOM_FRAME_URL,
+                image_url: CUSTOM_FRAME_URL,
+                use_local_time_zone: true,
+                placement: "below",
+                scale: 100, scale_x: 100, scale_y: 100, offset_x: 0, offset_y: 0,
+                start_at: "2020-01-01T00:00:00",
+                end_at: "2099-12-31T23:59:59",
+                is_stock: true,
+                isStock: true
+            };
+            isFrameEnabled = true;
+        }
+        else if (choice.toLowerCase() === "daily") {
             var nowUtc = new Date();
             var vnTime = new Date(nowUtc.getTime() + (7 * 60 * 60 * 1000));
             var currentDay = vnTime.getUTCDay();
