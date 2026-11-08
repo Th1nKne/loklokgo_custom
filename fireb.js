@@ -197,7 +197,7 @@ obj.entries = obj.entries || {};
             tag: "Gold By Al1nK Planet 🪐",
             tag_gradient: true,
             tag_style: "gold_gradient",
-            title: "Gold by Gon_Al1nK Planet🪐",
+            title: "Gold by Gon",
             feature_set: [
                 {
                     title: "Hãy cho @Gon 1 legit tại #⭐legit",
