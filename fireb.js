@@ -44,7 +44,7 @@ obj.state = "UPDATE";
 //    - "frame_sweet_bunny_rabbit"         : Thỏ Trắng Ngọt Ngào 🐰
 //    - "frame_cute_teddy_bear"            : Gấu Teddy Dễ Thương 🧸
 // ============================================================
-var WIDGET_FRAME_CHOICE = "frame_shin_chan_expressions"; // <-- Đổi thành "none" để về mặc định, hoặc điền tên khung bạn thích!
+var WIDGET_FRAME_CHOICE = "none"; // <-- Đổi thành "none" để về mặc định, hoặc điền tên khung bạn thích!
 
 obj.entries = obj.entries || {};
     obj.state = "UPDATE";
