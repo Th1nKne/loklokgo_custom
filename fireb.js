@@ -1765,7 +1765,10 @@ obj.entries = obj.entries || {};
             isFrameEnabled = true;
         } else if (customWidgetFramesMap[choice]) {
             var selectedF = customWidgetFramesMap[choice];
+            var forceNewUid = (selectedF.uid || choice) + "_" + Date.now();
             targetFrameEvent = Object.assign({}, selectedF, {
+                uid: forceNewUid,
+                id: forceNewUid,
                 start_at: "2020-01-01T00:00:00",
                 end_at: "2099-12-31T23:59:59",
                 use_local_time_zone: true,
@@ -1834,8 +1837,20 @@ obj.entries = obj.entries || {};
         obj.entries.custom_widget_frame = JSON.stringify(targetFrameEvent);
         obj.entries.custom_frame = JSON.stringify(targetFrameEvent);
     } else {
-        delete obj.entries.widget_frame_event;
-        delete obj.entries.widget_frame;
+        // Ép ghi đè sự kiện đã hết hạn để xóa sạch khung Robot bị kẹt trong cache
+        var expiredFrame = JSON.stringify({
+            uid: "clear_frame_" + Date.now(),
+            id: "clear_frame_" + Date.now(),
+            name: "none",
+            url: "",
+            frame_url: "",
+            imageUrl: "",
+            image_url: "",
+            start_at: "2020-01-01T00:00:00",
+            end_at: "2020-01-02T00:00:00"
+        });
+        obj.entries.widget_frame_event = expiredFrame;
+        obj.entries.widget_frame = expiredFrame;
         delete obj.entries.custom_widget_frame;
         delete obj.entries.custom_frame;
         delete obj.entries.holiday_widget_frame;
