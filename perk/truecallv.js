@@ -1,85 +1,96 @@
 const url = $request.url;
-const features = [
-    { id: "live_lookup", rank: 1, status: "Included", "isFree": false },
-    { id: "auto_spam_block", rank: 2, status: "Included", "isFree": false },
-    { id: "series_blocking", rank: 3, status: "Included", "isFree": false },
-    { id: "no_ads", rank: 4, status: "Included", "isFree": false },
-    { id: "extended_spam_blocking", rank: 5, status: "Included", "isFree": false },
-    { id: "advanced_caller_id", rank: 6, status: "Included", "isFree": false },
-    { id: "verified_badge", rank: 7, status: "Included", "isFree": false },
-    { id: "spam_stats", rank: 8, status: "Included", "isFree": false },
-    { id: "call_alert", rank: 9, status: "Included", "isFree": false },
-    { id: "premium_feature", rank: 12, status: "Included", "isFree": false },
-    { id: "identifai", rank: 15, status: "Included", "isFree": false },
-    { id: "siri_search", rank: 16, status: "Included", "isFree": false },
-    { id: "who_viewed_my_profile", rank: 17, status: "Included", "isFree": false },
-    { id: "who_searched_for_me", rank: 18, status: "Included", "isFree": false },
-    { id: "contact_request", rank: 19, status: "Included", "isFree": false },
-    { id: "incognito_mode", rank: 20, status: "Included", "isFree": false },
-    { id: "premium_badge", rank: 21, status: "Included", "isFree": false },
-    { id: "premium_app_icon", rank: 22, status: "Included", "isFree": false },
-    { id: "ghost_call", rank: 23, status: "Included", "isFree": false },
-    { id: "live_chat_support", rank: 24, status: "Included", "isFree": false },
-    { id: "call_recording", rank: 25, status: "Excluded", "isFree": false },
-    { id: "premium_support", rank: 25, status: "Excluded", "isFree": false },
-    { id: "family_sharing", rank: 26, status: "Included", "isFree": false },
-    { id: "gold_caller_id", rank: 27, status: "Included", "isFree": false },
-    { id: "announce_call", rank: 28, status: "Excluded", "isFree": false },
-    { id: "caller_id", rank: 29, status: "Included", "isFree": true },
-    { id: "spam_blocking", rank: 30, status: "Included", "isFree": true },
-    { id: "whatsapp_caller_id", rank: 31, status: "Excluded", "isFree": false } 
-];
+let body = $response.body; // Lấy dữ liệu thật từ server trả về
 
-let obj = null;
+if (body) {
+    try {
+        let obj = JSON.parse(body);
 
-if (/subscriptions\/status/.test(url)) {
-    obj = {
-        expire: "9999-01-09T01:01:01Z",
-        start: "9999-09-09T02:32:04Z",
-        paymentProvider: "Apple",
-        isExpired: false,
-        isGracePeriodExpired: false,
-        subscriptionStatus: "SUBSCRIBED",
-        inAppPurchaseAllowed: true,
-        product: {
-            id: "apple_gold_family_yearly_v0_shop-0176",
-            sku: "apple_gold_family_yearly_v0",
-            contentType: "subscription",
-            productType: "SubsYearly",
-            isFreeTrial: false
-        },
-        tier: { id: "goldfamily", feature: features }
-    };
-} else if (/products\/apple/.test(url)) {
-    obj = {
-        tier: [
-            {
-                id: "goldfamily",
-                product: [
+        const features = [
+            { id: "live_lookup", rank: 1, status: "Included", "isFree": false },
+            { id: "auto_spam_block", rank: 2, status: "Included", "isFree": false },
+            { id: "series_blocking", rank: 3, status: "Included", "isFree": false },
+            { id: "no_ads", rank: 4, status: "Included", "isFree": false },
+            { id: "extended_spam_blocking", rank: 5, status: "Included", "isFree": false },
+            { id: "advanced_caller_id", rank: 6, status: "Included", "isFree": false },
+            { id: "verified_badge", rank: 7, status: "Included", "isFree": false },
+            { id: "spam_stats", rank: 8, status: "Included", "isFree": false },
+            { id: "call_alert", rank: 9, status: "Included", "isFree": false },
+            { id: "premium_feature", rank: 12, status: "Included", "isFree": false },
+            { id: "identifai", rank: 15, status: "Included", "isFree": false },
+            { id: "siri_search", rank: 16, status: "Included", "isFree": false },
+            { id: "who_viewed_my_profile", rank: 17, status: "Included", "isFree": false },
+            { id: "who_searched_for_me", rank: 18, status: "Included", "isFree": false },
+            { id: "contact_request", rank: 19, status: "Included", "isFree": false },
+            { id: "incognito_mode", rank: 20, status: "Included", "isFree": false },
+            { id: "premium_badge", rank: 21, status: "Included", "isFree": false },
+            { id: "premium_app_icon", rank: 22, status: "Included", "isFree": false },
+            { id: "ghost_call", rank: 23, status: "Included", "isFree": false },
+            { id: "live_chat_support", rank: 24, status: "Included", "isFree": false },
+            { id: "call_recording", rank: 25, status: "Excluded", "isFree": false },
+            { id: "premium_support", rank: 25, status: "Excluded", "isFree": false },
+            { id: "family_sharing", rank: 26, status: "Included", "isFree": false },
+            { id: "gold_caller_id", rank: 27, status: "Included", "isFree": false },
+            { id: "announce_call", rank: 28, status: "Excluded", "isFree": false },
+            { id: "caller_id", rank: 29, status: "Included", "isFree": true },
+            { id: "spam_blocking", rank: 30, status: "Included", "isFree": true },
+            { id: "whatsapp_caller_id", rank: 31, status: "Excluded", "isFree": false }
+        ];
+
+        if (/subscriptions\/status/.test(url)) {
+            // Sửa trực tiếp vào obj thật
+            obj.expire = "2099-01-09T01:01:01Z";
+            obj.start = "2023-09-09T02:32:04Z";
+            obj.paymentProvider = "Apple";
+            obj.isExpired = false;
+            obj.isGracePeriodExpired = false;
+            obj.subscriptionStatus = "SUBSCRIBED";
+            obj.inAppPurchaseAllowed = true;
+            obj.tier = { id: "goldfamily", feature: features }; // Có thể đổi "goldfamily" thành "gold" nếu app lỗi
+            obj.product = {
+                id: "apple_gold_family_yearly_v0_shop-0176",
+                sku: "apple_gold_family_yearly_v0",
+                contentType: "subscription",
+                productType: "SubsYearly",
+                isFreeTrial: false
+            };
+            $done({ body: JSON.stringify(obj) });
+            
+        } else if (/products\/apple/.test(url)) {
+            // Ghi đè list sản phẩm
+            obj = {
+                tier: [
                     {
-                        productType: "SubsYearly",
-                        id: "apple_gold_family_yearly_v0_shop-0176",
-                        sku: "apple_gold_family_yearly_v0",
-                        contentType: "subscription",
-                        rank: 6,
-                        paymentProvider: "Apple",
-                        clientProductMetadata: {
-                            selectionRank: 5,
-                            displayOrder: 5,
-                            isEntitledPremiumScreenProduct: true
-                        }
+                        id: "goldfamily",
+                        product: [
+                            {
+                                productType: "SubsYearly",
+                                id: "apple_gold_family_yearly_v0_shop-0176",
+                                sku: "apple_gold_family_yearly_v0",
+                                contentType: "subscription",
+                                rank: 6,
+                                paymentProvider: "Apple",
+                                clientProductMetadata: {
+                                    selectionRank: 5,
+                                    displayOrder: 5,
+                                    isEntitledPremiumScreenProduct: true
+                                }
+                            }
+                        ],
+                        feature: features,
+                        rank: 5
                     }
-                ],
-                feature: features,
-                rank: 5
-            }
-        ]
-    };
-}
-
-// Safely modify body only if a match was found above
-if (obj) {
-    $done({ body: JSON.stringify(obj) });
+                ]
+            };
+            $done({ body: JSON.stringify(obj) });
+            
+        } else {
+            // Nếu không khớp URL thì trả về nguyên bản
+            $done({});
+        }
+    } catch (e) {
+        // Tránh lỗi khi body không phải là JSON
+        $done({});
+    }
 } else {
-    $done({}); // Returns the original response untouched to prevent breaking
+    $done({});
 }
