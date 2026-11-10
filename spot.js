@@ -746,11 +746,17 @@
   const patchCustomize = (b) => edit(b, [1], patchUcs);
   const patchBootstrap = (b) => edit(b, [2, 1, 1, 1], patchUcs);
 
-  // ------------------------------------------------------------------- entry
+// ------------------------------------------------------------------- entry
 
   let out = null;
-  if (url.indexOf("bootstrap") >= 0) out = patchBootstrap(body) || patchCustomize(body);
-  else out = patchCustomize(body) || patchBootstrap(body);
+  // Chỉ cho phép patch nếu đúng endpoint chứa cấu hình tài khoản cũ/mới
+  if (url.indexOf("bootstrap") >= 0 || url.indexOf("user-customization-service") >= 0) {
+    out = patchBootstrap(body) || patchCustomize(body);
+  } else {
+    // Các endpoint mới (remote-config-resolver, nebula, identity, reachability...) cho đi qua nguyên bản để tránh lỗi phát nhạc
+    $done({});
+    return;
+  }
 
   if (!out || same(out, body)) {
     if (verbose) console.log("spotify: nothing to patch");
