@@ -748,13 +748,17 @@
 
   const patchCustomize = (b) => edit(b, [1], patchUcs);
   const patchBootstrap = (b) => edit(b, [2, 1, 1, 1], patchUcs);
+  const patchRemoteConfig = (b) => edit(b, [1], patchConfiguration) || patchUcs(b) || patchConfiguration(b);
 
 // ------------------------------------------------------------------- entry
 
   let out = null;
-  // Hỗ trợ cả endpoint cũ lẫn bộ API cấu hình mới trên các bản Spotify mới nhất
-  if (url.indexOf("bootstrap") >= 0 || url.indexOf("user-customization-service") >= 0 || url.indexOf("remote-config-resolver") >= 0 || url.indexOf("nebula") >= 0) {
-    out = patchBootstrap(body) || patchCustomize(body);
+  if (
+    url.indexOf("bootstrap") >= 0 ||
+    url.indexOf("user-customization-service") >= 0 ||
+    url.indexOf("remote-config-resolver") >= 0
+  ) {
+    out = patchBootstrap(body) || patchCustomize(body) || patchRemoteConfig(body);
   } else {
     $done({});
     return;
