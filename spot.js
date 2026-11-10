@@ -759,6 +759,9 @@
     url.indexOf("remote-config-resolver") >= 0
   ) {
     out = patchBootstrap(body) || patchCustomize(body) || patchRemoteConfig(body);
+  } else if (url.indexOf("nebula") >= 0) {
+    // Ép Spotify nhận file attributes đã mod Premium
+    out = patchAttributes(body) || patchUcs(body) || patchRemoteConfig(body);
   } else {
     $done({});
     return;
