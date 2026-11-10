@@ -529,7 +529,7 @@
     ["","music_video_upsell_enabled",1,0,"","ad"],
     ["","is_gbb_upsell_enabled",1,0,"","ad"],
     ["","should_show_pigeon_upsell",1,0,"","ad"],
-    ["","disable_suggested_tracks_upsell",1,1,"","ad"],
+    // ["","disable_suggested_tracks_upsell",1,1,"","ad"],
     ["","is_enabled_pt2",1,0,"","misc"],
     ["","show_skip_button_during_skippable_ads",1,1,"","ad"],
     ["","sponsored_playlist_v2_header_dismissible",1,1,"","ad"],
@@ -592,7 +592,7 @@
     "pick-and-shuffle": false,
     // Thêm 2 key dưới đây để tránh treo khung Video/Canvas trên bản mới
     "canvas-enabled": true,
-    "music-videos-enabled": true
+    // "music-videos-enabled": true
   };
 
   const ATTR_ADS = {
@@ -759,9 +759,6 @@
     url.indexOf("remote-config-resolver") >= 0
   ) {
     out = patchBootstrap(body) || patchCustomize(body) || patchRemoteConfig(body);
-  } else if (url.indexOf("nebula") >= 0) {
-    // Ép Spotify nhận file attributes đã mod Premium
-    out = patchAttributes(body) || patchUcs(body) || patchRemoteConfig(body);
   } else {
     $done({});
     return;
