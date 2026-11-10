@@ -749,11 +749,10 @@
 // ------------------------------------------------------------------- entry
 
   let out = null;
-  // Chỉ cho phép patch nếu đúng endpoint chứa cấu hình tài khoản cũ/mới
-  if (url.indexOf("bootstrap") >= 0 || url.indexOf("user-customization-service") >= 0) {
+  // Hỗ trợ cả endpoint cũ lẫn bộ API cấu hình mới trên các bản Spotify mới nhất
+  if (url.indexOf("bootstrap") >= 0 || url.indexOf("user-customization-service") >= 0 || url.indexOf("remote-config-resolver") >= 0 || url.indexOf("nebula") >= 0) {
     out = patchBootstrap(body) || patchCustomize(body);
   } else {
-    // Các endpoint mới (remote-config-resolver, nebula, identity, reachability...) cho đi qua nguyên bản để tránh lỗi phát nhạc
     $done({});
     return;
   }
