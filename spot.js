@@ -752,6 +752,7 @@
 
 // ------------------------------------------------------------------- entry
 
+
   let out = null;
   if (
     url.indexOf("bootstrap") >= 0 ||
@@ -759,6 +760,9 @@
     url.indexOf("remote-config-resolver") >= 0
   ) {
     out = patchBootstrap(body) || patchCustomize(body) || patchRemoteConfig(body);
+  } else if (url.indexOf("nebula") >= 0) {
+    // Sửa đoạn này: Gọi thẳng patchAttributes để ép trạng thái Premium cho Nebula
+    out = patchAttributes(body) || patchRemoteConfig(body);
   } else {
     $done({});
     return;
