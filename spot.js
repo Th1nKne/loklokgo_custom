@@ -511,7 +511,7 @@
     ["ios-feature-adsbase","enable_minimal_preroll_management",1,0,"","misc"],
     ["ios-feature-adsbase","enable_swift_ads_base_movement_logger",1,0,"","ad"],
     ["ios-feature-adsswift","",0,0,"","misc"],
-    ["ios-feature-adsnowplayingui","embedded_npv_video_show_with_canvas",2,0,"","misc"],
+    ["ios-feature-adsnowplayingui","embedded_npv_video_show_with_canvas",2,1,"","misc"],
     ["ios-feature-adssponsoredcontext","sponsored_context_mismatch_aderror_enabled",1,0,"","ad"],
     ["ios-feature-adssponsoredcontext","sponsored_playlist_v2_enabled",1,0,"","ad"],
     ["ios-feature-adssponsoredcontextnpbattachment","sponsored_npb_slot_fetch_enabled",1,0,"","ad"],
@@ -521,7 +521,7 @@
     ["","music_npv_leavebehinds_enabled",1,0,"","misc"],
     ["","enable_ads_on_podcast",1,0,"","ad"],
     ["","enable_display_element",1,0,"","misc"],
-    ["","enable_video_element",1,0,"","misc"],
+    ["","enable_video_element",1,1,"","misc"],
     ["","is_promo_cta_enabled",1,0,"","ad"],
     ["","show_time_cap_upsell_with_premium_badge",1,0,"","ad"],
     ["","enable_video_time_cap_upsell",1,0,"","ad"],
@@ -589,7 +589,10 @@
     "your-library-tags": true,
     "libspotify": true,
     "mobile": true,
-    "pick-and-shuffle": false
+    "pick-and-shuffle": false,
+    // Thêm 2 key dưới đây để tránh treo khung Video/Canvas trên bản mới
+    "canvas-enabled": true,
+    "music-videos-enabled": true
   };
 
   const ATTR_ADS = {
