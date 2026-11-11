@@ -137,7 +137,14 @@ function getGoneDay(n = 0, yearFlag = true) {
     (day < 10 ? "0" + day : day);
   return result;
 }
-let obj = JSON.parse($response.body);
+let obj = {};
+if ($response.body) {
+    try {
+        obj = JSON.parse($response.body);
+    } catch (e) {
+        console.log("Parse JSON Error");
+    }
+}
 let $XiaoMaoSvip = new Env("ScanningAlmighty");
 let appName = `XiaoMao-ScanningAlmightyVip`;
 let XiaoMaoSvip = "";
