@@ -205,12 +205,6 @@ function XiaoMaoFunction() {
   XiaoMaoEndTime = new Date(XiaoMaoSvip).getTime() / XiaoMaoSuper;
 }
 if ($response.body) {
-  let requestUrl = $request.url;
-  if (
-    /^https:\/\/api-cs(-us)?\.intsig\.net\/purchase\/cs\/query_property/.test(
-      requestUrl
-    )
-  ) {
     let psnl_vip_property = {
       product_id: "com.intsig.camscanner.premiums.oneyear.autorenewable.plus",
       initial_tm: XiaoMaoStartTime,
@@ -230,11 +224,13 @@ if ($response.body) {
       renew_method: "appstore",
       last_payment_method: "appstore",
     };
-    obj.hasOwnProperty("data")
-      ? (obj.data.psnl_vip_property = psnl_vip_property)
-      : "";
-  }
-  $done({ body: JSON.stringify(obj) });
+
+    // Bỏ check requestUrl bằng Regex ở đây vì Module đã lọc chuẩn rồi
+    if (obj && obj.hasOwnProperty("data")) {
+        obj.data.psnl_vip_property = psnl_vip_property;
+    }
+    
+    $done({ body: JSON.stringify(obj) });
 } else {
-  $done({});
+    $done({});
 }
