@@ -1,43 +1,29 @@
-var obj = JSON.parse($response.body);
-const ua = $request.headers["User-Agent"] || $request.headers["user-agent"];
-const times = Date.now();
+let obj = JSON.parse($response.body);
 
-// Rút gọn keyword để check UA dễ ăn hơn
-const list = {
-  "epik": "com.snowcorp.epik.subscribe.plan.oneyear",
-  "snow": "com.campmobile.snow.subscribe.oneyear"
-};
-
-for (const key in list) {
-    if (new RegExp(key, "i").test(ua)) {
-        
-        // Đảm bảo object result tồn tại
-        if (!obj.result) obj.result = {};
-
-        // Chỉ modify các value cần thiết, giữ nguyên deviceId, tt...
-        obj.result.activated = true;
-        obj.result.products = [
-            {
-                "managed": true,
-                "status": "ACTIVE",
-                "startDate": times,
-                "productId": list[key],
-                "expireDate": 32662137600000
-            }
-        ];
-        obj.result.tickets = [
-            {
-                "managed": true,
-                "status": "ACTIVE",
-                "startDate": times,
-                "productId": list[key],
-                "expireDate": 32662137600000
-            }
-        ];
-        
-        console.log(`[+] Unlock ${key.toUpperCase()} Pro thành công 🎉`);
-        break;
-    }
+if (obj && obj.result) {
+    obj.result.activated = true;
+    obj.result.products = [
+        {
+            "managed": false,
+            "status": "ACTIVE",
+            "startDate": 1710428400000,
+            "productId": "com.campmobile.snow.subscribe.oneyear",
+            "expireDate": 4102412400000
+        }
+    ];
+    obj.result.tickets = [
+        {
+            "managed": false,
+            "status": "ACTIVE",
+            "startDate": 1710428400000,
+            "productId": "com.campmobile.snow.subscribe.oneyear",
+            "expireDate": 4102412400000
+        }
+    ];
+    obj.result.vipSegments = ["SUBSCRIPTION_PREMIER"];
+    
+    // Thử xóa sig xem client có cho qua khi thiếu chữ ký không
+    delete obj.sig;
 }
 
 $done({ body: JSON.stringify(obj) });
