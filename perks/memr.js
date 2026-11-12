@@ -1,25 +1,39 @@
 var body = $response.body;
-var obj = JSON.parse(body);
+var url = $request.url;
 
-// Xử lý linh hoạt trường hợp JSON có hoặc không có thẻ bọc "profile"
-var userProfile = obj.profile ? obj.profile : obj;
+// 1. Xử lý endpoint lấy thông tin gói cước (/me/subscriptions)
+if (url.indexOf("/subscriptions") !== -1) {
+    var subObj = {
+        "is_pro": true,
+        "on_hold": false,
+        "pending": false,
+        "renewing": false,
+        "expiry_date": "9999-12-31T23:59:59Z",
+        "subscription_type": "LIFETIME",
+        "payment_method": "STRIPE"
+    };
+    $done({ body: JSON.stringify(subObj) });
+} 
+// 2. Xử lý endpoint lấy thông tin user gốc (/me)
+else {
+    var obj = JSON.parse(body);
+    var userProfile = obj.profile ? obj.profile : obj;
 
-// Kích hoạt cờ Pro
-userProfile.is_pro = true;
-userProfile.has_lapsed_pro = false;
+    userProfile.is_pro = true;
+    userProfile.has_lapsed_pro = false;
 
-// Đè thông tin gói Lifetime
-userProfile.subscription = {
-    "expiry": "9999-12-31T23:59:59Z",
-    "is_active": false, // Trạng thái gói vĩnh viễn không phải là subscription gia hạn
-    "is_on_hold": false,
-    "subscription_type": 10 // Mã định danh gói Lifetime của Memrise
-};
+    userProfile.subscription = {
+        "expiry": "9999-12-31T23:59:59Z",
+        "is_active": false,
+        "is_on_hold": false,
+        "subscription_type": 10
+    };
 
-if (obj.profile) {
-    obj.profile = userProfile;
-} else {
-    obj = userProfile;
+    if (obj.profile) {
+        obj.profile = userProfile;
+    } else {
+        obj = userProfile;
+    }
+
+    $done({ body: JSON.stringify(obj) });
 }
-
-$done({ body: JSON.stringify(obj) });
