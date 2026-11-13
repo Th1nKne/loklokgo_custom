@@ -37,140 +37,74 @@ const vip = {
     "group2_paid" : 0
 };
 
-if ($request.url.indexOf(vipa) != -1){
-    banhsbao.data["psnl_vip_property"] = (vip);
-    banhsbao.data["fax_balance"] = "99999";
-    banhsbao.data["used_points"] = "99999";
-    banhsbao.data["points"] = "99999";
-    banhsbao.data["pdfword_balance"] = "100010";
-    banhsbao.data["bookmode_balance"] = 100010;
-    banhsbao.data["immt_expy_points"] = "99999";
-    banhsbao.data["ocr_balance"] = 99999;
-    banhsbao.data["no_login_ocr_balance"] = "99999";
-    banhsbao.data["CamScanner_RoadMap"] = 100000;
-}
+try {
+    if ($request.url.indexOf(vipa) != -1){
+        if (!banhsbao.data) banhsbao.data = {};
+        banhsbao.data["psnl_vip_property"] = vip;
+        banhsbao.data["fax_balance"] = "99999";
+        banhsbao.data["used_points"] = "99999";
+        banhsbao.data["points"] = "99999";
+        banhsbao.data["pdfword_balance"] = "100010";
+        banhsbao.data["bookmode_balance"] = 100010;
+        banhsbao.data["immt_expy_points"] = "99999";
+        banhsbao.data["ocr_balance"] = 99999;
+        banhsbao.data["no_login_ocr_balance"] = "99999";
+        banhsbao.data["CamScanner_RoadMap"] = 100000;
+    }
 
-if ($request.url.indexOf(vipb) != -1){
-    banhsbao.data.ar_property["psnl_vip_property"] = (vip);
-}
+    if ($request.url.indexOf(vipb) != -1){
+        if (!banhsbao.data) banhsbao.data = {};
+        // Bắt lỗi undefined object ar_property
+        if (!banhsbao.data.ar_property) {
+            banhsbao.data.ar_property = {};
+        }
+        banhsbao.data.ar_property["psnl_vip_property"] = vip;
+        // Inject thẳng vào data phòng hờ
+        banhsbao.data["psnl_vip_property"] = vip; 
+    }
 
-if ($request.url.indexOf(tqzx) != -1){
-    banhsbao.data.data = {
-        "document" : [
-            {
-                "balance" : -1,
-                "item" : "CamScanner_Pic2pdf"
-            },
-            {
-                "balance" : -1,
-                "item" : "CamScanner_PdfCompress"
-            },
-            {
-                "balance" : -1,
-                "item" : "CamScanner_PdfEncrypt"
-            },
-            {
-                "balance" : -1,
-                "item" : "CamScanner_FileMerge"
-            },
-            {
-                "balance" : -1,
-                "item" : "CamScanner_PdfExtract"
-            },
-            {
-                "balance" : -1,
-                "item" : "CamScanner_PdfWatermark"
-            },
-            {
-                "balance" : -1,
-                "item" : "CamScanner_PdfSign"
-            },
-            {
-                "balance" : 99999,
-                "item" : "CamScanner_Intellect_Erase"
-            }
-        ],
-        "transfer" : [
-            {
-                "balance" : -1,
-                "item" : "CamScanner_ExcelRecoginze"
-            },
-            {
-                "balance" : -1,
-                "item" : "CamScanner_RoadMap"
-            },
-            {
-                "balance" : -1,
-                "item" : "CamScanner_Pdf2ppt"
-            },
-            {
-                "balance" : 99999,
-                "item" : "CamScanner_CloudOCR"
-            }
-        ],
-        "other" : [
-            {
-                "balance" : 99999,
-                "item" : "CamScanner_Translation"
-            },
-            {
-                "balance" : -1,
-                "item" : "CamScanner_DirNum"
-            },
-            {
-                "balance" : -1,
-                "item" : "CamScanner_IP_REMOVEAD"
-            },
-            {
-                "balance" : -1,
-                "item" : "CamScanner_PingTu"
-            },
-            {
-                "balance" : 99999,
-                "item" : "CamScanner_Points"
-            },
-            {
-                "balance" : 99999,
-                "item" : "CamScanner_Fax_Balance"
-            }
-        ],
-        "scaner" : [
-            {
-                "balance" : 99999,
-                "item" : "CamScanner_ImageRestore"
-            },
-            {
-                "balance" : -1,
-                "item" : "CamScanner_Patting"
-            },
-            {
-                "balance" : 99999,
-                "item" : "CamScanner_Profile_Card_Format"
-            },
-            {
-                "balance" : -1,
-                "item" : "CamScanner_BookMode"
-            },
-            {
-                "balance" : -1,
-                "item" : "CamScanner_CertMode"
-            },
-            {
-                "balance" : -1,
-                "item" : "CamScanner_HDScan"
-            },
-            {
-                "balance" : 99999,
-                "item" : "CamScanner_CloudOCR"
-            }
-        ],
-        "pure" : [
-            {
-                "balance" : -1,
-                "item" : "CamScanner_IP_REMOVEAD"
-            }
-        ]
-    };
+    if ($request.url.indexOf(tqzx) != -1){
+        banhsbao.data.data = {
+            "document" : [
+                { "balance" : -1, "item" : "CamScanner_Pic2pdf" },
+                { "balance" : -1, "item" : "CamScanner_PdfCompress" },
+                { "balance" : -1, "item" : "CamScanner_PdfEncrypt" },
+                { "balance" : -1, "item" : "CamScanner_FileMerge" },
+                { "balance" : -1, "item" : "CamScanner_PdfExtract" },
+                { "balance" : -1, "item" : "CamScanner_PdfWatermark" },
+                { "balance" : -1, "item" : "CamScanner_PdfSign" },
+                { "balance" : 99999, "item" : "CamScanner_Intellect_Erase" }
+            ],
+            "transfer" : [
+                { "balance" : -1, "item" : "CamScanner_ExcelRecoginze" },
+                { "balance" : -1, "item" : "CamScanner_RoadMap" },
+                { "balance" : -1, "item" : "CamScanner_Pdf2ppt" },
+                { "balance" : 99999, "item" : "CamScanner_CloudOCR" }
+            ],
+            "other" : [
+                { "balance" : 99999, "item" : "CamScanner_Translation" },
+                { "balance" : -1, "item" : "CamScanner_DirNum" },
+                { "balance" : -1, "item" : "CamScanner_IP_REMOVEAD" },
+                { "balance" : -1, "item" : "CamScanner_PingTu" },
+                { "balance" : 99999, "item" : "CamScanner_Points" },
+                { "balance" : 99999, "item" : "CamScanner_Fax_Balance" }
+            ],
+            "scaner" : [
+                { "balance" : 99999, "item" : "CamScanner_ImageRestore" },
+                { "balance" : -1, "item" : "CamScanner_Patting" },
+                { "balance" : 99999, "item" : "CamScanner_Profile_Card_Format" },
+                { "balance" : -1, "item" : "CamScanner_BookMode" },
+                { "balance" : -1, "item" : "CamScanner_CertMode" },
+                { "balance" : -1, "item" : "CamScanner_HDScan" },
+                { "balance" : 99999, "item" : "CamScanner_CloudOCR" }
+            ],
+            "pure" : [
+                { "balance" : -1, "item" : "CamScanner_IP_REMOVEAD" }
+            ]
+        };
+    }
+} catch (e) {
+    console.log("CamScanner Script Fix Error: " + e);
 }
 
 $done({body : JSON.stringify(banhsbao)});
