@@ -1,12 +1,12 @@
 /*
- * Duolingo Surge Script - Core Modifier
- * Author: Lucasss1916 & Gemini
- * 
- * Arguments:
- * clear=true   // 开启秒过 (移除题目内容)
- * xp=2         // 经验倍率 (1为不修改)
- * time=60      // 挑战时间 (单位：分钟，脚本会自动转为秒)
- * unlock=false // 解锁灰色关卡 (视觉)
+- Duolingo Surge Script - Core Modifier
+- Author: Lucasss1916 & Gemini
+- 
+- Arguments:
+- clear=true   // 开启秒过 (移除题目内容)
+- xp=2         // 经验倍率 (1为不修改)
+- time=60      // 挑战时间 (单位：分钟，脚本会自动转为秒)
+- unlock=false // 解锁灰色关卡 (视觉)
  */
 
 // --- 1. 参数解析 ---
@@ -20,7 +20,6 @@ function getArgs() {
 
     try {
         if (typeof $argument !== "undefined" && $argument) {
-            // console.log(`[Duolingo] Raw Args: ${$argument}`);
             let params = $argument.split("&");
             params.forEach(param => {
                 let [key, val] = param.split("=");
@@ -59,15 +58,17 @@ try {
         $done({});
     }
 
-    let obj = JSON.parse($response.body);
+    const bodyString = typeof $response.body === "string" 
+        ? $response.body 
+        : new TextDecoder("utf-8").decode($response.body);
+        
+    let obj = JSON.parse(bodyString);
 
     // === 功能 A: 经验加倍 (XP Multiplier) ===
-    // 只有当 xp > 1 时才执行遍历，节省性能
     if (config.xp > 1) {
         traverse(obj, (parent, key) => {
             if (typeof parent[key] === 'number') {
                 const lowerKey = key.toLowerCase();
-                // 限制最大值防止封号，排除 id 等字段
                 if ((lowerKey === 'xp' || lowerKey === 'amount') && parent[key] > 0 && parent[key] < 5000) {
                     parent[key] = Math.floor(parent[key] * config.xp);
                 }
@@ -76,16 +77,13 @@ try {
     }
 
     // === 功能 B: 自定义挑战时间 (Timer) ===
-    // 输入为分钟，转换为秒
     if (config.time > 0) {
         const timeInSeconds = config.time * 60; 
         traverse(obj, (parent, key) => {
             if (typeof parent[key] === 'number') {
-                // 匹配 duration(通常是秒), timer, timeLimit
                 if (key === 'duration' || key === 'timer' || key === 'timeLimit') {
                     parent[key] = timeInSeconds;
                 }
-                // 针对某些特定题型的倒计时字段
                 if (key === 'expectedDuration') {
                     parent[key] = timeInSeconds;
                 }
@@ -107,7 +105,6 @@ try {
     // === 功能 D: 直接通关/秒过 (Instant Clear) ===
     if (config.clear) {
         const type = obj.type;
-        // 白名单：跳过不应被清空的特殊题型 (如配对题可能会卡死)
         const skipTypes = ["MATCH_PRACTICE"]; 
         
         if (!type || !skipTypes.includes(type)) {
@@ -116,7 +113,7 @@ try {
                 'adaptiveChallenges',
                 'adaptiveInterleavedChallenges',
                 'mistakesReplacementChallenges',
-                'elements' // 某些新版结构
+                'elements'
             ];
             
             pools.forEach(pool => {
@@ -125,13 +122,11 @@ try {
                 }
             });
             
-            // 处理 Session 结构
             if (obj.sessionElementSolutions && Array.isArray(obj.sessionElementSolutions)) {
                  obj.sessionElementSolutions = [];
             }
         }
         
-        // 处理 Audio 课程 (duoradio)
         if (obj.metadata && obj.metadata.type === "duoradio") {
              if (obj.elements && Array.isArray(obj.elements)) obj.elements = [];
         }
