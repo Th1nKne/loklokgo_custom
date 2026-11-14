@@ -1,5 +1,9 @@
 try {
-    const obj = JSON.parse($response.body);
+    const bodyString = typeof $response.body === "string" 
+        ? $response.body 
+        : new TextDecoder("utf-8").decode($response.body);
+        
+    const obj = JSON.parse(bodyString);
     const now = Math.floor(Date.now() / 1000);
 
     const applyGold = (userdata) => {
