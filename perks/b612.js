@@ -10,7 +10,7 @@ if ($request.url.indexOf("/status") === -1) {
                 "products": [{
                     "productId": "com.campmobile.snowcamera.vip.oneyear",
                     "startDate": 1656472739000,
-                    "expireDate": 3800000000000,
+                    "expireDate": 253402300799000,
                     "managed": false,
                     "status": "ACTIVE"
                 }]
