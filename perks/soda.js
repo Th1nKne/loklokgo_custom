@@ -1,4 +1,9 @@
-var bachiep = JSON.parse($response.body);
+// Kiểm tra và decode body thành String nếu nó đang là Uint8Array
+var bodyString = typeof $response.body === "string" 
+    ? $response.body 
+    : new TextDecoder("utf-8").decode($response.body);
+
+var bachiep = JSON.parse(bodyString);
 
 bachiep.result = {
     "products" : [
