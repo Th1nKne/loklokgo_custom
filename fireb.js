@@ -194,7 +194,7 @@ obj.entries = obj.entries || {};
             profile_banner: true
         }),
         feature_discovery_popup_config: JSON.stringify({
-            tag: "Gold By Al1nK Planet 🪐",
+            tag: "Gold by Al1nK Planet 🪐",
             tag_gradient: true,
             tag_style: "gold_gradient",
             title: "Gold by Gon",
