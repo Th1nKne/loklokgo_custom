@@ -753,6 +753,8 @@
 
   // ------------------------------------------------------------------- entry
 
+// ------------------------------------------------------------------- entry
+
   let out = null;
   if (
     url.indexOf("bootstrap") >= 0 ||
@@ -761,6 +763,8 @@
     out = patchBootstrap(body) || patchCustomize(body) || patchUcs(body);
   } else if (url.indexOf("remote-config-resolver") >= 0) {
     out = patchRemoteConfig(body);
+  } else if (url.indexOf("nebula") >= 0) {
+    out = patchAttributes(body);
   } else {
     $done({});
     return;
