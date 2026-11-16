@@ -326,7 +326,7 @@
     ["","enable_pick_and_shuffle_common_capping",0,0,"","cap"],
     ["","enable_pick_and_shuffle_dynamic_cap",0,0,"","cap"],
     ["","pick_and_shuffle_timecap",0,0,"","cap"],
-    ["ios-feature-queue","",0,0,"","cap"],
+    // ["ios-feature-queue","",0,0,"","cap"],
     ["","enable_free_on_demand_experiment",0,0,"","misc"],
     ["","enable_free_on_demand_context_menu_experiment",0,0,"","misc"],
     ["","enable_mft_plus_queue",0,0,"","cap"],
@@ -520,8 +520,8 @@
     ["","enable_leave_behind_ads_card_element",1,0,"","ad"],
     ["","music_npv_leavebehinds_enabled",1,0,"","misc"],
     ["","enable_ads_on_podcast",1,0,"","ad"],
-    ["","enable_display_element",1,0,"","misc"],
-    ["","enable_video_element",1,1,"","misc"],
+    // ["","enable_display_element",1,0,"","misc"],
+    // ["","enable_video_element",1,1,"","misc"],
     ["","is_promo_cta_enabled",1,0,"","ad"],
     ["","show_time_cap_upsell_with_premium_badge",1,0,"","ad"],
     ["","enable_video_time_cap_upsell",1,0,"","ad"],
@@ -556,7 +556,7 @@
     ["","enable_sponsored_search_results_v2",1,0,"","ad"],
     ["","enable_sponsored_home_results_v2",1,0,"","ad"],
     ["ios-feature-search","prompted_playlist_merchandizing_enabled",1,0,"","misc"],
-    ["","should_nova_scroll_use_scrollsita",0,0,"","misc"],
+    // ["","should_nova_scroll_use_scrollsita",0,0,"","misc"],
     ["ios-sociallistening-configuration-impl","premium_gated_start_jam_buttons_enabled",2,0,"","misc"]
   ];
 
@@ -583,7 +583,7 @@
     "can_use_superbird": true,
     "enable-crossfade-product-state": "1",
     "enable-gapless-product-state": "1",
-    "high-bitrate": true,
+    // "high-bitrate": true,
     "loudness-levels": "1:-5.0,0.0,3.0:-2.0",
     "mixing-tools": "EDIT",
     "your-library-tags": true,
@@ -748,21 +748,19 @@
 
   const patchCustomize = (b) => edit(b, [1], patchUcs);
   const patchBootstrap = (b) => edit(b, [2, 1, 1, 1], patchUcs);
-  const patchRemoteConfig = (b) => edit(b, [1], patchConfiguration) || patchUcs(b) || patchConfiguration(b);
+  // Chỉ chạy patchConfiguration cho remote-config-resolver, không gọi patchUcs để tránh ghi đè nhầm field 3 (AssignedValue)
+  const patchRemoteConfig = (b) => edit(b, [1], patchConfiguration) || patchConfiguration(b);
 
-// ------------------------------------------------------------------- entry
-
+  // ------------------------------------------------------------------- entry
 
   let out = null;
   if (
     url.indexOf("bootstrap") >= 0 ||
-    url.indexOf("user-customization-service") >= 0 ||
-    url.indexOf("remote-config-resolver") >= 0
+    url.indexOf("user-customization-service") >= 0
   ) {
-    out = patchBootstrap(body) || patchCustomize(body) || patchRemoteConfig(body);
-  } else if (url.indexOf("nebula") >= 0) {
-    // Sửa đoạn này: Gọi thẳng patchAttributes để ép trạng thái Premium cho Nebula
-    out = patchAttributes(body) || patchRemoteConfig(body);
+    out = patchBootstrap(body) || patchCustomize(body) || patchUcs(body);
+  } else if (url.indexOf("remote-config-resolver") >= 0) {
+    out = patchRemoteConfig(body);
   } else {
     $done({});
     return;
