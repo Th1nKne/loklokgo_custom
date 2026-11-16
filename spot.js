@@ -557,7 +557,10 @@
     ["","enable_sponsored_home_results_v2",1,0,"","ad"],
     ["ios-feature-search","prompted_playlist_merchandizing_enabled",1,0,"","misc"],
     // ["","should_nova_scroll_use_scrollsita",0,0,"","misc"],
-    ["ios-sociallistening-configuration-impl","premium_gated_start_jam_buttons_enabled",2,0,"","misc"]
+    ["ios-sociallistening-configuration-impl","premium_gated_start_jam_buttons_enabled",2,0,"","misc"],
+    ["","enable_telemetry",0,0,"","misc"],
+    ["","enable_metrics",0,0,"","misc"],
+    ["","enable_event_sender",0,0,"","misc"],
   ];
 
   // -------------------------------------------------------------- attributes
