@@ -592,7 +592,7 @@
     "pick-and-shuffle": false,
     // Thêm 2 key dưới đây để tránh treo khung Video/Canvas trên bản mới
     "canvas-enabled": true,
-    // "music-videos-enabled": true
+    "music-videos-enabled": true
   };
 
   const ATTR_ADS = {
