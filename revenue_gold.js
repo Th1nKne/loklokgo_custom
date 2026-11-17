@@ -39,6 +39,12 @@ if (match) {
   let [e, s] = mapping[match];
   s ? (locketGold.product_identifier = s, obj.subscriber.subscriptions[s] = locketGod) : obj.subscriber.subscriptions["locket_1600_1y"] = locketGod, obj.subscriber.entitlements[e] = locketGold
 } else obj.subscriber.subscriptions["locket_1600_1y"] = locketGod, obj.subscriber.entitlements.pro = locketGold;
+
+// Mở khóa bổ sung các entitlement cho Photobooth, Camera Filters và Themes
+var extraEnts = ["Gold", "filters", "camera_filters", "camera_theme", "camera_themes", "custom_widget_frames", "widget_frames", "longer_video", "captions", "pro"];
+extraEnts.forEach(function (ent) {
+  obj.subscriber.entitlements[ent] = locketGold;
+});
 $done({
   body: JSON.stringify(obj)
 });
