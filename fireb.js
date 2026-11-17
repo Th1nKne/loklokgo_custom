@@ -202,7 +202,7 @@ obj.entries = obj.entries || {};
                 {
                     title: "Hãy cho @Gon 1 legit tại #⭐legit",
                     body: "Hãy ủng hộ thêm cho sốp tại #stock nhé ❤️‍🩹",
-                    imageURL: "https://i.postimg.cc/7YmpJdSX/a6d77eb2-806d-439f-89c8-9f3637ac3273.png"
+                    imageURL: "https://i.postimg.cc/bNjsFGZ3/pasted-image.png"
                 }
             ],
             primary_button_title: "Xong",
