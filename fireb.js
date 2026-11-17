@@ -382,6 +382,10 @@ obj.entries = obj.entries || {};
         ai_filters_gold_only: "false",
         generative_ai_enabled: "false",
         generative_ai: "false",
+        // --- QUAN TRỌNG: Khai báo Storage Bucket ---
+        camera_filter_storage_bucket: "gs://locket-camera-filters",
+        celebrity_camera_filter_config: JSON.stringify({}),
+        // -------------------------------------------
         allowsCustomFilters: "true",
         allows_custom_filters: "true",
         camera_theme: "enabled",
@@ -482,8 +486,6 @@ obj.entries = obj.entries || {};
     };
     obj.entries.camera_filter_config = JSON.stringify(cameraFilterConfig);
     obj.entries.camera_filters_config = JSON.stringify(cameraFilterConfig);
-    delete obj.entries.celebrity_camera_filter_config;
-    // delete obj.entries.camera_filter_storage_bucket;
 
     // 4. BẠN BÈ, GIỚI HẠN & ĐỀ XUẤT KẾT BẠN
     // ============================================================
