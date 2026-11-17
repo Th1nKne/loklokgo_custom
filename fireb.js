@@ -53,7 +53,7 @@ obj.entries = obj.entries || {};
 
     // ============================================================
     // ============================================================
-    // 1. CẤU HÌNH GOLD, FEATURE GATES & PAYWALL (ĐÃ GỠ PHOTOBOOTH & AI FILTERS)
+    // 1. CẤU HÌNH GOLD, FEATURE GATES & PAYWALL (ĐÃ BẬT PHOTOBOOTH & CAMERA FILTERS)
     // ============================================================
     Object.assign(obj.entries, {
         feature_gates: JSON.stringify({
@@ -103,9 +103,9 @@ obj.entries = obj.entries || {};
           "private_mode": "enabled",
           "viewer_mode": "enabled",
           "close_friends": "enabled",
-          "camera_filter_sheet": "disabled",
-          "camera_filters": "disabled",
-          "camera_filter": "disabled",
+          "camera_filter_sheet": "enabled",
+          "camera_filters": "enabled",
+          "camera_filter": "enabled",
           "camera_roll_video_30s_enabled": "enabled",
           "allow_30s_video_upload": "enabled",
           "allow_video_upload_30s": "enabled",
@@ -132,8 +132,8 @@ obj.entries = obj.entries || {};
           "camera_roll_video_60s": "enabled",
           "longer_video_60s": "enabled",
           "extended_video_60s": "enabled",
-          "holiday_filters": "disabled",
-          "holiday_filter": "disabled",
+          "holiday_filters": "enabled",
+          "holiday_filter": "enabled",
           "custom_widget_frame": "enabled",
           "widget_frames": "enabled",
           "widget_frame": "enabled",
@@ -142,24 +142,26 @@ obj.entries = obj.entries || {};
           "holiday_widget_frame": "enabled",
           "holiday_widget_frames": "enabled",
           "holiday_frames": "enabled",
-          "camera_filters_enabled": "disabled",
-          "camera_filter_enabled": "disabled",
-          "all_filters_free": "disabled",
-          "all_filters": "disabled",
-          "all_filters_unlocked": "disabled",
+          "camera_filters_enabled": "enabled",
+          "camera_filter_enabled": "enabled",
+          "all_filters_free": "enabled",
+          "all_filters": "enabled",
+          "all_filters_unlocked": "enabled",
           "holiday_effect": "enabled",
           "holiday_effects_enabled": "enabled",
-          "holiday_filters_enabled": "disabled",
-          "holiday_filter_enabled": "disabled",
+          "holiday_filters_enabled": "enabled",
+          "holiday_filter_enabled": "enabled",
           "holiday_effect_enabled": "enabled",
           "holiday_effects_unlocked": "enabled",
-          "holiday_filters_unlocked": "disabled",
-          "holiday_filter_unlocked": "disabled",
+          "holiday_filters_unlocked": "enabled",
+          "holiday_filter_unlocked": "enabled",
           "holiday_effect_unlocked": "enabled",
           "holiday_effects_free": "enabled",
-          "holiday_filters_free": "disabled",
+          "holiday_filters_free": "enabled",
           "beta_features": "disabled",
           "gold_camera_themes": "enabled",
+          "camera_themes": "enabled",
+          "camera_themes_enabled": "enabled",
           "video_audio": "enabled",
           "high_quality_video": "enabled",
           "hd_media_upload": "enabled",
@@ -169,8 +171,10 @@ obj.entries = obj.entries || {};
           "magic_cutout": "disabled",
           "ai_captions": "disabled",
           "lenses": "disabled",
-          "photo_booth": "disabled",
-          "photobooth": "disabled",
+          "photo_booth": "enabled",
+          "photobooth": "enabled",
+          "camera_photobooth": "enabled",
+          "photo_filters": "enabled",
           "ai_filters": "disabled",
           "ai_filter": "disabled",
           "ai_camera": "disabled",
@@ -319,17 +323,37 @@ obj.entries = obj.entries || {};
         gold_camera_themes: "true",
         gold_custom_app_icons: "true",
         android_subscribe_gold_button_enabled: "false",
-        // Vô hiệu hóa Camera Filters & AI Filters & Photobooth
-        camera_filters: "false",
-        camera_filter: "false",
-        camera_filters_enabled: "false",
-        camera_filter_enabled: "false",
-        enable_camera_filter: "false",
-        camera_filter_sheet_enabled: "false",
+        // Bật Camera Filters, Photo Filters & Photobooth (Tắt AI Cloud Filters)
+        camera_filters: "true",
+        camera_filter: "true",
+        camera_filters_enabled: "true",
+        camera_filter_enabled: "true",
+        enable_camera_filter: "true",
+        camera_filter_sheet_enabled: "true",
         camera_filter_sheet_open: "false",
         camera_filter_sheet_open_immediately: "false",
-        photo_booth_enabled: "false",
-        photobooth_enabled: "false",
+        camera_filter_viewer: "enabled",
+        camera_filter_viewer_enabled: "enabled",
+        photo_booth_enabled: "true",
+        photobooth_enabled: "true",
+        camera_photobooth_enabled: "true",
+        photo_booth: "enabled",
+        photobooth: "enabled",
+        camera_photobooth: "enabled",
+        all_filters_free: "true",
+        free_filters_enabled: "true",
+        unlocked_filters: "true",
+        photo_filters: "enabled",
+        holiday_filters: "enabled",
+        camera_filter_paywall_enabled: "false",
+        filter_paywall_enabled: "false",
+        filter_upsell_enabled: "false",
+        require_gold_for_filters: "false",
+        requires_gold_for_filters: "false",
+        camera_filter_gold_only: "false",
+        camera_filters_gold_only: "false",
+        filter_gold_only: "false",
+        filters_gold_only: "false",
         ai_enabled: "false",
         ai_camera: "false",
         ai_camera_enabled: "false",
@@ -338,8 +362,13 @@ obj.entries = obj.entries || {};
         ai_filter: "false",
         generative_ai_enabled: "false",
         generative_ai: "false",
-        allowsCustomFilters: "false",
-        allows_custom_filters: "false",
+        allowsCustomFilters: "true",
+        allows_custom_filters: "true",
+        camera_theme: "enabled",
+        camera_theme_enabled: "true",
+        camera_themes_enabled: "true",
+        gold_camera_themes: "enabled",
+        gold_camera_themes_profile_menu: "enabled",
         // Tối ưu video & upload ảnh HD / 2K
         camera_roll_preview_enabled: "true",
         camera_roll_video_enabled: "true",
@@ -384,9 +413,36 @@ obj.entries = obj.entries || {};
         photo_sync_max_wait_seconds: "10"
     });
 
-    // Xóa bỏ hoàn toàn filter config khỏi response
-    delete obj.entries.camera_filter_config;
-    delete obj.entries.camera_filters_config;
+    // Cấu hình Camera Filters (Color & AR Filters offline, an toàn không gọi AI Cloud)
+    var cameraFilterConfig = {
+        showFilterButton: true,
+        allowsCustomFilters: true,
+        referenceImageAttachmentEnabled: true,
+        sheetEnabled: true,
+        openSheetImmediately: false,
+        pickerFilters: [
+            "stk_dio_pm2", "stk_dio_looksmaxing", "stk_dio_influencer", "stk_dio_toothless",
+            "stk_dio_orange_wig", "stk_dio_bye_brows", "stk_dio_braces", "stk_dio_tatted",
+            "stk_dio_bearded", "stk_dio_buns", "stk_dio_mohawk", "stk_dio_bob",
+            "stk_dio_bowling_ball", "stk_dio_bleached_hair", "stk_dio_princess", "stk_dio_cash",
+            "stk_dio_slimed", "stk_dio_happy_birthday", "stk_dio_disco", "stk_dio_flower_crown",
+            "stk_dio_cutesy", "stk_dio_sticker_face", "stk_dio_love_bug", "stk_dio_cowboy",
+            "stk_dio_giraffe", "stk_dio_wedding", "stk_dio_clown", "stk_dio_sweat_hearts",
+            "stk_dio_bearded_holiday", "stk_dio_frosty", "stk_dio_elf", "stk_dio_santa",
+            "stk_dio_easter_bunny", "stk_dio_leprechaun", "stk_dio_easter_chick", "stk_dio_lucky_face"
+        ],
+        sheetFilters: [
+            { title: { en: "Sự kiện", vi: "Sự kiện" }, filterIds: ["stk_dio_pm2"] },
+            { title: { en: "Tinh nghịch", vi: "Tinh nghịch" }, filterIds: ["stk_dio_looksmaxing", "stk_dio_influencer", "stk_dio_toothless", "stk_dio_orange_wig"] },
+            { title: { en: "Ngoại hình", vi: "Ngoại hình" }, filterIds: ["stk_dio_bye_brows", "stk_dio_braces", "stk_dio_tatted", "stk_dio_bearded", "stk_dio_buns", "stk_dio_mohawk", "stk_dio_bob", "stk_dio_bowling_ball", "stk_dio_bleached_hair"] },
+            { title: { en: "Ăn mừng", vi: "Ăn mừng" }, filterIds: ["stk_dio_princess", "stk_dio_cash", "stk_dio_slimed", "stk_dio_happy_birthday", "stk_dio_disco"] },
+            { title: { en: "Dễ thương", vi: "Dễ thương" }, filterIds: ["stk_dio_flower_crown", "stk_dio_cutesy", "stk_dio_sticker_face", "stk_dio_love_bug"] },
+            { title: { en: "Trang phục", vi: "Trang phục" }, filterIds: ["stk_dio_cowboy", "stk_dio_giraffe", "stk_dio_wedding", "stk_dio_clown"] },
+            { title: { en: "Ngày lễ", vi: "Ngày lễ" }, filterIds: ["stk_dio_sweat_hearts", "stk_dio_bearded_holiday", "stk_dio_frosty", "stk_dio_elf", "stk_dio_santa", "stk_dio_easter_bunny", "stk_dio_leprechaun", "stk_dio_easter_chick", "stk_dio_lucky_face"] }
+        ]
+    };
+    obj.entries.camera_filter_config = JSON.stringify(cameraFilterConfig);
+    obj.entries.camera_filters_config = JSON.stringify(cameraFilterConfig);
     delete obj.entries.celebrity_camera_filter_config;
     delete obj.entries.camera_filter_storage_bucket;
 
@@ -1719,8 +1775,108 @@ obj.entries = obj.entries || {};
         "end_at": "2035-12-31T23:59:59",
         "is_stock": false,
         "isStock": false
+    },
+    {
+        "uid": "frame_photobooth_kr",
+        "id": "frame_photobooth_kr",
+        "name": "Photobooth Hàn Quốc 🎀",
+        "title": "Photobooth Hàn Quốc 🎀",
+        "displayName": "Photobooth Hàn Quốc 🎀",
+        "section": "💖 Photobooth 2 ảnh • Cute & đôi bạn",
+        "url": "https://raw.githubusercontent.com/dth20006/shadow/main/frame_photobooth_kr.png",
+        "frame_url": "https://raw.githubusercontent.com/dth20006/shadow/main/frame_photobooth_kr.png",
+        "imageUrl": "https://raw.githubusercontent.com/dth20006/shadow/main/frame_photobooth_kr.png",
+        "image_url": "https://raw.githubusercontent.com/dth20006/shadow/main/frame_photobooth_kr.png",
+        "placement": "below",
+        "scale": 100,
+        "scale_x": 100,
+        "scale_y": 100,
+        "offset_x": 0,
+        "offset_y": 0,
+        "use_local_time_zone": true,
+        "start_at": "2020-01-01T00:00:00",
+        "end_at": "2035-12-31T23:59:59",
+        "is_stock": true,
+        "isStock": true
+    },
+    {
+        "uid": "frame_photobooth_retro",
+        "id": "frame_photobooth_retro",
+        "name": "Photobooth Retro Film 🎞️",
+        "title": "Photobooth Retro Film 🎞️",
+        "displayName": "Photobooth Retro Film 🎞️",
+        "section": "🍰 Photobooth 2 ảnh • Lễ hội & kỷ niệm",
+        "url": "https://raw.githubusercontent.com/dth20006/shadow/main/frame_photobooth_retro.png",
+        "frame_url": "https://raw.githubusercontent.com/dth20006/shadow/main/frame_photobooth_retro.png",
+        "imageUrl": "https://raw.githubusercontent.com/dth20006/shadow/main/frame_photobooth_retro.png",
+        "image_url": "https://raw.githubusercontent.com/dth20006/shadow/main/frame_photobooth_retro.png",
+        "placement": "below",
+        "scale": 100,
+        "scale_x": 100,
+        "scale_y": 100,
+        "offset_x": 0,
+        "offset_y": 0,
+        "use_local_time_zone": true,
+        "start_at": "2020-01-01T00:00:00",
+        "end_at": "2035-12-31T23:59:59",
+        "is_stock": true,
+        "isStock": true
+    },
+    {
+        "uid": "frame_photobooth_classic",
+        "id": "frame_photobooth_classic",
+        "name": "Photobooth Cổ Điển 📸",
+        "title": "Photobooth Cổ Điển 📸",
+        "displayName": "Photobooth Cổ Điển 📸",
+        "section": "💖 Photobooth • Cổ điển",
+        "url": "https://raw.githubusercontent.com/dth20006/shadow/main/photobooth_frame.png",
+        "frame_url": "https://raw.githubusercontent.com/dth20006/shadow/main/photobooth_frame.png",
+        "imageUrl": "https://raw.githubusercontent.com/dth20006/shadow/main/photobooth_frame.png",
+        "image_url": "https://raw.githubusercontent.com/dth20006/shadow/main/photobooth_frame.png",
+        "placement": "below",
+        "scale": 100,
+        "scale_x": 100,
+        "scale_y": 100,
+        "offset_x": 0,
+        "offset_y": 0,
+        "use_local_time_zone": true,
+        "start_at": "2020-01-01T00:00:00",
+        "end_at": "2035-12-31T23:59:59",
+        "is_stock": true,
+        "isStock": true
+    },
+    {
+        "uid": "frame_gold_vip",
+        "id": "frame_gold_vip",
+        "name": "Gold VIP Frame 👑",
+        "title": "Gold VIP Frame",
+        "displayName": "Gold VIP Frame 👑",
+        "section": "✨ Khung 1 ảnh • Hoàng Gia VIP",
+        "url": "https://raw.githubusercontent.com/dth20006/shadow/main/widget_frame_gemini.png",
+        "frame_url": "https://raw.githubusercontent.com/dth20006/shadow/main/widget_frame_gemini.png",
+        "imageUrl": "https://raw.githubusercontent.com/dth20006/shadow/main/widget_frame_gemini.png",
+        "image_url": "https://raw.githubusercontent.com/dth20006/shadow/main/widget_frame_gemini.png",
+        "placement": "below",
+        "scale": 100,
+        "scale_x": 100,
+        "scale_y": 100,
+        "offset_x": 0,
+        "offset_y": 0,
+        "use_local_time_zone": true,
+        "start_at": "2020-01-01T00:00:00",
+        "end_at": "2035-12-31T23:59:59",
+        "is_stock": true,
+        "isStock": true
     }
 ];
+
+    // Gán section mặc định cho các khung 1 ảnh nếu chưa có
+    customWidgetFramesList.forEach(function(f) {
+        if (!f.section) {
+            f.section = "🌸 Khung 1 ảnh • Phong cách Gen Z";
+        }
+    });
+
     var customWidgetFramesMap = {};
     customWidgetFramesList.forEach(function(f) {
         if (f && (f.uid || f.id)) {
@@ -1807,10 +1963,12 @@ obj.entries = obj.entries || {};
         android_widget_frame_event_enabled: isFrameEnabled ? "true" : "false",
         ios_widget_frame_event_enabled: isFrameEnabled ? "true" : "false",
         widget_frame_event_enabled: isFrameEnabled ? "true" : "false",
-        widget_frame_enabled: isFrameEnabled ? "true" : "false",
+        widget_frame_enabled: "true",
+        widget_frames_enabled: "true",
         enable_widget_frame_event: isFrameEnabled ? "true" : "false",
         custom_widget_frames: "true",
         custom_widget_frames_enabled: "true",
+        customWidgetFramesEnabled: "true",
         widget_badge_enabled: "true",
         widget_badge_v2: "true",
         widget_stale_state_enabled: "false",
