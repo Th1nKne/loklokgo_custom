@@ -41,7 +41,7 @@ if (match) {
 } else obj.subscriber.subscriptions["locket_1600_1y"] = locketGod, obj.subscriber.entitlements.pro = locketGold;
 
 // Mở khóa bổ sung các entitlement cho Photobooth, Camera Filters và Themes
-var extraEnts = ["Gold", "filters", "camera_filters", "camera_theme", "camera_themes", "custom_widget_frames", "widget_frames", "longer_video", "captions", "pro"];
+var extraEnts = ["Gold", "gold", "filters", "filter", "all_filters", "camera_filters", "camera_filter", "photobooth", "camera_photobooth", "photo_booth", "camera_theme", "camera_themes", "custom_widget_frames", "widget_frames", "longer_video", "captions", "pro"];
 extraEnts.forEach(function (ent) {
   obj.subscriber.entitlements[ent] = locketGold;
 });
