@@ -187,12 +187,12 @@ obj.entries = obj.entries || {};
           "all_filters_free": "true",
           "free_filters_enabled": "true",
           "unlocked_filters": "true",
-          "ai_filters": "enabled",
-          "ai_filter": "enabled",
-          "ai_camera": "enabled",
-          "ai_features": "enabled",
-          "ai_looks_maxxing": "enabled",
-          "generative_ai": "enabled"
+          "ai_filters": "disabled",
+          "ai_filter": "disabled",
+          "ai_camera": "disabled",
+          "ai_features": "disabled",
+          "ai_looks_maxxing": "disabled",
+          "generative_ai": "disabled"
 }),
         paywall_presentation_config: JSON.stringify({
             uid: "paywall_testflight",
@@ -370,18 +370,18 @@ obj.entries = obj.entries || {};
         camera_filters_gold_only: "false",
         filter_gold_only: "false",
         filters_gold_only: "false",
-        ai_enabled: "true",
-        ai_camera: "true",
-        ai_camera_enabled: "true",
-        ai_filters_enabled: "true",
-        ai_filters: "true",
-        ai_filter: "true",
-        can_use_ai_features: "true",
-        ai_features_enabled: "true",
+        ai_enabled: "false",
+        ai_camera: "false",
+        ai_camera_enabled: "false",
+        ai_filters_enabled: "false",
+        ai_filters: "false",
+        ai_filter: "false",
+        can_use_ai_features: "false",
+        ai_features_enabled: "false",
         ai_filter_gold_only: "false",
         ai_filters_gold_only: "false",
-        generative_ai_enabled: "true",
-        generative_ai: "true",
+        generative_ai_enabled: "false",
+        generative_ai: "false",
         allowsCustomFilters: "true",
         allows_custom_filters: "true",
         camera_theme: "enabled",
@@ -483,7 +483,7 @@ obj.entries = obj.entries || {};
     obj.entries.camera_filter_config = JSON.stringify(cameraFilterConfig);
     obj.entries.camera_filters_config = JSON.stringify(cameraFilterConfig);
     delete obj.entries.celebrity_camera_filter_config;
-    delete obj.entries.camera_filter_storage_bucket;
+    // delete obj.entries.camera_filter_storage_bucket;
 
     // 4. BẠN BÈ, GIỚI HẠN & ĐỀ XUẤT KẾT BẠN
     // ============================================================
