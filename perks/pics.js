@@ -1,4 +1,4 @@
-// pics.js - Fix triệt để apple/purchases token_error trên Shadowrocket
+// pics.js - Final Fix cho apple/purchases
 const url = $request.url;
 const isResponse = typeof $response !== "undefined";
 let obj = null;
@@ -137,19 +137,16 @@ if (obj !== null) {
     "Content-Type": "application/json; charset=utf-8",
     "Access-Control-Allow-Origin": "*",
     "Access-Control-Allow-Methods": "GET, POST, OPTIONS, PUT, DELETE",
-    "Access-Control-Allow-Headers": "*",
-    "Cache-Control": "no-store, no-cache, must-revalidate"
+    "Access-Control-Allow-Headers": "*"
   };
 
   if (isResponse) {
-    // Ở http-response: Dùng chuỗi "HTTP/1.1 200 OK" để ép Shadowrocket đổi mã 401 -> 200
     $done({
-      status: "HTTP/1.1 200 OK",
+      status: 200,
       headers: Object.assign({}, $response.headers || {}, headers),
       body: bodyStr
     });
   } else {
-    // Ở http-request: Trả mock response trực tiếp không qua server
     $done({
       response: {
         status: 200,
