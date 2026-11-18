@@ -1,39 +1,67 @@
 let url = $request.url;
 let body = $response.body;
-let obj = {};
+let obj;
 
 try {
-    obj = JSON.parse(body || "{}");
+    obj = JSON.parse(body);
 } catch (e) {
-    // Bỏ qua nếu body trống hoặc lỗi
+    $done({});
 }
 
-// 1. Phá Cache
-if (url.includes("/guard/credits") || url.includes("/guard/users/tier")) {
-    return $done({ status: 200, body: body });
+// 1. cloud-storage/v1/me/storages -> storage.json
+if (url.includes("/cloud-storage/v1/me/storages")) {
+    obj = {
+        "response": {
+            "totalStorageSizeInBytes": 0,
+            "storageLimitSizeInBytes": 107374182400,
+            "foldersCountLimit": -1,
+            "totalFoldersCount": 0,
+            "totalFilesCount": 0
+        },
+        "status": "success"
+    };
 }
-
-// 2. Bypass Purchases
-if (url.includes("/shop/subscription/apple/purchases")) {
+// 2. shop/subscription/apple/purchases -> a_picsart2.json
+else if (url.includes("/shop/subscription/apple/purchases")) {
     obj = {
         "status": "success",
-        "response": [{
-            "status": "SUBSCRIPTION_RENEWED",
-            "is_trial": false,
-            "order_id": "2000001108782321",
-            "expire_date": 32662137600000,
-            "purchase_date": 1704758400000,
-            "subscription_id": "com.picsart.studio.subscription_pro_3_yearly",
-            "original_order_id": "2000000756285050",
-            "plan_meta": { "id": "com.picsart.studio.subscription_pro_3_yearly", "frequency": "yearly", "tier_id": "pro", "permissions": ["premium_tools_standard", "premium_tools_ai"] },
-            "reason": "ok"
-        }]
+        "response": [
+            {
+                "status": "SUBSCRIPTION_RENEWED",
+                "is_trial": false,
+                "order_id": "2000001108782321",
+                "expire_date": 32662137600000,
+                "purchase_date": 1704758400000,
+                "subscription_id": "com.picsart.studio.subscription_pro_3_yearly",
+                "original_order_id": "2000000756285050",
+                "plan_meta": {
+                    "permissions": ["premium_tools_standard", "premium_tools_ai"],
+                    "auto_renew_product_id": "com.picsart.studio.subscription_mac_tier1_pro_yearly",
+                    "level": 2000,
+                    "storage_limit_in_mb": 102400,
+                    "id": "com.picsart.studio.subscription_pro_3_yearly",
+                    "frequency": "yearly",
+                    "type": "renewable",
+                    "scope_id": "full",
+                    "product_id": "com.picsart.studio.subscription_pro_3_yearly",
+                    "tier_id": "pro"
+                },
+                "limitation": { "max_count": 10, "limits_exceeded": false },
+                "is_eligible_for_introductory": false,
+                "reason": "ok"
+            }
+        ]
     };
-    return $done({ status: 200, body: JSON.stringify(obj) });
 }
-
-// 3. Fake API Guard Quyền AI & Tier
-if (url.includes("/gw-v2/guard/users/order")) {
+// 3. owner/info hoặc features -> a_owner.json
+else if (url.includes("/shop/subscription/owner/info") || url.includes("/shop/subscription/features")) {
+    obj = {
+        "status": "success",
+        "response": { "granted": true, "is_valid": true }
+    };
+}
+// 4. users/tier hoặc users/order -> a_guard.json
+else if (url.includes("/guard/users/tier") || url.includes("/guard/users/order")) {
     obj = {
         "status": "success",
         "response": {
@@ -44,48 +72,30 @@ if (url.includes("/gw-v2/guard/users/order")) {
                 "storage_limit_in_mb": 20480,
                 "device_limit": 5
             },
-            "additionalInfo": { "scopeTrialEligibility": [{"scopeId": "mobile_web_pro_packages", "canUseTrial": false}] }
+            "additionalInfo": {
+                "scopeTrialEligibility": [{ "scopeId": "mobile_web_pro_packages", "canUseTrial": false }]
+            }
         }
     };
-    return $done({ status: 200, body: JSON.stringify(obj) });
 }
-
-// 4. Fake Cloud Storage
-if (url.includes("/cloud-storage/v1/me/storages")) {
-    obj = {
-        "response": { "totalStorageSizeInBytes": 0, "storageLimitSizeInBytes": 107374182400, "foldersCountLimit": -1, "totalFoldersCount": 0 },
-        "status": "success"
-    };
-    return $done({ status: 200, body: JSON.stringify(obj) });
-}
-
-// 5. Bypass Check Owner Info
-if (url.includes("/shop/subscription/owner/info")) {
-    obj = { "status": "success", "response": { "granted": true, "is_valid": true } };
-    return $done({ status: 200, body: JSON.stringify(obj) });
-}
-
-// 6. Hack All AI Tools giá 0 Credit
-if (url.includes("/shop/subscription/features")) {
+// 5. guard/credits -> a_cost_ai.json (Xử lý Mảng)
+else if (url.includes("/guard/credits")) {
     if (obj.response && Array.isArray(obj.response)) {
         obj.response.forEach(item => {
-            item.credit_price = 0;
-            item.otpForUnsubscribedUsers = false;
+            if (item.hasOwnProperty("credit_price")) {
+                item.credit_price = 0;
+                item.otpForUnsubscribedUsers = false;
+            }
         });
     }
-    return $done({ status: 200, body: JSON.stringify(obj) });
 }
-
-// 7. Bypass Webhook Magic Flow AI
-if (url.includes("/workflows/magic-flow-webhook/options")) {
+// 6. workflows/magic-flow-webhook/options (Xử lý Object chặn trừ credit)
+else if (url.includes("/workflows/magic-flow-webhook/options")) {
     if (obj.response) {
-        obj.response.chargeCredits = false;
         obj.response.credits = 0;
         obj.response.usageAmount = 0;
-        obj.response.price = 0;
+        obj.response.chargeCredits = false;
     }
-    return $done({ status: 200, body: JSON.stringify(obj) });
 }
 
-// 8. Fallback
-return $done({});
+$done({ body: JSON.stringify(obj) });
