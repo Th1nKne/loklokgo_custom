@@ -1,0 +1,25 @@
+{
+  "status": "success",
+  "response": {
+    "tier": {
+      "id": "gold",
+      "level": 2000,
+      "permissions": [
+        "premium_tools_standard",
+        "premium_tools_ai",
+        "ai_avatar_generation",
+        "ai_image_generation"
+      ],
+      "storage_limit_in_mb": 20480,
+      "device_limit": 5
+    },
+    "additionalInfo": {
+      "scopeTrialEligibility": [
+        {
+          "scopeId": "mobile_web_pro_packages",
+          "canUseTrial": false
+        }
+      ]
+    }
+  }
+}
