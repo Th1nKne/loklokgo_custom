@@ -1,4 +1,4 @@
-// pics.js - Final Fix cho apple/purchases
+// pics.js - Tối ưu riêng cho Shadowrocket
 const url = $request.url;
 const isResponse = typeof $response !== "undefined";
 let obj = null;
@@ -141,12 +141,14 @@ if (obj !== null) {
   };
 
   if (isResponse) {
+    // Dành cho endpoint cost ở tầng http-response
     $done({
       status: 200,
       headers: Object.assign({}, $response.headers || {}, headers),
       body: bodyStr
     });
   } else {
+    // Dành cho các endpoint VIP ở tầng http-request trên Shadowrocket
     $done({
       response: {
         status: 200,
