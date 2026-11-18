@@ -2,19 +2,18 @@ let url = $request.url;
 let body = $response.body;
 let obj = {};
 
-// Parse body hiện tại (nếu có)
 try {
     obj = JSON.parse(body || "{}");
 } catch (e) {
-    // Bỏ qua lỗi parse
+    // Bỏ qua nếu body trống hoặc lỗi
 }
 
-// 1. Phá Cache (Chặn 304 Not Modified, trả về 200 để ép app load data mới)
+// 1. Phá Cache
 if (url.includes("/guard/credits") || url.includes("/guard/users/tier")) {
-    $done({ status: 200, body: body });
+    return $done({ status: 200, body: body });
 }
 
-// 2. Bypass Purchases (Gán trực tiếp JSON)
+// 2. Bypass Purchases
 if (url.includes("/shop/subscription/apple/purchases")) {
     obj = {
         "status": "success",
@@ -22,17 +21,18 @@ if (url.includes("/shop/subscription/apple/purchases")) {
             "status": "SUBSCRIPTION_RENEWED",
             "is_trial": false,
             "order_id": "2000001108782321",
-            "expire_date": 32662137600000, // Timestamp năm 3004, tương đương vĩnh viễn
+            "expire_date": 32662137600000,
             "purchase_date": 1704758400000,
             "subscription_id": "com.picsart.studio.subscription_pro_3_yearly",
-            "plan_meta": { "id": "com.picsart.studio.subscription_pro_3_yearly", "frequency": "yearly", "tier_id": "pro" },
+            "original_order_id": "2000000756285050",
+            "plan_meta": { "id": "com.picsart.studio.subscription_pro_3_yearly", "frequency": "yearly", "tier_id": "pro", "permissions": ["premium_tools_standard", "premium_tools_ai"] },
             "reason": "ok"
         }]
     };
-    $done({ status: 200, body: JSON.stringify(obj) });
+    return $done({ status: 200, body: JSON.stringify(obj) });
 }
 
-// 3. Fake API Guard Quyền AI & Tier (Gán trực tiếp JSON)
+// 3. Fake API Guard Quyền AI & Tier
 if (url.includes("/gw-v2/guard/users/order")) {
     obj = {
         "status": "success",
@@ -47,25 +47,25 @@ if (url.includes("/gw-v2/guard/users/order")) {
             "additionalInfo": { "scopeTrialEligibility": [{"scopeId": "mobile_web_pro_packages", "canUseTrial": false}] }
         }
     };
-    $done({ status: 200, body: JSON.stringify(obj) });
+    return $done({ status: 200, body: JSON.stringify(obj) });
 }
 
-// 4. Fake Cloud Storage 100GB (Gán trực tiếp JSON)
+// 4. Fake Cloud Storage
 if (url.includes("/cloud-storage/v1/me/storages")) {
     obj = {
         "response": { "totalStorageSizeInBytes": 0, "storageLimitSizeInBytes": 107374182400, "foldersCountLimit": -1, "totalFoldersCount": 0 },
         "status": "success"
     };
-    $done({ status: 200, body: JSON.stringify(obj) });
+    return $done({ status: 200, body: JSON.stringify(obj) });
 }
 
-// 5. Bypass Check Owner Info (Gán trực tiếp JSON)
+// 5. Bypass Check Owner Info
 if (url.includes("/shop/subscription/owner/info")) {
     obj = { "status": "success", "response": { "granted": true, "is_valid": true } };
-    $done({ status: 200, body: JSON.stringify(obj) });
+    return $done({ status: 200, body: JSON.stringify(obj) });
 }
 
-// 6. Hack All AI Tools giá 0 Credit (Can thiệp động vào response server)
+// 6. Hack All AI Tools giá 0 Credit
 if (url.includes("/shop/subscription/features")) {
     if (obj.response && Array.isArray(obj.response)) {
         obj.response.forEach(item => {
@@ -73,10 +73,10 @@ if (url.includes("/shop/subscription/features")) {
             item.otpForUnsubscribedUsers = false;
         });
     }
-    $done({ status: 200, body: JSON.stringify(obj) });
+    return $done({ status: 200, body: JSON.stringify(obj) });
 }
 
-// 7. Bypass Webhook Magic Flow AI (Can thiệp động, set mọi phí = 0)
+// 7. Bypass Webhook Magic Flow AI
 if (url.includes("/workflows/magic-flow-webhook/options")) {
     if (obj.response) {
         obj.response.chargeCredits = false;
@@ -84,8 +84,8 @@ if (url.includes("/workflows/magic-flow-webhook/options")) {
         obj.response.usageAmount = 0;
         obj.response.price = 0;
     }
-    $done({ status: 200, body: JSON.stringify(obj) });
+    return $done({ status: 200, body: JSON.stringify(obj) });
 }
 
-// Fallback: Trả về nguyên gốc cho các request không nằm trong danh sách trên
-$done({});
+// 8. Fallback
+return $done({});
