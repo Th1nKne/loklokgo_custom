@@ -1,14 +1,7 @@
 let url = $request.url;
-let body = $response.body;
-let obj;
+let obj = null;
 
-try {
-    obj = JSON.parse(body);
-} catch (e) {
-    $done({});
-}
-
-// 1. cloud-storage/v1/me/storages -> storage.json
+// 1. Storage 100GB -> storage.json
 if (url.includes("/cloud-storage/v1/me/storages")) {
     obj = {
         "response": {
@@ -21,7 +14,7 @@ if (url.includes("/cloud-storage/v1/me/storages")) {
         "status": "success"
     };
 }
-// 2. shop/subscription/apple/purchases -> a_picsart2.json
+// 2. Purchases -> a_picsart2.json
 else if (url.includes("/shop/subscription/apple/purchases")) {
     obj = {
         "status": "success",
@@ -53,14 +46,14 @@ else if (url.includes("/shop/subscription/apple/purchases")) {
         ]
     };
 }
-// 3. owner/info hoặc features -> a_owner.json
-else if (url.includes("/shop/subscription/owner/info") || url.includes("/shop/subscription/features")) {
+// 3. Owner Info -> a_owner.json (Tách riêng, không gộp chung với features)
+else if (url.includes("/shop/subscription/owner/info")) {
     obj = {
         "status": "success",
         "response": { "granted": true, "is_valid": true }
     };
 }
-// 4. users/tier hoặc users/order -> a_guard.json
+// 4. Guard Tier & Order -> a_guard.json
 else if (url.includes("/guard/users/tier") || url.includes("/guard/users/order")) {
     obj = {
         "status": "success",
@@ -78,24 +71,61 @@ else if (url.includes("/guard/users/tier") || url.includes("/guard/users/order")
         }
     };
 }
-// 5. guard/credits -> a_cost_ai.json (Xử lý Mảng)
-else if (url.includes("/guard/credits")) {
-    if (obj.response && Array.isArray(obj.response)) {
-        obj.response.forEach(item => {
-            if (item.hasOwnProperty("credit_price")) {
+// 5. Workflow Options -> a_workflow.json
+else if (url.includes("/workflows/magic-flow-webhook/options")) {
+    obj = {
+        "status": "success",
+        "response": {
+            "monetization": { "toolId": "request.magicflow-webhook" },
+            "usageAmount": 0,
+            "chargeCredits": false,
+            "toolId": "request.magicflow-webhook",
+            "credits": 0,
+            "unit": "generation",
+            "price": 0,
+            "estimated": false
+        }
+    };
+}
+// 6. Shop Features (Bảng giá AI) -> Sửa động từ response của server
+else if (url.includes("/shop/subscription/features") && typeof $response !== "undefined") {
+    try {
+        let featObj = JSON.parse($response.body);
+        if (featObj.response && Array.isArray(featObj.response)) {
+            featObj.response.forEach(item => {
                 item.credit_price = 0;
                 item.otpForUnsubscribedUsers = false;
-            }
+            });
+        }
+        $done({
+            status: 200,
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(featObj)
         });
-    }
-}
-// 6. workflows/magic-flow-webhook/options (Xử lý Object chặn trừ credit)
-else if (url.includes("/workflows/magic-flow-webhook/options")) {
-    if (obj.response) {
-        obj.response.credits = 0;
-        obj.response.usageAmount = 0;
-        obj.response.chargeCredits = false;
+    } catch (e) {
+        $done({});
     }
 }
 
-$done({ body: JSON.stringify(obj) });
+// Nếu thuộc 5 API tĩnh ở trên: Trả thẳng HTTP 200 giống hệt Charles Map Local
+if (obj !== null) {
+    if (typeof $response !== "undefined") {
+        // Khi chạy ở chế độ http-response
+        $done({
+            status: 200,
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(obj)
+        });
+    } else {
+        // Khi chạy ở chế độ http-request (Chặn ngay lập tức như Map Local)
+        $done({
+            response: {
+                status: 200,
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(obj)
+            }
+        });
+    }
+} else if (typeof $response === "undefined") {
+    $done({});
+}
