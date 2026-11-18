@@ -1,0 +1,7 @@
+{
+  "status": "success",
+  "response": {
+    "granted": true,
+    "is_valid": true
+  }
+}
