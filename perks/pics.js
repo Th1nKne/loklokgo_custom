@@ -1,4 +1,4 @@
-// pics.js - Dual-mode (http-request & http-response) cho Shadowrocket / Surge
+// pics.js - Fix triệt để apple/purchases token_error trên Shadowrocket
 const url = $request.url;
 const isResponse = typeof $response !== "undefined";
 let obj = null;
@@ -51,7 +51,7 @@ if (url.includes("/guard/credits")) {
       }
     }
   };
-} else if (url.includes("/apple/purchases")) {
+} else if (url.includes("apple/purchases")) {
   obj = {
     "status": "success",
     "response": [
@@ -133,25 +133,27 @@ if (url.includes("/guard/credits")) {
 
 if (obj !== null) {
   const bodyStr = JSON.stringify(obj);
-  const customHeaders = isResponse && $response.headers ? Object.assign({}, $response.headers) : {};
-  customHeaders["Content-Type"] = "application/json; charset=utf-8";
-  customHeaders["Access-Control-Allow-Origin"] = "*";
-  customHeaders["Access-Control-Allow-Methods"] = "GET, POST, OPTIONS, PUT, DELETE";
-  customHeaders["Access-Control-Allow-Headers"] = "*";
+  const headers = {
+    "Content-Type": "application/json; charset=utf-8",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Methods": "GET, POST, OPTIONS, PUT, DELETE",
+    "Access-Control-Allow-Headers": "*",
+    "Cache-Control": "no-store, no-cache, must-revalidate"
+  };
 
   if (isResponse) {
-    // Khi chạy ở type=http-response: ghi đè status 200 và body
+    // Ở http-response: Dùng chuỗi "HTTP/1.1 200 OK" để ép Shadowrocket đổi mã 401 -> 200
     $done({
-      status: 200,
-      headers: customHeaders,
+      status: "HTTP/1.1 200 OK",
+      headers: Object.assign({}, $response.headers || {}, headers),
       body: bodyStr
     });
   } else {
-    // Khi chạy ở type=http-request: BẮT BUỘC bọc trong object `response` để chặn không cho lên server
+    // Ở http-request: Trả mock response trực tiếp không qua server
     $done({
       response: {
         status: 200,
-        headers: customHeaders,
+        headers: headers,
         body: bodyStr
       }
     });
