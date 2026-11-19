@@ -1,7 +1,7 @@
 /**
  * Picsart Premium Spoof
  * Type: http-response
- * Target: api.picsart.com
+ * Target: api.picsart.com / api.meiease.cn
  */
 
 const url = $request.url;
@@ -103,7 +103,7 @@ else if (url.includes('/gw-v2/shop/subscription/apple/purchases')) {
   };
 }
 
-// /gw-v2/cloud-storage/v1/me/storages  AND  /cloud-storage/v1/me/storages
+// /cloud-storage/v1/me/storages (gw-v2 and non-gw-v2)
 else if (url.includes('/cloud-storage/v1/me/storages')) {
   body = {
     status: "success",
@@ -113,6 +113,29 @@ else if (url.includes('/cloud-storage/v1/me/storages')) {
       foldersCountLimit: -1,
       totalFoldersCount: 0,
       totalFilesCount: 0
+    }
+  };
+}
+
+// /users/show/me
+else if (url.includes('/users/show/me')) {
+  body = {
+    status: "success",
+    response: {
+      is_premium: true,
+      subscription: {
+        status: "SUBSCRIPTION_RENEWED",
+        tier_id: "gold",
+        level: 2000,
+        expire_date: 32662137600000,
+        is_trial: false,
+        permissions: [
+          "premium_tools_standard",
+          "premium_tools_ai",
+          "ai_avatar_generation",
+          "ai_image_generation"
+        ]
+      }
     }
   };
 }
