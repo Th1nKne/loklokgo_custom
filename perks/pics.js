@@ -93,8 +93,8 @@ if (url.includes("/guard/credits")) {
     "status": "success"
   };
 
-// --- patch users/show và user-blocks: giữ data thật, chỉ inject subscription ---
-} else if (url.match(/\/users\/show\//) || url.includes("/users/show/me")) {
+// --- patch users/show: giữ data thật, chỉ inject subscription ---
+} else if (url.includes("/users/show/")) {
   if (isResponse && $response.body) {
     try {
       let parsed = JSON.parse($response.body);
@@ -106,7 +106,8 @@ if (url.includes("/guard/credits")) {
           "permissions": ["premium_tools_standard", "premium_tools_ai"],
           "expire_date": 32662137600000
         };
-        parsed.roles = parsed.roles || ["default", "pro"];
+        parsed.roles = ["default", "pro"];
+        parsed.is_verified = true;
         obj = parsed;
       }
     } catch(e) {}
