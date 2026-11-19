@@ -52,7 +52,6 @@ if (url.includes("/guard/credits")) {
     }
   };
 } else if (url.includes("apple/purchases")) {
-  // http-response layer — override response từ server
   obj = {
     "status": "success",
     "response": [
@@ -93,6 +92,27 @@ if (url.includes("/guard/credits")) {
     },
     "status": "success"
   };
+
+// --- patch users/show và user-blocks: giữ data thật, chỉ inject subscription ---
+} else if (url.match(/\/users\/show\//) || url.includes("/users/show/me")) {
+  if (isResponse && $response.body) {
+    try {
+      let parsed = JSON.parse($response.body);
+      if (parsed) {
+        parsed.subscription = {
+          "granted": true,
+          "tier": "gold",
+          "level": 2000,
+          "permissions": ["premium_tools_standard", "premium_tools_ai"],
+          "expire_date": 32662137600000
+        };
+        parsed.roles = parsed.roles || ["default", "pro"];
+        obj = parsed;
+      }
+    } catch(e) {}
+  }
+}
+
 } else if (url.includes("cost")) {
   if (isResponse && $response.body) {
     try {
@@ -135,7 +155,6 @@ if (obj !== null) {
     "Access-Control-Allow-Headers": "*"
   };
 
-  // tất cả đều dùng $response format vì giờ purchases cũng là http-response
   if (isResponse) {
     $done({
       status: 200,
@@ -143,7 +162,6 @@ if (obj !== null) {
       body: bodyStr
     });
   } else {
-    // http-request (guard/credits, owner/info, users/order, storages)
     $done({
       response: {
         status: 200,
