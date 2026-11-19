@@ -52,7 +52,7 @@ if (url.includes("/guard/credits")) {
     }
   };
 } else if (url.includes("apple/purchases")) {
-  // chạy ở tầng response — override response từ server
+  // http-response layer — override response từ server
   obj = {
     "status": "success",
     "response": [
@@ -135,15 +135,15 @@ if (obj !== null) {
     "Access-Control-Allow-Headers": "*"
   };
 
+  // tất cả đều dùng $response format vì giờ purchases cũng là http-response
   if (isResponse) {
-    // Dành cho endpoint cost ở tầng http-response
     $done({
       status: 200,
       headers: Object.assign({}, $response.headers || {}, headers),
       body: bodyStr
     });
   } else {
-    // Dành cho các endpoint VIP ở tầng http-request trên Shadowrocket
+    // http-request (guard/credits, owner/info, users/order, storages)
     $done({
       response: {
         status: 200,
