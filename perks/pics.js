@@ -52,6 +52,7 @@ if (url.includes("/guard/credits")) {
     }
   };
 } else if (url.includes("apple/purchases")) {
+  // chạy ở tầng response — override response từ server
   obj = {
     "status": "success",
     "response": [
@@ -64,10 +65,7 @@ if (url.includes("/guard/credits")) {
         "subscription_id": "com.picsart.studio.subscription_pro_3_yearly",
         "original_order_id": "2000000756285050",
         "plan_meta": {
-          "permissions": [
-            "premium_tools_standard",
-            "premium_tools_ai"
-          ],
+          "permissions": ["premium_tools_standard", "premium_tools_ai"],
           "auto_renew_product_id": "com.picsart.studio.subscription_mac_tier1_pro_yearly",
           "level": 2000,
           "storage_limit_in_mb": 102400,
@@ -78,10 +76,7 @@ if (url.includes("/guard/credits")) {
           "product_id": "com.picsart.studio.subscription_pro_3_yearly",
           "tier_id": "pro"
         },
-        "limitation": {
-          "max_count": 10,
-          "limits_exceeded": false
-        },
+        "limitation": {"max_count": 10, "limits_exceeded": false},
         "is_eligible_for_introductory": false,
         "reason": "ok"
       }
