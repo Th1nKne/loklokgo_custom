@@ -1,4 +1,4 @@
-// pics.js v16 - Shadowrocket
+// pics.js - Tối ưu riêng cho Shadowrocket
 const url = $request.url;
 const isResponse = typeof $response !== "undefined";
 let obj = null;
@@ -92,8 +92,9 @@ if (url.includes("/guard/credits")) {
     },
     "status": "success"
   };
-} else if (url.includes("/users/show/")) {
-  // match cả /users/show/me.json?time=... và /users/show/12345.json?time=...
+
+// --- patch users/show và user-blocks: giữ data thật, chỉ inject subscription ---
+} else if (url.match(/\/users\/show\//) || url.includes("/users/show/me")) {
   if (isResponse && $response.body) {
     try {
       let parsed = JSON.parse($response.body);
@@ -110,7 +111,9 @@ if (url.includes("/guard/credits")) {
       }
     } catch(e) {}
   }
-} else if (url.includes("cost")) {
+}
+
+else if (url.includes("cost")) {
   if (isResponse && $response.body) {
     try {
       let parsed = JSON.parse($response.body);
