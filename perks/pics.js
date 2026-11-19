@@ -1,4 +1,4 @@
-// pics.js v15 - Shadowrocket
+// pics.js v16 - Shadowrocket
 const url = $request.url;
 const isResponse = typeof $response !== "undefined";
 let obj = null;
@@ -82,7 +82,6 @@ if (url.includes("/guard/credits")) {
     ]
   };
 } else if (url.includes("/me/storages") || url.includes("cloud-storage")) {
-  // response-type: luôn override kể cả khi server trả token_error
   obj = {
     "response": {
       "totalStorageSizeInBytes": 0,
@@ -93,7 +92,8 @@ if (url.includes("/guard/credits")) {
     },
     "status": "success"
   };
-} else if (url.match(/\/users\/show\//) || url.includes("/users/show/me")) {
+} else if (url.includes("/users/show/")) {
+  // match cả /users/show/me.json?time=... và /users/show/12345.json?time=...
   if (isResponse && $response.body) {
     try {
       let parsed = JSON.parse($response.body);
