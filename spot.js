@@ -758,6 +758,7 @@
 
 // ------------------------------------------------------------------- entry
 
+// dòng 761–774, sửa thành:
   let out = null;
   if (
     url.indexOf("bootstrap") >= 0 ||
@@ -768,6 +769,21 @@
     out = patchRemoteConfig(body);
   } else if (url.indexOf("nebula") >= 0) {
     out = patchAttributes(body);
+  } else if (url.indexOf("/v1/me") >= 0) {
+    // --- api.spotify.com/v1/me: JSON profile endpoint, patch product field ---
+    try {
+      const td = new TextDecoder("utf-8", { fatal: false });
+      const jsonStr = td.decode(body);
+      const obj = JSON.parse(jsonStr);
+      obj.product = "premium";
+      const patched = new TextEncoder().encode(JSON.stringify(obj));
+      if (verbose) console.log("spotify/me: patched product -> premium");
+      $done({ body: patched });
+    } catch (e) {
+      console.log("spotify/me: parse error " + e.message);
+      $done({});
+    }
+    return;
   } else {
     $done({});
     return;
