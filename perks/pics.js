@@ -111,9 +111,7 @@ if (url.includes("/guard/credits")) {
       }
     } catch(e) {}
   }
-}
-
-else if (url.includes("cost")) {
+} else if (url.includes("cost")) {
   if (isResponse && $response.body) {
     try {
       let parsed = JSON.parse($response.body);
