@@ -620,7 +620,8 @@
     "is-eligible-for-upsell",
     "upsell-state",
     "ad-session-persistence",
-    "ad-formats-preroll-video"
+    "ad-formats-preroll-video",
+    "your-plan-menu-treatment"
   ];
 
   const forced = Object.assign({}, ATTR_CORE, adsOn ? ATTR_ADS : {});
