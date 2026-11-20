@@ -768,7 +768,7 @@
   } else if (url.indexOf("remote-config-resolver") >= 0) {
     out = patchRemoteConfig(body);
   } else if (url.indexOf("nebula") >= 0) {
-    out = patchAttributes(body);
+    out = edit(body, [3], patchAttributes) || patchAttributes(body);
   } else {
     $done({});
     return;
